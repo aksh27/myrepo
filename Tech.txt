@@ -6,8 +6,14 @@ Welcome to Tech
 4. JQuery
 5. JAVA
 
+6. SQL
+7. C++
 
 
 
 Thanks.
+
+Done my changes.
+
 Final Copy
+
