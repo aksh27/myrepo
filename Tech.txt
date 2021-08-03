@@ -5,3 +5,8 @@ Welcome to Tech
 3. JS
 4. JQuery
 5. JAVA
+
+
+
+
+Thanks.
