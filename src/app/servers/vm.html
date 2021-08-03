@@ -1,0 +1,62 @@
+  <img src="assets/images/loading.gif" class="padT10" ng-if="listLoading">
+  <div class="row marT10" ng-if="!listLoading && vmList.length == 0">
+    <div class="col-xs-4" ng-if="!isAuthorized">
+      <div class="form-group">
+        <label>{{'servers.vm.label.1' | translate}}</label>
+        <div class="msg-warning marB10" ng-if="cListShow">{{'servers.vm.btn.1' | translate}}</div>
+        <div><button class="btn btn-success" ng-click="openUrlFx(626, 450);">{{'Authorize' | translate}}</button></div>
+      </div>
+      <div class="errMsg marT10" ng-if="hasErr">
+        <span ng-if="errType == 'empty'">{{'servers.msg.15' | translate}}</span>
+        <span ng-if="errType == 'noData'">{{'cm.msg.50' | translate}}</span>
+        <!-- <span ng-if="errType == 'authEmpty'">{{'No authorized account found to access VM.' | translate}}</span> -->
+        <span ng-if="errType == 'authFailed '">{{'servers.vm.msg.1' | translate}}</span>
+      </div>
+    </div>
+    <!-- <div class="clear-fix"></div>
+    <div class="col-xs-12" ng-if="cListShow">
+      <div class="form-group marB5">
+        <div class="bdr-btm-dashed noMarB">
+          <label class="noMarB marT10">{{'VM List' | translate}}</label>
+        </div>
+      </div>
+      <div class="table no-th no-pointer">
+        <div class="scrollQuad" style="max-height:{{getAvailableHeight(370)}}px">
+          <div class="row" ng-repeat="vm in vmList">
+            <div class="col-xs-11 word-break">{{email.email}}</div>
+            <div class="col-xs-1 text-right"><a href="" class="text-danger" ng-click="deleteEmailConfirm($index, 'include');"><i class="fas fa-times"></i></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="msg-warning">{{'No VM List found.' | translate}}</div>
+
+
+    </div> -->
+  </div>
+  <div class="table table-md no-th no-pointer" ng-if="vmList.length > 0">
+    <div class="noPad" ng-if="!listLoading">
+      <div class="row th">
+        <a href="" ng-click="sortBy('fname');">
+          <div class="col-xs-4">Name
+            <span class="pull-right" ng-show="propertyName === 'fname'">
+              <span ng-show="!reverse"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+              <span ng-show="reverse"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+            </span>
+          </div>
+        </a>
+        <div class="col-xs-8">
+          &nbsp;
+          <!-- <div class="text-primary pull-right">Action</div> -->
+        </div>
+      </div>
+      <div class="row" ng-repeat="vm in filteredSList = (vmList | filter:search.text | orderBy:propertyName:reverse)">
+        <div class="col-xs-4">{{vm.name}}</div>
+        <div class="col-xs-8 text-right">
+          <a href="" class="marR5" ng-click="vmTurnOnOpen(vm.id);" uib-tooltip="{{'Turn on' | translate}}" tooltip-append-to-body="true"><span class="fa fa-plug"></span></a>
+          <a href="" ng-click="vmRestartOpen(vm.id);" uib-tooltip="{{'Restart' | translate}}" tooltip-append-to-body="true"><span class="fa fa-power-off"></span></a>
+        </div>
+      </div>
+      <div class="msg-warning" ng-if="filteredSList.length == 0" translate="{{'cm.msg.14'}}" translate-values="{searchText: '<b>&quot;{{search.text.replace(searchRegExp, searchReplaceChar)}}&quot;</b>'}"></div>
+    </div>
+    <div class="msg-warning" ng-if="!listLoading && !vmList.length" translate="{{'No vm found for this server location.'}}"></div>
+  </div>

@@ -1,0 +1,19 @@
+<div class="row marT10">
+  <div class="col-xs-3">
+    <div class="form-group">
+      <label>Select date range</label>
+      <div class="input-group">
+        <span class="input-group-addon"><span class="fas fa-calendar-alt"></span></span>
+        <input type="daterange" class="form-control picker" ng-model="odr.range" format="MM/DD/YYYY" readonly="">
+      </div>
+    </div>
+    <div>
+      <button class="btn btn-primary marR20" ng-click="odrReportsFx();" ng-disabled="saveProcessing"><span class="fas" ng-class="saveProcessing?'fa-spin fa-redo':'fa-check'"></span>{{'reports.btn.1' | translate}}</button>
+      <a href="{{download}}" ng-if="download!=''" target="_blank"><span class="fas fa-download marR5"></span>{{'reports.btn.2' | translate}}</a>
+    </div>
+    <div class="errMsg marT10" ng-if="hasErr">
+      <span ng-if="errType == 'noData'">{{'cm.msg.50' | translate}}</span>
+    </div>
+  </div>
+</div>
+

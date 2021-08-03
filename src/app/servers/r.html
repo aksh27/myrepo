@@ -1,0 +1,24 @@
+<img src="assets/images/loading.gif" class="padT10" ng-if="listLoading">
+<div class="row padLR10" ng-if="!listLoading">
+  <div class="col-xs-12 bdrBtm">
+    <label class="padT10 padB5">Partner Server-Device Summary</label>
+  </div>
+</div>
+<div class="row marT-6" ng-if="!listLoading">
+  <div class="col-xs-4">
+    <div class="form-group">
+      <label>{{'servers.label.10' | translate}}</label>
+      <select class="form-control" ng-model="reports.partner" ng-options="(partner.firstname + ' ' + partner.lastname) for partner in partnerList track by partner.id" ng-change="resetFx();">
+        <option value="" disabled="disabled">{{'servers.label.10' | translate}}</option>
+      </select>
+    </div>
+    <div>
+      <button class="btn btn-primary marR20" ng-click="partnerReportsFx();" ng-disabled="saveProcessing || listLoading"><span class="fas" ng-class="saveProcessing?'fa-spin fa-redo':'fa-check'"></span>{{'reports.btn.1' | translate}}</button>
+      <a href="{{download}}" ng-if="download!=''" target="_blank"><span class="fas fa-download marR5"></span>{{'reports.btn.2' | translate}}</a>
+    </div>
+    <div class="errMsg marT10" ng-if="hasErr">
+      <span ng-if="errType == 'empty'">{{'servers.msg.15' | translate}}</span>
+      <span ng-if="errType == 'noData'">{{'cm.msg.50' | translate}}</span>
+    </div>
+  </div>
+</div>

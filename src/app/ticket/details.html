@@ -1,0 +1,309 @@
+<section>
+  <img src="assets/images/loading.gif" ng-if="detailLoading">
+  <div ng-if="!detailLoading">
+    <div class="marB25">
+      <div class="row subject-header">
+        <div class="col-xs-10">
+          <div class="text-big" ng-class="{'sub-coo':details.subAgent.length}">
+            <!-- <a href="" ui-sref="support.tickets.{{details.status}}" class="text-muted back-btn pull-left"><span class="fas fa-arrow-left text-sm"></span></a> -->
+            <a href="" ui-sref="support.tickets.a" ng-if="details.status == 'a'" class="text-muted back-btn pull-left"><span class="fas fa-arrow-left text-sm"></span></a>
+            <a href="" ui-sref="support.tickets.o" ng-if="details.status == 'o'" class="text-muted back-btn pull-left"><span class="fas fa-arrow-left text-sm"></span></a>
+            <a href="" ui-sref="support.tickets.r" ng-if="details.status == 'r'" class="text-muted back-btn pull-left"><span class="fas fa-arrow-left text-sm"></span></a>
+            <a href="" ui-sref="support.tickets.n" ng-if="details.status == 'n'" class="text-muted back-btn pull-left"><span class="fas fa-arrow-left text-sm"></span></a>
+            <div class="word-break">
+              <span ng-if="details.sub !== ''">{{details.sub}}</span>
+              <span class="text-muted" ng-if="details.sub === ''">{{'t.label.15' | translate}}</span>
+            </div>
+          </div>
+          <div class="text-sm text-muted" style="margin-left:46px">
+            <span class="text-bold">{{'t.label.1' | translate}} #:</span> {{details.tid}}
+            |
+            <span ng-if="details.status == 'a'" class="badge bg-primary">{{'t.tab.1' | translate}}</span>
+            <span ng-if="details.status == 'o'" class="badge bg-danger" translate="{{'cm.label.19'}}" translate-values="{htmlTag: '&nbsp;'}"></span>
+            <span ng-if="details.status == 'r'" class="badge bg-success">{{'t.tab.3' | translate}}</span>
+            <span ng-if="details.status == 'n'" class="badge bg-gray">{{'t.tab.4' | translate}}</span>
+            |
+            <!-- Assigned to 1-->
+            <span class="text-bold">{{'t.label.13' | translate}}:</span>
+            <span ng-if="details.ownerType == 1 || details.ownerType == 2">
+              <a href="" ng-click="forwardOpen();">
+                <span ng-if="!details.assignee">None</span>
+                <span ng-if="details.assignee">{{details.assignee.label}}</span>
+              </a>
+            </span>
+            <span ng-if="details.ownerType == 0 || details.ownerType == 3">
+              <span ng-if="!details.assignee"><a href="" ng-click="forwardOpen();">None</a></span>
+              <span ng-if="details.assignee">{{details.assignee.label}}</span>
+            </span>
+            |
+            <!-- Domain -->
+            <span class="text-bold">{{'t.label.9' | translate}}:</span>
+            <a href="" ng-click="domainOpen();">{{details.domain.label?details.domain.label:'N/A'}}</a>
+            |
+            <!-- Categories -->
+            <span class="text-bold">{{'t.label.24' | translate}}:</span>
+            <a href="" ng-click="categoryOpen();">{{details.category.label?details.category.label:'N/A'}}</a>
+            <!-- Labels -->
+            <span ng-if="details.labels.length">|
+              <span class="text-bold">{{'t.label.10' | translate}}:</span>
+              <span class="label-list" ng-repeat="label in details.labels" style="background-color:{{label.bg}};color:{{label.color}}">{{label.label}} <a href="" ng-click="labelAUFx('u', label.id);" class="text-danger"><i class="fas fa-times"></i></a></span>
+            </span>
+            <!-- Due date -->
+            <div class="marT2" ng-if="details.status == 'a' || details.status == 'o' || details.status == 'r'">
+              <span class="text-bold" ng-if="details.dueDateTime">{{'t.pop.15' | translate}}:</span>
+              <!-- <a href="" ng-click="dateTimeOpen();" ng-if="details.status !== 'r' && (auth.role == 0 || auth.id == details.createdBy)" ng-class="{'badge bg-danger':dateSmall}"><span ng-if="details.dueDate && details.dueTime">{{details.dueDate +" "+ details.dueTime}}</span><span ng-if="!details.dueDate && !details.dueTime">N/A</span></a> -->
+              <!-- <span ng-if="details.status !== 'r' && (auth.role != 0 && auth.id != details.createdBy)" ng-class="{'badge bg-danger':dateSmall}"><span ng-if="details.dueDate && details.dueTime">{{details.dueDate +" "+ details.dueTime}}</span><span ng-if="!details.dueDate && !details.dueTime">N/A</span></span> -->
+
+              <!-- {{details.dueDateTime}}
+              {{details.dueDateTime | date:getDateFormat(details.dueDateTime, 'dt')}} -->
+              <a href="" ng-click="dateTimeOpen();" ng-if="details.status !== 'r' && details.dueDateTime && (auth.role == 0 || auth.id == details.createdBy)" ng-class="{'badge bg-danger':dateSmall}">{{details.dueDateTime | date:getDateFormat(details.dueDateTime, 'dt')}}</a>
+              <span ng-if="details.status !== 'r' && details.dueDateTime && (auth.role != 0 && auth.id != details.createdBy)" ng-class="{'badge bg-danger':dateSmall}">{{details.dueDateTime | date:getDateFormat(details.dueDateTime, 'dt')}}</span>
+
+              <span ng-if="details.status === 'r'">
+                <!-- <span ng-if="details.dueDate && details.dueTime">{{details.dueDate +" "+ details.dueTime}}</span><span ng-if="!details.dueDate && !details.dueTime">N/A</span> -->
+                <span ng-if="details.dueDateTime">{{details.dueDateTime | date:getDateFormat(details.dueDateTime, 'dt')}} |</span>
+                <span ng-if="details.resolvedOn">
+                  <span class="text-bold">{{'cm.label.5' | translate}}:</span>
+                  <span ng-class="{'badge bg-danger':details.dueDateTime < details.resolvedOn, 'badge bg-success':details.dueDateTime >= details.resolvedOn}">{{details.resolvedOn | date:getDateFormat(details.resolvedOn, 'dt')}}</span>
+                </span>
+              </span>
+            </div>
+            <!-- Sub-agent -->
+            <div class="marT2" ng-if="details.subAgent.length">
+              <span class="text-bold">{{'t.label.19' | translate}}:</span>
+              <!-- <span ng-if="details.ownerType == 0" ng-repeat="s in details.subAgent" class="text-muted">{{s.label}}<span ng-if="!$last" class="marR5">,</span></span> -->
+              <a href="" ng-click="subAgentOpen();"><span ng-repeat="s in details.subAgent">{{s.label}}<span ng-if="!$last" class="marR5">,</span></span></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-2 text-right tool-box">
+          <!-- Reply -->
+          <a href="" class="btn btn-default btn-sm" ng-click="replyFx();" uib-tooltip="{{'cm.btn.22' | translate}}" ng-if="details.ownerType != 0 || !details.assignee"><i class="fas fa-reply noMar"></i></a>
+          <!-- Assign -->
+          <a href="" class="btn btn-default btn-sm" ng-click="forwardOpen();" uib-tooltip="{{'t.btn.2' | translate}}" ng-if="(details.ownerType != 0 && details.ownerType != 3) || !details.assignee"><i class="fas fa-share noMar"></i></a>
+          <!-- Delete -->
+          <a href="" class="btn btn-default btn-sm" ng-click="confirmOpen('d');" uib-tooltip="{{'cm.btn.12' | translate}}" ng-if="details.status == 'n' && auth.role == 0"><i class="fas fa-trash-alt noMar"></i></a>
+          <!-- More -->
+          <div class="btn-group marL4 pull-right" uib-dropdown is-open="status.isopen">
+            <a href="" class="btn btn-default btn-sm" id="single-button" uib-dropdown-toggle><i class="fas fa-ellipsis-v noMar"></i></a>
+            <ul class="dropdown-menu pull-right" uib-dropdown-menu role="menu">
+              <!-- mark as unread -->
+              <li role="menu-item"><a href="" ng-click="unreadFx();">{{'t.label.29' | translate}}</a></li>
+              <!-- Mark as non-ticket -->
+              <li role="menu-item"><a href="" ng-click="confirmOpen('t');" ng-if="(details.ownerType == 1 || details.ownerType == 2) && details.status == 'o' || (details.ownerType == 0 && details.status == 'o')">{{'t.label.3' | translate}}</a></li>
+              <!-- Mark as resolved -->
+              <li role="menu-item"><a href="" ng-click="confirmOpen('r');" ng-if="(details.ownerType == 1 || details.ownerType == 2 || !details.assignee) && details.status != 'r'">{{'t.label.4' | translate}}</a></li>
+              <!-- Mark as not resolved -->
+              <li role="menu-item"><a href="" ng-click="confirmOpen('nr');" ng-if="(details.ownerType != 0 || !details.assignee) && details.status == 'r'">{{'t.label.4.1' | translate}}</a></li>
+              <!-- Mark as Not Assigned -->
+              <li role="menu-item" ng-if="details.status != 'o'"><a href="" ng-click="confirmOpen('o');" ng-if="details.ownerType == 1 || details.ownerType == 2">{{'t.label.5' | translate}}</a></li>
+              <!-- Assign to Domain -->
+              <li role="menu-item"><a href="" ng-click="domainOpen();">{{'t.pop.1' | translate}}</a></li>
+              <!-- Assign to Categories -->
+              <li role="menu-item"><a href="" ng-click="categoryOpen();">{{'t.pop.8' | translate}}</a></li>
+              <!-- Sub coordinator -->
+              <li role="menu-item"><a href="" ng-click="subAgentOpen();">{{'t.label.19' | translate}}</a></li>
+              <!-- <li role="menu-item" ng-if="details.status == 'o'"><a href="" ng-click="subAgentOpen();">{{'t.label.19' | translate}}</a></li> -->
+
+              <!-- Due date -->
+              <li role="menu-item" ng-if="details.status !== 'r' && details.status !== 'n'  && (auth.role == 0 || auth.id == details.createdBy)"><a href="" ng-click="dateTimeOpen();">{{'t.pop.15' | translate}}</a></li>
+              <li role="menu-item"><a href="" ng-click="toggleHistory();">{{'t.label.16' | translate}}</a></li>
+
+              <li role="menu-item" class="hide"><a href="" ng-click="ticketExportFx();">{{'t.btn.4' | translate}}</a></li>
+            </ul>
+          </div>
+          <!-- Time entry -->
+          <div class="pull-right marL4" ng-if="details.ownerType != 0 && details.assignee && details.status != 'r'"><a href="" class="btn btn-default btn-sm" ng-click="timeEntryOpen();" uib-tooltip="{{'t.label.25' | translate}}"><i class="fas fa-clock noMar"></i></a></div>
+          <!-- label -->
+          <div class="btn-group marL4 pull-right label-dropdown" uib-dropdown>
+            <a href="" class="btn btn-default btn-sm" uib-dropdown-toggle uib-tooltip="{{'t.label.10' | translate}}" ng-click="labelOpenCheckFx();"><i class="fas fa-backspace fa-rotate-180 label-icon noMarR"></i></a>
+            <div class="dropdown-menu noPadL pull-right" uib-dropdown-menu role="menu">
+              <div class="padL10 bdr-btm-dashed noMarB text-bold" ng-if="ddLabel.length > 0">{{'t.label.11' | translate}}:</div>
+              <div class="scrollQuad" ng-if="ddLabel.length > 0">
+                <ul class="list-unstyled noMarB">
+                  <li ng-click="$event.stopPropagation();" ng-repeat="label in ddLabel" uib-tooltip="{{label.label}}" tooltip-popup-delay="1000"><label><input type="checkbox" ng-model="label.selected" ng-change="labelChangeFx()"><label></label>{{label.label}}</label></li>
+                </ul>
+              </div>
+              <div class="padL10 msg-warning text-unbold pad2" ng-if="ddLabel.length == 0">{{'t.msg.14' | translate}}</div>
+              <li class="divider"></li>
+              <li ng-if="!isApply"><a href="" ng-click="labelCUOpen();">{{'t.btn.5' | translate}}</a></li>
+              <li ng-if="isApply"><a href="" ng-click="labelAUFx('a');">{{'t.btn.6' | translate}}</a></li>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="panel noShadow" ng-class="isHistoryOpen?'col-xs-9':'col-xs-12'">
+        <div class="panel-body noPad relative">
+          <div class="accordion">
+            <div ng-repeat="thread in details.threads | orderBy:'id'" class="bdrB" id="{{thread.id}}">
+              <div class="accordion-header" ng-class="{'cursorDefault':$last}" ng-click="!$last && (thread.o = !thread.o)">
+                <div class="dpQuad pull-left">
+                  <span class="profileIcon-sm" ng-if="thread.dir">{{details.label?details.label:thread.label | limitTo:1}}</span>
+                  <img class="marR5" src="assets/images/logo_square.png" ng-if="!thread.dir && thread.mId">
+                  <img class="marR5" src="assets/images/note.png" ng-if="!thread.dir && !thread.mId">
+                </div>
+                <span class="text-bold">{{thread.label?thread.label:details.label}}</span>
+                  <!-- <span ng-if="!thread.label">{{details.label}}</span>
+                  <span ng-if="thread.label">{{thread.label}}</span>
+                </span>-->
+                <span class="text-muted text-sm pull-right">{{thread.date | date:getDateFormat(thread.date)}}</span>
+                <div class="email-text text-sm" ng-if="thread.o">
+                  {{thread.email?thread.email:details.email}}
+                  <!-- <span ng-if="!thread.email">{{details.email}}</span>
+                  <span ng-if="thread.email">{{thread.email}}</span> -->
+                </div>
+                <div class="text-ellipsis" ng-if="!thread.o" bind-html-compile="thread.body"></div>
+
+                <div class="accordion-body word-break cursorAuto" ng-if="thread.o" bind-html-compile="thread.html" ng-click="$event.stopPropagation();"></div>
+                <!-- <iframe class="accordion-body word-break" srcdoc="{{thread.html}}" style="border:none;width:100%;height:100%;" scrolling="no" onload="this.style.height=this.contentDocument.body.scrollHeight +'px';"></iframe> -->
+                <!-- Edit -->
+                <!-- <div class="accordion-body noMarT noMarB text-sm" ng-if="thread.o && thread.isEditable">
+                  <a href="" ng-click="editThreadOpen(thread.html, details.thid, thread.mId, thread.id); $event.stopPropagation();">{{'cm.btn.21' | translate}}</a>
+                  <span ng-if="thread.isVersion">|
+                    <a href="" ng-click="viewVersions(details.thid, thread.mId, thread.id); $event.stopPropagation();">{{'t.btn.10' | translate}}</a>
+                  </span>
+                </div> -->
+
+                <div class="attach-quad" ng-if="thread.o && thread.attach.length">
+                  <div class="text-bold">{{thread.attach.length}} {{thread.attach.length?'t.label.21.1':'t.label.21' | translate}}</div>
+                  <div class="marT5 noMarR">
+                    <!-- <div ng-repeat="a in thread.attach" class="col-xs-7 noPadR"> -->
+                      <div ng-repeat="a in thread.attach" class="attachList text-ellipsis">
+                        <a href="" ng-click="attachmentOpen(thread.mId, a.id, a.size); $event.stopPropagation();" ng-if="!a.isReply" uib-tooltip="{{a.name}}" tooltip-popup-delay="1000" tooltip-append-to-body="true">
+                          {{ext = (a.mime | fileExt:a.name); ""}}
+                          <i class="far" ng-class="{'fa-file-image':ext=='image', 'fa-file-video':ext=='video', 'fa-file-audio':ext=='audio', 'fa-file-code':ext=='code', 'fa-file-alt':ext=='text', 'fa-file-pdf':ext=='pdf', 'fa-file-archive':ext=='zip', 'fa-file-excel':ext=='xls', 'fa-file-word':ext=='doc', 'fa-file-powerpoint':ext=='ppt', 'fa-file':ext=='file', 'fas fa-file-csv':ext=='csv'}"></i>
+                          {{a.name}}
+                        </a>
+                        <a href="{{a.url}}" download target="_blank" ng-click="$event.stopPropagation();" ng-if="a.isReply" uib-tooltip="{{a.name}}" tooltip-popup-delay="1000" tooltip-append-to-body="true">
+                          {{ext = (a.mime | fileExt:a.name); ""}}
+                          <i class="far" ng-class="{'fa-file-image':ext=='image', 'fa-file-video':ext=='video', 'fa-file-audio':ext=='audio', 'fa-file-code':ext=='code', 'fa-file-alt':ext=='text', 'fa-file-pdf':ext=='pdf', 'fa-file-archive':ext=='zip', 'fa-file-excel':ext=='xls', 'fas fa-file-invoice':ext=='doc', 'fa-file-powerpoint':ext=='ppt', 'fa-file':ext=='file', 'fas fa-file-csv':ext=='csv'}"></i>
+                          {{a.name}}
+                        </a>
+                      </div>
+                    <!-- </div> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-footer" ng-if="!replyOpen">
+              <button class="btn btn-primary" ng-click="replyFx();"><i class="fas fa-reply"></i>{{'cm.btn.22' | translate}}</button>
+              <button class="btn btn-default" ng-click="confirmOpen('r');" ng-if="(details.ownerType == 1 || details.ownerType == 2) && details.status == 'a' || details.status == 'o'"><i class="fas fa-check"></i>{{'t.label.4' | translate}}</button>
+              <button class="btn btn-link" ui-sref="support.tickets.a" ng-if="details.status == 'a'">{{'cm.btn.8' | translate}}</button>
+              <button class="btn btn-link" ui-sref="support.tickets.o" ng-if="details.status == 'o'">{{'cm.btn.8' | translate}}</button>
+              <button class="btn btn-link" ui-sref="support.tickets.r" ng-if="details.status == 'r'">{{'cm.btn.8' | translate}}</button>
+              <button class="btn btn-link" ui-sref="support.tickets.n" ng-if="details.status == 'n'">{{'cm.btn.8' | translate}}</button>
+            </div>
+          </div>
+          <div class="replyQuad marT20" ng-if="replyOpen">
+            <div class="dpQuad pull-left">
+              <img class="marR5 marT5" src="assets/images/logo_square.png" ng-if="reply.replyType == 'c'">
+              <img class="marR5 marT5" src="assets/images/note.png" ng-if="reply.replyType == 's'">
+            </div>
+            <div class="textQuad">
+              <a href="" class="btn-close" ng-click="replyFx();"><i class="fas fa-times"></i></a>
+              <div class="form-group" ng-if="(details.ownerType == 1 || details.ownerType == 2 || !details.assignee) && !details.isGmail">
+                <label class="noMarB"><input type="radio" name="replyOpt" ng-model="reply.replyType" value="c"><label></label>{{'t.label.17' | translate}}</label>
+                <label class="noMarB marL10"><input type="radio" name="replyOpt" ng-model="reply.replyType" value="s"><label></label>{{'t.label.18' | translate}}</label>
+              </div>
+              <div class="form-group" ng-if="(details.ownerType == 0 || details.ownerType == 3) && details.assignee || details.isGmail">
+                <label class="noMarB cursor-not-allowed text-muted"><input type="radio" name="replyOpt" ng-model="reply.replyType" value="c" disabled><label></label>{{'t.label.17' | translate}}</label>
+                <label class="noMarB marL10"><input type="radio" name="replyOpt" ng-model="reply.replyType" value="s"><label></label>{{'t.label.18' | translate}}</label>
+              </div>
+              <div class="row" ng-if="((details.ownerType == 1 || details.ownerType == 2) || !details.assignee) && reply.replyType == 'c'">
+                <div class="col-xs-12 text-muted" ng-if="ccCollapsed">
+                  <div class="form-group bg-grey pad5" style="border-radius:3px;" ng-click="ccExpand()">
+                    To: {{details.email}}<span ng-if="curEmails.cc.length > 0"><span ng-repeat="cc in curEmails.cc">, {{cc}}</span></span>
+                  </div>
+                </div>
+                <div class="col-xs-12 text-muted" ng-if="!ccCollapsed">
+                  <div class="form-group bg-grey pad5" style="border-radius:3px;">
+                    <div class="bdr-btm-dashed">To: {{details.email}}</div>
+                    <div>
+                      <div class="pull-left">Cc:</div>
+                      <div style="padding-left:30px"><ng-token-field ng-model="curEmails.cc" placeholder="" validator="validator"></ng-token-field></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <text-angular ng-model="reply.html" name="demo-editor" ta-target-toolbars="toolbar1" ta-text-editor-class="clearfix border-around" ta-html-editor-class="border-around" class="text-editor" focus="shouldFocus" ta-disabled="sendProcessing"></text-angular>
+              <div class="form-group marT15">
+                <div class="marB10" ng-if="sFiles.length || uFiles.length">
+                  <div class="row attachList" ng-repeat="sFile in sFiles">
+                    <div class="col-xs-11 text-ellipsis noPadL noPadR">
+                      {{ext = (sFile.type | fileExt:sFile.name); ""}}
+                      <i class="far marR5" ng-class="{'fa-file-image':ext=='image', 'fa-file-video':ext=='video', 'fa-file-audio':ext=='audio', 'fa-file-code':ext=='code', 'fa-file-alt':ext=='text', 'fa-file-pdf':ext=='pdf', 'fa-file-archive':ext=='zip', 'fa-file-excel':ext=='xls', 'fa-file-word':ext=='doc', 'fa-file-powerpoint':ext=='ppt', 'fa-file':ext=='file', 'fas fa-file-csv':ext=='csv'}"></i>{{sFile.name | limitTo:55}}<span ng-if="sFile.name.length > 55">...</span><span class="text-muted marL5">({{sFile.size | filesize}})</span>
+                    </div>
+                    <div class="col-xs-1 text-right padR5"><a href="" class="text-danger" ng-click="attachRemoveFx('s', $index);" ng-disabled="sendProcessing"><i class="fas fa-times"></i></a></div>
+                  </div>
+                  <div class="attachList text-ellipsis" ng-repeat="uFile in uFiles">
+                    <div class="col-xs-11 text-ellipsis noPadL noPadR">
+                      <div><i class="far fa-file marR5"></i>{{uFile.name | limitTo:55}}<span ng-if="uFile.name.length > 55">...</span><span class="text-muted marL5">({{uFile.size | filesize}})</span></div>
+                      <span class="text-danger text-sm">{{'cm.msg.40' | translate}}</span>
+                    </div>
+                    <div class="col-xs-1 text-right padR5"><a href="" class="text-danger" ng-click="attachRemoveFx('u', $index);" ng-disabled="sendProcessing"><i class="fas fa-times"></i></a></div>
+                  </div>
+                </div>
+              </div>
+              <footer class="marT10">
+                <span class="btnQuad">
+                  <button class="btn btn-primary" ng-click="sendFx('s');" ng-disabled="sendProcessing" ng-if="reply.replyType == 'c'"><span class="fas" ng-class="sendProcessing && !reply.isResolve?'fa-redo fa-spin':'fa-reply'"></span>{{'cm.btn.28' | translate}}</button>
+                  <button class="btn btn-primary" ng-click="sendFx('s');" ng-disabled="sendProcessing" ng-if="reply.replyType == 's'"><span class="fas" ng-class="sendProcessing && !reply.isResolve?'fa-redo fa-spin':'fa-check'"></span>{{'t.label.18' | translate}}</button>
+                  <button class="btn btn-default" ng-click="sendRSFx('sr');" ng-disabled="sendProcessing" ng-if="(details.ownerType == 1 || details.ownerType == 2 || !details.assignee) && reply.replyType == 'c'"><span class="fas" ng-class="sendProcessing && reply.isResolve?'fa-redo fa-spin':'fa-check'"></span>{{'t.btn.1' | translate}}</button>
+                  <div class="btn-file pull-right">
+                    <button type="button" class="btn btn-default not" ng-disabled="sendProcessing"><i class="fas fa-paperclip noMarR"></i></button>
+                    <input type="file" file-model="curFiles" options="{size:10485760, format:['attach'], callback:true, multiple:true, caller:'s'}" multiple ng-disabled="sendProcessing" uib-tooltip="{{'t.label.23' | translate}}" tooltip-popup-delay="1000" tooltip-append-to-body="true" title="">
+                  </div>
+                  <div class="toolbarToggle pull-right bdrLd bdrRd marL10 padR5 marR5">
+                    <button type="button" class="btn btn-default not marL5" ng-class="{'active':toolbarToggle}" ng-click="toolbarToggleFx();" uib-tooltip="{{'t.label.22' | translate}}" tooltip-popup-delay="1000" tooltip-append-to-body="true"><i class="fas fa-font noMarR"></i></button>
+                    <div class="dropdown-menu" ng-if="toolbarToggle">
+                      <text-angular-toolbar name="toolbar1"></text-angular-toolbar>
+                    </div>
+                  </div>
+                </span>
+                <div class="errMsg pull-right" ng-if="hasErr">
+                  <div ng-if="errType == 'invalide'">{{'t.msg.5' | translate}}</div>
+                </div>
+                <div class="clearfix"></div>
+              </footer>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- HISTORY -->
+      <div ng-if="isHistoryOpen" class="col-xs-3 panel noShadow">
+        <div class="panel-heading pad10"><a href="" class="btn-close pull-right text-danger" ng-click="toggleHistory();"><i class="fas fa-times"></i></a>Ticket History</div>
+        <div class="panel-body bdr-muted noBdrT">
+          <img src="assets/images/loading.gif" ng-if="historyLoading">
+          <div ng-if="!historyLoading && history.length>0">
+            <div ng-repeat="date in history" style="border-left:1px dashed #ccc;padding-left:10px;">
+              <div class="badge badge-info">{{date.date}}</div>
+              <div ng-repeat="item in date.items" style="padding:10px 0">
+                <div class="word-break"><span class="fas fa-circle" style="font-size:8px;margin:7px 0 0 -14px;position:absolute;color:#666;"></span>{{item.data}}</div>
+                <div class="word-break text-sm text-bold text-muted">{{item.user}} | {{item.ts | date:'shortTime'}}</div>
+              </div>
+            </div>
+          </div>
+          <!-- <div ng-if="!historyLoading && history.length>0" class="table no-th no-pointer">
+            <div class="row" ng-repeat="item in history">
+              <div class="col-xs-10">
+                <div class="word-break">{{item.data}}</div>
+                <div class="word-break text-sm text-bold text-muted">{{item.user}}</div>
+              </div>
+              <div class="col-xs-2 text-right" uib-tooltip="{{item.logDate}} | {{item.logTime}}" tooltip-append-to-body="true" tooltip-placement="left" tooltip-popup-delay="1000">
+                <div class="text-ellipsis text-sm">{{item.ts | date:getDateFormat(item.ts, 'date')}}</div>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="syncToast" ng-if="syncToastShow && cutThreads.length">
+    <span ng-if="cutThreads.length == 1">{{'t.msg.22' | translate:{name:cutThreads[0].label} }}</span>
+    <span ng-if="cutThreads.length > 1">{{'t.msg.23' | translate:{count:cutThreads.length} }}</span>
+    <button class="btn btn-link btn-xs text-bold" ng-click="syncFx('s');">{{'t.btn.7' | translate}}</button>
+    <button class="btn btn-link btn-xs text-bold" ng-click="syncFx('i');">{{'t.btn.8' | translate}}</button>
+  </div>
+</section>

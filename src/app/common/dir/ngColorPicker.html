@@ -1,0 +1,12 @@
+<div class="colorPicker">
+    <!-- <div><label>{{'cm.label.23' | translate}}:</label></div> -->
+    <div class="marB5">
+      <a href="" ng-repeat="color in monochromePallet" uib-tooltip="{{color | uppercase}}" ng-class="{'selected':color===selectedColor  && selectedType === 'monochrome'}" tooltip-popup-delay="1000" style="background-color:{{color}};" ng-click="applyColor($index, 'monochrome')"></a>
+    </div>
+    <div class="marB5">
+      <a href="" ng-repeat="color in basicPallet" uib-tooltip="{{color | uppercase}}" ng-class="{'selected':color===selectedColor  && selectedType === 'basic'}" tooltip-popup-delay="1000" style="background-color:{{color}};" ng-click="applyColor($index, 'basic')"></a>
+    </div>
+    <div>
+      <a href="" ng-repeat="color in defaultPallet" uib-tooltip="{{color | uppercase}}" ng-class="{'selected':color===selectedColor  && selectedType === 'default'}" tooltip-popup-delay="1000" style="background-color:{{color}};" ng-click="applyColor($index, 'default')"></a>
+    </div>
+</div>

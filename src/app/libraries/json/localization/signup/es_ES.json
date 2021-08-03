@@ -1,0 +1,42 @@
+{
+  "lang": "en_US",
+  "cm": {
+    "menu": {
+      "53": "Regístrate"
+    },
+    "footer": {
+      "1": "Términos y condiciones",
+      "2": "Política de privacidad"
+    }
+  },
+  "signup": {
+    "label": {
+      "1": "Nombre",
+      "1.1": "Nombre de pila",
+      "1.2": "Apellido",
+      "2": "Contraseña",
+      "3": "Confirmar contraseña"
+    },
+    "btn": {
+      "1": "Regístrate",
+      "2": "Cancelar"
+    },
+    "msg": {
+      "1": "Bienvenido a {{brand}} plataforma de señalización digital",
+      "2": "Todos los campos son obligatorios.",
+      "3": "Las contraseñas no coinciden.",
+      "4": "Por favor, valide el captcha.",
+      "5": "Usuario ya existente.",
+      "6": "Oops! Algo salió mal. Por favor, inténtelo de nuevo más tarde.",
+      "6.1": "Prueba registrarse nuevamente",
+      "7": "Gracias por unirte a {{brand}}.",
+      "8": "Su cuenta ha sido creada con {{brand}}.",
+      "9": "Iniciar sesión en {{brand}}",
+      "10": "La contraseña debe tener al menos 8 caracteres.",
+      "11": "La contraseña debe contener al menos una letra.",
+      "12": "La contraseña debe contener al menos un dígito.",
+      "13": "La contraseña debe contener al menos uno de los siguientes caracteres:",
+      "14": "La contraseña no es valida."
+    }
+  }
+}

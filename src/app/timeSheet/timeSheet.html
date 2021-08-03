@@ -1,0 +1,12 @@
+<section class="panel noShadow">
+  <header class="panel-heading panel-tab">
+    <ul class="nav nav-tabs">
+      <li ui-sref-active="active" class="tab-info"><a ui-sref=".o">{{'ts.tab.1' | translate}}</a></li>
+      <li ui-sref-active="active" class="tab-primary"><a ui-sref=".s">{{(auth.role == 0 || auth.userType == 4)?'ts.tab.3':'ts.tab.2' | translate}}</a></li>
+      <li ui-sref-active="active" class="tab-success"><a ui-sref=".a">{{'ts.tab.4' | translate}}</a></li>
+    </ul>
+  </header>
+  <div>
+    <div ui-view="tabView"></div>
+  </div>
+</section>

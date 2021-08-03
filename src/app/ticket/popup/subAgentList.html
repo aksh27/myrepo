@@ -1,0 +1,28 @@
+<section class="panel">
+  <div class="panel-heading pad15">{{'t.label.19' | translate}}</div>
+  <div class="panel-body">
+    <img src="assets/images/loading.gif" ng-if="popupLoading">
+    <div class="table" ng-if="!popupLoading">
+      <div class="row th">
+        <div class="col-xs-8">{{'t.label.19' | translate}}</div>
+        <div class="col-xs-4">{{'cm.label.2' | translate}}</div>
+      </div>
+      <div class="scrollQuad" style="max-height:{{getAvailableHeight(470)}}px">
+        <div class="row" ng-repeat="sub in subAgentList" ng-class="{'disabledRow':sub.isDisable}" uib-tooltip="{{'t.label.20' | translate}}" tooltip-popup-delay="1000" tooltip-append-to-body="true" tooltip-enable="sub.isDisable">
+          <div class="col-xs-8 word-break"><label class="text-unbold"><input type="checkbox" ng-model="sub.isAssign" ng-false-value="0" ng-true-value="1" ng-disabled="sub.isDisable"><label></label>{{sub.label}}</label></div>
+          <div class="col-xs-4 word-break">{{sub.email}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="panel-footer">
+    <span class="btnQuad">
+      <button type="button" class="btn btn-success" ng-click="subAssignFx();" ng-disabled="popupProcessing"><span class="fas" ng-class="popupProcessing?'fa-redo fa-spin':'fa-check'"></span>{{'t.btn.2' | translate}}</button>
+      <button type="button" class="btn btn-link" ng-click="closeThisDialog();">{{'cm.btn.8' | translate}}</button>
+    </span>
+    <div class="errMsg pull-right" ng-if="hasErrPop">
+      <span ng-if="errType == 'same'">{{'t.msg.19' | translate}}</span>
+    </div>
+    <div class="clearfix"></div>
+  </footer>
+</section>

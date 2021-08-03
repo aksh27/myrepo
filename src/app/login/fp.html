@@ -1,0 +1,42 @@
+<section class="wrapper">
+  <div class="loginContainer">
+    <div class="text-center">
+      <img src="assets/images/logo-index.png">
+    </div>
+    <div style="margin-top:40px">
+      <!-- <header class="text-big" style="color:#fff">Reset Password</header> -->
+      <div class="padLR10" ng-if="isSupport">
+        <div class="marT25 text-center text-bold">Please contact dev team for support password.</div>
+        <div class="marT25 marB25 text-center"><button class="btn btn-primary" ng-click="goLoginFx();">Sign in to L Squared Support</button></div>
+      </div>
+      <div class="padLR10" ng-if="isPwdSuccess">
+        <div class="marT25 text-md">If <span class="text-bold">{{pwd.email}}</span> is associated with L&nbsp;Squared&nbsp;Support account, you should receive an email with password reset link.</div>
+        <div class="marT25 text-muted">
+          <div class="text-bold">Didn't receive the email?</div>
+          <div>Check your spam folder for a message from hub@lsquared.com</div>
+        </div>
+        <div class="marT25 marB25 text-center"><button class="btn btn-primary" ng-click="goLoginFx();">Sign in to L Squared Support</button></div>
+      </div>
+      <form method="post" name="retrievePassForm" ng-show="!isPwdSuccess && !isSupport" class="noMarT">
+        <div class="panel-body">
+          <div class="errMsg marB10" ng-if="hasErr">
+            <div ng-if="errType == 'email'">Please provide Email.</div>
+            <div ng-if="errType == 'reCaptcha'">Please validate captcha.</div>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" ng-model="email" class="form-control" placeholder="Email" focus-me="true" required>
+          </div>
+          <div class="form-group">
+            <div vc-recaptcha key="publicKey" theme="light"></div>
+          </div>
+          <button type="button" ng-click="forgotPassFx();" class="btn btn-primary" ng-disabled="authProcessing"><i class="fas" ng-class="authProcessing?'fa-redo fa-spin':'fa-undo'"></i>Reset Password</button>
+          <a href="" ui-sref="login" class="btn btn-link">Cancel</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+<footer class="footer noMarL padL10">
+  <span ng-bind-html="copyRight"></span> | <a href="https://s3-us-west-2.amazonaws.com/lsquared-hub/doc/terms.pdf" target="_blank">Terms &amp; Conditions</a> | <a href="https://s3-us-west-2.amazonaws.com/lsquared-hub/doc/privacy.pdf" target="_blank">Privacy Policy</a> | V&nbsp;{{uiVersion}}
+</footer>

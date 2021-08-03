@@ -1,0 +1,108 @@
+<img src="assets/images/loading.gif" class="marT10" ng-if="pageLoading">
+<div ng-if="!pageLoading">
+  <div class="row subject-header marB25">
+    <div class="col-xs-10">
+      <div class="text-big">
+        <a ui-sref="{{curTab == 'devices' ? 'support.i.d' : 'support.i.o'}}" class="text-muted back-btn pull-left"><span
+            class="fas fa-arrow-left text-sm"></span></a>
+        <div class="word-break">
+          <span ng-if="itemMode == 'c'" class="text-muted">{{"i.btn.2" | translate}} {{ curTab == 'devices'? "i.label.25" : "i.label.26" | translate}}</span>
+          <span ng-if="itemMode == 'u'" class="text-muted">{{"i.btn.3" | translate}} {{ curTab == 'devices'? "i.label.25" : "i.label.26" | translate}} {{itemlabel}}</span> <span class="text-sm text-muted" ng-if="curTab == 'devices' && inventoryName">[ {{inventoryName}} ]</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-2">
+      &nbsp;
+      <!-- <div class="pull-right">
+        <button ng-click="typeModelOpen(curTab);" type="button" class="btn btn-primary btn-sm"><i class="fas fa-plus-circle"></i> {{'Add Type & Model' | translate}}</button>
+      </div> -->
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-4">
+      <div class="form-group" ng-if="curTab == 'devices'">
+        <label>{{'i.label.1' | translate}}</label>
+        <input type="text" id="sn" class="form-control" ng-model="inventory.sn"><!--readonly-->
+      </div>
+      <div class="form-group">
+        <label>{{'i.label.2' | translate}}</label>
+        <select class="form-control" ng-options="item.label for item in items track by item.id"
+          ng-change="selectedType()" ng-model="inventory.type">
+          <option value="">{{"i.msg.7" | translate}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>{{'i.label.3' | translate}}</label>
+        <select class="form-control bg-white" ng-options="model.label for model in modelList track by model.id"
+          ng-change="" ng-model="inventory.model" ng-disabled="isDisabled">
+          <option selected value="">{{"i.msg.8" | translate}}</option>
+        </select>
+      </div>
+      <div class="form-group" ng-if="inventory.type.id == 1">
+        <label>{{'i.label.4' | translate}}</label>
+        <input type="text" class="form-control" ng-model="inventory.fccId">
+      </div>
+      <div class="form-group" ng-if="inventory.type.id == 1">
+        <label>{{'i.label.5' | translate}}</label>
+        <input type="text" class="form-control" ng-model="inventory.icId">
+      </div>
+      <div class="form-group">
+        <label>{{'t.label.8' | translate}}</label>
+        <textarea class="form-control" rows="3" ng-model="inventory.desc"></textarea>
+      </div>
+      <div class="form-group" ng-if="curTab == 'others'">
+        <label>{{'i.label.14' | translate}}</label>
+        <input type="number" class="form-control" min="1" ng-model="inventory.qty">
+      </div>
+      <div class="form-group">
+        <label>{{curTab == 'devices'?'i.label.6':'i.label.6.1' | translate}}</label>
+        <input type="number" class="form-control" min="1" ng-model="inventory.cost">
+      </div>
+      <div class="form-group other-sec">
+        <div class="row">
+          <div class="bdr-btm-dashed marL10 marR10">
+            <div class="col-xs-7 noPadL">
+              <label>{{'i.label.7' | translate}}</label>
+            </div>
+            <div class="col-xs-5 noPadR text-right">
+              <button type="button" ng-click="addMore($index);" class="btn btn-primary btn-xs" id="addOther"><span class="fa fa-plus-circle"></span>{{'i.btn.1' | translate}}</button>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+        <div class="row other-container marB10" ng-repeat="other in otherArr">
+          <div class="other">
+            <div class="col-xs-7">
+              <input type="text" placeholder="{{'i.label.8' | translate}}" class="form-control" ng-model="other.key">
+            </div>
+            <div class="col-xs-4">
+              <input type="text" placeholder="{{'i.label.9' | translate}}" class="form-control" ng-model="other.value">
+            </div>
+            <div class="col-xs-1 text-right marT7">
+              <a href="" class="text-danger" ng-click="deleteOthOpen($index);" uib-tooltip="Delete"
+                tooltip-popup-delay="1000"><i class="fas fa-times"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="msg-warning" ng-if="!otherArr.length">{{"cm.msg.41" | translate}}</div>
+      </div>
+      <div class="form-group">
+        <span class="btnQuad">
+          <button type="submit" ng-disabled="popupProcessing" ng-click="addInventoryFx();" class="btn btn-success" id="submitBtn"><span class="fas" ng-class="popupProcessing? 'fa-redo fa-spin':'fa-check'"></span>{{decId?'cm.btn.14':'cm.btn.18' | translate}}</button>
+          <button class="btn btn-link" ui-sref="{{curTab == 'devices'?'support.i.d':'support.i.o'}}">{{"cm.btn.8" | translate}}</button>
+        </span>
+        <div class="errMsg pull-right" ng-if="hasErr">
+          <span ng-if="errType == 'sn'">{{"i.msg.23" | translate}}</span>
+          <span ng-if="errType == 'type'">{{"i.msg.1" | translate}}</span>
+          <span ng-if="errType == 'model'">{{"i.msg.2" | translate}}</span>
+          <span ng-if="errType == 'fcc'">{{"i.msg.3" | translate}}</span>
+          <span ng-if="errType == 'ic'">{{"i.msg.4" | translate}}</span>
+          <span ng-if="errType == 'desc'">{{"i.msg.5" | translate}}</span>
+          <span ng-if="errType == 'cost'">{{"i.msg.6" | translate}}</span>
+          <span ng-if="errType == 'qty'">{{"i.msg.19" | translate}}</span>
+          <span ng-if="errType == 'snExist'">{{"i.msg.30" | translate}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+{
+  "lang": "en_US",
+  "cm": {
+    "menu": {
+      "53": "Signup"
+    },
+    "footer": {
+      "1": "Terms & Conditions",
+      "2": "Privacy Policy"
+    }
+  },
+  "signup": {
+    "label": {
+      "1": "Name",
+      "1.1": "First",
+      "1.2": "Last",
+      "2": "Password",
+      "3": "Confirm password"
+    },
+    "btn": {
+      "1": "Sign Up",
+      "2": "Cancel"
+    },
+    "msg": {
+      "1": "Welcome to {{brand}} Digital Signage Platform",
+      "2": "All fields are mandatory.",
+      "3": "Passwords did not match.",
+      "4": "Please validate captcha.",
+      "5": "User already exist.",
+      "6": "Oops! Something went wrong. Please try again later.",
+      "6.1": "Try sign up again",
+      "7": "Thanks for joining {{brand}}.",
+      "8": "Your account has been created with {{brand}}.",
+      "9": "Sign in to {{brand}}",
+      "10": "Password must be at least 8 characters.",
+      "11": "Password must contain at least one letter.",
+      "12": "Password must contain at least one digit.",
+      "13": "Password must contain at least one of the following character:",
+      "14": "Password is not valid."
+    }
+  }
+}

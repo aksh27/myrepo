@@ -1,0 +1,38 @@
+<section class="panel">
+  <header class="panel-heading"><span ng-if="categoryObj.new">{{"s.label.12" | translate}}</span><span ng-if="!categoryObj.new">{{"s.label.13" | translate}}</span></header>
+  <div class="panel-body">
+    <img src="assets/images/loading.gif" ng-if="popupLoading">
+    <div ng-if="!popupLoading">
+      <div class="form-group">
+        <label>{{'cm.label.1' | translate}}</label>
+        <input type="text" class="form-control" ng-model="categoryObj.label" focus-me="true">
+      </div>
+      <div class="form-group">
+        <label class="noMarB"><input type="checkbox" ng-model="categoryObj.exclusive"><label></label> {{'s.label.15' | translate}}</label>
+      </div>
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label>{{'s.label.14' | translate}} <span class="text-muted text-sm">({{"cm.label.7" | translate}})</span></label>
+            <select ng-model="categoryObj.hash" class="form-control" ng-options="hash as hash for hash in hashList">
+              <option value="">{{"s.label.16" | translate}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="panel-footer">
+    <span class="btnQuad">
+      <button class="btn btn-success" ng-click="addSettingsFx();" ng-disabled="popupProcessing" ng-if="categoryObj.new"><span class="fas" ng-class="popupProcessing?'fa-redo fa-spin':'fa-check'"></span>{{popupProcessing?'cm.btn.6i':'cm.btn.6' | translate}}</button>
+      <button class="btn btn-success" ng-click="addSettingsFx();" ng-disabled="popupProcessing" ng-if="!categoryObj.new"><span class="fas" ng-class="popupProcessing?'fa-redo fa-spin':'fa-check'"></span>{{popupProcessing?'cm.btn.14i':'cm.btn.14' | translate}}</button>
+      <button class="btn btn-link" ng-click="closeThisDialog();">{{'cm.btn.8' | translate}}</button>
+    </span>
+    <div class="errMsg pull-right" ng-if="hasErrPop">
+      <span ng-if="errType == 'exist'">{{'s.msg.18' | translate}}</span>
+      <span ng-if="errType == 'hash'">{{'s.msg.19' | translate}}</span>
+      <span ng-if="errType == 'name'">{{'cm.msg.37' | translate}}</span>
+    </div>
+    <div class="clearfix"></div>
+  </footer>
+</section>

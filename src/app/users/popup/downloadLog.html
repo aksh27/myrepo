@@ -1,0 +1,27 @@
+<section class="panel">
+  <header class="panel-heading">{{'users.label.2' | translate}}</header>
+  <div class="panel-body">
+    <div ng-if="!logs.url">
+      <div class="form-group noMarB">
+        <label>{{'reports.label.1.6' | translate}}</label>
+        <div class="input-group">
+          <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+          <input type="daterange" class="form-control picker" ng-model="logs.date" format="MM/DD/YYYY" max-date="{{maxDate}}" readonly="">
+        </div>
+      </div>
+      <div class="errMsg marT10" ng-if="hasErrPop">{{'cm.msg.2' | translate}}</div>
+    </div>
+    <div class="text-center" ng-if="logs.url">
+      <p translate="{{'cm.body.1'}}"  translate-values="{htmlTagO: '<b>&quot;', htmlTagC: '&quot;</b>'}"></p>
+      <a href="{{logs.url}}" target="_blank" download class="btn btn-link text-lg"><span class="fa fa-download"></span> {{'cm.btn.16' | translate}}</a>
+    </div>
+  </div>
+  <div class="panel-footer">
+    <span class="btnQuad">
+      <button type="button" class="btn btn-primary" ng-click="logsFx();" ng-if="!logs.url" ng-disabled="popupProcessing"><span class="fas" ng-class="popupProcessing?'fa-redo fa-spin':'fa-check'"></span>{{'cm.btn.32' | translate}}</button>
+      <button type="button" class="btn btn-link" ng-click="closeThisDialog();" ng-if="!logs.url">{{'cm.btn.8' | translate}}</button>
+      <button type="button" class="btn btn-default" ng-click="closeThisDialog();" ng-if="logs.url">{{'cm.btn.9' | translate}}</button>
+    </span>
+    <div class="clearfix"></div>
+  </div>
+</section>

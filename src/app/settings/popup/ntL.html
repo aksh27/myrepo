@@ -1,0 +1,59 @@
+<section class="panel">
+  <header class="panel-heading" ng-if="ntLObj.caller == 'nt'">{{"s.label.4" | translate}}</header>
+  <header class="panel-heading" ng-if="ntLObj.caller != 'nt'"><span ng-if="ntLObj.new">{{"s.label.9" | translate}}</span><span ng-if="!ntLObj.new">{{"s.label.10" | translate}}</span></header>
+  <div class="panel-body">
+    <div class="form-group" ng-if="ntLObj.caller == 'nt'">
+      <label>{{"cm.label.2" | translate}}</label>
+      <input type="email" class="form-control" ng-model="ntLObj.email" focus-me="true">
+    </div>
+
+    <div ng-if="ntLObj.caller == 'l'">
+      <div class="form-group">
+        <label>{{"cm.label.1" | translate}}</label>
+        <input type="text" class="form-control" ng-model="ntLObj.label" focus-me="true">
+      </div>
+      <div class="row">
+        <div class="col-xs-6">
+          <label>{{"s.label.5" | translate}}</label>
+          <div uib-dropdown auto-close="outsideClick" dropdown-append-to-body>
+            <div class="input-group input-colorPicker">
+              <span class="input-group-addon"><span ng-style="{'background-color':ntLObj.bg}"></span></span>
+              <input type="text" class="form-control picker" ng-value="ntLObj.bg | uppercase" uib-dropdown-toggle ng-click="colorPicker=true" readonly="">
+            </div>
+            <div class="dropdown-menu dropdown-to-body" placement="left bottom" uib-dropdown-menu>
+              <img alt="" src="assets/images/loading-xs.gif" ng-if="colorPickerOpen">
+              <ng-color-picker selected-color="ntLObj.bg" selected-type="ntLObj.bgType" ng-if="colorPicker"></ng-color-picker>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <label>{{"s.label.6" | translate}}</label>
+          <div uib-dropdown auto-close="outsideClick" dropdown-append-to-body>
+            <div class="input-group input-colorPicker">
+              <span class="input-group-addon"><span ng-style="{'background-color':ntLObj.color}"></span></span>
+              <input type="text" class="form-control picker" ng-value="ntLObj.color | uppercase" uib-dropdown-toggle ng-click="colorPicker=true" readonly="">
+            </div>
+            <div class="dropdown-menu dropdown-to-body" placement="left bottom" uib-dropdown-menu>
+              <img alt="" src="assets/images/loading-xs.gif" ng-if="colorPickerOpen">
+              <ng-color-picker selected-color="ntLObj.color" selected-type="ntLObj.cType" ng-if="colorPicker"></ng-color-picker>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="panel-footer">
+    <span class="btnQuad">
+      <button type="button" class="btn btn-success" ng-click="addSettingsFx();" ng-disabled="popupProcessing" ng-if="ntLObj.new"><span class="fas" ng-class="popupProcessing?'fa-redo fa-spin':'fa-check'"></span>{{popupProcessing?"cm.btn.6i":"cm.btn.6" | translate}}</button>
+      <button type="button" class="btn btn-success" ng-click="addSettingsFx();" ng-disabled="popupProcessing" ng-if="!ntLObj.new"><span class="fas" ng-class="popupProcessing?'fa-redo fa-spin':'fa-check'"></span>{{popupProcessing?"cm.btn.14i":"cm.btn.14" | translate}}</button>
+      <button type="button" class="btn btn-link" ng-click="closeThisDialog();">{{"cm.btn.8" | translate}}</button>
+    </span>
+    <div class="errMsg pull-right" ng-if="hasErrPop">
+      <span ng-if="errType == 'ntExist'">{{"t.msg.11.2" | translate}}</span>
+      <span ng-if="errType == 'lExist'">{{"t.msg.16" | translate}}</span>
+      <span ng-if="errType == 'email'">{{"t.msg.11" | translate}}</span>
+      <span ng-if="errType == 'name'">{{'cm.msg.37' | translate}}</span>
+    </div>
+    <div class="clearfix"></div>
+  </footer>
+</section>

@@ -1,0 +1,30 @@
+<!-- <img src="assets/images/loading.gif" class="marT10" ng-if="pageLoading">
+<div class="table table-md no-pointer" ng-if="!pageLoading">
+  <div class="row th">
+    <a href="" ng-click="columnSortFx('t', (auth.sort.kbar.val == 'a' ? 'd' : 'a'), articleKbList, 'kbar');">
+      <div class="col-xs-2 text-primary text-bold display-flex">Title
+        <div class="marL10">
+          <span ng-if="auth.sort.kbar.val === 'd'"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+          <span ng-if="auth.sort.kbar.val === 'a'"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="row" ng-repeat="article in filteredArticleList = (articleKbList | customSearch:{key:(search.text | removeSpaces), module:'kb'})">
+    <div class="col-xs-10"><a href="{{article.url}}?{{timestamp}}" target="_blank"><span class="fas fa-file-pdf marR5"></span> {{article.label}}</a></div>
+    <div class="col-xs-2 text-right">
+      <a href="" class="text-primary" ng-click="sendKb('a', article.label, article.url);" uib-tooltip="{{'cm.btn.28' | translate}}" tooltip-popup-delay="1000"><i class="fas fa-share"></i></a>
+      <a href="" class="text-primary marLR5" ng-click="addOpen('a', article.id, article.label, article.file);" ng-if="auth.role == 0 || auth.id == article.createdBy" uib-tooltip="{{'cm.btn.21' | translate}}" tooltip-popup-delay="1000"><i class="fas fa-pencil-alt"></i></a>
+      <a href="" class="text-danger" ng-click="deleteOpen('a', article.id);" ng-if="auth.role == 0 || auth.id == article.createdBy" uib-tooltip="{{'cm.btn.12' | translate}}" tooltip-popup-delay="1000"><i class="fas fa-times"></i></a>
+    </div>
+  </div>
+  <div class="msg-warning" ng-if="filteredArticleList.length == 0" translate="{{'cm.msg.14'}}" translate-values="{searchText: '<b>&quot;{{search.text.replace(searchRegExp, searchReplaceChar)}}&quot;</b>'}"></div>
+</div> -->
+<img src="assets/images/loading.gif" class="marT10" ng-if="pageLoading">
+<div context-menu="contextMenuBase">
+  <div ng-if="!pageLoading && (articleKbList.a.length > 0 || articleKbList.g.length > 0)">
+    <ng-article-list class="show table table-md" selectable="selection" selectable-list="articleKbList" selectable-options="{filter:'li', cancel:'input,button,.nonSelectable'}"></ng-article-list>
+  </div>
+  <div class="msg-warning" ng-if="!pageLoading && articleKbList.a.length == 0 && articleKbList.g.length == 0">{{'kb.msg.2' | translate}}</div>
+</div>
+

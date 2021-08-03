@@ -1,0 +1,32 @@
+<img src="assets/images/loading.gif" class="marT10" ng-if="pageLoading">
+<div class="table table-md no-pointer" ng-if="!pageLoading">
+  <div class="row th">
+    <a href="" ng-click="columnSortFx('t', (auth.sort.kbvi.val == 'a' ? 'd' : 'a'), vidKbList, 'kbvi');">
+      <div class="col-xs-2 text-primary text-bold display-flex">Title
+        <div class="marL10">
+          <span ng-if="auth.sort.kbvi.val === 'd'"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+          <span ng-if="auth.sort.kbvi.val === 'a'"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="row" ng-repeat="vid in filteredVidKbList = (vidKbList | customSearch:{key:(search.text | removeSpaces), module:'kb'})">
+    <div class="col-xs-10"><span class="badge marR5">{{vid.duration}}</span> <a href="" ng-click="videoFx(vid.id, vid.vidId, vid.label);">{{vid.label}}</a></div>
+    <div class="col-xs-2 text-right">
+      <a href="" class="text-primary" ng-click="sendKb('v', vid.label, vid.vidId);" uib-tooltip="{{'cm.btn.28' | translate}}" tooltip-popup-delay="1000"><i class="fas fa-share"></i></a>
+      <a href="" class="text-primary marLR5" ng-click="addOpen('v', vid.id, vid.label, vid.url);" ng-if="auth.role == 0 || auth.id == vid.createdBy" uib-tooltip="{{'cm.btn.21' | translate}}" tooltip-popup-delay="1000"><i class="fas fa-pencil-alt"></i></a>
+      <a href="" class="text-danger" ng-click="deleteOpen('v', vid.id);" ng-if="auth.role == 0 || auth.id == vid.createdBy" uib-tooltip="{{'cm.btn.12' | translate}}" tooltip-popup-delay="1000"><i class="fas fa-times"></i></a>
+    </div>
+  </div>
+  <div class="msg-warning" ng-if="filteredVidKbList.length == 0" translate="{{'cm.msg.14'}}" translate-values="{searchText: '<b>&quot;{{search.text.replace(searchRegExp, searchReplaceChar)}}&quot;</b>'}"></div>
+</div>
+<!-- <div class="row pad10">
+  <div class="vidKbThumb" ng-repeat="vid in vidKbList">
+    <div><a href="" ng-click="videoFx(vid.vidId, vid.label)"><span class="overlay"></span><span class="duration">{{vid.duration}}</span><img src="https://s3-us-west-2.amazonaws.com/lsquared-hub/support/kb/vidThumbs/{{vid.id}}_{{vid.vidId}}.png"></a></div>
+    <div class="info">
+      <div class="title-txt text-ellipsis" uib-tooltip="{{vid.label}}">{{vid.label}}</div>
+      <div class="subtitle-txt">{{'kb.label.1' | translate}}</div>
+      <div class="text-bold">{{'kb.label.2' | translate:{count: vid.id} }}</div>
+    </div>
+  </div>
+</div> -->

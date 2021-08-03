@@ -1,0 +1,31 @@
+<img src="assets/images/loading.gif" class="padT10" ng-if="pageLoading">
+<div class="row" ng-if="!pageLoading && domains.length > 0">
+  <div class="col-lg-12">
+    <div class="panel-body noPad">
+      <div class="table table-md">
+        <ul class="checkList">
+          <li class="row th">
+            <a href="" ng-click="columnSortFx('l', (auth.sort.cust.val == 'a' ? 'd' : 'a'), domains, 'cust');">
+              <div class="col-xs-2 text-primary text-bold display-flex">Name
+                <div class="marL10">
+                  <span ng-if="auth.sort.cust.val == 'd'"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+                  <span class="asc" ng-if="auth.sort.cust.val == 'a'"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="row" ng-repeat="domain in filteredDomainList = (domains | customSearch:{key:(search.text | removeSpaces), module:'s'})">
+            <div class="col-xs-11 word-break text-primary" ng-click="addSettings(domain.id);">{{domain.label}}</div>
+            <!-- <div class="col-xs-3 word-break" ng-click="addSettings(domain.id);">{{domain.postfix}}</div> -->
+            <div class="col-xs-1 text-right"><a href="" ng-click="deleteConfirmation(domain.id, 'd');"><i class="fas fa-times text-danger"></i></a></div>
+          </li>
+        </ul>
+      </div>
+      <div class="msg-warning" ng-if="filteredDomainList.length == 0" translate="{{'cm.msg.14'}}" translate-values="{searchText: '<b>&quot;{{search.text.replace(searchRegExp, searchReplaceChar)}}&quot;</b>'}"></div>
+      <div class="msg-warning" ng-if="filteredDomainList.length > 0 && filterCount == 0">{{'cm.msg.15' | translate}} <button class="btn btn-default btn-xs" ng-click="filterFx('all');">{{'cm.btn.38' | translate}}</button></div>
+    </div>
+  </div>
+</div>
+<div class="msg-warning" ng-if="!pageLoading && domains.length == 0">
+  <p class="noMar">{{'s.msg.10' | translate}}</p>
+</div>

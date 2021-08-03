@@ -1,0 +1,3878 @@
+{
+  "lang": "es_ES",
+  "cm": {
+    "menu": {
+      "0": "Tablero",
+      "1": "Biblioteca de Contenido",
+      "2": "Modelos",
+      "3": "Horarios",
+      "4": "Planes de marco",
+      "5": "Dispositivos",
+      "6": "Usuarios",
+      "7": "Mensaje de urgencia",
+      "8": "Informes",
+      "9": "Servicios creativos",
+      "21": "Soporte",
+      "22": "Mi configuración",
+      "51": "Iniciar sesión",
+      "52": "Se te olvidó tu contraseña",
+      "53": "Inscribir",
+      "54": "Mostrar contraseña",
+      "55": "Aprobar objeto",
+      "56": "Seleccionar el servidor",
+      "57": "Otro",
+      "58": "Widget de cola",
+      "59": "Ingreso de encuesta",
+      "60": "Encuesta Participa",
+      "61": "Encuesta Gracias",
+      "62": "Resultado de la encuesta",
+      "63": "Restablecer la contraseña"
+    },
+    "head": {
+      "menu": {
+        "1": "Cambiar Servidor",
+        "2": "Mi configuración",
+        "3": "Centro de soporte",
+        "4": "Ir al Panel de Control",
+        "5": "Cerrar sesión",
+        "3.1": "Soporte técnico",
+        "3.2": "Solicitar nueva característica",
+        "3.3": "Realimentación",
+        "3.4": "Reportar un error",
+        "3.5": "Tutoriales de vídeos"
+      },
+      "notify": {
+        "1": "Ninguna nueva notificación",
+        "2": "Contenido no aprobado",
+        "3": "Modelo no aprobado",
+        "4": "Horario no aprobado",
+        "5": "Plan de marco no aprobado",
+        "6": "Factura no pagadas",
+        "7": "Servicio creativos no aprobado",
+        "8": "Plano de marco expirado",
+        "3s": "Modelos no aprobados",
+        "4s": "Horarios no aprobados",
+        "5s": "Planes de marco no aprobados",
+        "6s": "Facturas no pagadas",
+        "7s": "Servicios creativos no aprobados",
+        "8s": "Planos de marco expirados"
+      }
+    },
+    "footer": {
+      "1": "Términos y condiciones",
+      "2": "Política de privacidad"
+    },
+    "tool": {
+      "1": "Clasificación",
+      "2": "Filtrar",
+      "3": "Información",
+      "4": "Tamaño del thumb",
+      "5": "Vista del thumb",
+      "6": "Vista de la lista",
+      "7": "Vista de la lista",
+      "8": "Apuntalar abajo",
+      "9": "Desprender de bajo",
+      "10": "Recargar",
+      "1.1": "Alfabético",
+      "1.2": "Fecha de aprobación",
+      "1.3": "Fecha de creación",
+      "1.4": "Ascendente",
+      "1.5": "Descendente",
+      "2.1": "Todos",
+      "3.1": "Ver tutorial de vídeo"
+    },
+    "body": {
+      "1": "Lista de Contenido",
+      "2": "Lista de Horarios",
+      "3": "Lista de Dispositivos",
+      "4": "Contenido Disponible",
+      "5": "Contenido seleccionado",
+      "6": "Dispositivo Disponible",
+      "7": "Dispositivo seleccionado",
+      "8": "Dispositivos/Grupos Elejidos",
+      "9": "Descargar registro de actividad del usuario",
+      "10": "Busca Avanzada",
+      "11": "Por favor haz click con el botón derecho del ratón en el link de descargar abajo y seleccione {{htmlTagO}}Salvar Link Como...{{htmlTagC}}",
+      "12": "",
+      "13": "Cargando {{count}} {{key}}",
+      "14": "Este objeto es público.",
+      "15": "Agregar a los horarios",
+      "16": "¿Estas COMPLETAMENTE seguro?",
+      "17": "Información del botón",
+      "18": "Información de contenido",
+      "6s": "Dispositivos Disponibles",
+      "7s": "Dispositivos seleccionados",
+      "14.1": "No se puede cambiar el permiso de un elemento público."
+    },
+    "ph": {
+      "1": "Escribe para buscar",
+      "2": "Escribe para buscar",
+      "3": "Ejemplo",
+      "4": "Escribe tu comentario aquí..."
+    },
+    "brief": {
+      "1": "Nombre",
+      "2": "Creado en",
+      "3": "Creado por",
+      "4": "Aprobado en",
+      "5": "Aprobado por",
+      "6": "Agregado en",
+      "7": "Agregado por",
+      "8": "Dimensión",
+      "9": "Conteo de contenido",
+      "10": "Cuenta de programación",
+      "11": "Recuento de dispositivos",
+      "12": "Tamaño del archivo",
+      "13": "Ninguna acción disponible",
+      "14": "Editado en",
+      "15": "Editado por"
+    },
+    "label": {
+      "1": "Contenido",
+      "2": "Modelo",
+        "2s": "Modelos",
+      "3": "Horario",
+        "3s": "Horarios",
+      "4": "Dispositivo",
+        "4s": "Dispositivos",
+      "5": "Usuario",
+        "5s": "Usuarios",
+      "6": "Comienzo",
+      "7": "Fecha",
+      "8": "Hora",
+      "9": "Rango de fechas",
+      "10": "Fecha de inicio",
+      "11": "Fecha final",
+      "12": "Hora del comienzo",
+      "13": "Hora del final",
+      "14": "Configurasiones",
+      "15": "Permiso",
+      "16": "Para siempre",
+      "17": "Personalizado",
+      "18": "Nunca",
+      "19": "Público",
+        "19i": "Añadiendo",
+      "20": "Todos los Grupos que Pertenezco",
+      "21": "Grupo Disponible",
+        "21s": "Grupos Disponibles",
+      "22": "Grupo Asignado",
+        "22s": "Grupos Asignados",
+      "23": "Título",
+      "24": "Fuente",
+      "24.1": "Fuente alternativa",
+      "25": "Acción",
+      "26": "Opcional",
+      "27": "Segundo",
+      "27s": "Segundos",
+      "28": "Minuto",
+      "28s": "Minutos",
+      "29": "Hora",
+        "29s": "Horas",
+      "30": "Seleccione la imagen",
+      "31": "Seleccione el dispositivo",
+        "31s": "Seleccionar dispositivos",
+      "32": "Seleccionar contenido",
+      "33": "Selecciona el huso horario",
+        "33.1": "Zona horaria del dispositivo",
+      "34": "Seleccione el idioma",
+      "35": "Seleccionar horario",
+      "36": "Seleccionar periodo",
+      "37": "Imágenes",
+      "38": "Video",
+      "39": "Audio",
+      "40": "Otros",
+      "41": "Muestra",
+      "42": "o",
+      "43": "Max",
+      "44": "Imagen",
+      "45": "Ciudad",
+      "46": "Estado",
+      "47": "Email",
+      "48": "Número de contacto",
+      "49": "Duración",
+      "50": "Grupo Primarios",
+      "51": "Todos los Grupos",
+      "52": "Grupos Personalizados",
+      "53": "Registros",
+      "54": "Formatos de archivo aceptados",
+      "55": "Asignar nombre y permiso",
+      "56": "URL de origen",
+      "57": "Enfocar",
+      "58": "Rotar",
+      "59": "Anchura",
+      "60": "Altura",
+      "61": "Color de fondo",
+      "62": "Colores de patrón",
+      "63": "Colores personalizadas",
+      "64": "Texto",
+      "65": "Paso {{stepNo}}",
+      "66": "Nota",
+      "67": "Mudo",
+      "68": "Pantalla Completa",
+      "69": "Tipo",
+      "70": "Sistema Operativo",
+      "71": "Nombre del dispositivo",
+      "72": "Nombre del trabajo",
+      "73": "Oficio",
+      "74": "ítem",
+        "74s": "ítems",
+      "75": "Seg",
+      "76": "Min",
+        "76.t": "Min",
+      "77": "Max",
+      "78": "Nombre del Grupo",
+      "79": "Grupo",
+        "79s": "Grupo",
+      "80": "Identidad",
+      "81": "Añadir a grupo(s)",
+      "82": "Crear un nuevo grupo",
+      "83": "Tamaño",
+      "84": "Intervalo de actualización de la alimentación",
+      "85": "Descripción",
+      "86": "Vector",
+      "87": "Fondo",
+      "88": "Zona horaria",
+      "89": "Alineación de contenido",
+        "89.1": "Arriba a la izquierda",
+        "89.2": "Medio-Izquierda",
+        "89.3": "Abajo a la izquierda",
+        "89.4": "Centro Superior",
+        "89.5": "Centro-Medio",
+        "89.6": "Parte inferior central",
+        "89.7": "Parte superior derecha",
+        "89.8": "Medio-Derecha",
+        "89.9": "Abajo a la derecha",
+      "90": "Default"
+    },
+    "btn": {
+      "1": "De acuerdo",
+      "2": "Sí",
+      "3": "No",
+      "4": "en",
+      "5": "apagado",
+      "6": "",
+      "7": "Salvar",
+        "7i": "Guardar",
+      "8": "Guardar cerrar",
+      "9": "Anular",
+      "10": "Cerrar",
+      "11": "Espalda",
+      "12": "Próximo",
+      "13": "Borrar",
+        "13i": "Borrando",
+      "14": "Crear",
+        "14i": "Creando",
+      "15": "Actualizar",
+        "15i": "Actualizando",
+      "16": "Cargar",
+        "16i": "Cargando",
+      "17": "Descargar",
+        "17i": "Descargando",
+      "18": "Continuar",
+      "19": "Añadir",
+      "20": "Retirar",
+      "21": "Ver",
+      "22": "Editar",
+      "23": "Más",
+      "24": "Aprobar",
+      "25": "No apruebe",
+      "26": "Sustituir",
+      "27": "Horario",
+      "28": "Agregar a los horarios",
+      "29": "Añadir al grupo",
+      "30": "Duplicar",
+      "31": "Detalles",
+      "32": "Configurasiones",
+      "33": "Refrescar",
+      "34": "Reiniciar",
+      "35": "Enviar",
+        "35i": "Enviando",
+      "36": "Mirar...",
+      "37": "Cambiar imagen del perfil",
+      "38": "Filtro Claro",
+      "39": "Seleccione paso para editar",
+      "40": "Nombre y Permiso",
+      "41": "Hasta el padre",
+      "42": "Enviar",
+      "43": "Forzar salida",
+      "44": "Seleccionar todo",
+      "45": "Eliminar todo",
+      "46": "Ouvrir dossier contenant",
+      "47": "Impresión"
+    },
+    "msg": {
+      "1": "No hay ningún registro de actividad reciente disponible.",
+      "2": "No hay ningún registro disponible para el período seleccionado.",
+      "3": "Por favor guarde primero el Permiso.",
+      "4": "Por favor seleccione un elemento de la lista.",
+      "5": "Todos los campos son obligatorios.",
+      "6": "Por favor seleccione {{str}} un marcador para ver los detalles.",
+      "7": "Todavía no tienes contenido.",
+      "8": "Proporcione la hora de Inicio.",
+      "9": "Proporcione el tiempo de finalización.",
+      "10": "Generación de Miniatura...",
+      "11": "La duración no debe ser menos de 1.",
+      "12": "Seleccione al menos un dispositivo/grupo.",
+      "13": "Hay cargas de archivos en proceso. Por favor espere mientras se completa.",
+      "14": "Su busca {{searchText}} no coincide con ningún elemento. Pruebe con palabras clave diferentes.",
+      "15": "El filtro aplicado no tiene ningún elemento coincidente.",
+      "16": "La hora de inicio no debe ser igual o mayor que la hora de finalización.",
+      "17": "El límite del archivo es: {{size}}.",
+      "18": "Todavía no tienes ningún horario.",
+      "19": "Ya existe.",
+      "20": "Código de color inválido.",
+      "21": "Por favor proporcionar la Fecha.",
+      "22": "Por favor proporcionar la Hora.",
+      "23": "El formato de archivo seleccionado no es compatible. A continuación se muestra la lista de formatos de archivo compatibles:",
+      "24": "Limite de tamaño de archivo es {{fileSize}}. El archivo selecionado es fuera del límite.",
+      "25": "Estas seguro que quieres salir de la página?",
+      "26": "Si todavía desea cerrar la sesión, haga click en \"Forzar el Logout\". En caso de cierre forzado, se descartará el proceso de carga.",
+      "27": "No se encontró Internet. Verifique su conexión.",
+      "28": "{{htmlTagO}}¡Desconexión de seguridad!{{htmlTagC}} Ya que no hay habido actividad del usuario durante mucho tiempo, L Squared Hub se desconectará automáticamente en {{sessionTimer}} segundos.",
+      "29": "Mantenme conectado.",
+      "30": "Hay más botones de acción para el elemento seleccionado que no están disponibles para usted porque no tiene permisos de usuario relevantes.",
+      "31": "No se permite el formato.",
+      "32": "El ancho no debe estar vacío ni inferior a {{value}}.",
+      "33": "La altura no debe estar vacía o ser inferior a {{value}}.",
+      "34": "¿Seguro que desea eliminar el elemento seleccionado?",
+        "34s": "¿Seguro que desea eliminar los elementos seleccionados?",
+      "35": "¿Seguro que quieres eliminar el elemento seleccionado?",
+      "35s": "¿Seguro que quieres eliminar los elementos seleccionados?",
+      "36": "No ha seleccionado ningún artículo todavía. Cuando selecciones algunos, aparecerán aquí.",
+      "37": "Por favor, proporciona el nombre.",
+      "38": "Por favor seleccione al menos un artículo."
+    },
+    "p_h": {
+      "1": "Historia",
+      "2": "Historial de edición del elemento",
+      "m1": "No hay historia disponible."
+    },
+    "editor": {
+      "1": "Añadir texto",
+      "2": "Agregar Rectángulo",
+      "3": "Añadir círculo",
+      "4": "Añadir Triángulo",
+      "5": "Añadir Contenido",
+      "6": "Enviar al revés",
+      "7": "Enviar adelante",
+      "8": "Enviar al fondo",
+      "9": "Traer al frente",
+      "10": "Propriedades del texto",
+        "10.1": "Acentuado",
+        "10.2": "Itálico",
+        "10.3": "Subrayar",
+        "10.4": "Izquierda",
+        "10.5": "Centro",
+        "10.6": "Derecha",
+        "10.7": "Justificar",
+      "11": "Filtros",
+        "11.1": "Escala de grises",
+        "11.2": "Inverter",
+        "11.3": "Sepia {{no}}",
+        "11.4": "Realzar",
+        "11.5": "Difuminar",
+        "11.6": "Afilar",
+        "11.7": "Luminosidad",
+        "11.8": "Contraste",
+        "11.9": "Saturación",
+      "12": "Propiedades del objeto",
+      "13": "Propiedades del contenedor",
+        "13.1": "Escala X",
+        "13.2": "Escala Y",
+        "13.3": "Rotar",
+        "13.4": "Opacidad"
+    }
+  },
+  "lock": {
+    "1": "Contraseña",
+    "b1": "Desbloquear",
+    "m1": "Proporcione la contraseña."
+  },
+  "ss": {
+    "1": "Seleccionar el servidor",
+    "2": "Servidor",
+    "m1": "¡Oops! Algo salió mal. Por favor, inténtelo de nuevo más tarde. Puede informar de este problema a {{by}}.",
+    "m1.1": "haciendo clic aquí"
+  },
+  "db": {
+    "body": {
+      "1": "Dispositivo en línea fuera de {{count}}",
+        "1s": "Dispositivos en línea fuera de {{count}}",
+      "2": "Espacio disponible",
+      "3": "Registro de actividad reciente",
+        "3.1": "Descargar registro de actividad reciente",
+      "4": "Dispositivos en el mapa",
+      "5": "Mostrando {{show}} de {{total}} dispositivos",
+      "6": "Archivado",
+      "7": "Suprimido",
+      "8": "Muerto",
+      "9": "Activo",
+      "10": "Incompleto",
+      "11": "Obstruido"
+    },
+    "p_map": {
+      "1": "Coordinar",
+      "2": "Dirección",
+      "3": "Latitud",
+      "4": "Longitud",
+      "5": "Haga clic en el mapa de abajo para soltar el marcador de ubicación pin.",
+      "6": "Estado / Provincia",
+      "7": "Código postal / postal",
+      "8": "País",
+      "9": "Dispositivo registrado",
+      "10": "Dispositivo no registrado",
+      "9s": "Dispositivos registrados",
+      "10s": "Dispositivos no registrados"
+    },
+    "p_dl": {
+      "1": "Detalles del registro"
+    },
+    "btn": {
+      "1": "Registrar dispositivo en el mapa",
+      "2": "Registry"
+    },
+    "msg": {
+      "1": "Ningún dispositivo disponible.",
+      "2": "Por favor seleccione el dispositivo.",
+      "3": "Por favor proporcione la dirección.",
+      "4": "Por favor proporcione la ciudad.",
+      "5": "Por favor proporcione el Estado/Provincia.",
+      "6": "Por favor proporcione el País.",
+      "7": "Por favor proporcione la Latitud & la Longitud.",
+      "8": "Por favor ingrese una dirección válida."
+    }
+  },
+  "cl": {
+    "tab": {
+      "1": "Contenido",
+      "2": "Contenido no aprobado",
+      "3": "Contenido expirado",
+      "4": "Contenido archivado",
+      "5": "Contenido eliminado"
+    },
+    "tool": {
+      "1": "Pequeño",
+      "2": "Normal",
+      "3": "Medio",
+      "4": "Grande",
+      "5": "Extra Grande",
+      "6": "Imagen",
+      "7": "Video",
+      "8": "Widget",
+      "9": "Mi Contenido",
+      "10": "Aprobado",
+      "11": "No aprobado",
+      "12": "Vista del árbol",
+      "13": "¿Qué es {{htmlTagO}} Contenido No Aprobado{{htmlTagC}}?",
+      "14": "¿Qué es {{htmlTagO}} Contenido expirado{{htmlTagC}}?",
+      "15": "¿Qué es {{htmlTagO}} Contenido archivado{{htmlTagC}}?",
+      "16": "No aprobado",
+      "17": "No aprobado y expirando pronto",
+      "18": "Expirando pronto",
+      "8s": "Widgets"
+    },
+    "brief": {
+      "1": "Tamaño de contenido",
+      "2": "Protegido por Escritura",
+      "3": "Subido en",
+      "4": "Subido por",
+      "5": "Período Activo",
+      "6": "Tipo de archivo",
+      "7": "Versiones",
+      "8": "Camino",
+      "9": "Páginas",
+      "10": "Tamaño descargable en el dispositivo",
+      "11": "Optimizado"
+    },
+    "label": {
+      "1": "Nombre del widget",
+      "2": "Nombre personalizado",
+      "3": "Cortar y Redimensionar el vídeo",
+      "4": "Etiqueta de Video",
+      "5": "Horario activo",
+        "5s": "Horarios activos",
+      "6": "Horario inactivo",
+        "6s": "Horarios inactivos",
+      "7": "Leyenda del video",
+      "8": "Importar SRT",
+      "9": "Añadir nuevo subtítulo",
+      "10": "Subtítulo",
+      "11": "Transcripción dentro del servidor",
+      "12": "Use un tercero",
+      "13": "Optimization"
+    },
+    "btn": {
+      "1": "Añadir nuevo contenido",
+      "2": "Crear Nuevo Widget",
+      "3": "Crear Carpeta",
+      "4": "Agregar contenido",
+      "5": "Selecciona archivos",
+        "5s": "Selecciona archivos",
+      "6": "Movimiento",
+      "7": "Archivo",
+      "8": "Abrir",
+      "9": "Abrir en el Editor de Imagen",
+      "10": "Abrir en el Editor de vídeo",
+      "11": "Eliminar la Expiración",
+      "12": "Restaurar",
+      "13": "Borrar Para Siempre",
+      "14": "Guardar como Nuevo Contenido",
+      "15": "Sustituir existente",
+      "16": "Descargar como Imagen",
+      "17": "Crear acceso directo",
+      "18": "Proceso de reinicio",
+      "19": "Archivo fuente",
+      "20": "Archivo procesado",
+      "21": "Archivo de ejemplo",
+      "22": "Reprocesar"
+    },
+    "msg": {
+      "1": "Todavía no tienes contenido. Cuando agregar algo, aparecerán aquí.",
+      "2": "Vee el {{htmlTagO}} tutorial de vídeo de la Biblioteca de Contenido{{htmlTagC}}.",
+      "3": "No tienes ningún contenido no aprobado.",
+      "4": "No tienes ningún contenido caducado.",
+      "5": "No tienes ningún contenido archivado.",
+      "6": "Todavía no tienes contenido eliminado. Cuando elimines algo, antes de eliminarlos para siempre, aparecerán aquí.",
+      "7": "¿Seguro que quieres archivar el contenido seleccionado?",
+      "8": "¿Está seguro de que desea suprimir el contenido seleccionado?",
+      "9": "¿Seguro que quieres eliminar el contenido seleccionado?",
+      "10": "¿Seguro que quieres eliminar el contenido seleccionado para siempre? {{htmlTag}} {{htmlTagO}}Este proceso no se puede deshacer.{{htmlTagC}}",
+      "11": "Esta carpeta está protegida contra escritura.",
+      "12": "Esta carpeta está protegida contra escritura. Sólo puede ver y programar los archivos / carpeta dentro de esta carpeta (si tiene permiso de \"Agregar Horario\").",
+      "13": "Este contenido está protegido contra escritura.",
+      "14": "Este contenido está protegido contra escritura. Sólo puede ver y programar(si tiene el permiso de \"Agregar Horario\").",
+      "15": "Si el proceso está tomando más tiempo que lo habitual, presione el botón siguiente para volver a procesar.",
+      "16": "Por favor proporcione el nombre de contenido.",
+      "17": "Por favor seleccione el contenido.",
+      "18": "¿Seguro que desea cancelar la carga de contenido?",
+      "19": "Por favor seleccione al menos un horario.",
+      "20": "No hay leyenda disponible para este video.",
+      "21": "Proporcione un subtítulo.",
+      "22": "Proporcione el tiempo de inicio y fin del subtítulo.",
+      "23": "El contenido seleccionado no se puede asignar a la programación seleccionada porque el widget Music Choice no se puede combinar con otro tipo de contenido y dispositivo.",
+      "24": "La carpeta seleccionada no contiene ningún contenido aprobado para programar.",
+      "25": "La leyenda de video se está generando. Puede tomar algún tiempo, dependiendo de la duración del video.",
+      "26": "Nota: Reprocesar el video con una nueva optimización creará una nueva versión de video y se actualizará en los dispositivos si ya está programado.",
+      "27": "Esta carpeta está asignada a SharePoint y está protegida contra escritura.",
+      "28": "Este contenido está correlacionado con SharePoint y está protegido contra escritura."
+    },
+    "p_f": {
+      "1": "Crear nueva carpeta",
+      "2": "Carpeta de actualización",
+      "3": "Nombre de la carpeta",
+      "4": "Esta es una carpeta de SharePoint",
+      "5": "URL de SharePoint",
+      "6": "Nombre de usuario",
+      "7": "Contraseña",
+      "8": "Seleccionar biblioteca",
+      "9": "Seleccione la carpeta",
+      "10": "Raíz",
+      "11": "Identificación del cliente",
+      "12": "Secreto del cliente",
+      "m1": "Proporcione el nombre de la carpeta.",
+      "m2": "Seleccione una carpeta de SharePoint.",
+      "m3": "Por favor seleccione la biblioteca.",
+      "m4": "Seleccione la carpeta."
+    },
+    "p_c": {
+      "1": "Cargar contenido",
+      "2": "Crear widget",
+      "3": "Utilizar Publisher para Word y PowerPoint",
+      "4": "Minimizar",
+      "5": "Pausar",
+      "6": "Continuar",
+      "7": "Rever",
+      "8": "Por favor guarde primero el permiso o el período activo.",
+      "9": "Tercero",
+      "m1": "Coloque tus archivos aquí / Selección de archivos para subir",
+      "m2": "Este formato de archivo no es compatible. Esto no se subirá.",
+      "m3": "El video se optimizará para obtener el mejor rendimiento. La calidad puede variar.",
+      "m4": "Este archivo no se puede cargar debido a un tamaño de archivo de 0kb."
+    },
+    "p_cEdit": {
+      "1": "Edición de contenido",
+      "2": "Nombre de contenido",
+      "m1": "El video se redimensionará proporcionalmente.",
+      "m2": "Por favor proporcione la etiqueta de vídeo.",
+      "m3": "La hora de inicio no es válida.",
+      "m4": "La hora de finalización no es válida.",
+      "m5": "La hora de finalización no debe ser igual o inferior a la hora de inicio.",
+      "m6": "La hora de finalización no debe ser mayor que la hora de finalización del video.",
+      "m7": "Por favor proporcione el ancho.",
+      "m8": "Por favor proporcione la Altura.",
+      "m9": "Por favor seleccione un marcador para ver los detalles.",
+      "m10": "No tienes permiso para agregar contenido en el directorio principal.",
+      "m11": "No tienes permiso para agregar contenido.",
+      "m12": "Dado que el nuevo vídeo tiene una longitud diferente, su sustitución en un programa existente cambiará la longitud del bucle de su contenido. ¿Seguro que quieres hacer esto?",
+      "m13": "La altura y el ancho deben ser pares.",
+      "m14": "Importar archivo de nuevo borrará todos los datos actuales de la lista. ¿Está seguro de importar nuevo archivo?",
+      "m15": "Formato de archivo inválido."
+    },
+    "p_r": {
+      "1": "Sustituir",
+      "2": "Sustituir con",
+      "3": "Optimizar",
+      "m1": "Por favor proporcione un nuevo archivo.",
+      "m2": "Por favor, proporcione un tipo de archivo similar.",
+      "m3": "Se está cargando el archivo. Por favor no actualice el navegador."
+    },
+    "p_m": {
+      "1": "Mover Contenido",
+      "2": "Dentro del Servidor",
+      "3": "Otro Servidor",
+      "4": "Mover",
+      "5": "Copiar",
+      "6": "Casa",
+      "7": "Seleccionar el servidor",
+      "8": "Sí, mover este contenido",
+      "m1": "Seleccione una carpeta.",
+      "m2": "Seleccione un servidor.",
+      "m3": "Los elementos seleccionados no se pueden mover a este servidor porque",
+      "m4": "Los elementos seleccionados no se pueden copiar en este servidor porque",
+      "m5": "No tienes permiso para agregar contenido en el directorio principal en el servidor seleccionado.",
+      "m6": "No tienes permiso para crear una carpeta en el servidor seleccionado.",
+      "m7": "No tienes permiso para cargar contenido en el servidor seleccionado.",
+      "m8": "No tienes permiso para crear widget en el servidor seleccionado.",
+      "m9": "La carpeta no puede ser movida / copiada dentro de sí misma.",
+      "m10": "Si mueve el contenido seleccionado a otro servidor, éste se eliminará del servidor actual. El contenido se eliminará automáticamente de los horarios y de los reproductores multimedia. Por favor, confirme si entiende las consecuencias."
+    },
+    "p_v": {
+      "1": "Versiones de Contenido",
+      "2": "Versión corriente",
+      "3": "Utilizar",
+      "m1": "Procesando contenido. Por favor, inténtelo de nuevo más tarde.",
+      "m2": "No se puede actualizar el contenido protegido por escritura.",
+      "m3": "Esta acción reemplazará automáticamente el contenido existente por uno seleccionado en todos los dispositivos programados. ¿Estás seguro de que quieres cambiar la versión seleccionada?"
+    },
+    "p_mt":{
+      "1": "Metaetiqueta",
+        "1.1": "Metaetiquetas",
+      "2": "Asignar metaetiqueta",
+      "3": "Separe las etiquetas múltiples con comas",
+      "m1": "Aún no tienes metaetiqueta para este contenido. Cuando agregue algunos, aparecerán aquí.",
+      "m2": "¿Seguro que quieres eliminar la metaetiqueta seleccionada?"
+    },
+    "info": {
+      "uc1": "El contenido subido por un usuario, que no tiene permiso de \"aprobación\", se clasifica como \"Contenido no aprobado\". Estos contenidos no pueden ser programados hasta que sean aprobados por el administrador o por un usuario con derechos de aprobación.",
+      "ec1": "Al cargar contenido o crear widgets, el usuario puede establecer un período activo del contenido / widget. El contenido expira después de ese período y se quita del dispositivo (si está programado) y se mueve a la lengüeta de \"Contenido expirado\".",
+      "ac1": "El contenido archivado es el contenido que no se utiliza desde hace mucho tiempo y hay menos probabilidad de ser utilizado en el futuro. El usuario puede marcar el contenido como \"archivado\". El contenido archivado se moverá automáticamente después de un mes.",
+      "v1": "Cargando y Organizando Contenido"
+    },
+    "t_p": {
+      "ftp":{
+        "1": "Nombre de host",
+        "2": "Nombre de usuario de FTP",
+        "3": "Contraseña FTP"
+      }
+    },
+    "widget": {
+      "cm": {
+        "1": "Editar Widget",
+        "2": "Nombre y Permiso",
+        "3": "Color",
+					"3.1": "Color alternativo",
+        "4": "Color del texto",
+        "5": "Velocidad",
+        "6": "Nombre personalizado",
+        "7": "Escojer modelo",
+        "8": "Modelo {{count}}",
+        "9": "Tipo de visualización",
+					"9.1": "Normal",
+        "10": "URL",
+        "11": "Fondo del cabezazo",
+        "12": "Texto del cabezazo",
+					"12.1": "Auto",
+					"12.2": "Personalizado",
+          "12.3": "Ninguna",
+        "13": "Fuente del cabezazo",
+        "14": "Fondo de hilera",
+        "15": "Fondo alternativo de fila",
+        "16": "Texto del título",
+          "16.1": "Texto alternativo del título",
+          "16.2": "Fuente del titulo",
+          "16.3": "Tamaño de fuente del título",
+        "17": "Texto del subtítulo",
+        "17.1": "Texto de subtítulo alternativo",
+        "18": "Velocidad de arrastre",
+					"18.1": "Mayor valor = Velocidad más lenta",
+        "19": "Imagen de fondo",
+        "20": "Seleccione tipo",
+        "21": "Hash tag",
+        "22": "Manipular datos",
+        "23": "Texto de arrastre",
+        "24": "Importar",
+					"24i": "Importador",
+        "25": "Autorizar",
+					"25.1": "Reautorizar",
+        "26": "Tamaño de fuente",
+        "27": "Autenticación",
+        "28": "Nombre de usuario",
+				"29": "Columna {{no}}",
+        "30": "Texto del tiempo",
+          "30.1": "Texto de tiempo alternativo",
+        "31": "Tamaño de fuente del encabezado",
+        "32": "Tamaño de letra de fila",
+        "33": "Tamaño de fuente de fila alternativo",
+        "34": "Color de bala"
+      },
+      "msg": {
+        "1": "Por favor proporcione el nombre del widget.",
+        "2": "Por favor guarde primero el período Activo.",
+        "3": "Por favor proporcione URL.",
+          "3.1": "Proporcione una URL válida.",
+        "4": "Por favor proporcione el título.",
+        "5": "Por favor proporcione velocidad de arrastre.",
+        "6": "Este widget siempre aparecerá como el marco más superior. Si tiene marcos solapados, asegúrese de que el marco en el que programe este widget sea el marco más superior.",
+        "7": "Por favor proporcione la URL de origen.",
+        "8": "Por favor proporcione la latitud y la longitud ambos.",
+        "9": "Proporcione el texto del encabezado.",
+        "10": "Autorización exitosa.",
+          "10.1": "Ya está autorizado para esta cuenta en este widget. Si desea cambiar la cuenta, vuelva a autorizar.",
+        "11": "Autorizar falló.",
+        "12": "Hay entradas duplicadas de identificación de correo electrónico en la lista.",
+        "13": "Proporcione el tamaño de fuente de título.",
+        "14": "Por favor, proporcione el tamaño de letra Subtitle.",
+        "15": "Por favor, proporcione el tamaño de letra Time.",
+        "16": "Por favor proporcione el tamaño de la fuente del encabezado.",
+        "17": "Por favor proporcione el tamaño de letra de la fila.",
+        "18": "Por favor, proporcione el tamaño alternativo de la fila.",
+        "19": "Por favor proporcione la Rotación.",
+        "20": "La estructura del menú no es correcta."
+      },
+      "dt": {
+        "1": "Fecha y hora",
+        "2": "Editar hora de fecha Widget",
+        "3": "Obtener el nombre del widget de la zona horaria",
+        "4": "Color automático",
+        "5": "Única hora {{count}}",
+        "6": "Única fecha {{count}}",
+        "7": "Color de la fecha",
+        "8": "Color de la hora",
+        "9": "Formato",
+        "10": "Color de la caja",
+        "4.1": "Esto seleccionará automáticamente el color del widget, dependiendo del color de fondo en la pantalla.",
+        "9.1": "{{value}} Horas",
+        "9.2": "{{value}} Horas con separador \"h\""
+      },
+      "dText": {
+        "1": "Widget de texto delimitado",
+        "2": "Editar widget de texto delimitado",
+        "3": "Editar formato",
+        "4": "Fuente de los datos",
+        "5": "Intervalo de actualización automática",
+        "6": "Delimitador",
+        "7": "Tipo de gráfico",
+        "8": "Ancho del marco",
+        "9": "Altura del marco",
+        "10": "Data de muestra",
+        "6.1": "Coma",
+        "6.2": "Punto y coma",
+        "6.3": "Lengüeta",
+        "7.1": "Tabla",
+        "7.2": "Forma libre"
+      },
+      "fb": {
+        "1": "Facebook",
+        "2": "Editar widget de Facebook",
+        "3": "Obtener el nombre del widget de Facebook",
+        "4": "URL de la página de Facebook",
+        "5": "Texto con medios",
+        "6": "Medios de comunicación",
+        "m1": "Proporcione la URL de la página de Facebook."
+      },
+      "fc": {
+        "1": "Contenido del relleno",
+        "2": "Editar widget de contenido de relleno"
+      },
+      "fs": {
+        "1": "Horario de vuelo",
+        "2": "Editar widget Horario de vuelo",
+        "3": "Obtener el nombre del widget a partir del nombre del aeropuerto",
+        "4": "Seleccionar aeropuerto",
+        "5": "Llegada",
+        "6": "Salida",
+        "7": "Texto de la fila",
+        "8": "Fuente de la fila",
+        "9": "Texto de fila alternativo",
+        "10": "Fuente de fila alternativa",
+        "11": "A tiempo / programado",
+        "12": "Cancelado",
+        "13": "Retrasado",
+        "14": "Llegado / Infiltrado",
+        "15": "Código de vuelo",
+        "16": "Nombre de la aerolínea",
+        "17": "Nombre de la ciudad",
+        "18": "Hora",
+        "19": "Terminal",
+        "20": "Estado predeterminado",
+        "m1": "Por favor seleccione un aeropuerto."
+      },
+      "fsc": {
+        "1": "Cromo de pantalla completa",
+        "2": "Editar widget de pantalla completa de Chrome"
+      },
+      "gc": {
+        "1": "Calendario de Google",
+        "2": "Editar widget Calendario de Google",
+        "3": "Autoriza Google Calendar",
+        "4": "Calendario",
+          "4.1": "Seleccionar calendario",
+        "m1": "Autoriza el calendario.",
+        "m2": "Por favor selecciona el calendario."
+      },
+      "iFrame": {
+        "1": "IFrame",
+        "2": "Editar el widget IFrame",
+        "3": "Datos de widget",
+        "4": "Tags permitidas",
+        "m1": "Proporcione datos de Widget."
+      },
+      "instagram": {
+        "1": "Instagram",
+        "2": "Editar Instagram Widget",
+        "3": "Obtener el nombre del widget de instagram",
+        "5": "Etiqueta hash de Instagram",
+          "5.1": "Nombre de usuario Instagram",
+        "6": "Seleccione el número de publicación",
+        "m1": "Proporcione la etiqueta hash Instagram.",
+        "m2": "Proporcione el nombre de usuario Instagram."
+      },
+      "in": {
+        "1": "LinkedIn",
+        "2": "Editar widget de LinkedIn",
+        "3": "Obtener el nombre del widget de linkedIn",
+        "4": "Autorizar a LinkedIn",
+        "5": "Empresa",
+          "5.1": "Seleccionar empresa",
+        "m1": "Autoriza LinkedIn.",
+        "m2": "Compañía no encontrada."
+      },
+      "iMenu": {
+        "1": "Menú Interactivo",
+        "2": "Editar widget de menú interactivo",
+        "3": "Ancho del botón",
+        "4": "Altura del botón",
+        "5": "Color de fondo del botón",
+        "6": "Tamaño de fuente del botón",
+        "7": "Color del texto del botón",
+        "8": "Alineación del texto del botón",
+        "9": "Borde del botón",
+        "10": "Color del borde del botón",
+        "11": "Tamaño del borde del botón",
+        "12": "Radio de borde del botón",
+        "13": "Icono {{count}}",
+        "14": "Posición del icono",
+        "15": "Parent",
+        "16": "Objetivo",
+        "17": "Menu principal",
+        "18": "Seleccionar",
+        "19": "Estructura del menú",
+        "13.1": "La selección de imágenes en cada menú no es obligatoria. Si lo hace \"marcado\" aquí. Si no se selecciona ninguna imagen en el nivel del submenú, se mostrará el icono del menú principal",
+        "b1": "Añadir nuevo menú"
+      },
+      "mc": {
+        "1": "Music Choice",
+        "2": "Editar el widget Music Choice",
+        "3": "Seleccione Categorías",
+        "4": "Lista de reproducción",
+        "5": "barajar",
+        "6": "Categorías disponibles",
+        "7": "Categorías seleccionadas",
+        "8": "Canciones",
+        "9": "Lista de canciones",
+        "10": "No jugar",
+        "11": "Claro",
+        "12": "Importar no reproducir lista",
+        "13": "Seleccionar widget",
+        "14": "Ningún elemento en No jugar",
+        "8.1": "Available songs",
+        "8.2": "Canciones seleccionadas",
+        "m1": "Agregue una categoría de la lista.",
+        "m2": "Ninguna canción seleccionada aún.",
+        "m3": "Datos no disponibles.",
+        "m4": "Seleccione al menos una categoría.",
+        "m5": "¿Seguro que quieres eliminar esta categoría de la lista de reproducción actual? Todas las canciones correspondientes se eliminarán de la lista de reproducción.",
+        "m6": "Cuenta de canciones no válidas.",
+        "m7": "Resultado de búsqueda",
+        "m8": "No se han encontrado resultados.",
+        "m9": "Recuento de canciones no válido en una de las categorías seleccionadas.",
+        "m10": "La lista de reproducción puede contener un máximo de 900 canciones incluyendo todas las categorías.",
+        "m11": "Aún no tienes ningún widget de elección de música.",
+        "m12": "",
+        "m13": "La importación de archivos borrará todos los datos actuales de la lista. ¿Estás seguro de importar un nuevo archivo?",
+        "m14": "La lista de reproducción no debería estar vacía.",
+        "t1": "Esta categoría no tiene ninguna canción",
+        "t2": "Esta canción está en la lista \"No reproducir\""
+      },
+      "ls": {
+        "1": "Live Streaming",
+        "2": "Edit Live Streaming Widget",
+        "3": "URL de Streaming",
+        "m1": "Proporciona URL de Streaming."
+      },
+      "coe":{
+        "1": "Calendario de eventos",
+        "2": "Editar calendario de eventos",
+        "3": "Lista de eventos",
+        "4": "Anunciar este evento",
+        "5": "Añadir evento",
+        "6": "Crear vista",
+        "7": "Establecer visibilidad",
+          "7.1": "Vista de sala",
+          "7.2": "Vista de tablero",
+          "7.3": "Vista del calendario",
+        "8": "Ver nombre",
+        "9": "Ver lista",
+        "m1": "Aún no tienes ningún evento activo. Cuando crees algo, aparecerán aquí.",
+          "m1.1": "Aún no tienes ningún evento caducado.",
+        "m2": "Proporcione el nombre de la vista.",
+        "m3": "Seleccione Tipo."
+      },
+      "coev":{
+        "1": "Vista de calendario de eventos",
+        "2": "Editar vista de calendario de eventos",
+        "3": "Fondo del nombre del día",
+        "4": "Texto del nombre del día",
+        "5": "Fondo de celda",
+        "m1": "Aún no tienes ningún evento. Cuando crees algo, aparecerán aquí."
+      },
+      "meeting": {
+        "1": "Reunión",
+        "2": "Editar widget de reunión",
+        "3": "Lista de reuniones",
+        "4": "Salvapantallas",
+          "4.1": "Fondo de salvapantallas",
+        "5": "Agregar reunión",
+        "6": "Agregar protector de pantalla",
+        "7": "Lista de habitaciones",
+        "8": "Piso",
+        "9": "Logo",
+        "10": "Por favor seleccione habitación",
+        "11": "Guardar y agregar más",
+        "12": "Asignar dispositivos",
+        "13": "Imagen / Video",
+          "13.1": "Seleccionar imagen / video",
+
+        "m1": "Por favor, proporcione la habitación.",
+        "m2": "Aún no tienes ninguna reunión activa. Cuando crees algo, aparecerán aquí.",
+          "m2.1": "Aún no tienes una reunión expirada.",
+        "m3": "Aún no tienes ningún protector de pantalla. Cuando crees algo, aparecerán aquí.",
+        "m4": "Por favor proporcione Imagen / Video.",
+        "m5": "Por favor asigne al menos un dispositivo."
+      },
+      "news": {
+        "1": "Noticias",
+        "2": "Editar widget de noticias",
+        "3": "Obtener el nombre del widget de las noticias",
+        "4": "Proveedor de noticias",
+        "5": "Categoría de noticias",
+        "6": "Rotación",
+        "4.1": "Seleccionar proveedor de noticias",
+        "4.2": "BBC",
+        "4.3": "CBC",
+        "4.4": "CNN",
+        "4.5": "ESPN",
+        "4.6": "Fox News",
+        "5.1": "Seleccionar categoría de noticias",
+        "6.1": "Auto",
+        "m1": "Proporcione al proveedor de noticias.",
+        "m2": "Proporcione la categoría Noticias.",
+        "m3": "",
+        "m4": "El feed proporcionado por el proveedor de noticias es gratuito para uso no comercial. Si desea utilizar este servicio para uso comercial, póngase en contacto con el proveedor de noticias y obtenga una licencia."
+      },
+      "nb": {
+        "1": "Next Vehicle",
+        "2": "Editar Next Vehicle Widget"
+      },
+      "pw": {
+        "1": "Paciente espera",
+        "2": "Editar Widget de espera del paciente",
+        "3": "Tiempo promedio de espera",
+        "4": "Número de fondo",
+        "5": "Texto numérico",
+        "6": "Número fuente",
+        "7": "Tamaño del número",
+        "8": "Fondo de pie de página",
+        "9": "Texto de pie de página",
+        "10": "Fuente de pie de página",
+        "11": "Tamaño de letra de pie de página",
+        "12": "Importar asignación del sitio",
+        "13": "Texto no llegado",
+        "14": "Color del icono",
+        "15": "Color de icono alternativo",
+        "16": "Identificación del sitio",
+        "17": "Elija el símbolo",
+          "17.1": "Cita",
+          "17.2": "Entrar",
+          "17.3": "Guarde mi lugar",
+        "18": "Elija la plantilla de formato de nombre",
+        "19": "Mapa del sitio",
+        "20": "Texto llegado",
+        "21": "Texto de Walk In",
+        "22": "Formato de texto del nombre",
+          "22.1": "Mayúsculas",
+          "22.2": "Minúscula",
+        "23": "Llegué a salvar mi lugar",
+        "24": "No llegó a guardar mi lugar",
+        "25": "Ambiente",
+          "25.1": "Prueba",
+          "25.2": "Producción",
+          "25.3": "Formación",
+        "26": "En el servicio web",
+          "26.1": "Reiniciar",
+          "26.2": "Hacer nada",
+        "m1": "",
+        "m2": "Por favor, proporcione el tamaño.",
+        "m3": "",
+        "m4": "Por favor, indique el tamaño del número.",
+        "m5": "Por favor, proporcione el tamaño de fuente del pie de página.",
+        "m6": "Por favor proporcione mapeo del sitio.",
+        "m7": "Por favor, proporcione intervalo de recarga.",
+        "m8": "La hoja de mapeo cargada no es válida.",
+        "m9.1": "Primer nombre completo del cliente e inicial del apellido (por ejemplo, Steve Z.)",
+        "m9.2": "Mostrar solo el tiempo de cita para las citas",
+        "m9.3": "Las llamadas sin cita aparecen en el orden de llamada pero no aparecen veces",
+        "m10.1": "Iniciales del primer nombre y apellido (por ejemplo, S. Z.)",
+        "m10.2": "Mostrar solo el tiempo de cita para las citas",
+        "m10.3": "Las llamadas sin cita aparecen en el orden de llamada pero no aparecen veces",
+        "m11.1": "Primera letra de Nombre, espacio y primeras tres iniciales del apellido inicial (por ejemplo, S. ZAN)",
+        "m11.2": "Simplemente muestra el orden de clasificación (no hay veces)",
+        "m12": "Por favor agregue o importe mapas del sitio."
+      },
+      "pBI": {
+        "1": "Power BI",
+        "2": "Editar el widget de Power BI",
+        "3": "Obtener el nombre del widget de Power BI",
+        "4": "Autorizar Power BI",
+        "5": "Tablero",
+        "6": "Informes",
+        "7": "Grupos",
+        "7.1": "Selecciona grupo",
+        "m1": "Autorice Power BI.",
+        "m2": "Aún no tienes ningún grupo. Cuando crees algo, aparecerán aquí.",
+        "m3": "Por favor seleccione grupo.",
+        "m4": "No tienes ninguna visualización todavía. Cuando crees algo, aparecerán aquí.",
+        "m5": "Por favor, seleccione visualización."
+      },
+      "or": {
+        "1": "Radio online",
+        "2": "Editar el widget de radio en línea",
+        "3": "Obtener el nombre del widget de la estación de radio",
+        "4": "Estación de radio",
+					"4.1": "Seleccionar estación",
+        "5": "Volume",
+        "m1": "Por favor proporcione la estación de radio.",
+        "m2": "El servicio proporcionado por las estaciones de radio es gratuito para uso no comercial. Si desea utilizar este servicio para uso comercial, póngase en contacto con la estación de radio y obtenga una licencia."
+      },
+      "oh": {
+        "1": "Horarios de apertura",
+        "2": "Editar widget de horas abiertas",
+        "3": "Horas ingles",
+          "3.1": "Horas francesas",
+        "4": "Recogida en inglés",
+          "4.1": "Pickup francés",
+        "5": "Imagen de pie de página",
+        "6": "Día de recogida",
+        "7": "Hora de recogida",
+        "8": "Idioma",
+        "9": "Horas de texto",
+        "10": "Fuente de Horas",
+        "11": "Recoger texto",
+        "12": "Pickup font"
+      },
+      "oc": {
+        "1": "Calendario de Outlook",
+        "2": "Editar el widget del calendario de Outlook",
+        "4": "Alojamiento y comida",
+					"4.1": "ID de habitación",
+        "5": "Tablero",
+					"5.1": "Lista de paneles",
+        "6": "Autorizar el calendario de Outlook",
+        "8": "Calendario de Outlook sincrónico",
+        "9": "Sincronización",
+        "10": "Habitación",
+
+        "14": "Fuente de subtítulos",
+        "15": "Tamaño de letra del subtítulo",
+
+        "17": "Fuente de tiempo",
+        "18": "Tamaño de fuente de tiempo",
+        "20": "Antecedentes alternativos",
+        "21": "Outlook.com",
+        "22": "Servidor de intercambio",
+        "23": "Anfitrión",
+        "24": "Contraseña",
+				"25": "Vuelva a escribir la contraseña",
+        "26": "Versión del servidor de Exchange",
+					"26.1": "Seleccionar versión",
+				"27": "Texto de la habitación",
+          "27.1": "Texto alternativo de la sala",
+        "28": "Fuente de la habitación",
+        "29": "Nombre del calendario",
+
+        "m1": "Por favor, proporciona la identificación de la habitación.",
+        "m3": "Autorice Outlook.",
+        "m4": "Sync failed.",
+        "m5": "Agregue el ID de correo electrónico y el nombre de la sala respectiva para los que desea generar paneles de pared.",
+        "m6": "Por favor agrega al menos un tablero de pared.",
+        "m7": "Proporcione un nombre y correo electrónico válidos.",
+          "m7.1": "Por favor proporcione un correo electrónico válido.",
+        "m8": "Por favor, proporcione un host válido.",
+        "m9": "Por favor proporcione un nombre de usuario válido.",
+        "m10": "Por favor ingrese una contraseña válida.",
+				"m11": "Proporcione una contraseña de reescritura válida.",
+				"m12": "La contraseña y la contraseña de nuevo no coinciden.",
+        "m13": "Por favor seleccione la versión."
+      },
+      "queue": {
+        "1": "Cola",
+        "2": "Editar widget de cola",
+        "3": "Corriente",
+        "4": "Próximo",
+        "5": "Número de inicio",
+        "6": "Número final",
+        "7": "Prefijo",
+          "7.1": "Prefijo de color",
+          "7.2": "Fuente de prefijo",
+        "8": "Sufijo",
+          "8.1": "Color del sufijo",
+          "8.2": "Fuente de sufijo",
+        "9": "Incremento",
+        "10": "Decremento",
+        "11": "Tabular",
+        "12": "Tabular - Terceros",
+        "13": "Intervalo de actualización",
+        "14": "",
+        "15": "Generar cuadrícula",
+        "16": "Importar archivo",
+        "17": "Número de columnas",
+        "18": "Delimitador",
+          "18.1": "Coma",
+          "18.2": "Punto y coma",
+          "18.3": "Lengüeta",
+        "19": "Número de color actual",
+          "19.1": "Número fuente actual",
+        "1t": "Esconder",
+        "1b": "Generar",
+        "1bi": "Generando",
+        "2b": "Añadir fila",
+        "m1": "Proporcione el número de inicio.",
+        "m2": "Proporcione el número de fin.",
+        "m3": "El número inicial no debe ser igual o mayor que el número final.",
+        "m4": "¿Está seguro de que desea restablecer el número de cola?",
+        "m5": "Artículo no accesible.",
+        "m7": "Proporcione el intervalo de rotación de página.",
+        "m8": "Proporcione el número de columnas.",
+          "m8.1": "Por favor, genere la cuadrícula.",
+          "m8.2": "Importar archivo.",
+        "m9": "Esta acción eliminará las entradas de datos actuales de la cuadrícula. ¿Estas seguro que deseas continuar?",
+        "m10": "Generando la cuadrícula de nuevo wipeout toda la fecha actual de ella. ¿Está seguro de regenerar la cuadrícula?",
+        "m11": "Importar archivo de nuevo borrará todos los datos actuales de la cuadrícula. ¿Está seguro de importar nuevo archivo?",
+        "m12": "El separador seleccionado no está en el archivo subido. Estás seguro de que quieres continuar?"
+      },
+      "quotes": {
+        "1": "Citar",
+        "2": "Editar el widget de cotizaciones",
+        "3": "Seleccionar cotizaciones",
+        "4": "Duración de la rotación",
+        "5": "Fuente de las citas",
+        "6": "Tamaño de fuente de la cotización",
+        "7": "Texto de las citas",
+        "8": "Fuente del autor",
+        "9": "Tamaño de la fuente del autor",
+        "10": "Texto del autor",
+        "11": "Agregar nueva cita",
+        "12": "Elija una cita de la biblioteca",
+        "13": "Biblioteca de cotizacion",
+        "14": "Clic para seleccionar",
+        "15": "Autor",
+        "16": "Citas seleccionadas",
+        "1s": "Citas",
+        "13s": "Biblioteca de cotizaciones",
+        "m1": "Por favor proporcione una cotización.",
+        "m2": "Ninguna cita agregada.",
+        "m3": "",
+        "m4": "Por favor proporcione tamaño de la fuente de las citas.",
+        "m5": "Por favor proporcione el tamaño de fuente del Autor.",
+        "m6": "La imagen no está disponible para usted."
+      },
+      "rss": {
+        "1": "RSS feed",
+        "2": "Editar el widget de RSS Feed",
+        "m1": "Por favor proporcione el feed RSS."
+      },
+      "sc": {
+        "1": "Horario Calendario",
+        "2": "Editar calendario de horario",
+        "3": "",
+        "4": "Day",
+        "5": "Week",
+        "6": "Month",
+        "7": "Select Schedules",
+        "m1": "Por favor seleccione al menos un horario.",
+        "m2": "Por favor selecciona las fechas.",
+        "m3": "Por favor seleccione semanas.",
+        "m4": "Por favor seleccione meses."
+      },
+      "ssm": {
+        "1": "Seleccione Widgets de redes sociales",
+        "2": "Editar Seleccionar widgets de redes sociales"
+      },
+      "slack": {
+        "1": "Slack",
+        "2": "Editar Slack Widget",
+        "3": "Obtener el nombre del widget de slack",
+        "5": "Autorizar bot de Slack",
+        "7": "Lista de canales",
+          "7.1": "Seleccionar canal",
+        "8": "Color de nombre de usuario",
+        "9": "Color del mensaje",
+        "m2": "Autoriza a Slack bot.",
+        "m3": "Por favor selecciona el canal."
+      },
+      "sp": {
+        "1": "Precio de la accion",
+        "2": "Editar el widget de precios de acciones",
+        "3": "Símbolo de la accion",
+        "4": "Mostrar la imagen del gráfico",
+        "m1": "El precio de cotización de acciones proporcionado por ALPHA VANTAGE, puede no ser libre para uso comercial. Si desea utilizar este servicio para su uso comercial, póngase en contacto con el proveedor de precios comerciales y obtenga una licencia."
+      },
+      "ss": {
+        "1": "SunSmart",
+        "2": "Editar el widget SunSmart",
+        "3": "Obtener el nombre del widget de sun smart",
+        "4": "Tipo de widget",
+        "5": "Estado",
+        "6": "Ubicación predeterminada",
+        "7": "Preestrenar",
+        "5.1": "Seleccione estado",
+        "6.1": "Seleccionar ubicación",
+        "m1": "Proporcione el tipo de widget.",
+        "m2": "Por favor proporcione el Estado.",
+        "m3": "Proporcione la ubicación predeterminada."
+      },
+      "survey": {
+        "1": "Encuesta",
+        "2": "Editar widget de Encuesta",
+        "3": "Pregunta",
+          "3s": "Preguntas",
+        "4": "Opción {{no}}",
+        "8": "Fuente de la descripción",
+        "9": "Tamaño de la fuente de la descripción",
+        "10": "Descripción del texto",
+        "11": "Enlace de la encuesta",
+        "12": "Resultado",
+        "13": "Terminado",
+        "14": "Reabrir",
+        "15": "Pantalla de información",
+        "16": "Pantalla de resultados",
+
+        "17": "Color de la pregunta",
+        "18": "Tamaño de la pregunta",
+        "19": "Fuente de pregunta",
+        "20": "Respuestas color",
+        "21": "Tamaño de las respuestas",
+        "22": "Fuente de respuestas",
+
+        "23": "Fondo de Progressbar",
+        "24": "Barra de progreso",
+        "25": "Color de Progressbar",
+
+        "m1": "Proporcione la Pregunta.",
+        "m2": "Proporcione por lo menos dos opciones.",
+        "m3": "Ninguna pregunta agregada.",
+        "m5": "Proporcione el tamaño de fuente de la descripción.",
+        "m6": "El registro para las votaciones sobre esta pregunta también se eliminará si elimina la pregunta. ¿Seguro que quieres eliminar esta pregunta?",
+        "m7": "¿Seguro que quieres terminar la Encuesta?",
+        "m8": "¿Está seguro de que desea volver a abrir la Encuesta?",
+        "m9": "Resultado no encontrado.",
+        "m10": "Por favor proporcione el tamaño de la pregunta.",
+        "m11": "Por favor proporcione la fuente de Respuestas."
+      },
+      "telax": {
+        "1": "Telax",
+        "2": "Editar el widget Telax",
+        "3": "Tipo de informe",
+        "4": "Status del agente",
+        "5": "Estadísticas de Colas",
+        "6": "Estadísticas COPS",
+        "7": "Límite",
+        "m1": "Proporcione el límite.",
+        "m2": "El límite debe ser único.",
+        "m3": "El límite debe estar en orden incremental."
+      },
+      "text": {
+        "1": "Texto",
+        "2": "Editar widget de texto",
+        "3": "Lista de texto",
+        "4": "Dirección",
+        "5": "De derecha a izquierda",
+        "6": "De abajo hacia arriba",
+        "7": "Rastreo de texto",
+        "8": "Texto estático",
+        "m1": "Por favor proporcione texto.",
+        "m2": "Por favor, proporcione el tamaño de letra."
+      },
+      "tl": {
+        "1": "Reuniones de TouchLink",
+        "2": "Editar widget de reuniones de TouchLink",
+        "3": "Sala de Reuniones",
+        "4": "Wallboard colapso",
+        "5": "Wallboard expandido",
+        "6": "Ruta de directorio del Logo",
+        "7": "Camino del directorio del protector de pantalla",
+        "m1": "Proporcione la ruta del directorio del logotipo.",
+        "m2": "Proporcione la ruta del directorio del protector de pantalla."
+      },
+      "traffic": {
+        "1": "Tráfico",
+        "2": "Editar widget de Tráfico"
+      },
+      "twitter": {
+        "1": "Twitter",
+        "2": "Editar widget de Twitter",
+        "3": "Obtener el nombre del widget desde twitter",
+        "4": "Identidad de usuario",
+        "5": "Hash tag de Twitter",
+        "6": "Texto de descripción",
+        "6.1": "Texto de descripción alternativa",
+        "5.1": "ID de usuario de Twitter",
+        "m1": "Proporcione una etiqueta hash de Twitter.",
+        "m2": "Proporcione el ID de usuario de Twitter."
+      },
+      "ub": {
+        "1": "Ungerboeck",
+        "2": "Editar Ungerboeck Widget",
+        "3": "Sala de Reuniones",
+        "4": "Wallboard colapso",
+        "5": "Wallboard expandido",
+        "6": "Ruta de directorio del Logo",
+        "7": "Camino del directorio del protector de pantalla"
+      },
+      "weather": {
+        "1": "Clima",
+        "2": "Editar el widget del tiempo",
+        "3": "Relación de aspecto ideal (w:h)",
+        "4": "La relación de aspecto ideal para este widget es {{ratio}}. Sin embargo, cabrá en cualquier tamaño del marco.",
+        "5": "Vista previa de muestra",
+        "6": "Obtener el nombre del widget de la ciudad del clima",
+        "7": "Color de primer plano",
+        "8": "Unidad de visualización",
+        "9": "Imagen del tiempo",
+        "10": "Ciudad selecta",
+        "11": "Ciudad del dispositivo",
+        "3.1": "Para la fecha actual",
+        "3.2": "Pronóstico de 5 días",
+        "3.3": "Pronóstico de 4 días incluyendo detalles de la temperatura de hoy",
+        "8.1": "Celsius {{deg}}",
+        "8.2": "Fahrenheit {{deg}}",
+        "9.1": "Estático",
+        "9.2": "Animado",
+        "9.1.1": "Simple",
+        "9.1.2": "Color {{count}}",
+        "9.2.1": "Contorno",
+        "9.2.2": "Recorte",
+        "ph": "Escriba para buscar la ciudad",
+        "m1": "La ciudad no es correcta. Por favor busque de nuevo.",
+        "m2": "Hub detectará la ciudad desde la IP del dispositivo."
+      },
+      "wc": {
+        "1": "Web Cam",
+        "2": "Editar Web Cam Widget"
+      },
+      "wl": {
+        "1": "Inicio de sesión Web",
+          "1.1": "Acceso web Chrome",
+        "2": "Editar widget de inicio de sesión web",
+          "2.1": "Editar widget de inicio de sesión web de Chrome",
+        "3": "",
+        "4": "Identificador del nombre de usuario",
+        "5": "Contraseña",
+        "6": "Identificador de contraseña",
+        "7": "Enviar identificador del botón",
+        "8": "Retardo de inicio de sesión",
+        "9": "Redirigir URL después de iniciar sesión"
+      },
+      "wp": {
+        "1": "Sitio",
+        "2": "Editar widget de Sitio",
+        "3": "Intervalo de recarga",
+        "4": "Mostrar barra de desplazamiento",
+        "m1": "El intervalo de recarga no debe ser inferior a 10 segundos."
+      },
+      "youTube": {
+        "1": "YouTube",
+        "2": "Edit YouTube Widget",
+        "3": "Obtener el nombre del widget del video de YouTube",
+        "4": "ID de vídeo o lista de reproducción",
+        "5": "Habilitar Subtítulos / Subtítulos",
+        "m1": "Por favor proporcione el Id del video o de la lista de reproducción.",
+        "m2": "El ID de video no es válido.",
+        "m3": "Los subtítulos solo se mostrarán con video si están disponibles en el video de YouTube."
+      }
+    }
+  },
+  "t": {
+    "tab": {
+      "1": "Modelos",
+      "2": "Modelos no aprobados",
+      "3": "Plantillas incompletas",
+      "4": "Biblioteca",
+      "5": "Feed"
+    },
+    "tool": {
+      "1": "¿Qué es {{htmlTagO}}Plantilla{{htmlTagC}}?",
+      "2": "Ver tutorial de vídeo de {{htmlTagO}}plantilla{{htmlTagC}}.",
+      "3": "¿Qué es una {{htmlTagO}}plantilla no aprobada{{htmlTagC}}?",
+      "4": "¿Qué es una {{htmlTagO}}plantilla incompleta{{htmlTagC}}?"
+    },
+    "body": {
+      "1": "Plantilla seleccionada",
+      "2": "Editar Plantilla",
+      "1s": "Plantillas seleccionadas"
+    },
+    "label": {
+      "1": "Nombre de la plantilla",
+      "2": "Dibujar plantilla",
+      "3": "Marcador de posición",
+      "4": "Contenido de {{frameName}}",
+      "5": "Seleccione el directorio padre"
+    },
+    "btn": {
+      "1": "Crear Nueva Plantilla",
+      "2": "Usar Plantilla",
+      "3": "Dibujar Plantilla"
+    },
+    "msg": {
+      "1": "Todavía no has creado ninguna plantilla. Al crear, aparecerán aquí.",
+      "2": "No tienes ninguna plantilla no aprobada",
+      "3": "No tienes ninguna plantilla incompleta.",
+      "4": "No hay una biblioteca de plantillas disponible.",
+      "5": "No hay plantilla disponible en esta categoría.",
+      "6": "¿Está seguro de que desea desaprobar las plantilla seleccionada?",
+        "6s": "¿Está seguro de que desea desaprobar las plantillas seleccionadas?",
+      "7": "¿Está seguro de que desea eliminar las plantilla seleccionada?",
+        "7s": "¿Está seguro de que desea eliminar las plantillas seleccionadas?",
+      "8": "Por favor proporcione el nombre de la plantilla.",
+      "9": "Por favor proporcione el ancho y la altura para esta plantilla.",
+      "10": "¿Seguro que quieres eliminar el marcador de posición seleccionado?",
+      "11": "¿Está seguro de que desea hacer una copia de las plantilla seleccionada?",
+        "11s": "¿Está seguro de que desea hacer una copia de las plantillas seleccionadas?",
+      "12": "La plantilla se moverá a la pestaña de {{htmlTagO}}plantilla{{htmlTagC}}. A continuación, puede asignar esta plantilla a sus dispositivos. ¿Estás seguro de que quieres usar esta plantilla?",
+        "12s": "Las plantillas se moverá a la pestaña de {{htmlTagO}}plantilla{{htmlTagC}}. A continuación, puede asignar estas plantillas a sus dispositivos. ¿Estás seguro de que quieres usar estas plantillas?",
+      "13": "Por favor seleccione el contenido.",
+      "14": "La plantilla aún no tiene ningún marcador de posición agregado. Una plantilla sin marcador de posición se considerará incompleta y no podrá programarla.",
+      "15": "El contenido / widgets utilizados en esta plantilla se copiarán en una nueva carpeta a su Biblioteca de contenido. Asigne un nombre a la carpeta y seleccione su ubicación en la Biblioteca de contenido a continuación:",
+      "16": "Hay contenido / widgets utilizados en esta plantilla y no está permitido subir contenido ni crear un widget o crear una carpeta, por lo que los archivos utilizados en la plantilla seleccionada no se copiarán. Sin embargo, la plantilla será creada.",
+      "17": "Veuillez sélectionner le répertoire parent."
+    },
+    "info": {
+      "t1": "El propósito de la plantilla es permitir a los usuarios cambiar rápidamente una pequeña parte del contenido que desean mostrar en una pantalla. Por ejemplo, digamos que este sistema de señalización digital necesita ser utilizado en una cafetería. La cafetería tiene especialidades diarias que desean actualizar en la mañana. La cafetería puede utilizar plantillas para crear un diseño para la pantalla diaria especial y definir el área donde el precio va como un campo cambiante. Esta plantilla se puede abrir en la mañana todos los días para cambiar sólo el precio, y despues guardar la plantilla. De esta manera el precio se puede cambiar sin recrear el diseño entero cada vez.",
+      "ut1": "Las plantillas creadas por un usuario, que no tiene permiso de \"aprobación\", se clasifican como \"Plantillas no aprobadas\". Estas plantillas no se pueden programar hasta que sean aprobadas por el administrador o un usuario con derechos de aprobación.",
+      "it1": "Si no hay ningún marcador de posición en la plantilla, se considera incompleto y se cambia a la pestaña Plantilla incompleta."
+    }
+  },
+  "s": {
+    "tab": {
+      "1": "Horarios",
+      "2": "Horarios no aprobado",
+      "3": "Horarios incompletos",
+      "4": "Horarios caducados"
+    },
+    "tool": {
+      "1": "¿Qué es el {{htmlTagO}}Horario{{htmlTagC}}?",
+      "2": "Vea el tutorial de video de {{htmlTagO}}Schedule{{htmlTagC}}.",
+      "3": "¿Qué es un {{htmlTagO}}horario no aprobado{{htmlTagC}}?",
+      "4": "¿Qué es un {{htmlTagO}}horario incompleto{{htmlTagC}}?",
+      "5": "¿Qué son los {{htmlTagO}}horario caducado{{htmlTagC}}?",
+      "6": "El widget Music Choice solo se puede programar para un día completo o un horario diario."
+    },
+    "body": {
+      "1": "Nombre del programa",
+      "2": "Lista de contenido en el horario",
+      "3": "Intervalo de fechas de la asignación",
+      "4": "Cuadro",
+      "5": "Actualizar el grupo de horarios"
+    },
+    "brief": {
+      "1": "Horario seleccionado",
+      "2": "Día completo",
+      "1s": "Horarios seleccionados"
+    },
+    "btn": {
+      "1": "Crear nuevo horario",
+      "2": "Crear grupo de horarios",
+      "3": "Asignar al grupo"
+    },
+    "msg": {
+      "1": "Todavía no tienes ningún horario. Cuando crear algunos, aparecerán aquí.",
+      "2": "Usted no tiene ningún horario no aprobado.",
+      "3": "usted no tiene ningún horario incompleto.",
+      "4": "usted no tiene ningún horario expirado.",
+      "5": "No hay horarios en este grupo.",
+      "6": "¿Seguro que desea desautorizar lo horario seleccionado?",
+        "6s": "¿Seguro que desea desautorizar los horarios seleccionados?",
+      "7": "¿Está seguro de que desea eliminar lo horario seleccionado?",
+        "7s": "¿Está seguro de que desea eliminar los horarios seleccionados?",
+      "8": "¿Está seguro de que desea eliminar el grupo de programación seleccionado?",
+      "9": "Los horarios asociados con este grupo no se eliminarán, tendrá que eliminarlos separadamente.",
+      "10": "No se pueden aprobar los siguientes horarios porque el cronograma no contiene el permiso correspondiente con su grupo de cronograma."
+    },
+    "p_sg": {
+      "1": "Nombre de grupo de horario",
+      "m1": "Por favor proporcione el nombre del grupo del horario.",
+      "m2": "El nombre del grupo de horarios ya existe.",
+      "m3": "No se puede aplicar un nuevo permiso en el grupo porque las programaciones dentro de este grupo no tienen el mismo permiso que seleccionó.",
+      "m4": "Por favor, cambie primero el permiso de los siguientes horarios:"
+    },
+    "p_s": {
+      "body": {
+        "1": "Editar horario",
+        "2": "Contenido / Plantillas Seleccionadas",
+        "3": "Seleccionar marco",
+        "4": "No tiene permiso para programar contenido en este cuadro.",
+        "5": "Dispositivos/Grupos/Etiquetas Elejidos"
+      },
+      "btn": {
+        "1": "Déjame Rectificar",
+        "2": "Ok lo haré después",
+        "3": "Ahorrar de todos modos!",
+        "4": "Guardar como grupo"
+      },
+      "label": {
+        "1": "Seleccionar grupo de programación",
+          "1.1": "Sin grupo",
+        "2": "Horario heredará los permisos del grupo seleccionado.",
+          "2.1": "Horario de grupos",
+        "3": "Ejecutar en todos los tiempos disponibles",
+        "4": "Tiempo personalizado",
+          "4.1": "Diariamente",
+          "4.2": "Semanal",
+          "4.2.1": "Lunes",
+          "4.2.2": "Martes",
+          "4.2.3": "Miércoles",
+          "4.2.4": "Jueves",
+          "4.2.5": "Viernes",
+          "4.2.6": "Sábado",
+          "4.2.7": "Domingo",
+          "4.3": "Mensual",
+          "4.4": "Intervalo de días",
+          "4.4.1": "Repetición personalizada",
+        "5": "Temporizaciones personalizadas",
+        "6": "Frecuencia",
+        "7": "Día",
+        "8": "Repetir a cada día n",
+        "9": "Seleccionar capa",
+        "10": "Rango de asignación",
+        "11": "Meses",
+          "11.0": "enero",
+          "11.1": "febrero",
+          "11.2": "marzo",
+          "11.3": "abril",
+          "11.4": "Mayo",
+          "11.5": "junio",
+          "11.6": "julio",
+          "11.7": "agosto",
+          "11.8": "septiembre",
+          "11.9": "octubre",
+          "11.10": "noviembre",
+          "11.11": "diciembre",
+        "12": "Prioridad de horario"
+      },
+      "msg": {
+        "1": "Por favor proporcione el nombre del Horario.",
+        "2": "Por favor seleccione al menos un Contenido / Plantilla.",
+        "3": "Agregue un intervalo de tiempo personalizado.",
+        "4": "Día / Fecha debe estar entre 1 y 365.",
+        "5": "Por favor, añadir calendario personalizado para el horario.",
+        "6": "No se ha seleccionado el diseño de trama.",
+        "7": "Existe un conflicto de carpetas restringido entre los dispositivos seleccionados. Por favor cree horarios separados para las siguientes asignaciones",
+        "8": "La programación contiene más de la duración máxima de contenido permitida para este marco.",
+          "8.1": "Restante",
+        "9": "El horario contiene más que el conteo máximo permitido para este cuadro.",
+        "10": "Sólo se puede asignar a este marco el contenido de la carpeta siguiente.",
+          "10.1": "Carpeta permitida",
+        "11": "Hay contenido asignado a este programa que no es accesible para usted. Puede continuar sin seleccionar contenido nuevo.",
+        "12": "Este dispositivo no tiene ningún diseño asignado.",
+        "13": "Este grupo contiene al menos un dispositivo en el que no hay ningún diseño de trama asignado o que no tiene un diseño de trama asignado en el intervalo de fechas del programa.",
+        "14": "Hay dispositivos/grupos asignados a este horario que no son accesibles para usted. Puede continuar sin seleccionar nuevo dispositivo/grupo.",
+        "15": "No hay ninguna disposición de marco disponible para usted. Se le redirigirá automáticamente a la página de programación en {{counter}} segundos.",
+        "16": "Por favor seleccione Marco para cada diseño de trama.",
+        "17": "El horario pasará a la pestaña Horarios Incompletos Porque no hay ningún contenido activo seleccionado en esta lista.",
+        "18": "El horario pasará a la pestaña Horarios Incompletos Porque la asignación de diseño de trama del dispositivo seleccionado no está en el intervalo de fechas de este horario.",
+        "19": "El programa pasará a la pestaña Horarios Vencidos porque el intervalo de fechas que seleccionó ya está vencido.",
+        "20": "El horario pasará a la pestaña Horarios Incompletos Porque los marcos de destino de todos los dispositivos escojidos no estan seleccionados.",
+        "21": "El horario pasará a la pestaña Horarios Incompletos Porque el marco del destino del dispositivo siguiente no está seleccionado.",
+        "22": "Se ha guardado el horario Sin embargo, este horario no se aplica a los dispositivos siguientes porque su asignación de diseño de marco no está en el intervalo de fechas de este horario.",
+        "23": "Rango de fechas del calendario actual",
+        "24": "No tienes permiso para crear un grupo de programación.",
+        "25": "Esta etiqueta no tiene ningún dispositivo asignado o uno de sus dispositivos no tiene un diseño de marco en el rango de fechas del programa.",
+        "26": "El horario marcado como \"Forever\" se aplicará en los dispositivos durante 100 años.",
+        "27": "Por favor, cree primero el grupo de planificación.",
+        "28": "Seleccione el grupo de horarios.",
+        "29": "Seleccione un grupo en el primer paso y continúe.",
+        "30": "Los Widgets de música solo se pueden programar en un reproductor de música, por lo tanto, no puede tener el widget de música y otro contenido en el mismo horario.",
+        "31": "Los widgets de música solo se pueden programar en un reproductor de música, por lo tanto, no puede tener el reproductor de música y otro dispositivo en el mismo horario.",
+        "32": "Solo se permiten los horarios de \"día completo\" o \"diario\" para el dispositivo de elección de música.",
+        "33": "Este grupo no tiene ningún dispositivo.",
+        "34": "Esta búsqueda no tiene ningún dispositivo asignado o uno de sus dispositivos no tiene un diseño de marco en el rango de fechas del programa.",
+        "35": "",
+        "36": "El grupo al que se han asignado las programaciones seleccionadas no contiene el permiso correspondiente. Los horarios seleccionados no se pueden guardar."
+      }
+    },
+    "p_ag": {
+      "1": "Asignar a",
+      "m1": "El horario se puede asignar a un grupo público o a un grupo que tiene seleccionados todos los permisos del programa.",
+      "m2": "El grupo de programación no existe. El siguiente usuario lo ha eliminado de su servidor: {{uName}}"
+    },
+    "p_as": {
+      "1": "Nombre del Horario",
+      "2": "Restricción en el marco",
+      "m1": "Hay algunas restricciones con el marco en el que se asignan los horarios seleccionados. Los elementos seleccionados no se pueden asignar a esos programas. A continuación se muestra la lista de dichos horarios con los detalles de la restricción:"
+    },
+    "info": {
+      "s1": "Los horarios son básicamente las reglas por las cuales el contenido se muestra en la pantalla. Un horario definirá qué contenido de la biblioteca de contenido se mostrará en qué pantallas, en qué momento y por cuánto tiempo.",
+      "us1": "Las programaciones creadas por un usuario, que no tiene permiso de aprobación, se clasifican como Programaciones no aprobadas. Estos horarios no serán visibles en Dispositivos hasta que sea aprobado por el administrador o un usuario con derechos de aprobación.",
+      "is1": "Hay cinco pasos de un horario. Si alguno de los pasos no se asiste, o se vuelve incompleto debido a alguna acción del usuario (como la supresión del contenido del dispositivo asociado al horario) el horario se convierte en Incompleto y se mueve a la pestaña Horario Incompleto.",
+      "es1": "Los horarios cuyo intervalo de fechas expira, se vencen y se mueven a la pestaña Horarios Expirados.",
+      "isV1": "Introducción a la programación"
+    }
+  },
+  "fl": {
+    "tab": {
+      "1": "Planes de marco",
+      "2": "Asignaciones de diseño de trama",
+      "3": "Planes de marco no aprobado",
+      "4": "Planes de marco incompletos",
+      "5": "Biblioteca"
+    },
+    "tool": {
+      "1": "¿Qué es {{htmlTagO}}diseño de marcos{{htmlTagC}}?",
+      "2": "Vea el tutorial de vídeo de {{htmlTagO}}diseño de marco{{htmlTagC}}.",
+      "3": "¿Qué es la {{htmlTagO}}asignación de diseño de marco{{htmlTagC}}?",
+      "4": "¿Qué es un {{htmlTagO}}diseño de marco no aprobado{{htmlTagC}}?",
+      "5": "¿Qué es el {{htmlTagO}}diseño incompleto del marco{{htmlTagC}}?",
+      "6": "Asignación caducado"
+    },
+    "btn": {
+      "1": "Crear nuevo diseño de marco",
+      "2": "Agregar marco",
+      "3": "Nombre y Resolución",
+      "4": "Diseño del Planes del marco",
+      "5": "Asignar",
+      "7": "Horario",
+      "8": "Umbral del marco",
+      "11": "Eliminar categoría",
+      "12": "Utilizar el diseño del marco",
+      "13": "Umbral y Restricciones",
+      "14": "Umbral del marco",
+      "15": "Restricciones"
+    },
+    "brief": {
+      "1": "Diseño de marco seleccionado",
+      "2": "Asignación de diseño de marco seleccionado",
+      "3": "Asignaciones",
+      "4": "Nombre del diseño del marco",
+      "5": "Número de marcos",
+      "6": "Contagem de uso",
+      "1s": "Diseños de marco seleccionados",
+      "2s": "Asignaciones de diseño de marcos seleccionadas"
+    },
+    "label": {
+      "1": "Lista de asignaciones"
+    },
+    "body": {
+      "1": "No se puede hacer este proceso.",
+      "2": "Diseño de marcos con asignación",
+      "3": "Diseño del marco",
+      "4": "Asignación",
+      "5": "Editar diseño del marco"
+    },
+    "msg": {
+      "1": "Todavía no tienes ningún diseño de marco. Cuando creas algo, aparecerán aquí.",
+      "2": "Todavía no tienes ninguna asignación de diseño de marco.",
+      "3": "No tiene ningún diseño de marco no aprobado.",
+      "4": "No tienes ningún diseño incompleto del marco.",
+      "5": "No hay ningun diseño de marco disponible.",
+      "6": "Ningun diseño de marco disponible en esta categoría.",
+      "7": "¿Estás seguro de que quieres hacer una copia del diseño de marco seleccionado?",
+      "8": "¿Está seguro de que desea desautorizar el diseño de trama seleccionado?",
+      "9": "¿Está seguro de que desea eliminar el diseño de marco seleccionado?",
+      "10": "El diseño de marcos seleccionado esta asignado a algún dispositivo. No puede desautorizar un diseño de marco asignado. Por favor elimine primero la asignación.",
+      "11": "El diseño de marcos seleccionado esta asignado a algún dispositivo. No se puede eliminar un diseño de marco asignado. Por favor elimine primero la asignación.",
+      "12": "El diseño del marco se moverá a la pestaña {{htmlTagO}}Diseños de marcos{{htmlTagC}}. A continuación, puede asignar este diseño de marco a sus dispositivos. ¿Estás seguro de que quieres usar este diseño de marco?",
+      "13": "La asignación de diseño de marcos seleccionada no puede ser aprobada debido a que uno de sus dispositivos tiene una nueva asignación en el mismo intervalo de fechas.",
+      "14": "¿Está seguro de que desea eliminar la asignación de diseño de marco seleccionada?",
+      "15": "¿Está seguro de que desea suprimir la Asignación de diseño de marco seleccionada?",
+      "16": "¿Estás seguro de que quieres eliminar la categoría?",
+      "7s": "¿Está seguro de que desea hacer una copia de los diseños de marcos seleccionados?",
+      "8s": "¿Está seguro de que desea desautorizar los diseños de marcos seleccionados?",
+      "9s": "¿Está seguro de que desea eliminar los diseños de marcos seleccionados?",
+      "10s": "Los diseños de marco seleccionados estan asignados a algunos dispositivos. No puede desautorizar un diseño de marco asignado. Por favor elimine primero las asignaciones.",
+      "11s": "Los diseños de marco seleccionados estan asignados a algunos dispositivos. No se puede eliminar un diseño de marco asignado. Por favor elimine primero las asignaciones.",
+      "12s": "Los Diseños de marcos se moverán a la pestaña {{htmlTagO}}Diseños de marcos{{htmlTagC}}. A continuación, puede asignar estos diseños de trama a sus dispositivos. ¿Está seguro de que desea utilizar estos diseños de marco?",
+      "14s": "¿Está seguro de que desea eliminar las asignaciones de diseño de marco seleccionadas?",
+      "15s": "¿Está seguro de que desea desaprobar las asignaciones de diseño de marco seleccionadas?"
+    },
+    "p_cfl": {
+      "tab": {
+        "1": "Frame Info",
+        "2": "Capas"
+      },
+      "label": {
+        "1": "Seleccionar orientación",
+          "1.1": "Paisaje",
+          "1.2": "Retrato",
+        "2": "Seleccione la resolución",
+          "2.1": "WxH",
+        "3": "Agregar a la biblioteca",
+        "4": "Seleccionar una categoría",
+        "5": "Nombre de la nueva categoría",
+        "6": "Dibujar diseño de marco",
+        "7": "Encajar a la cuadricula",
+        "8": "X (Izquierda)",
+        "9": "Y (Parte superior)",
+        "10": "Modo de relleno",
+        "11": "Ajustar",
+        "12": "Estirar",
+        "13": "Cortar",
+        "14": "¿Ayuda?",
+        "15": "Diseño de fondo",
+        "17": "Ok, no ahorres!",
+        "18": "¡Ahórralo de todos modos!",
+        "19": "Establecer predeterminado",
+        "20": "Parte superior",
+        "21": "Medio",
+        "22": "Fondo",
+        "23": "Ajuste automático"
+      },
+      "msg": {
+        "1": "Por favor roporcione el nombre del diseño de marco.",
+        "2": "Por favor proporcione una resolución válida del diseño de marco.",
+        "3": "Por favor, seleccione la categoría, o proporcione un nuevo nombre de categoría.",
+        "4": "El nombre de la categoría ya existe.",
+        "5": "¿Está seguro de que desea eliminar el marco seleccionado?",
+        "6": "Por favor, seleccione un marco para ver los detalles.",
+        "7": "Este objeto es público. No se puede cambiar el permiso de un elemento público.",
+        "8": "No tienes permiso para cambiar este marco.",
+        "9": "El diseño del marco aún no tiene ningún marco agregado. Un diseño de marco sin ningún marco se considerará incompleto y no podrá asignarlo a ningún dispositivo."
+      }
+    },
+    "p_assign": {
+      "body": {
+        "1": "Asignar nombre",
+        "2": "Asignar umbral y restricciones",
+          "2.1": "Asignar umbral",
+          "2.2": "Asignar restricciones",
+        "3": "Nombre del marco",
+        "4": "Umbral de bucle",
+        "5": "Duración del contenido",
+        "6": "Conteo de contenido",
+        "7": "Carpeta de contenido",
+        "8": "Grupos de Usuarios",
+        "9": "Todas las carpetas",
+        "10": "Seleccione la carpeta",
+        "11": "Seleccionar",
+        "12": "Asignar nombre y resolución"
+      },
+      "label": {
+        "1": "Período de asignación"
+      },
+      "ph": {
+        "1": "Introducir nombre de asignación de diseño"
+      },
+      "msg": {
+        "1": "Por favor proporcione el nombre de Asignación de diseño de trama.",
+        "2": "Proporcione el intervalo de fechas.",
+        "3": "Los dispositivos no están libres en este intervalo de tiempo.",
+        "4": "Este dispositivo ya tiene un diseño asignado en el rango de tiempo seleccionado.",
+        "5": "Hay dispositivos/grupos asignados a esta asignación que no son accesibles para usted. Puede continuar sin seleccionar nuevo dispositivo/grupo.",
+        "6": "Este grupo de dispositivos no tiene ningún dispositivo, o contiene un dispositivo que ya tiene un diseño asignado en el intervalo de tiempo seleccionado.",
+        "7": "No tienes ninguna carpeta.",
+        "8": "Las asignaciones de diseño de trama marcadas como siempre se aplicarán en los dispositivos durante 100 años."
+      }
+    },
+    "p_group": {
+      "1": "Seleccionar grupos de usuarios",
+      "2": "Grupo seleccionado",
+      "2s": "Grupos Seleccionados",
+      "m1": "No tienes ningún grupo de usuarios."
+    },
+    "info": {
+      "fl1": "Los diseños de marcos son sólo un conjunto de diseños que definen cómo se divide una pantalla en particular de modo que se pueda utilizar una pantalla para mostrar contenido único en cárea.ada  En cada diseño, la pantalla se divide en marcos. Cada marco puede tener horarios independientes para que cada pantalla pueda mostrar contenido único.",
+      "fla1": "Asignar el diseño de marco en un dispositivo para un intervalo de especificaciones de las fechas Asignación de Diseño de Marco. La pantalla se divide en marcos asociados de marcos de diseno para ese período de tiempo.",
+      "ufl1": "Los diseños de marco creados por un usuario, que no tiene permiso de aprobación, se clasifican como diseños de marco no aprobados. Estos diseños de marco no se pueden asignar a dispositivos hasta que sean aprobados por el administrador o el usuario con derechos de aprobación.",
+      "ifl1": "Si no hay ningun marco en el diseño de marco se la considera incompleta y se traslada a la ficha diseño de marco incompletos.",
+      "v1": "Introducción a Marcos"
+    }
+  },
+  "d": {
+    "tab": {
+      "1": "Dispositivos",
+      "2": "Grupos",
+      "3": "Etiquetas",
+      "4": "Identificar",
+        "4.1": "Enviar solicitud de identificación",
+      "5": "Búsqueda guardada"
+    },
+    "tool": {
+      "1": "En línea",
+      "2": "Desconectado",
+      "3": "¿Cómo agregar un {{htmlTagO}}dispositivo{{htmlTagC}}?",
+      "4": "Ver tutorial de vídeo del {{htmlTagO}}dispositivo{{htmlTagC}}.",
+      "5": "¿Qué es un {{htmlTagO}}grupo de dispositivos{{htmlTagC}}?",
+      "6": "¿Qué es la {{htmlTagO}}etiqueta del dispositivo{{htmlTagC}}?",
+      "7": "Eliminar etiquetas",
+      "8": "Slide",
+        "8.1": "Versión de diapositiva no más reciente",
+      "9": "Vigilante",
+        "9.1": "Versión Watcher no más reciente",
+      "10": "Poco espacio en el disco",
+      "11": "Borrar historial",
+      "12": "Mostrar Descargar"
+    },
+    "body": {
+      "1": "{{reman}} Licencias restantes",
+      "2": "Editar dispositivo",
+      "3": "Asignaciones de diseño de trama",
+      "4": "Biblioteca de diseño de marco",
+      "5": "¿Qué son las etiquetas?",
+      "6": "Lista de contenido programada en el dispositivo",
+      "7": "Lista de diseño del marco",
+      "8": "Lista de etiquetas",
+      "9": "Registros del dispositivo",
+      "10": "Último ping",
+      "11": "Descargar Device Log",
+      "12": "Dispositivo / etiqueta seleccionados",
+      "13": "Enviado"
+    },
+    "btn": {
+      "1": "Agregar nuevo dispositivo",
+      "2": "Crear nuevo grupo",
+      "3": "Crear una nueva etiqueta",
+      "4": "Asignar nombre",
+      "5": "Asignar diseño del marco",
+      "6": "Asignar etiquetas",
+      "7": "Preestrenar",
+      "8": "Play List",
+      "9": "Seleccionar diseño de marco / asignación",
+      "10": "Seleccionar dispositivos similares",
+      "11": "Vista previa del dispositivo",
+      "12": "Actualizar la captura de pantalla",
+      "13": "Seleccionar dispositivos / etiquetas"
+    },
+    "brief": {
+      "1": "Grupo de dispositivos seleccionado",
+        "1s": "Grupos de dispositivos seleccionados",
+      "2": "Resolución de la pantalla",
+      "3": "Actualización automática del cliente",
+      "4": "Reiniciar Offline",
+        "4.1": "Si esta configuración está activada, el dispositivo se reiniciará si está sin conexión durante 1 hora.",
+      "5": "Registros",
+      "6": "Tags",
+      "7": "Adaptadores",
+      "8": "Identidad",
+      "9": "Versión del cliente",
+      "10": "Estado",
+      "11": "IP",
+        "11.1": "IP local",
+        "11.2": "IP público",
+      "12": "Uso de datos",
+      "13": "Control del dispositivo",
+      "14": "LAN accesible",
+      "15": "Mac",
+      "16": "Nombre de la computadora",
+      "17": "Captura de pantalla desactivada",
+      "18": "Ultima actualizacion en",
+      "19": "Configuración",
+      "20": "Recherche sauvegardée sélectionnée"
+    },
+    "label": {
+      "1": "Tipo de dispositivo",
+        "1.1": "Media Player",
+        "1.2": "Geo Fence",
+        "1.3": "Dispositivo virtual",
+        "1.4": "Reproductor de música",
+      "2": "ID de dispositivo",
+        "2.1": "ID de dispositivo (clave)",
+        "2.2": "Se aceptan alfabetos, números, guiones y dos puntos",
+      "3": "Añadir nueva etiqueta",
+      "4": "Nombre de etiqueta",
+      "5": "Etiqueta disponible",
+        "5s": "Etiquetas disponibles",
+      "6": "Etiqueta asignada",
+        "6s": "Etiquetas asignadas",
+      "7": "Guardar búsqueda",
+      "8": "Lista de Búsquedas"
+    },
+    "ph": {
+      "1": "Asignar un nombre significativo al dispositivo",
+      "2": "Asignar un nombre significativo al grupo",
+      "3": "Descargado {{no}}%"
+    },
+    "p_dc": {
+      "1": "Reiniciar dispositivo",
+      "2": "El último reinicio solicitado en",
+      "3": "Reinicio reconocido en",
+      "4": "Esperando reiniciar.",
+      "5": "Reiniciar",
+      "6": "Relanzar",
+        "6.1": "Esperando el relanzamiento",
+
+      "7":"Esperando la descarga.",
+      "8": "Relanzar la aplicación",
+        "8.1": "Último relanzamiento solicitado en",
+        "8.2": "Relanzamiento reconocido en",
+      "9":"Descarga fresca",
+        "9.1":"Última descarga solicitada en",
+        "9.2":"Descargar reconocido en",
+
+      "10": "Transición entre contenido",
+        "10.1": "Fade In/Out",
+        "10.2": "ninguno",
+      "11": "Visualización del cliente en la parte superior más",
+      "12": "Pantalla en blanco en el dispositivo",
+
+      "m1": "¿Seguro que quieres reiniciar el dispositivo?",
+      "m2": "¿Seguro que quieres reiniciar la aplicación?",
+      "m3": "Esta acción eliminará todo el contenido descargado del dispositivo e iniciará una nueva descarga. ¿Estás seguro de que deseas iniciar una nueva descarga?",
+      "m4": "El reproductor de música es un dispositivo de terceros. No se puede controlar desde Hub.",
+      "m5": "¿Estás seguro de que deseas cambiar la transición entre el contenido?"
+    },
+    "p_du": {
+      "1": "Uso total de datos hasta la fecha",
+        "1.1": "Desde",
+      "2": "Esta semana",
+      "3": "Este mes",
+      "4": "Últimas dos semanas",
+      "5": "Dos meses pasados",
+      "6": "Filtro personalizado",
+      "7": "Calcular",
+      "8": "Uso total de datos"
+    },
+    "p_dus": {
+      "1": "Configuración de uso de datos",
+      "2": "Cargar las capturas de pantalla",
+      "3": "Intervalo de carga de capturas de pantalla",
+      "4": "Restriccion de descargo",
+      "5": "Intervalo de tiempo permitido para la descarga",
+      "6": "Anular el tamaño del archivo",
+      "7": "Los archivos dentro del tamaño dado se descargarán en cualquier momento.",
+      "8": "Frecuencia de sondeo",
+      "3.1": "Inválido",
+      "m1": "El intervalo de carga de la captura de pantalla no debe ser inferior a 2 minutos.",
+      "m2": "La hora de inicio no debe ser igual o mayor que la hora de finalización.",
+      "m3": "Proporcione el tamaño del archivo para Anular.",
+      "m4": "La frecuencia de sondeo no debe ser inferior a 30 segundos."
+    },
+    "p_mac": {
+      "1": "Editar ID de dispositivo",
+      "m1": "Por favor, proporcionar un nuevo ID de dispositivo."
+    },
+    "p_res": {
+      "1": "Cambiar resolución de pantalla",
+      "b1": "Aplicar",
+      "m1": "No hay información sobre las resoluciones aplicables de la pantalla. Encienda el dispositivo y asegúrese de que esté conectado a internet.",
+      "m2": "Ha cambiado la resolución en {{dateTime}} que aún no se aplica. Puede esperar o puede aplicar una nueva resolución."
+    },
+    "p_config": {
+      "1": "ID de configuración",
+      "2": "Fecha de inicio",
+      "3": "Hora de finalización",
+      "4": "Fecha de Creación",
+      "5": "Fecha de carga",
+      "m1": "Aún no tienes ninguna configuración.",
+      "m2": "¿Seguro que quieres eliminar la configuración seleccionada?"
+    },
+    "p_similar": {
+      "1": "Por favor, elija la similitud",
+      "2": "Mismo grupo de dispositivos",
+      "3": "Cualquier grupo común",
+      "4": "Fecha de adición",
+      "5": "Sistema operativo",
+      "6": "Resolución de la pantalla",
+      "7": "Restriccion de descargo"
+    },
+    "p_delete": {
+      "1": "Esta acción no se puede deshacer. Esto eliminará permanentemente el dispositivo seleccionado, sus informes, capturas de pantalla, registros y contenido del reproductor multimedia. Por favor, confirme si entiende las consecuencias.",
+        "1s": "Esta acción no se puede deshacer. Esto eliminará permanentemente los dispositivos seleccionados, sus informes, capturas de pantalla, registros y contenido del reproductor multimedia. Por favor, confirme si entiende las consecuencias.",
+      "2": "¿Seguro de que desea eliminar el grupo de dispositivos seleccionado?",
+        "2s": "¿Seguro que desea eliminar los grupos de dispositivos seleccionados?",
+      "3": "¿Está seguro de que desea eliminar la etiqueta de dispositivo seleccionada?",
+      "4": "Sí, borre el dispositivo",
+        "4s": "Sí, borre los dispositivos",
+      "5": "¿Seguro que quieres eliminar la solicitud de identificación seleccionada?"
+    },
+    "p_dg": {
+      "1": "Grupo de Dispositivos",
+      "2": "Editar grupo",
+      "3": "Asignar nombre de grupo",
+      "4": "Importar Excel",
+      "5": "Borrar lista importada",
+      "m1": "Por favor, proporcione el nombre del grupo de dispositivos.",
+      "m2": "El grupo de dispositivos ya existe.",
+      "m3": "El grupo de dispositivos no puede tener un dispositivo Music Player con otro tipo de dispositivo.",
+      "m4": "Los dispositivos seleccionados no se pueden asignar a este grupo / etiqueta porque los dispositivos no tienen un diseño de marco asignado o el rango de fechas de su asignación de diseño de cuadro no está dentro del rango de fechas del programa asignado.",
+      "m5": "El nombre del grupo ya existe Por favor, intenta con otro nombre.",
+      "m6": "La siguiente lista de dispositivos se importa desde la hoja de Excel cargada.",
+      "m7": "No se encontró ningún dispositivo coincidente.",
+      "m8": "Por favor proporcione el archivo."
+    },
+    "p_adg": {
+      "1": "Agregar dispositivo al grupo",
+      "m1": "Todavía no tienes ningún grupo de dispositivos accesible.",
+      "m2": "Por favor, crear un nuevo grupo de dispositivos."
+    },
+    "p_tag": {
+      "1": "Actualizar etiqueta",
+      "m1": "Por favor, proporcione el nombre de la etiqueta.",
+      "m2": "La etiqueta ya existe.",
+      "m3": "Solo se puede agregar un tipo similar de dispositivos a una etiqueta."
+    },
+    "msg": {
+      "1": "Todavía no tienes ningún dispositivo. Cuando añadas algo, aparecerán aquí.",
+      "2": "Todavía no tienes ningún grupo de dispositivos. Cuando creas algo, aparecerán aquí.",
+      "3": "Todavía no tienes ninguna etiqueta de dispositivo. Cuando creas algo, aparecerán aquí.",
+      "4": "Introduzca el ID de dispositivo que se muestra en la pantalla de señalización.",
+      "5": "El Id de dispositivo ya existe.",
+      "6": "El nombre del dispositivo ya existe.",
+      "7": "Por favor, cree una Geo Fence para el dispositivo.",
+      "8": "¿Estás seguro de que quieres eliminar la Geo Fence seleccionada?",
+      "9": "Algunos de los widgets no son compatibles con el modo de vista previa.",
+      "10": "No hay contenido programado en este dispositivo.",
+      "11": "Proporcione un ID de dispositivo válido.",
+      "12": "El dispositivo(s) añadido al grupo de dispositivos {{deviceGroupName}} requiere que se revise un cronograma y se seleccione el marco correcto. Estos horarios se marcarán con un icono {{icon}} en la lista de programación, Por favor, pídale al administrador del servidor que los modifique y siga todos los pasos.",
+      "13": "El dispositivo(s) añadido al grupo de dispositivos {{deviceGroupName}} requiere que se revisen los horarios siguientes y se selecciona el marco correcto:",
+      "14": "El dispositivo(s) añadido a la etiqueta de dispositivo {{deviceTagName}} requiere que se revisen algunos esquemas y se selecciona el marco correcto. Estos horarios se marcarán con un icono {{icon}} en la lista de programación, Por favor, pídale al administrador del servidor que los modifique y siga todos los pasos.",
+      "15": "El dispositivo(s) añadido a la etiqueta de dispositivo {{deviceTagName}} requiere que se revisen las siguientes planificaciones y se selecciona el marco correcto:",
+      "16": "Estos horarios se marcarán con un icono {{icon}} en la lista de programación, Por favor edítelos y siga todos los pasos.",
+      "17": "Seleccione dispositivo, grupo o etiqueta.",
+      "18": "Enviado Identificar el historial de solicitudes no encontrado.",
+      "19": "Ningún dispositivo ha reconocido la solicitud de identificación todavía.",
+      "20": "No hay ningún dispositivo disponible en el servidor.",
+      "21": "Los grupos / etiquetas seleccionados no tienen ningún dispositivo.",
+      "22": "Aún no tienes ninguna búsqueda guardada. Cuando crees algo, aparecerán aquí.",
+      "23": "Los elementos seleccionados tienen programaciones asignadas. Eliminar estos elementos puede hacer que esos horarios sean incompletos. ¿Seguro que quieres eliminar los elementos seleccionados?",
+      "24": "Seleccione al menos un Dispositivo.",
+      "25": "Los siguientes horarios quedarán incompletos si guarda los cambios realizados en el grupo de búsqueda:",
+        "25.1": "¿Estás seguro de que quieres guardarlo?",
+        "25.2": "Hay algunos horarios que quedarán incompletos si guarda los cambios que realizó en el grupo de búsqueda."
+    },
+    "info": {
+      "1": "Adición de un nuevo dispositivo al servidor",
+      "d1": "Hay dos maneras de registrar el dispositivo (reproductor de medios). Através del app del cliente o mediante el web admin en el navegador.",
+      "d2": "A través de Slide",
+      "d2.1": "Cuando enciende el dispositivo, le mostrará el indicador de inicio de sesión. Inicie sesión allí con un nombre de usuario y una contraseña válidos. Seleccione el servidor y asigne un nombre significativo al dispositivo.",
+      "d3": "A través de Hub",
+      "d3.1": "Haga clic en el botón Agregar nuevo dispositivo en la ficha Dispositivos. Proporcione el Id del dispositivo que se muestra en la pantalla del dispositivo y asigne un nombre significativo al dispositivo.",
+      "dg1": "Al programar el contenido, puede seleccionar los grupos de dispositivos a los que planificar el contenido. Podrá utilizar estos grupos de dispositivos rápidamente.",
+      "dt1": "Por favor asigne las etiquetas que identifican la ubicación o el propósito de este dispositivo. Estas etiquetas se utilizan más tarde en el proceso de programación.",
+      "dt2": "Al programar contenido, necesitará seleccionar qué dispositivos programar el contenido. Podrá utilizar estas etiquetas para encontrar rápidamente el dispositivo que coincida con sus criterios.",
+      "dt3": "Por ejemplo, supongamos que tiene tres dispositivos. Para el primer dispositivo, asignó la etiqueta 'Ontario', 'Café' y 'Escuela. Para el segundo dispositivo, asigna 'Ontario', 'Lobby' y 'Retail'. Para el tercer dispositivo, asigna 'Vancouver', 'Café' y 'Escuela'. Ahora imaginemos que hay muchos dispositivos y desea programar el contenido de los dispositivos en Ontario Cafes. Utilizará las etiquetas para incluir dispositivos con etiquetas 'Ontario' y 'Café'. Digamos que usted quiere encontrar todos los cafés no en Vancouver, entonces, se incluyen etiquetas 'Cafe' y exclui etiqueta 'Vancouver'."
+    }
+  },
+  "u": {
+    "tab": {
+      "1": "Usuarios activos",
+      "2": "Grupos de Usuarios",
+      "3": "Usuarios bloqueados",
+      "4": "Roles y Derechos"
+    },
+    "tool": {
+      "1": "¿Qué es {{htmlTagO}}Grupo de usuarios{{htmlTagC}}?",
+      "2": "¿Qué es {{htmlTagO}} Usuario bloqueado {{htmlTagC}}?",
+      "3": "Ver video tutorial de {{htmlTagO}}usuario{{htmlTagC}}.",
+      "4": "Vea las tutoriales de vídeo sobre las {{htmlTagO}}funciones de usuario{{htmlTagC}}.",
+      "5": "Ver vídeo tutorial del {{htmlTagO}}grupo de usuarios{{htmlTagC}}."
+    },
+    "btn": {
+      "1": "Invitar nuevo usuario",
+      "2": "Crear nuevo grupo de usuarios",
+      "3": "Crear nueva función",
+      "4": "Invitar",
+      "5": "Envío de invitación",
+      "6": "Invitar otra vez",
+      "7": "Cambio",
+      "8": "Bloquear",
+      "9": "Desbloquear",
+      "10": "Seleccionar Usuarios"
+    },
+    "brief": {
+      "1": "Usuario seleccionado",
+      "2": "Grupo de usuarios seleccionado",
+      "3": "Grupo",
+      "4": "Oficio",
+      "5": "Último acceso",
+      "6": "Enviar contraseña",
+      "7": "Cuenta de usuario",
+      "8": "Invitado em",
+      "9": "Invitado por",
+      "1s": "Usuarios seleccionados",
+      "2s": "Grupos de usuarios seleccionados"
+    },
+    "body": {
+      "1": "Lista de Usuarios",
+      "2": "Oficios",
+      "3": "Derechos",
+      "4": "Registros de usuario",
+      "5": "La contraseña se enviará al siguiente correo electrónico",
+      "6": "Usuario bloqueado",
+      "7": "Administrador no se puede agregar a un grupo.",
+      "8": "Tú",
+      "9": "Gerente",
+      "10": "Ejecutivo"
+    },
+    "p_invite": {
+      "1": "editar usuario",
+      "2": "Asignar rol",
+      "3": "Administrador",
+      "4": "Funciones predefinidas",
+      "5": "Las funciones personalizadas no están disponibles. Puede crear su propia función y asignarla al usuario.",
+      "6": "No hay grupo disponible.",
+      "7": "Invitar al usuario nuevamente",
+      "8": "Seleccionar grupo de usuarios",
+      "5.1": "Crear función de usuario",
+      "m1": "El correo de invitación se enviará en el idioma seleccionado. Además, si el usuario no está registrado con {{brand}}, el idioma seleccionado será su idioma predeterminado.",
+      "m2": "Este es un usuario de L Squared Support Coordinator, no puede cambiar su rol."
+    },
+    "p_pgroup": {
+      "1": "Cambiar grupo principal",
+      "2": "Seleccionar grupo"
+    },
+    "p_group": {
+      "1": "Editar grupo de usuarios",
+      "2": "Asignar nombre de grupo",
+      "3": "Usuarios disponibles",
+      "ph1": "Asignar un nombre significativo al grupo de usuarios",
+      "m1": "Por favor, proporcione el nombre del grupo de usuarios.",
+      "m2": "Grupo de usuarios ya existe."
+    },
+    "p_delete": {
+      "1": "Sí, elimine el grupo de usuarios",
+      "1s": "Sí, eliminar los grupos de usuarios"
+    },
+    "p_role": {
+      "1": "Editar rol",
+      "2": "Nombre de rol",
+      "3": "Asignar derechos",
+      "4": "Derechos de contenido",
+      "5": "Derechos de Plantilla",
+      "6": "Derechos del dispositivo",
+      "7": "Derechos del horario",
+      "8": "Derechos de los usuarios",
+      "9": "Derechos de diseño del marco",
+      "10": "Otros Derechos",
+      "11": "Aprobación",
+      "4.1": "Agregar Contenido",
+      "4.2": "Editar contenido",
+      "4.3": "Eliminar contenido",
+      "4.4": "Crear widget",
+      "4.5": "Editar Widget",
+      "4.6": "Eliminar widget",
+      "4.7": "Crear Carpeta",
+      "4.8": "Editar carpeta",
+      "4.9": "Eliminar carpeta",
+      "4.10": "Movimiento",
+      "4.11": "Archivo",
+      "4.12": "Añadir al directorio principal",
+      "4.13": "Editar en el directorio principal",
+      "4.14": "Eliminar del directorio principal",
+      "6.1": "Añadir dispositivo",
+      "6.2": "Editar dispositivo",
+      "6.3": "Eliminar dispositivo",
+      "6.4": "Añadir grupo",
+      "6.5": "Editar grupo",
+      "6.6": "Eliminar grupo",
+      "6.7": "Añadir etiqueta",
+      "6.8": "Editar etiqueta",
+      "6.9": "Eliminar etiqueta",
+      "6.10": "Control del dispositivo",
+      "6.11": "Registrar / Editar dispositivo en el mapa",
+      "7.1": "Establecer contenido a pantalla completa",
+      "8.1": "Invitar",
+      "8.2": "Editar",
+      "8.3": "Bloquear",
+      "8.4": "Añadir rol",
+      "8.5": "Editar rol",
+      "8.6": "Eliminar rol",
+      "9.1": "Establecer restricciones",
+      "9.2": "Editar asignación",
+      "9.3": "Eliminar asignación",
+      "10.1": "Mensaje de urgencia",
+      "10.2": "Informes",
+      "10.3": "Servicio creativo",
+      "10.4": "Facturación y Pago",
+      "m1": "El rol con el mismo nombre ya existe. Por favor, intentar otro nombre.",
+      "m2": "Proporcione un nombre para la función.",
+      "m3": "Por favor, seleccione al menos un derecho."
+    },
+    "msg": {
+      "1": "No hay usuarios activos disponibles.",
+      "2": "Todavía no tienes ningún grupo de usuarios. Cuando creas algo, aparecerán aquí.",
+      "3": "No tienes ningún usuario bloqueado.",
+      "4": "No hay derechos de roles disponibles.",
+      "5": "El usuario ya existe en este servidor.",
+      "6": "Proporciona una identificación de correo electrónico.",
+      "7": "El ID de correo electrónico no es válido.",
+      "8": "Seleccione un rol.",
+      "9": "¿Está seguro de que desea bloquear el usuario seleccionado?",
+      "10": "¿Está seguro de que desea eliminar el usuario seleccionado?",
+      "11": "Esta acción no se puede deshacer. Esto eliminará de forma permanente el grupo de usuarios seleccionado. El dispositivo asociado, el contenido, el horario, etc se convertirá público. Por favor, confirme si entiende las consecuencias.",
+      "12": "¿Está seguro de que desea eliminar la función seleccionada?",
+      "13": "Esta función no se puede eliminar. Hay usuarios asignados a esta función. Por favor cambie sus roles primero.",
+      "14": "Todavía no tiene ningún grupo de usuarios accesible. Por favor, cree un nuevo grupo de usuarios.",
+      "9s": "¿Está seguro de que desea bloquear los usuarios seleccionados?",
+      "10s": "¿Está seguro de que desea eliminar los usuarios seleccionados?",
+      "11s": "Esta acción no se puede deshacer. Esto eliminará de forma permanente los grupos de usuarios seleccionados. Su dispositivo asociado, contenido, horario, etc se convertirá en público. Por favor, confirme si entiende las consecuencias."
+    },
+    "info": {
+      "ug1": "Grupos de usuarios es una forma para que los usuarios dentro de un servidor oculten datos entre sí. Esto se debe a que un departamento de marketing que utiliza parte del sistema para mostrar contenido de marketing no tiene que ver el contenido de mensajería corporativa utilizado por el departamento de recursos humanos.",
+      "bu1": "El administrador del servidor puede bloquear a un usuario para acceder a su servidor. Una vez bloqueado, ese usuario no puede iniciar sesión en ese servidor específico.",
+      "uv1": "Agregando usuarios al servidor",
+      "urv1": "Uso de funciones para controlar el acceso",
+      "ugv1": "Restringir y compartir contenido mediante grupos de usuarios"
+    }
+  },
+  "em": {
+    "tab": {
+      "1": "Enviar mensaje",
+      "2": "Mensajes enviados",
+      "3": "Configurasiones"
+    },
+    "tool": {
+      "1": "¿Qué es un {{htmlTagO}}mensaje de emergencia{{htmlTagC}}?"
+    },
+    "body": {
+      "1": "Mensaje",
+      "2": "Muerto",
+      "3": "Activo",
+      "4": "En cola",
+      "5": "Estado del acuse de recibo",
+      "6": "Se acabó el tiempo",
+      "7": "Admitido",
+      "8": "Pendiente",
+      "9": "Título de la imagen",
+      "10": "Agregar mensaje predefinido",
+      "11": "Editar mensaje enviado",
+      "12": "Enviado por"
+    },
+    "label": {
+      "1": "Mensaje predefinido",
+      "2": "Mensaje personalizado",
+        "2.1": "Si también se selecciona un mensaje predefinido, este mensaje personalizado se agregará al final del mensaje predefinido.",
+      "4": "Predefinido",
+      "5": "¿Cuándo mostrar?",
+        "5.1": "Inmediatamente",
+      "6": "Todos los dispositivos",
+      "7": "Dispositivo asignado",
+        "7s": "Dispositivos asignados",
+      "8": "Fondo intermitente",
+      "9": "Mensaje de fondo",
+      "10": "Mensaje de texto",
+      "11": "Fuente del mensaje",
+      "12": "Texto a voz"
+    },
+    "btn": {
+      "1": "Ver estado",
+      "2": "Eliminar mensaje",
+      "3": "Configuración por defecto",
+      "4": "Cambiar imagen",
+      "5": "Eliminar Imagen"
+    },
+    "ph": {
+      "1": "Seleccionar un mensaje predefinido"
+    },
+    "msg": {
+      "1": "Todavía no tienes ningún dispositivo. El mensaje de emergencia sólo funciona cuando tiene dispositivos para recibir emisiones de emergencia.",
+      "2": "No se emite ningún mensaje de emergencia.",
+      "3": "Por favor proporcione el mensaje.",
+      "4": "Por favor proporcione la Duración.",
+      "5": "Por favor proporcione Cuándo mostrar.",
+      "6": "Por favor seleccione dispositivo o grupo.",
+      "7": "Ningún dispositivo ha reconocido el mensaje de emergencia todavía.",
+      "8": "Por favor proporcione el texto del encabezado.",
+      "9": "Esta imagen aparecerá con el texto del título {{htmlTag}} en la pantalla Mensaje de emergencia. {{htmlTag}} Puede cargar un archivo JPG, GIF o PNG.",
+      "10": "Proporcione un mensaje personalizado.",
+      "11": "¿Seguro que quieres eliminar la imagen del título?",
+      "12": "¿Está seguro de que desea eliminar el mensaje seleccionado?",
+      "13": "¿Está seguro de que desea eliminar la programación de mensajes seleccionados?"
+    },
+    "info": {
+      "1": "En el momento de cualquier emergencia, un usuario con permiso de mensaje de emergencia puede transmitir un mensaje a todos oa los dispositivos seleccionados durante un tiempo específico. El mensaje de emergencia muestra toda la pantalla."
+    }
+  },
+  "r": {
+    "tab": {
+      "1": "Prueba de juego",
+      "2": "Estado del dispositivo",
+      "3": "Saturación del contenido",
+      "4": "Porcentaje online",
+      "5": "Dispositivo fuera de línea"
+    },
+    "tool": {
+      "1": "¿Qué es el informe de {{htmlTagO}}Prueba de Reproducción{{htmlTagC}}?",
+      "2": "¿Qué es el informe de {{htmlTagO}}estado del dispositivo{{htmlTagC}}?",
+      "3": "¿Qué es el informe de {{htmlTagO}}saturación de contenido{{htmlTagC}}?",
+      "4": "¿Qué es el informe de {{htmlTagO}}Porcentaje online{{htmlTagC}}?",
+      "5": "Acortar",
+      "6": "Desenclavar",
+      "7": "Enviar informe a correo electrónico"
+    },
+    "body": {
+      "1": "Seleccione Dispositivo para el informe",
+      "2": "Seleccionar contenido para el informe",
+      "3": "Informe de Prueba de Juego",
+      "4": "Informe de estado del dispositivo",
+      "5": "Informe de saturación de contenido",
+      "6": "Nombre de contenido",
+      "7": "Duración (s)",
+      "8": "Espacio",
+      "9": "Total",
+      "10": "Usado",
+      "11": "Disponible",
+      "12": "Sobre el limite",
+      "13": "Sin umbral"
+    },
+    "label": {
+      "1": "Seleccione fecha",
+      "2": "Intervalo de tiempo",
+      "3": "Todo el dia",
+      "4": "Para",
+      "5": "Longitud del bucle",
+      "6": "Mostrar todos los marcos",
+      "7": "Mostrar marcos sólo con umbral",
+      "8": "Sólo dispositivos en línea",
+      "9": "Dispositivos sin conexión para:"
+    },
+    "ph": {
+      "1": "Ingrese correo electrónico"
+    },
+    "btn": {
+      "1": "Generar informe",
+      "3": "Seleccionar contenido",
+      "4": "Exportar {{format}}"
+    },
+    "msg": {
+      "1": "No se encontrarón archivos.",
+      "2": "Datos no encontrados.",
+      "3": "Datos no disponibles.",
+      "4": "Proporcione el intervalo de tiempo",
+      "5": "Rango de tiempo no válido",
+      "6": "Proporcione longitud de bucle",
+      "7": "Proporcione un intervalo de fechas válido. El rango de fechas no debe ser mayor de 15 días.",
+      "8": "Por favor proporcione horas."
+    },
+    "info": {
+      "pp1": "El informe de contenido muestra básicamente cuándo, dónde y por cuánto tiempo se ha reproducido el contenido. Imagine que tiene anunciantes en su red de anuncios y debe mostrarles cuántas veces se difundió el anuncio o cuánto tiempo se estaba reproduciendo este anuncio, cuántas pantallas y así sucesivamente. Los informes proporcionarán estos datos.",
+      "ds1": "Los informes del dispositivo muestran al usuario durante cuánto tiempo ha estado encendido el dispositivo vs durante cuánto tiempo debería haber estado activado."
+    }
+  },
+  "cs": {
+    "tab": {
+      "1": "Pedidos actuales",
+      "2": "Órdenes completadas",
+      "3": "Facturas",
+      "4": "Detalle de la orden",
+      "5": "Archivos adjuntos",
+      "6": "Factura",
+      "4s": "Detalles de la orden"
+    },
+    "tool": {
+      "1": "¿Qué es el {{htmlTagO}}servicio creativo{{htmlTagC}}?",
+      "2": "Vea el video tutorial de {{htmlTagO}}Servicios Creativos{{htmlTagC}}.",
+      "3": "Cancelar orden",
+      "4": "Formatos permitidos"
+    },
+    "body": {
+      "1": "Solicitado por",
+      "2": "Solicitado em",
+      "3": "Pago",
+      "4": "Cantidad",
+      "5": "Fecha de la factura",
+      "6": "No se ha pagado todavía",
+      "7": "Pagado",
+      "8": "Nuevo orden",
+      "9": "Estimado",
+      "10": "Aceptado",
+      "11": "Rechazado",
+      "12": "Terminado",
+      "13": "Cancelado",
+      "14": "Estimación Actualizada",
+      "15": "Factura generada",
+      "16": "Factura no generada",
+      "17": "Aprobado",
+      "18": "Descripción",
+      "19": "Servicio Creativo"
+    },
+    "btn": {
+      "1": "Solicitar una nueva creatividad",
+      "2": "Aprobar",
+      "3": "Ver facturas",
+      "4": "Hacer el pago",
+      "5": "Impresión"
+    },
+    "p_c": {
+      "body": {
+        "1": "Solicitar servicio creativo",
+        "2": "Por favor, seleccione una de las dos opciones a continuación y describa el proyecto tanto como detalle como sea posible. Si ya tiene bocetos o story boards, adjúntelos a esta solicitud. En la descripción, asegúrese de describir dónde y cómo se mostrará este contenido, quién es el público objetivo, etc. Cuanto más detalle proporcione, mejor será el resultado. También podemos ponernos en contacto con usted para obtener más información."
+      },
+      "label": {
+        "1": "Solicitud de",
+        "2": "Adjuntar archivos"
+      }
+    },
+    "p_d": {
+      "label": {
+        "1": "Id de solicitud",
+        "2": "Fecha de solicitud",
+        "3": "Teléfono de contacto",
+        "4": "Asignado a",
+        "5": "Recuento de archivos adjuntos",
+        "6": "Horas estimadas",
+        "7": "Costo estimado",
+        "8": "Tarifa",
+        "9": "Cronograma"
+      },
+      "btn": {
+        "1": "Aceptar",
+        "2": "Rechazar",
+        "3": "Comentar",
+        "4": "Adjuntar archivo",
+        "5": "Adjuntar nuevo archivo"
+      }
+    },
+    "p_i": {
+      "1": "Teléfono",
+      "2": "Sitio web",
+      "3": "Dirección",
+      "4": "Factura a",
+      "5": "ID de factura",
+      "6": "ID de transacción",
+      "7": "Fecha de orden",
+      "8": "ID del impuesto",
+      "9": "Descripción del Artículo",
+      "10": "Tarifa unitaria ($/hora)",
+      "11": "Horas totales",
+      "12": "Precio",
+      "13": "Coste total",
+      "m1": "Por favor espere, el pago esta en proceso. No actualice el navegador.",
+      "m2": "Su pago se ha realizado. ¡Gracias!",
+      "m3": "Hay algún problema con el pago. Por favor, inténtelo de nuevo más tarde."
+    },
+    "msg": {
+      "1": "No tiene ninguna solicitud de servicio creativo abierta.",
+      "2": "No tiene ninguna solicitud de servicio creativo completada.",
+      "3": "No tiene ninguna factura para la solicitud de servicio creativo.",
+      "4": "Por favor proporcione el título.",
+      "5": "Por favor proporcione el Descripción.",
+      "6": "Por favor Proporcione el número de contacto.",
+      "7": "Por favor proporcione un número de contacto válido.",
+      "8": "No se encontraron archivos adjuntos.",
+      "9": "¿Está seguro de que desea aceptar la estimación de {{rate}}?",
+      "10": "¿Está seguro de que desea rechazar la estimación?",
+      "11": "¿Seguro que quieres cancelar el pedido?",
+      "12": "¿Estás seguro de que quieres completar el pedido?",
+      "13": "¿Seguro que desea eliminar la creatividad seleccionada?",
+      "14": "Sólo el administrador puede aceptar la estimación",
+      "15": "Sólo el administrador puede rechazar la estimación"
+    },
+    "info": {
+      "1": "{{lsn}} diseñadores gráficos crearán imágenes, videos y Plantillas de acuerdo a sus requerimientos para su uso en su red de Red de señalización digital. Simplemente envíe una solicitud aquí y {{lsn}} representante se pondrá en contacto con usted."
+    }
+  },
+  "ms": {
+    "tab": {
+      "1": "Perfil",
+      "2": "Preferencias",
+      "3": "Funciones de servidor",
+      "4": "Cambia la contraseña",
+      "5": "Configuración del servidor",
+      "6": "Coordinadores de apoyo"
+    },
+    "label": {
+      "1": "Nombre de pila",
+      "2": "Apellido",
+      "3": "Foto de perfil",
+      "4": "Usar imagen predeterminada",
+      "5": "Preferencias de usuario",
+      "6": "Vista del dispositivo",
+        "6.1": "Pulgar",
+        "6.2": "Lista",
+      "7": "Panel izquierdo",
+        "7.1": "Expandido",
+        "7.2": "Derrumbado",
+      "8": "Detalles de la posición de la sección",
+      "9": "Redirigir popup en la página",
+      "10": "División",
+        "10.1": "Vertical",
+        "10.2": "Horizontal",
+      "11": "Vista de árbol de la biblioteca de contenido",
+      "12": "Funciones de servidor",
+        "12.1": "Nombre del servidor",
+        "12.2": "Grupos",
+      "13": "Contraseña actual",
+      "14": "Nueva contraseña",
+      "15": "Confirmar contraseña",
+      "16": "Nuevo Email",
+      "17": "Código de verificación",
+        "17.1": "Deberías haber recibido un código de verificación en tu correo electrónico. Proporcionarlo aquí.",
+      "18": "Puede cargar un archivo JPG, GIF o PNG. {{htmlTag}} Preferiblemente dimensión cuadrada. {{htmlTag}} (límite de tamaño de archivo es de {{size}})",
+      "19": "Añadir coordinador de soporte",
+      "20": "Notificar a un nuevo coordinador de soporte"
+    },
+    "btn": {
+      "1": "Cambiar e-mail",
+      "2": "Buscar usuario",
+      "3": "Hacer Coordinador de Apoyo"
+    },
+    "msg": {
+      "1": "Tanto el nombre como el apellido son obligatorios.",
+      "2": "Por favor proporcione un número de contacto válido.",
+      "3": "¿Está seguro de que desea establecer la imagen predeterminada?",
+      "4": "Esta acción iniciará el proceso para cambiar su ID de correo electrónico de acceso para Hub. Recibirá un correo electrónico con un código de verificación, que deberá proporcionar en la siguiente pantalla. {{htmlTagO}} Quieres proceder? {{htmlTagC}}",
+      "5": "Código de verificación invalido.",
+      "6": "El nuevo ID de correo electrónico es el mismo que el antiguo.",
+      "7": "Por favor proporcione una identificación de correo electrónico válida.",
+      "8": "Por favor proporcione el código de verificación.",
+      "9": "El usuario ya existe con el mismo correo electrónico.",
+      "10": "Su ID de correo electrónico se ha cambiado correctamente.",
+        "10.1": "Inicia sesión nuevamente con un nuevo ID de correo electrónico.",
+      "11": "Tu contraseña ha sido cambiada exitosamente.",
+        "11.1": "Inicie sesión nuevamente con la nueva contraseña.",
+      "12": "La nueva contraseña y contraseña confirmada deben coincidir.",
+      "13": "La contraseña actual no coincide.",
+      "14": "La contraseña actual y la nueva contraseña son las mismas.",
+      "15": "La contraseña no es valida.",
+      "16": "La contraseña debe tener al menos 8 caracteres.",
+      "17": "La contraseña debe contener al menos una letra.",
+      "18": "La contraseña debe contener al menos un dígito.",
+      "19": "La contraseña debe contener al menos uno de los siguientes caracteres:",
+      "20": "Aún no tienes ningún coordinador de soporte. Cuando agregues algunos, aparecerán aquí.",
+      "21": "El usuario con la identificación de correo electrónico {{email}} no existe en Hub.",
+      "22": "El usuario seleccionado ya es un coordinador de soporte.",
+      "23": "El usuario seleccionado está bloqueado en los siguientes servidores.",
+      "24": "¿Está seguro de que desea eliminar la función de coordinador de soporte de un usuario seleccionado?",
+      "25": "Êtes-vous sûr de vouloir faire de {{htmlTagO}}{{name}}{{htmlTagC}} ({{email}}) un coordinateur de support?",
+      "26": "El rol de coordinador de soporte no puede asignarse a un usuario seleccionado porque tiene un rol de administrador principal en los siguientes servidores:",
+        "26.1": "Por favor, primero debe hacer que alguien más sea el administrador principal de los servidores anteriores.",
+      "27": "El usuario seleccionado es un coordinador de soporte. El primer rol de administrador no se puede asignar a este usuario."
+    },
+    "p_s": {
+      "tab": {
+        "1": "Cambiar primer administrador",
+        "2": "Notificación",
+        "3": "Frecuencia de sondeo",
+        "4": "Lista de adaptadores",
+        "5": "Imagen de cliente predeterminada",
+        "6": "Tipos de archivo permitidos",
+        "7": "Permisos del servidor"
+      },
+      "notifyS": {
+        "1": "Se actualizaron los ajustes de notificación.",
+        "2": "Notificaciónes de Correo Electrónico",
+          "2.1": "Cuando los horarios expiran (Diario una vez).",
+          "2.2": "Cuando el contenido caduca (Diario una vez).",
+          "2.3": "Cuando se cargan nuevos contenidos no aprobados.",
+          "2.4": "Cuando se crean nuevas plantillas no aprobadas.",
+          "2.5": "Cuando se crean nuevas programaciones no aprobadas.",
+          "2.6": "Cuando se cambian los horarios.",
+          "2.7": "Cuando se cambian los horarios.",
+          "2.8": "Cuando se elimina el contenido.",
+          "2.9": "Cuando se elimina la plantilla.",
+          "2.10": "Cuando se cambia el diseño del marco.",
+        "3": "Notificaciones de la aplicación para dispositivos móviles",
+        "4": "Notificaciones por SMS"
+      },
+      "polling": {
+        "1": "Configuración de frecuencia de sondeo",
+        "2": "Frecuencia de sondeo",
+        "3": "Inválido",
+        "4": "Aplicar en todos los dispositivos",
+        "5": "Aplicar en dispositivos futuros",
+        "m1": "Proporcione una frecuencia de sondeo válida."
+      },
+      "prime": {
+        "1": "Administrador",
+        "2": "Administrador(Primer)",
+        "3": "El usuario no se ha registrado con L Squared Hub todavía.",
+        "4": "Notificar a nuevo administrador principal",
+        "5": "Notificar a administrador principal sobre este cambio."
+      },
+      "defaultImg": {
+        "1": "Imagen predeterminada",
+        "2": "Resolución del dispositivo disponible",
+        "3": "Puede subir un archivo JPG, JPEG o PNG.",
+        "m1": "¡Por favor espera! No cierre ni cambie las pestañas mientras la subida de archivos está en proceso.",
+        "m2": "¿Seguro que quieres eliminar la imagen?"
+      },
+      "serverPer": {
+        "1": "Informes",
+        "2": "Mostrar registro de actividad del soporte",
+        "3": "Restricción de contenido en el marco",
+        "4": "Prima",
+        "5": "Privado",
+        "6": "Rastreo",
+        "7": "Mostrar el coordinador de soporte en la lista de usuarios y sus registros de actividad",
+        "8": "Mapas",
+          "8.1": "Google",
+          "8.2": "Bing",
+        "m1": "Proporcione la duración de la saturación del contenido.",
+        "m2": "¿Seguro que quieres actualizar la configuración del servidor {{serverName}}? ",
+        "m3": "No puede deshabilitar este servicio porque hay elementos activos de este servicio disponibles en el servidor."
+      }
+    }
+  },
+  "sc": {
+    "tab": {
+      "1": "Soporte técnico",
+      "2": "Solicitud de función",
+      "3": "Errores reportados",
+      "4": "Tutoriales de vídeos"
+    },
+    "fb": {
+      "1": "Envíe sus comentarios",
+      "2": "Por favor, díganos qué piensa de esta aplicación, buena o mala, queremos saber de usted.",
+      "3": "Realimentación",
+      "m1": "Por favor proporcione comentarios."
+    },
+    "bug": {
+      "1": "Reportar un error",
+      "2": "{{lsn}} es genial! Pero a veces hay problemas que deben ser resueltos para que sea mucho mayor. Para ayudarnos a mejorar {{lsn}}, el equipo necesita su ayuda y puede hacerlo mediante el reporte de un error.",
+      "3": "Descripción de Bug",
+      "4": "Capturas de pantalla",
+      "5": "Navegador",
+      "6": "Versión del navegador",
+      "5.1": "Otro",
+      "m1": "Proporcione la descripción del Bug."
+    },
+    "mail": {
+      "1": "Correo al Equipo de Apoyo",
+      "2": "¿Necesita ayuda con {{lsn}}? Conseguiremos la ayuda que necesite.",
+      "3": "Tema",
+      "m1": "El asunto no debe estar en blanco.",
+      "m2": "El mensaje no debe estar en blanco."
+    },
+    "ts": {
+      "body": {
+        "1": "Nuestro servicio de soporte técnico está aquí para ayudarle con problemas técnicos con el software {{lsnh}}, así como cualquier hardware y software adquirido en {{lsn}}. Tenga en cuenta que si su plan de asistencia con {{lsn}} no cubre problemas de usuario, puede incurrir en cargos adicionales.",
+        "2": "Documentos",
+        "3": "Descargas",
+        "4": "Después de descargar, antes de descomprimir, haga clic en Desbloquear botón / casilla de verificación en las propiedades del archivo zip.",
+        "5": "Cómo desbloquear el archivo zip",
+        "6": "Clave de activación:"
+      },
+      "btn": {
+        "1": "Soporte técnico por correo electrónico",
+        "2": "Reportar un error",
+        "3": "Realimentación",
+        "4": "Guía del usuario - Inglés",
+        "5": "Guía del usuario - Francés",
+        "6": "Instalación de Media Player y configuración de Internet",
+        "7": "Configuración del puerto del firewall",
+        "8": "L Squared Editor de Word - Inglés",
+        "9": "L Squared Editor de PowerPoint - Inglés",
+        "10": "L Squared Slide (Client)",
+        "11": "L Squared HDMI",
+        "12": "Ver la imagen...",
+        "8.1": "L Squared Editor de Word - Francés",
+        "9.1": "L Squared Editor de PowerPoint - Francés"
+      }
+    },
+    "fr": {
+      "body": {
+        "1": "¿Qué es {{htmlTagO}}Solicitud de función{{htmlTagC}}?",
+        "2": "Características solicitadas",
+        "3": "Funciones aceptadas",
+        "4": "Pedir detalles",
+        "5": "Votar",
+        "6": "Episodio",
+        "7": "Reportar abuso",
+        "8": "Aceptado",
+        "9": "Implementado",
+        "10": "Características implementadas",
+        "5s": "Votos"
+      },
+      "btn": {
+        "1": "Agregar solicitud de nueva función",
+        "2": "Editar solicitud de función"
+      },
+      "p_add": {
+        "1": "Revise primero las solicitudes de nuevas funciones existentes para ver si ya se ha solicitado la función que desea. Si encuentra uno que es similar a lo que quiere, vota por ello. Existe una mayor probabilidad de que implementemos la característica más votada en la próxima versión. Si no encuentra la función que desea en la lista, añádelo aquí.",
+        "2": "Solicitar título",
+        "3": "Descripción",
+        "m1": "Proporcione el título de la Solicitud."
+      },
+      "p_comment": {
+        "body": {
+          "1": "Total de votos",
+          "2": "Comentario",
+          "3": "Editar comentario",
+          "4": "Añadir nuevo comentario",
+          "5": "Reportar este comentario",
+          "2s": "Comentarios"
+        },
+        "btn": {
+          "1": "Vota esta función",
+          "2": "Marcar como aceptado",
+          "3": "Marcar como implementado",
+          "4": "Reabrir(Mover a Aceptado)"
+        },
+        "msg": {
+          "1": "Ya has votado esta solicitud de función.",
+          "2": "No puedes votar en tu propia solicitud de característica.",
+          "3": "¿Está seguro de que desea eliminar el comentario seleccionado?",
+          "4": "El comentario no debe estar en blanco.",
+          "5": "Aún sin comentarios.",
+          "6": "¿Seguro que quieres marcar esta solicitud de función como Aceptada?",
+          "7": "¿Seguro que quieres marcar esta solicitud de función como Implemento?",
+          "8": "¿Está seguro de que desea mover esta solicitud de función en la lista de Aceptado?"
+        }
+      },
+      "msg": {
+        "1": "Proporcione la descripción.",
+        "2": "¿Está seguro de que desea eliminar la Solicitud de función seleccionada?",
+        "3": "Ya ha informado de esta solicitud de función.",
+        "4": "No hay ninguna característica solicitada.",
+        "5": "¿Qué es la función solicitada?",
+        "6": "No hay ninguna característica aceptada.",
+        "7": "¿Qué es la característica aceptada?",
+        "8": "No hay ninguna característica implementada.",
+        "9": "¿Qué es una característica implementada?"
+      },
+      "info": {
+        "1": "Generalmente lanzamos una actualización de versión principal a la {{lsnh}} una vez al año y tres a cuatro revisiones menores a lo largo del año. La forma en que seleccionamos las nuevas funciones para trabajar depende mucho de las características que nuestros usuarios solicitan. Por favor, tómese unos minutos para decirnos qué podemos mejorar en nuestro sistema para ayudarle a hacer más con {{lsnh}}.",
+        "2": "Las características solicitadas por los usuarios de {{lsnh}} de diferentes servidores aparecen en la ficha Características solicitadas. Si necesita alguna característica de {{lsnh}} que no exista en ella, puede solicitarla aquí.",
+        "3": "Las solicitudes de características que son aceptadas para el desarrollo por {{lsn}} Equipo se muestran en la pestaña Características aceptadas.",
+        "4": "Las solicitudes de funciones que se implementan en Hub se enumeran en la pestaña Funciones implementadas."
+      }
+    },
+    "kb": {
+      "1": "L Squared Hub Serie de Tutoriales de Video.",
+      "2": "Episodio {{count}}"
+    }
+  },
+  "as": {
+    "label": {
+      "1": "Rango de fechas de creación",
+      "2": "Rango de fechas de horario",
+      "3": "Seleccionar Usuarios",
+      "4": "Nombre del programa",
+      "5": "Etiquetas disponibles",
+      "6": "Incluir",
+      "7": "Excluir",
+      "8": "Etiqueta",
+      "9": "Y",
+      "10": "Alguna",
+      "11": "Todo el contenido",
+      "12": "Todos los widgets"
+    },
+    "btn": {
+      "1": "Buscar",
+      "2": "Buscando"
+    },
+    "msg": {
+      "1": "Por favor proporcione al menos una opción de filtro.",
+      "2": "Su búsqueda no coincide con ningún elemento. Pruebe con diferentes palabras clave.",
+      "3": "La búsqueda del dispositivo solo puede realizarse para un tipo de dispositivo."
+    }
+  },
+  "notification": [
+    {
+      "id": 6019,
+      "en": "Contraseña enviada a "
+    },
+    {
+      "id": 7001,
+      "en": "Dispositivo registrado en el mapa."
+    },
+    {
+      "id": 8001,
+      "en": "Contenido cargado."
+    },
+    {
+      "id": 8002,
+      "en": "Contenido actualizado."
+    },
+    {
+      "id": 8003,
+      "en": "El contenido se trasladó a la pestaña Contenido eliminado."
+    },
+    {
+      "id": 8004,
+      "en": "Creación del widget Página Web."
+    },
+    {
+      "id": 8005,
+      "en": "Widget Página Web actualizado."
+    },
+    {
+      "id": 8006,
+      "en": "Se creó el widget Fecha Hora."
+    },
+    {
+      "id": 8007,
+      "en": "Actualización del widget Fecha Hora."
+    },
+    {
+      "id": 8008,
+      "en": "Widget de noticias creado."
+    },
+    {
+      "id": 8009,
+      "en": "Actualización del widget de noticias."
+    },
+    {
+      "id": 8010,
+      "en": "Se ha creado el widget de tiempo."
+    },
+    {
+      "id": 8011,
+      "en": "Actualización del widget de tiempo."
+    },
+    {
+      "id": 8012,
+      "en": "Widget de YouTube creado."
+    },
+    {
+      "id": 8013,
+      "en": "Actualización del widget de YouTube."
+    },
+    {
+      "id": 8014,
+      "en": "Widget de Twitter creado."
+    },
+    {
+      "id": 8015,
+      "en": "Widget de Twitter actualizado."
+    },
+    {
+      "id": 8016,
+      "en": "RSS widget creado."
+    },
+    {
+      "id": 8017,
+      "en": "RSS widget actualizado."
+    },
+    {
+      "id": 8018,
+      "en": "Creación del widget Programa de vuelo."
+    },
+    {
+      "id": 8019,
+      "en": "Actualización del widget Programa de vuelo."
+    },
+    {
+      "id": 8020,
+      "en": "Widget de la reunión creado."
+    },
+    {
+      "id": 8021,
+      "en": "Actualización del widget de la reunión."
+    },
+    {
+      "id": 8022,
+      "en": "El widget de citas creado."
+    },
+    {
+      "id": 8023,
+      "en": "Actualización del widget de citas."
+    },
+    {
+      "id": 8024,
+      "en": "Se ha creado un widget de transmisión en directo."
+    },
+    {
+      "id": 8025,
+      "en": "Actualización del widget de transmisión en vivo."
+    },
+    {
+      "id": 8026,
+      "en": "Widget de precios de acciones creado."
+    },
+    {
+      "id": 8027,
+      "en": "Precio actualizado del widget."
+    },
+    {
+      "id": 8028,
+      "en": "Se ha creado el widget FTP."
+    },
+    {
+      "id": 8029,
+      "en": "Actualización del widget FTP."
+    },
+    {
+      "id": 8030,
+      "en": "Se creó el widget Texto delimitado."
+    },
+    {
+      "id": 8031,
+      "en": "Actualización del widget Texto delimitado."
+    },
+    {
+      "id": 8032,
+      "en": "Widget de divisas creado."
+    },
+    {
+      "id": 8033,
+      "en": "Actualización del widget de divisas."
+    },
+    {
+      "id": 8034,
+      "en": "Se creó un widget de formulario gratuito."
+    },
+    {
+      "id": 8035,
+      "en": "Actualización del widget de formulario gratuito."
+    },
+    {
+      "id": 8036,
+      "en": "Widget Horas abiertas creado."
+    },
+    {
+      "id": 8037,
+      "en": "Se actualizó el widget Horas abiertas."
+    },
+    {
+      "id": 8038,
+      "en": "Se ha creado el widget Instagram."
+    },
+    {
+      "id": 8039,
+      "en": "Widget Instagram actualizado."
+    },
+    {
+      "id": 8040,
+      "en": "Se creó el widget Contenido de relleno."
+    },
+    {
+      "id": 8041,
+      "en": "Se actualizó el widget Contenido de relleno."
+    },
+    {
+      "id": 8042,
+      "en": "Widget de TouchLink creado."
+    },
+    {
+      "id": 8043,
+      "en": "Widget de TouchLink actualizado."
+    },
+    {
+      "id": 8044,
+      "en": "Se creó el widget Tarea de Windows."
+    },
+    {
+      "id": 8045,
+      "en": "Se actualizó el widget Tarea de Windows."
+    },
+    {
+      "id": 8046,
+      "en": "Se ha creado el widget SunSmart."
+    },
+    {
+      "id": 8047,
+      "en": "Se actualizó el widget SunSmart."
+    },
+    {
+      "id": 8048,
+      "en": "IFrame widget creado."
+    },
+    {
+      "id": 8049,
+      "en": "Actualización del widget IFrame."
+    },
+    {
+      "id": 8050,
+      "en": "Creación del widget de reuniones de TouchLink."
+    },
+    {
+      "id": 8051,
+      "en": "Actualización del widget de reuniones de TouchLink."
+    },
+    {
+      "id": 8052,
+      "en": "Se creó el widget Web Cam."
+    },
+    {
+      "id": 8053,
+      "en": "Widget Web Cam actualizado."
+    },
+    {
+      "id": 8054,
+      "en": "Telax widget creado."
+    },
+    {
+      "id": 8055,
+      "en": "Telax widget actualizado."
+    },
+    {
+      "id": 8056,
+      "en": "Se creó el widget Chrome de pantalla completa."
+    },
+    {
+      "id": 8057,
+      "en": "Widget de Chrome de pantalla completa actualizado."
+    },
+    {
+      "id": 8058,
+      "en": "Se ha creado el widget de Radio en línea."
+    },
+    {
+      "id": 8059,
+      "en": "Widget de radio en línea actualizado."
+    },
+    {
+      "id": 8060,
+      "en": "Se ha creado el widget de menú interactivo."
+    },
+    {
+      "id": 8061,
+      "en": "Actualización del widget del menú interactivo."
+    },
+    {
+      "id": 8062,
+      "en": "Widget de texto creado."
+    },
+    {
+      "id": 8063,
+      "en": "Widget de texto actualizado."
+    },
+    {
+      "id": 8064,
+      "en": "Se ha creado el widget de Google Calendar."
+    },
+    {
+      "id": 8065,
+      "en": "Se ha actualizado el widget de Google Calendar."
+    },
+    {
+      "id": 8066,
+      "en": "Widget de lector creado."
+    },
+    {
+      "id": 8067,
+      "en": "Widget de lector actualizado."
+    },
+    {
+      "id": 8068,
+      "en": "Se ha creado el widget de inicio de sesión Web."
+    },
+    {
+      "id": 8069,
+      "en": "Actualización del widget de inicio de sesión Web."
+    },
+    {
+      "id": 8070,
+      "en": "Carpeta creada."
+    },
+    {
+      "id": 8071,
+      "en": "Carpeta actualizada."
+    },
+    {
+      "id": 8072,
+      "en": "Carpeta eliminada."
+    },
+    {
+      "id": 8073,
+      "en": "Contenido archivado."
+    },
+    {
+      "id": 8074,
+      "en": "Contenido no aprobado."
+    },
+    {
+      "id": 8075,
+      "en": "Elemento(s) movido "
+    },
+    {
+      "id": 8076,
+      "en": "Se ha cargado una nueva versión del contenido."
+    },
+    {
+      "id": 8081,
+      "en": "Contenido aprobado."
+    },
+    {
+      "id": 8082,
+      "en": "Todo el contenido de la carpeta ha sido aprobado."
+    },
+    {
+      "id": 8083,
+      "en": "Todo el contenido de la carpeta no se ha aprobado."
+    },
+    {
+      "id": 8084,
+      "en": "Contenido restaurado."
+    },
+    {
+      "id": 8094,
+      "en": "Elementos movidos a otro servidor."
+    },
+    {
+      "id": 8095,
+      "en": "Elementos copiados."
+    },
+    {
+      "id": 8096,
+      "en": "Elementos copiados a otro servidor."
+    },
+    {
+      "id": 8098,
+      "en": "Contenido eliminado para siempre."
+    },
+    {
+      "id": 8103,
+      "en": "Contenido creado."
+    },
+    {
+      "id": 8104,
+      "en": "No tiene permiso para mover elementos seleccionados en este servidor."
+    },
+    {
+      "id": 8106,
+      "en": "La carpeta principal no existe y no tiene permiso para agregar contenido en el directorio principal."
+    },
+    {
+      "id": 8108,
+      "en": "Accesos directos creados."
+    },
+    {
+      "id": 8100,
+      "en": "Eliminar la caducidad."
+    },
+    {
+      "id": 8111,
+      "en": "Creación del widget de cola"
+    },
+    {
+      "id": 8112,
+      "en": "Widget de cola actualizado."
+    },
+    {
+      "id": 8113,
+      "en": "Cola actualizada."
+    },
+    {
+      "id": 8116,
+      "en": "Autorización exitosa."
+    },
+    {
+      "id": 8142,
+      "en": "Autorización exitosa."
+    },
+    {
+      "id": 8119,
+      "en": "Facebook widget creado."
+    },
+    {
+      "id": 8120,
+      "en": "Widget de Facebook actualizado."
+    },
+    {
+      "id": 8121,
+      "en": "Se creó widget de tráfico."
+    },
+    {
+      "id": 8122,
+      "en": "Widget de tráfico actualizado."
+    },
+    {
+      "id": 8123,
+      "en": "Widget de encuesta creado."
+    },
+    {
+      "id": 8124,
+      "en": "Widget de la encuesta actualizado."
+    },
+    {
+      "id": 8125,
+      "en": "La encuesta terminó."
+    },
+    {
+      "id": 8127,
+      "en": "Se creó el widget Music Choice."
+    },
+    {
+      "id": 8128,
+      "en": "Se actualizó el widget Music Choice."
+    },
+    {
+      "id": 8130,
+      "en": "La encuesta se reabrió."
+    },
+    {
+      "id": 8137,
+      "en": "Widget de Outlook creado."
+    },
+		{
+      "id": 8138,
+      "en": "Widget de Outlook actualizado."
+    },
+    {
+      "id": 8143,
+      "en": "Widget de Power BI creado."
+    },
+    {
+      "id": 8144,
+      "en": "Widget de Power BI actualizado."
+    },
+    {
+      "id": 8147,
+      "en": "Widget de espera del paciente creado."
+    },
+    {
+      "id": 8148,
+      "en": "Widget de espera del paciente actualizado."
+    },
+    {
+      "id": 8149,
+      "en": "Programar widget de calendario creado."
+    },
+    {
+      "id": 8150,
+      "en": "Programar widget de calendario actualizado."
+    },
+    {
+      "id": 8151,
+      "en": "Seleccione widget de redes sociales creado."
+    },
+    {
+      "id": 8152,
+      "en": "Seleccione widget de redes sociales actualizado."
+    },
+    {
+      "id": 8156,
+      "en": "Widget de NextBus creado."
+    },
+    {
+      "id": 8157,
+      "en": "Widget de NextBus actualizado."
+    },
+    {
+      "id": 8158,
+      "en": "Metaetiqueta eliminada."
+    },
+    {
+      "id": 8160,
+      "en": "Metaetiqueta agregada."
+    },
+    {
+      "id": 8167,
+      "en": "Web Login Chrome widget creado."
+    },
+    {
+      "id": 8168,
+      "en": "Web Login Chrome widget actualizado."
+    },
+    {
+      "id": 8169,
+      "en": "FIFA widget creado."
+    },
+    {
+      "id": 8170,
+      "en": "Widget de FIFA actualizado."
+    },
+    {
+      "id": 8175,
+      "en": "Se creó el widget Vehículo siguiente."
+    },
+    {
+      "id": 8176,
+      "en": "Se creó el widget Vehículo siguiente."
+    },
+    {
+      "id": 8177,
+      "en": "Widget de LinkedIn creado."
+    },
+    {
+      "id": 8178,
+      "en": "Widget de LinkedIn actualizado."
+    },
+    {
+      "id": 8185,
+      "en": "Calendario de eventos actualizado."
+    },
+    {
+      "id": 8186,
+      "en": "Calendar of Events View created."
+    },
+    {
+      "id": 8187,
+      "en": "Calendar of Events View updated."
+    },
+    {
+      "id": 8190,
+      "en": "Hoja de Excel widget creado."
+    },
+    {
+      "id": 8191,
+      "en": "Hoja de Excel widget actualizada."
+    },
+    {
+      "id": 9001,
+      "en": "Plantilla creada."
+    },
+    {
+      "id": 9002,
+      "en": "Plantilla actualizada."
+    },
+    {
+      "id": 9003,
+      "en": "Plantilla eliminada."
+    },
+    {
+      "id": 9005,
+      "en": "Plantilla aprobada."
+    },
+    {
+      "id": 9006,
+      "en": "Plantilla no aprobada."
+    },
+    {
+      "id": 9012,
+      "en": "Ha creado una copia de los elementos seleccionados."
+    },
+    {
+      "id": 9014,
+      "en": "La plantilla seleccionada se ha movido a la pestaña Plantillas. Puede usarla ahora."
+    },
+    {
+      "id": 9016,
+      "en": "Categoría de plantilla eliminada."
+    },
+    {
+      "id": 10001,
+      "en": "Programa creado."
+    },
+    {
+      "id": 10002,
+      "en": "Calendario actualizado."
+    },
+    {
+      "id": 10003,
+      "en": "Programa eliminado."
+    },
+    {
+      "id": 10004,
+      "en": "Grupo de programación creado."
+    },
+    {
+      "id": 10005,
+      "en": "Grupo de planificación actualizado."
+    },
+    {
+      "id": 10006,
+      "en": "Grupo de planificación eliminado."
+    },
+    {
+      "id": 10007,
+      "en": "Horario aprobado."
+    },
+    {
+      "id": 10008,
+      "en": "Programa no aprobado."
+    },
+    {
+      "id": 10017,
+      "en": "Grupo de planificación actualizado."
+    },
+    {
+      "id": 10022,
+      "en": "Elemento (s) añadido (s) al horario"
+    },
+    {
+      "id": 11001,
+      "en": "Diseño del marco creado."
+    },
+    {
+      "id": 11002,
+      "en": "Diseño de trama actualizado."
+    },
+    {
+      "id": 11003,
+      "en": "Se eliminó el diseño de trama."
+    },
+    {
+      "id": 11005,
+      "en": "Diseño de trama aprobado."
+    },
+    {
+      "id": 11006,
+      "en": "Diseño de trama no aprobado."
+    },
+    {
+      "id": 11007,
+      "en": "El diseño de marco seleccionado se ha movido a la ficha diseño de marco. Puede usarlo ahora."
+    },
+    {
+      "id": 11008,
+      "en": "Se eliminó la asignación."
+    },
+    {
+      "id": 11009,
+      "en": "Diseño de marco asignado."
+    },
+    {
+      "id": 11010,
+      "en": "Asignación actualizada."
+    },
+    {
+      "id": 11015,
+      "en": "Asignación aprobada."
+    },
+    {
+      "id": 11016,
+      "en": "Asignación no aprobada."
+    },
+    {
+      "id": 11018,
+      "en": "Ha creado una copia de los elementos seleccionados."
+    },
+    {
+      "id": 11028,
+      "en": "Se eliminó la categoría Diseño del marco."
+    },
+    {
+      "id": 12001,
+      "en": "Dispositivo añadido."
+    },
+    {
+      "id": 12002,
+      "en": "Dispositivo actualizado."
+    },
+    {
+      "id": 12003,
+      "en": "Dispositivo eliminado."
+    },
+    {
+      "id": 12004,
+      "en": "Grupo de dispositivos guardado."
+    },
+    {
+      "id": 12006,
+      "en": "Grupo de dispositivos eliminado."
+    },
+    {
+      "id": 12007,
+      "en": "Etiqueta de dispositivo creada."
+    },
+    {
+      "id": 12008,
+      "en": "Etiqueta del dispositivo actualizada."
+    },
+    {
+      "id": 12009,
+      "en": "Etiqueta del dispositivo eliminada."
+    },
+    {
+      "id": 12012,
+      "en": "Se actualizaron los ajustes de uso de datos del dispositivo."
+    },
+    {
+      "id": 12019,
+      "en": "Grupo de dispositivos actualizado."
+    },
+    {
+      "id": 12043,
+      "en": "Identificar solicitud enviada."
+    },
+    {
+      "id": 12044,
+      "en": "Identificar solicitud eliminada."
+    },
+    {
+      "id": 12048,
+      "en": "Grupo de dispositivos creado."
+    },
+    {
+      "id": 12051,
+      "en": "Búsqueda actualizada."
+    },
+    {
+      "id": 13001,
+      "en": "Usuario invitado."
+    },
+    {
+      "id": 13002,
+      "en": "Acceso de usuario actualizado."
+    },
+    {
+      "id": 13003,
+      "en": "Usuario eliminado."
+    },
+    {
+      "id": 13004,
+      "en": "Grupo de usuarios guardado."
+    },
+    {
+      "id": 13005,
+      "en": "Grupo de usuarios actualizado."
+    },
+    {
+      "id": 13006,
+      "en": "Grupo de usuarios eliminado."
+    },
+    {
+      "id": 13007,
+      "en": "Función de usuario creada."
+    },
+    {
+      "id": 13008,
+      "en": "Función de usuario actualizada."
+    },
+    {
+      "id": 13009,
+      "en": "Se eliminó el rol de usuario."
+    },
+    {
+      "id": 13010,
+      "en": "Usuario desbloqueado."
+    },
+    {
+      "id": 13011,
+      "en": "Usuario bloqueado."
+    },
+    {
+      "id": 13019,
+      "en": "Grupo primario actualizado."
+    },
+    {
+      "id": 13022,
+      "en": "Contraseña enviada a"
+    },
+    {
+      "id": 13026,
+      "en": "Usuario invitado nuevamente."
+    },
+    {
+      "id": 14001,
+      "en": "Mensaje de emergencia enviado."
+    },
+    {
+      "id": 14002,
+      "en": "Ajustes actualizados."
+    },
+    {
+      "id": 14003,
+      "en": "Se ha eliminado el mensaje enviado."
+    },
+    {
+      "id": 14004,
+      "en": "Mensaje predefinido eliminado."
+    },
+    {
+      "id": 14005,
+      "en": "Imagen de título actualizada."
+    },
+    {
+      "id": 14006,
+      "en": "Imagen de título eliminada."
+    },
+    {
+      "id": 14007,
+      "en": "Mensaje predefinido añadido."
+    },
+    {
+      "id": 14008,
+      "en": "Se ha actualizado el mensaje enviado."
+    },
+    {
+      "id": 15001,
+      "en": "Servicio creativo solicitado."
+    },
+    {
+      "id": 15009,
+      "en": "Archivo adjunto."
+    },
+    {
+      "id": 15012,
+      "en": "El soporte no puede crear o comentar los servicios creativos"
+    },
+    {
+      "id": 16001,
+      "en": "Nueva solicitud de función enviada."
+    },
+    {
+      "id": 16002,
+      "en": "Solicitud de función actualizada."
+    },
+    {
+      "id": 16003,
+      "en": "Se ha eliminado la solicitud de función."
+    },
+    {
+      "id": 16004,
+      "en": "Solicitud de función aceptada."
+    },
+    {
+      "id": 16006,
+      "en": "Solicitud de función implementada."
+    },
+    {
+      "id": 16007,
+      "en": "Voto enviado."
+    },
+    {
+      "id": 16008,
+      "en": "Comentario actualizado."
+    },
+    {
+      "id": 16009,
+      "en": "Nuevo comentario añadido."
+    },
+    {
+      "id": 16010,
+      "en": "Comentario borrado."
+    },
+    {
+      "id": 16011,
+      "en": "Solicitud de función reportada"
+    },
+    {
+      "id": 16017,
+      "en": "Solicitud de función Volver a abrir."
+    },
+    {
+      "id": 17001,
+      "en": "Encuesta creada."
+    },
+    {
+      "id": 17002,
+      "en": "Encuesta actualizada."
+    },
+    {
+      "id": 17003,
+      "en": "Encuesta eliminada."
+    },
+    {
+      "id": 17004,
+      "en": "Cambiar e-mail."
+    },
+    {
+      "id": 17005,
+      "en": "Cambia la contraseña."
+    },
+    {
+      "id": 17006,
+      "en": "Imagen del perfil actualizada."
+    },
+    {
+      "id": 17007,
+      "en": "Imagen de perfil configurada como predeterminada"
+    },
+    {
+      "id": 17008,
+      "en": "Perfil actualizado."
+    },
+    {
+      "id": 17011,
+      "en": "La contraseña nueva y de confirmación no coincide."
+    },
+    {
+      "id": 17012,
+      "en": "Las contraseñas actuales y nuevas son las mismas."
+    },
+    {
+      "id": 17015,
+      "en": "Código de verificación enviado a tu correo electrónico actual."
+    },
+    {
+      "id": 17017,
+      "en": "Se actualizaron los ajustes de notificación."
+    },
+    {
+      "id": 17018,
+      "en": "Frecuencia de sondeo actualizada."
+    },
+    {
+      "id": 17020,
+      "en": "Primer administrador actualizado."
+    },
+    {
+      "id": 17021,
+      "en": "Se han actualizado los tipos de archivos permitidos."
+    },
+    {
+      "id": 17029,
+      "en": "Coordinador de soporte añadido."
+    },
+    {
+      "id": 17032,
+      "en": "Coordinador de soporte eliminado."
+    },
+    {
+      "id": 17035,
+      "en": "Usuario no autorizado."
+    },
+    {
+      "id": 18001,
+      "en": "Informe enviado a "
+    },
+    {
+      "id": 1000,
+      "en": "Algo salió mal. Vuelve a intentarlo."
+    },
+    {
+      "id": 5000,
+      "en": "Algo salió mal. Vuelve a intentarlo."
+    },
+    {
+      "id": 4004,
+      "en": "El elemento que está editando no existe. El siguiente usuario lo ha eliminado de su servidor:"
+    }
+  ],
+  "btnInfo": {
+    "2001101": "No tiene permiso para agregar contenido.",
+    "2001102": "No tiene permiso para editar contenido.",
+    "2001103": "No tiene permiso para eliminar contenido.",
+    "2001104": "No tienes permiso para crear una carpeta.",
+    "2001105": "No tiene permiso para editar la carpeta.",
+    "2001106": "No tiene permiso para eliminar la carpeta.",
+    "2001107": "No tienes permiso para crear widget.",
+    "2001108": "No tienes permiso para editar el widget.",
+    "2001109": "No tienes permiso para eliminar el widget.",
+    "2001110": "No tiene permiso para mover contenido.",
+    "2001111": "No tiene permiso para archivar contenido.",
+    "2001112": "No tiene permiso para la aprobación de contenido.",
+    "2001113": "No tiene permiso para agregar un elemento en el directorio principal.",
+    "2001114": "No tiene permiso para editar el elemento en el directorio principal.",
+    "2001115": "No tiene permiso para eliminar del directorio personal.",
+    "2001116": "No tienes permiso para eliminar carpeta, eliminar contenido y eliminar widgets.",
+    "2001117": "No tienes permiso para eliminar contenido y eliminar widget.",
+    "2001118": "No tiene permiso para eliminar la carpeta y eliminar contenido.",
+    "2001119": "No tienes permiso para eliminar la carpeta y eliminar widget.",
+    "2001120": "Los elementos seleccionados contienen carpeta, contenido o widget protegidos contra escritura y no eres administrador de este servidor. ",
+    "2001121": "El contenido está en estado de procesamiento, por lo que sólo puede eliminarlo si tiene permiso de borrado.",
+    "2001122": "No puede tener Music Widget y otro contenido en el mismo horario.",
+    "2001123": "La vista previa no está disponible para el dispositivo del reproductor de música.",
+    "2002101": "No tiene permiso para crear una plantilla.",
+    "2002102": "No tiene permiso para editar la plantilla.",
+    "2002103": "No tiene permiso para eliminar la plantilla.",
+    "2002104": "No tiene permiso para la aprobación de la plantilla.",
+    "2002105": "No se pueden utilizar varias plantillas a la vez. Por favor, seleccione y utilícelo uno por uno.",
+    "2003101": "No tiene permiso para crear una programación.",
+    "2003102": "No tiene permiso para editar la programación.",
+    "2003103": "No tiene permiso para eliminar el horario.",
+    "2003104": "No tiene permiso para la aprobación del horario.",
+    "2004101": "No tiene permiso para crear el diseño del marco.",
+    "2004102": "No tiene permiso para editar el diseño del marco.",
+    "2004103": "No tiene permiso para eliminar el diseño del marco.",
+    "2004104": "No tiene permiso para la aprobación del diseño del marco.",
+    "2004105": "No tiene permiso para asignar diseño de trama.",
+    "2004106": "No tiene permiso para editar la asignación.",
+    "2004107": "No tiene permiso para eliminar la asignación.",
+    "2004108": "No tiene permiso para aplicar la restricción de diseño de trama.",
+    "2005101": "No tiene permiso para agregar dispositivo.",
+    "2005102": "No tiene permiso para editar el dispositivo.",
+    "2005103": "No tiene permiso para eliminar el dispositivo.",
+    "2005104": "No tiene permiso para agregar el grupo de dispositivos.",
+    "2005105": "No tiene permiso para editar el grupo de dispositivos.",
+    "2005106": "No tiene permiso para eliminar el grupo de dispositivos.",
+    "2005107": "No tiene permiso para crear etiqueta de dispositivo.",
+    "2005108": "No tiene permiso para editar la etiqueta del dispositivo.",
+    "2005109": "No tiene permiso para eliminar la etiqueta del dispositivo.",
+    "2005110": "No tiene permiso para controlar el dispositivo.",
+    "2005111": "No tiene permiso para registrar / editar el dispositivo en el mapa.",
+    "2005112": "Solo se puede agregar un tipo similar de dispositivos a un grupo.",
+    "2005113": "Múltiples dispositivos no pueden ser eliminados a la vez.",
+    "2006101": "No tiene permiso para agregar o invitar al usuario.",
+    "2006102": "No tiene permiso para editar el usuario.",
+    "2006103": "No tiene permiso para bloquear usuario.",
+    "2006104": "El usuario seleccionado es admin y no eres un administrador en este servidor, por lo que no puedes realizar ninguna operación en él.",
+    "2006105": "El usuario seleccionado es un usuario público y usted no es un administrador en este servidor, por lo que no puede realizar ninguna operación en él.",
+    "2006106": "Este botón de acción está disponible sólo para administradores del servidor."
+  },
+  "roles": {
+    "2": "Gestor de contenidos",
+    "3": "Ejecutivo de contenido",
+    "4": "Administrador",
+    "5": "Administrador de horarios",
+    "6": "Horario Ejecutivo",
+    "7": "Administrador de dispositivos",
+    "8": "Ejecutivo de dispositivos",
+    "11": "Administrador de cuadros",
+    "12": "Marco Ejecutivo",
+    "13": "Gerente de seguridad",
+    "14": "Administrador de plantillas",
+    "15": "Plantilla ejecutiva",
+    "17": "Informe",
+    "18": "Servicios creativos",
+    "4.1": "Administrador(Primer)"
+  },
+  "rights": {
+    "1": "Derechos de contenido",
+    "2": "Derechos de Plantilla",
+    "3": "Derechos del horario",
+    "4": "Derechos de diseño del marco",
+    "5": "Derechos del dispositivo",
+    "6": "Derechos de los usuarios",
+    "7": "Otros Derechos",
+    "1.1": "Agregar contenido",
+    "1.2": "Editar contenido",
+    "1.4": "Eliminar contenido",
+    "1.8": "Crear widget",
+    "1.16": "Editar Widget",
+    "1.32": "Eliminar widget",
+    "1.64": "Crear Carpeta",
+    "1.128": "Editar carpeta",
+    "1.256": "Eliminar carpeta",
+    "1.512": "Movimiento",
+    "1.1024": "Archivo",
+    "1.2048": "Aprobación",
+    "1.4096": "Añadir al directorio de inicio",
+    "1.8192": "Editar en el directorio principal",
+    "1.16384": "Eliminar del directorio personal",
+    "1.32768": "Optimizar el video",
+    "2.1": "Añadir",
+    "2.2": "Editar nombre y permiso - Editar",
+    "2.4": "Eliminar",
+    "2.8": "Aprobación",
+
+    "3.1": "Añadir",
+    "3.2": "Editar",
+    "3.4": "Editar programa",
+    "3.8": "Contenido editado",
+    "3.16": "Editar dispositivo",
+    "3.32": "Editar etiqueta de dispositivo",
+    "3.64": "Editar grupo de dispositivos",
+    "3.128": "Editar marco",
+    "3.256": "Eliminar ",
+    "3.512": "Aprobación",
+    "3.1024": "Establecer contenido a pantalla completa",
+    "3.2048": "Añadir al directorio de inicio",
+
+    "4.1": "Añadir",
+    "4.2": "Editar",
+    "4.4": "Borrar",
+    "4.8": "Aprobación",
+    "4.16": "Asignación",
+    "4.32": "Establecer restricciones",
+    "4.64": "Editar asignación",
+    "4.128": "Eliminar asignación",
+    "5.1": "Añadir dispositivo",
+    "5.2": "Editar dispositivo",
+    "5.4": "Eliminar dispositivo",
+    "5.8": "Añadir grupo",
+    "5.16": "Editar grupo",
+    "5.32": "Eliminar grupo",
+    "5.64": "Añadir etiqueta",
+    "5.128": "Editar etiqueta",
+    "5.256": "Eliminar etiqueta",
+    "5.512": "Control del dispositivo",
+    "5.1024": "Registrar / Editar dispositivo en el mapa",
+    "6.1": "Invitación",
+    "6.2": "Editar",
+    "6.4": "Bloquear",
+    "6.8": "Añadir rol",
+    "6.16": "Editar función",
+    "6.32": "Eliminar rol",
+    "6.64": "Añadir grupo",
+    "6.128": "Editar grupo",
+    "6.256": "Eliminar grupo",
+    "7.1": "Mensaje de urgencia",
+    "7.2": "Informes",
+    "7.4": "Servicios creativos",
+    "7.8": "Facturación y Pago"
+  }
+}

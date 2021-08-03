@@ -1,0 +1,53 @@
+<div class="table table-md">
+  <!-- <div class="row th" ng-if="((articleKbList.g | customSearch:{key:searchText, module:'s'}).length > 0 || (articleKbList.a | customSearch:{key:searchText, module:'s'}).length > 0)"> -->
+  <!-- <div class="row th">
+    <a href="" ng-click="columnSortFx('t', (auth.sort.kbar.val == 'a' ? 'd' : 'a'), articleKbList, 'kbar');">
+      <div class="col-xs-2 text-primary text-bold display-flex">Title
+        <div class="marL10">
+          <span ng-if="auth.sort.kbar.val === 'd'"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+          <span ng-if="auth.sort.kbar.val === 'a'"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+        </div>
+      </div>
+    </a>
+  </div> -->
+  <ul id="tab-list">
+    <div class="folderQuad" ng-repeat="g in articleKbList.g = articleKbList.g" ng-if="articleKbList.g">
+      <div ng-if="g.label" class="nonSelectable">
+        <!--Folder-->
+        <div class="folder-heading">
+          <div class="col-xs-10 text-bold text-ellipsis folder" ng-click="folderFx($event);" data-id="{{g.id}}">
+            <a role="button"><span class="fa fa-folder marR5"></span>{{g.label}} <span class="text-muted text-unbold text-sm">({{g.a.length}})</span></a>
+          </div>
+          <div class="col-xs-2 text-right">
+            <a href="" class="text-primary marLR5" ng-click="groupOpen(g.id, g.label, g.file);" ng-if="auth.role == 0 || auth.id == g.createdBy" uib-tooltip="{{'cm.btn.21' | translate}}" tooltip-popup-delay="1000"><i class="fas fa-pencil-alt"></i></a>
+            <a href="" class="text-danger" ng-click="deleteOpen('g', g.id);" ng-if="auth.role == 0 || auth.id == g.createdBy" uib-tooltip="{{'cm.btn.12' | translate}}" tooltip-popup-delay="1000"><i class="fas fa-times"></i></a>
+          </div>
+        </div>
+      </div>
+      {{curGrpArticle = (g.a | sameValue:([g.groupId, 'sg']));""}}
+      <div class="folder-content hide">
+        <li class="row" ng-repeat="cga in curGrpArticle" data-id="{{cga.id}}" context-menu="contextMenuOpt">
+          <div class="panel-body">
+            <div class="col-xs-10 text-ellipsis"><a href="{{cga.url}}?{{timestamp}}" target="_blank"><span class="fas fa-file-pdf marR5"></span> {{cga.label}}</a></div>
+            <div class="col-xs-2 text-right">
+              <a href="" class="text-primary" ng-click="sendKb('a', cga.label, cga.url);" uib-tooltip="{{'cm.btn.28' | translate}}" tooltip-popup-delay="1000"><i class="fas fa-share"></i></a>
+              <a href="" class="text-primary marLR5" ng-click="addOpen('a', cga.id, cga.label, cga.file, cga.group);" ng-if="auth.role == 0 || auth.id == cga.createdBy" uib-tooltip="{{'cm.btn.21' | translate}}" tooltip-popup-delay="1000"><i class="fas fa-pencil-alt"></i></a>
+              <a href="" class="text-danger" ng-click="deleteOpen('a', cga.id);" ng-if="auth.role == 0 || auth.id == cga.createdBy" uib-tooltip="{{'cm.btn.12' | translate}}" tooltip-popup-delay="1000"><i class="fas fa-times"></i></a>
+            </div>
+          </div>
+        </li>
+        <div class="msg-warning mar5" ng-if="curGrpArticle.length == 0">{{'kb.msg.17' | translate}}</div>
+      </div>
+    </div>
+    <!--Item-->
+    <li class="row" ng-repeat="a in articleKbList.a" data-id="{{a.id}}" context-menu="contextMenuOpt">
+      <div class="col-xs-10 text-ellipsis"><a href="{{a.url}}?{{timestamp}}" target="_blank"><span class="fas fa-file-pdf marR5"></span> {{a.label}}</a></div>
+      <div class="col-xs-2 text-right">
+        <a href="" class="text-primary" ng-click="sendKb('a', a.label, a.url);" uib-tooltip="{{'cm.btn.28' | translate}}" tooltip-popup-delay="1000"><i class="fas fa-share"></i></a>
+        <a href="" class="text-primary marLR5" ng-click="addOpen('a', a.id, a.label, a.file);" ng-if="auth.role == 0 || auth.id == a.createdBy" uib-tooltip="{{'cm.btn.21' | translate}}" tooltip-popup-delay="1000"><i class="fas fa-pencil-alt"></i></a>
+        <a href="" class="text-danger" ng-click="deleteOpen('a', a.id);" ng-if="auth.role == 0 || auth.id == a.createdBy" uib-tooltip="{{'cm.btn.12' | translate}}" tooltip-popup-delay="1000"><i class="fas fa-times"></i></a>
+      </div>
+    </li>
+  </ul>
+  <div class="msg-warning" ng-if="searchMsg" translate="{{'cm.msg.14'}}" translate-values="{searchText: '<b>&quot;{{curSearch}}&quot;</b>'}"></div>
+</div>

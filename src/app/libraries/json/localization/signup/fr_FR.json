@@ -1,0 +1,42 @@
+{
+  "lang": "fr_FR",
+  "cm": {
+    "menu": {
+      "53": "Inscription"
+    },
+    "footer": {
+      "1": "Conditions générales",
+      "2": "Politique de confidentialité"
+    }
+  },
+  "signup": {
+    "label": {
+      "1": "Nom",
+      "1.1": "Premier",
+      "1.2": "Dernier",
+      "2": "Mot de passe",
+      "3": "Confirmer le mot de passe"
+    },
+    "btn": {
+      "1":"S'inscrire",
+      "2": "Annuler"
+    },
+    "msg": {
+      "1": "Bienvenue sur la plate-forme de signalisation numérique {{brand}}",
+      "2": "Tous les champs sont obligatoires",
+      "3": "Les mots de passe ne correspondaient pas.",
+      "4": "Veuillez valider le captcha.",
+      "5": "L'utilisateur existe déjà.",
+      "6": "Oops! Quelque chose a mal tourné. Veuillez réessayer plus tard.",
+      "6.1": "Essayez de vous inscrire de nouveau",
+      "7": "Merci de vous joindre à {{brand}}.",
+      "8": "Votre compte a été créé avec {{brand}}.",
+      "9": "Connectez-vous à {{brand}}",
+      "10": "Mot de passe doit être d'au moins 8 caractères.",
+      "11": "Le mot de passe doit contenir au moins une lettre.",
+      "12": "Le mot de passe doit contenir au moins un chiffre.",
+      "13": "Le mot de passe doit contenir au moins l'un des caractères suivants:",
+      "14": "Le mot de passe n'est pas valide."
+    }
+  }
+}

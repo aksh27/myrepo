@@ -1,0 +1,27 @@
+<section class="panel">
+  <header class="panel-heading">{{'users.label.1' | translate}}</header>
+  <div class="panel-body">
+    <img alt="" src="assets/images/loading.gif" ng-if="detailLoading">
+    <div ng-if="!detailLoading" class="scrollQuad" ng-style="{'max-height':{{getAvailableHeight(370)}}+'px'}">
+      <div class="marB10">
+        <div>{{detailedLog.obj.data}}</div>
+        <div class="text-muted text-sm">{{detailedLog.obj.user}}</div>
+        <div class="text-muted text-sm">{{detailedLog.obj.logDate}} - {{detailedLog.obj.logTime | uppercase}}</div>
+      </div>
+      <div class="table no-th no-pointer word-break">
+        <div class="row" ng-repeat="list in detailedLog.list.list track by $index">
+          <div class="col-xs-12">{{list}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel-footer">
+    <span class="btnQuad">
+      <button type="button" class="btn btn-default" ng-click="closeThisDialog();">{{'cm.btn.10' | translate}}</button>
+    </span>
+    <div class="errMsg pull-right" ng-if="hasErrPop">
+      <div ng-if="errType == 'device'">{{'db.msg.2' | translate}}</div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+</section>

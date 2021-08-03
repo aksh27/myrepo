@@ -1,0 +1,14 @@
+<section class="panel">
+  <header class="panel-heading">{{'cm.btn.16' | translate}}</header>
+  <img src="assets/images/loading.gif" ng-if="popupProcessing" class="pad10">
+  <div class="panel-body text-center" ng-if="!popupProcessing">
+    <p translate="{{'cm.body.1'}}" translate-values="{htmlTagO: '<b>&quot;', htmlTagC: '&quot;</b>'}"></p>
+    <a href="{{attachObj.url}}" download target="_blank" class="btn btn-link text-lg"><span class="fa fa-download"></span> {{'cm.btn.16' | translate}} <span ng-if="attachObj.size">({{attachObj.size | filesize}})</span></a>
+  </div>
+  <footer class="panel-footer" ng-if="!popupProcessing">
+    <span class="btnQuad">
+      <button type="button" class="btn btn-default" ng-click="closeThisDialog();">{{'cm.btn.9' | translate}}</button>
+    </span>
+    <div class="clearfix"></div>
+  </footer>
+</section>

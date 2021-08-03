@@ -1,0 +1,26 @@
+<section class="panel">
+  <div class="panel-heading">{{'s.btn.3' | translate}}</div>
+  <div class="panel-body text-center">
+    <div class="form-group text-left">
+      <label><input type="radio" name="key" ng-model="keyObj.type" value="hub" ng-change="keyFx(0)"><label></label> Hub</label>
+      <label class="marL10 marR10"><input type="radio" name="key" ng-model="keyObj.type" value="cp" ng-change="keyFx(3)"><label></label> Canada Post</label>
+      <label class="marR10"><input type="radio" name="key" ng-model="keyObj.type" value="nav" ng-change="keyFx(1)"><label></label> Nav Canada</label>
+      <label><input type="radio" name="key" ng-model="keyObj.type" value="ll" ng-change="keyFx(2)"><label></label> LifeLabs</label>
+    </div>
+    <div class="marB10">
+      <div class="marB5">{{'s.label.1' | translate}}</div>
+      <div class="form-group marB10">
+        <div class="input-group input-group-sm">
+          <input type="text" class="form-control picker" value="{{licenseKey}}" readonly="">
+          <div class="input-group-btn"><button class="btn btn-default" ngclipboard data-clipboard-text="{{licenseKey}}" uib-tooltip="{{'cm.tool.5' | translate}}" tooltip-append-to-body="true"><span class="glyphicon glyphicon-copy text-primary"></span></button></div>
+        </div>
+      </div>
+    </div>
+    <div><a href="{{url}}LSquaredPublisher.zip?{{timestamp.getTime()}}" class="btn btn-link text-lg" target="_blank" download><span class="fa fa-download"></span> {{'cm.btn.16' | translate}}</a></div>
+  </div>
+  <footer class="panel-footer">
+    <span class="btnQuad">
+      <button type="button" class="btn btn-default" ng-click="closeThisDialog();">{{'cm.btn.9' | translate}}</button>
+    </span>
+  </footer>
+</section>

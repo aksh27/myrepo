@@ -1,0 +1,87 @@
+<!-- <div class="row marT10">
+  <div class="col-xs-4">
+    <div class="form-group">
+      <label>{{'reports.label.3' | translate}}</label>
+      <div>
+        <label><input type="radio" name="trTypeOpt" ng-model="tr.rType" value="ts"><label></label>{{'reports.label.4' | translate}}</label>
+        <label class="marLR5"><input type="radio" name="trTypeOpt" ng-model="tr.rType" value="t" ng-change="getReports()"><label></label>{{'reports.label.5' | translate}}</label>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!-- Timesheet -->
+<div class="row marT10">
+  <div class="col-xs-4">
+    <div class="form-group">
+      <label>{{'reports.label.1' | translate}}</label>
+      <select class="form-control" ng-model="reports.type" ng-change="typeFx();">
+        <option value="" disabled="disabled">{{'reports.label.1' | translate}}</option>
+        <option value="cw">{{'reports.label.1.1' | translate}}</option>
+        <option value="l2w">{{'reports.label.1.2' | translate}}</option>
+        <option value="cm">{{'reports.label.1.3' | translate}}</option>
+        <option value="l2m">{{'reports.label.1.4' | translate}}</option>
+        <option value="sd">{{'reports.label.1.7' | translate}}</option>
+        <option value="c">{{'reports.label.1.5' | translate}}</option>
+      </select>
+    </div>
+    <div class="form-group" ng-if="reports.type == 'c'">
+      <label>{{'reports.label.1.6' | translate}}</label>
+      <div class="input-group">
+        <span class="input-group-addon"><span class="fas fa-calendar-alt"></span></span>
+        <input type="daterange" class="form-control picker" ng-model="reports.dateRange" format="MM/DD/YYYY"  max-date="{{maxDate}}" readonly="" ng-change="rangeFx()">
+      </div>
+    </div>
+    <div>
+      <button class="btn btn-primary marR20" ng-click="reportsFx();" ng-disabled="saveProcessing"><span class="fas" ng-class="saveProcessing?'fa-spin fa-redo':'fa-check'"></span>{{'reports.btn.1' | translate}}</button>
+      <a href="{{download}}" ng-if="download!=''" target="_blank"><span class="fas fa-download marR5"></span>{{'reports.btn.2' | translate}}</a>
+    </div>
+    <div class="errMsg marT10" ng-if="hasErr">
+      <span ng-if="errType == 'empty'">{{'reports.msg.1' | translate}}</span>
+      <span ng-if="errType == 'date'">{{'reports.msg.2' | translate}}</span>
+      <span ng-if="errType == 'noData'">{{'reports.msg.3' | translate}}</span>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="row marT10">
+  <div class="col-xs-4">
+    <div class="form-group">
+      <label>{{'reports.label.3' | translate}}</label>
+      <div>
+        <label><input type="radio" name="hrTypeOpt" ng-model="hr.rType" value="s" ng-change="resetHrFx()"><label></label>{{'reports.label.6' | translate}}</label>
+        <label class="marLR5"><input type="radio" name="hrTypeOpt" ng-model="hr.rType" value="d" ng-change="resetHrFx()"><label></label>{{'reports.label.7' | translate}}</label>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-4">
+    <div class="form-group">
+      <label>{{'reports.label.2' | translate}}</label>
+      <select class="form-control" ng-model="reports.type" ng-change="getServers();">
+        <option value="" disabled="disabled">{{'reports.label.2' | translate}}</option>
+        <option value="cp">{{'reports.label.2.2' | translate}}</option>
+        <option value="ll">{{'reports.label.2.3' | translate}}</option>
+        <option value="nc">{{'reports.label.2.4' | translate}}</option>
+        <option value="pro">{{'reports.label.2.1' | translate}}</option>
+        <option value="ta">{{'reports.label.2.6' | translate}}</option>
+        <option value="us">{{'reports.label.2.5' | translate}}</option>
+      </select>
+    </div>
+    <div class="form-group" ng-if="hr.rType == 'd' && serverList.length > 0">
+      <label>{{'reports.label.8' | translate}}</label>
+      <select class="form-control" ng-model="hr.sType" ng-options="server.label for server in serverList track by server.id" ng-change="rangeFx()">
+        <option value="" disabled="disabled">{{'reports.label.8' | translate}}</option>
+      </select>
+    </div>
+    <div>
+      <button class="btn btn-primary marR20" ng-click="hubReportsFx();" ng-disabled="saveProcessing || listLoading"><span class="fas" ng-class="saveProcessing?'fa-spin fa-redo':'fa-check'"></span>{{'reports.btn.1' | translate}}</button>
+      <a href="{{download}}" ng-if="download!=''" target="_blank"><span class="fas fa-download marR5"></span>{{'reports.btn.2' | translate}}</a>
+    </div>
+    <div class="errMsg marT10" ng-if="hasErr">
+      <span ng-if="errType == 'empty'">{{'reports.msg.8' | translate}}</span>
+      <span ng-if="errType == 'noData'">{{'reports.msg.9' | translate}}</span>
+      <span ng-if="errType == 'sEmpty'">{{'reports.msg.10' | translate}}</span>
+    </div>
+  </div>
+</div> -->

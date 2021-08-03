@@ -1,0 +1,390 @@
+<img src="assets/images/loading.gif" class="marT10" ng-if="pageOLoading">
+<div ng-if="!pageOLoading">
+  <div class="row subject-header marB25">
+    <div class="col-xs-10">
+      <div class="text-big">
+        <a ui-sref="support.order.{{curTab}}" class="text-muted back-btn pull-left"><span class="fas fa-arrow-left text-sm"></span></a>
+        <div class="word-break">
+          <span ng-if="decId" class="text-muted">{{"od.label.5" | translate}} <span class="text-sm">[ LSORD-{{order.id}} ]</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="section-head">{{'i.tab.4' | translate}}</div>
+      <div>
+        <div ng-if="isShowC">
+          <label class="marR10"><input type="radio" ng-model="curCustDetail.custType" value="e" ng-change="changeCustmerFx()"><label></label>{{'cm.label.34' | translate}}</label>
+          <label><input type="radio" ng-model="curCustDetail.custType" value="n" ng-change="changeCustmerFx()"><label></label>{{'cm.label.33' | translate}}</label>
+        </div>
+
+        <div ng-if="curCustDetail.custType == 'n'">
+          <div class="form-group padT5 padB5">
+            <div class="text-bold marB5" ng-if="!isShowC">Vendor name</div>
+            <span>{{order.vendor.label}}</span>
+            <a href="" ng-click="addCustomerOpen();" ng-if="!order.vendor.label" class="text-underline">Add New Customer</a>
+            <span ng-if="order.vendor.label">
+              <a href="" ng-click="selectCustomerOpen();" ng-if="isShowC" class="text-underline marL10">Change</a>
+            </span>
+          </div>
+        </div>
+
+        <!-- <div class="form-group padT5">
+          <div class="text-bold marB5">Customer name</div>
+          <span class="text-bold">{{order.name != "" ? order.name : "None"}}</span>
+        </div> -->
+
+        <div ng-if="curCustDetail.custType == 'e'">
+          <div class="form-group padT5 padB5">
+            <div class="text-bold marB5" ng-if="!isShowC">Customer name</div>
+            <span class="text-bold">{{((!order.name && !isShowC) || (!order.name && order.customerId == 0)) ? 'None' : order.name}}</span>
+            <a href="" ng-click="selectCustomerOpen('s');" ng-if="!order.name && isShowC && order.customerId!=0" class="text-underline">Select Existing Customer</a>
+            <span ng-if="order.name || order.customerId==0">
+              <a href="" ng-click="selectCustomerOpen('c');" ng-if="isShowC" class="text-underline marL10">Change</a>
+            </span>
+          </div>
+          <div class="form-group" ng-if="order.name">
+            <div class="row">
+              <div class="col-xs-6">
+                <div class="bg-grey pad5">
+                  <div class="marB10">
+                    <a href="" class="text-sm pull-right" ng-click="changeAdsOpen('b', curCustDetail.ebAds)" ng-if="curTab=='cm' && isShowA">{{curCustDetail.ebAds.address?'od.label.7':'cm.btn.18' | translate}}</a>
+                    <label class="noMarB">{{'od.label.25' | translate}}</label>
+                  </div>
+                  <div ng-if="curCustDetail.ebAds.address">
+                    <div>{{curCustDetail.ebAds.name}}</div>
+                    <div>{{curCustDetail.ebAds.address}}</div>
+                    <div>{{curCustDetail.ebAds.city}}, {{curCustDetail.ebAds.province}} {{curCustDetail.ebAds.zip}}</div>
+                    <div>{{curCustDetail.ebAds.country}}</div>
+                    <div ng-if="curCustDetail.ebAds.phone" class="marT5"><span class="text-bold marR5">{{'od.label.49' | translate}}:</span>{{curCustDetail.ebAds.phone}}</div>
+                    <div ng-if="curCustDetail.ebAds.email"><span class="text-bold marR5">{{'cm.label.2' | translate}}:</span>{{curCustDetail.ebAds.email}}</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-6">
+                <div class="bg-grey pad5">
+                  <div class="marB10">
+                    <a href="" class="text-sm pull-right" ng-click="changeAdsOpen('b', curCustDetail.ebAds)" ng-if="curTab=='cm' && isShowA">{{curCustDetail.ebAds.address?'od.label.7':'cm.btn.18' | translate}}</a>
+                    <label class="noMarB">{{'od.label.26' | translate}}</label>
+                  </div>
+                  <div ng-if="curCustDetail.esAds.address">
+                    <div>{{curCustDetail.esAds.name}}</div>
+                    <div>{{curCustDetail.esAds.address}}</div>
+                    <div>{{curCustDetail.esAds.city}}, {{curCustDetail.esAds.province}} {{curCustDetail.esAds.zip}}</div>
+                    <div>{{curCustDetail.esAds.country}}</div>
+                    <div ng-if="curCustDetail.esAds.phone" class="marT5"><span class="text-bold marR5">{{'od.label.49' | translate}}:</span>{{curCustDetail.esAds.phone}}</div>
+                    <div ng-if="curCustDetail.esAds.email"><span class="text-bold marR5">{{'cm.label.2' | translate}}:</span>{{curCustDetail.esAds.email}}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="form-group">
+          <label>{{'Vendor name' | translate}}</label>
+          <div class="clear-fix"></div>
+          <span ng-repeat="vendor in order.vendor track by $index">{{vendor.label}} {{$index==order.vendor.length-1 ? '' :','}} &nbsp;</span>
+          <span ng-if="order.vendor.length==0">None</span>
+        </div> -->
+
+        <!-- vendor -->
+        <div ng-if="isShowC">
+          <label class="marR10"><input type="radio" ng-model="curVendDetail.vendType" value="e" ng-change="changeVendorFx()"><label></label>{{'Existing Vendor' | translate}}</label>
+          <label><input type="radio" ng-model="curVendDetail.vendType" value="n" ng-change="changeVendorFx()"><label></label>{{'New Vendor' | translate}}</label>
+        </div>
+
+        <div ng-if="curVendDetail.vendType == 'n'">
+          <div class="form-group padT5 padB5">
+            <div class="text-bold marB5" ng-if="!isShowC">Vendor name</div>
+            <span>{{order.vendor.label}}</span>
+            <a href="" ng-click="addVendorOpen();" ng-if="!order.vendor.label" class="text-underline">Add New Vendor</a>
+            <span ng-if="order.vendor.label">
+              <a href="" ng-click="selectVendorOpen();" ng-if="isShowC" class="text-underline marL10">Change</a>
+            </span>
+          </div>
+        </div>
+        <div ng-if="curVendDetail.vendType == 'e'">
+          <div class="form-group padT5 padB5">
+            <div class="text-bold marB5" ng-if="!isShowC">Vendor name</div>
+            <div ng-repeat="vendor in order.vendor track by $index">
+              {{vendor.label}} {{$index==order.vendor.length-1 ? '' :','}}
+              <span ng-if="order.vendor.length > 0 && ($index == order.vendor.length - 1)">
+                <a href="" ng-click="selectVendorOpen('c');" ng-if="isShowC" class="text-underline marL10">Change</a>
+              </span>
+            </div>
+            <span ng-if="order.vendor.length==0 && !isShowC">None</span>
+            <a href="" ng-click="selectVendorOpen();" ng-if="(!order.vendor || order.vendor.length ==0) && isShowC" class="text-underline">Select Existing Vendor</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row marB15">
+        <div class="col-xs-6">
+          <label>{{'od.label.14' | translate}}</label>
+          <div>{{order.createdBy.label}}</div>
+        </div>
+        <div class="col-xs-6">
+          <label>{{'od.label.21' | translate}}</label>
+          <div>{{getToday(order.createdOn)?('od.label.23' | translate):''}}  {{order.createdOn | date:getDateFormat(order.createdOn, 'oDT')}}</div>
+        </div>
+      </div>
+      <div class="row marB15" ng-if="isShowOD">
+        <div class="col-xs-6">
+          <label>Billed by</label>
+          <div>{{order.completedBy.label}}</div>
+        </div>
+        <div class="col-xs-6">
+          <label>Billing date</label>
+          <div>{{getToday(order.completedOn)?('od.label.23' | translate):''}} {{order.completedOn | date:getDateFormat(order.completedOn, 'oDT')}}</div>
+        </div>
+      </div>
+      <div class="row marB15" ng-if="(isShowOD || isShowCL) && order.dispatchedOn">
+        <div class="col-xs-6">
+          <label>{{'od.label.17' | translate}}</label>
+          <div>{{order.dispatchedBy.label}}</div>
+        </div>
+        <div class="col-xs-6">
+          <label>{{'od.label.22' | translate}}</label>
+          <div>{{getToday(order.dispatchedOn)?('od.label.23' | translate):''}} {{order.dispatchedOn | date:getDateFormat(order.dispatchedOn, 'oDT')}}</div>
+        </div>
+      </div>
+      <div class="row marB15" ng-if="isShowCL">
+        <div class="col-xs-6">
+          <label>{{'od.label.56' | translate}}</label>
+          <div>{{order.closedBy.label}}</div>
+        </div>
+        <div class="col-xs-6">
+          <label>{{'od.label.57' | translate}}</label>
+          <div>{{getToday(order.closedOn)?('od.label.56' | translate):''}} {{order.closedOn | date:getDateFormat(order.closedOn, 'oDT')}}</div>
+        </div>
+      </div>
+      <div class="row marB15">
+        <div class="col-xs-6">
+          <label>{{'db.label.1' | translate}}</label>
+          <div>{{odrStatus}}</div>
+        </div>
+      </div>
+
+      <div class="marB10">
+        <div class="bdrBtm marB10 padB2">
+          <label>{{'od.label.55' | translate}}</label><a href="" uib-tooltip-template="'poFilesTemp.html'" tooltip-placement="right" class="marL5"><span class="fas fa-info-circle text-sm"></span></a>
+          <div class="btn-file pull-right" ng-if="curTab != 'cl' && curTab != 'cn'">
+            <button type="button" class="btn btn-primary btn-xs" ng-disabled="popupProcessing"><i class="fas fa-plus-circle"></i>{{'cm.btn.18' | translate}}</button>
+            <input type="file" file-model="curFiles" options="{size:10485760, format:['order'], callback:true, multiple:true, caller:'c'}" multiple ng-disabled="popupProcessing">
+          </div>
+        </div>
+        <div class="marB10" ng-if="poSFiles.length || poUFiles.length">
+          <div class="row attachList wmw100" ng-repeat="sFile in poSFiles">
+            <div class="col-xs-11 text-ellipsis noPadL noPadR">
+              {{ext = (sFile.type | fileExt:sFile.name); ""}}
+              <i class="far marR5" ng-class="{'fa-file-image':ext=='image', 'fa-file-alt':ext=='text', 'fa-file-pdf':ext=='pdf', 'fa-file-word':ext=='doc', 'fa-file-powerpoint':ext=='ppt', 'fa-file':ext=='file'}"></i>{{sFile.name | limitTo:55}}<span ng-if="sFile.name.length > 55">...</span><span class="text-muted marL5">({{sFile.size | filesize}})</span>
+            </div>
+            <div class="col-xs-1 text-right noPadL padR5">
+              <a href="{{order.poPath + sFile.nameTemp}}" target="_blank" download class="marR5 text-sm"><i class="fas fa-download"></i></a>
+              <a href="" class="text-danger" ng-click="poAttachRemoveFx('s', $index);" ng-disabled="popupProcessing" ng-if="(auth.id == order.createdBy.id || auth.userType == 5) && (curTab != 'cl' && curTab != 'cn')"><i class="fas fa-times"></i></a>
+            </div>
+            <div class="col-xs-8 text-ellipsis noPadL noPadR marT3">
+              <div ng-if="decId" class="text-ellipsis text-sm text-bold text-muted">{{sFile.by}} {{sFile.by?'|':''}} {{getToday(sFile.on)?('od.label.23' | translate):''}} {{sFile.on | date:getDateFormat(sFile.on, 'oDT')}}</div>
+            </div>
+          </div>
+          <div class="row attachList wmw100" ng-repeat="uFile in poUFiles">
+            <div class="col-xs-11 text-ellipsis noPadL noPadR">
+              <div><i class="far fa-file marR5"></i>{{uFile.name | limitTo:55}}<span ng-if="uFile.name.length > 55">...</span><span class="text-muted marL5">({{uFile.size | filesize}})</span></div>
+              <span class="text-danger text-sm">{{'cm.msg.40' | translate}}</span>
+            </div>
+            <div class="col-xs-1 text-right noPadL padR5">
+              <a href="{{order.poPath + uFile.nameTemp}}" target="_blank" download class="marR5 text-sm"><i class="fas fa-download"></i></a>
+              <a href="" class="text-danger" ng-click="poAttachRemoveFx('u', $index);" ng-disabled="popupProcessing" ng-if="(auth.id == order.createdBy.id || auth.userType == 5) && (curTab != 'cl' && curTab != 'cn')"><i class="fas fa-times"></i></a>
+            </div>
+          </div>
+        </div>
+        <div ng-if="!poSFiles.length && !poUFiles.length" class="msg-warning">{{'od.msg.31' | translate}}</div>
+      </div>
+
+      <!-- <div class="bdr-top-dashed"></div>
+      <button ng-if="curTab != 'cl' && curTab != 'cn' && upRemAttachment" type="submit" ng-disabled="updateProcessing" ng-click="updateAttachmentFx(order);" class="btn btn-success btn-xs"><span class="fas" ng-class="updateProcessing?'fa-redo fa-spin':'fa-check'"></span> {{updateProcessing?'cm.btn.14i':'cm.btn.14' | translate}}</button> -->
+
+      <div class="marB20 marT35" ng-if="isShowCL">
+        <div class="bdrBtm marB10 padB2 section-head">
+          <label>Renewal Detail</label>
+          <div class="btn-file pull-right" ng-if="(auth.userType != 1 && auth.userType != 2)">
+            <button type="button" ng-click="odrRenewalOpen(order);" class="btn btn-primary btn-xs" ng-disabled="popupProcessing"><i class="fas fa-plus-circle"></i>{{'cm.btn.18' | translate}}</button>
+          </div>
+        </div>
+        <div class="marB10">
+          <div class="row item-container">
+            <div class="order-item col-xs-12">
+              <div class="table table-striped no-pointer">
+                <div class="row th">
+                  <div class="col-xs-3">{{'Date' | translate}}</div>
+                  <div class="col-xs-3">{{'Amount' | translate}}</div>
+                  <div class="col-xs-6">{{'Comment' | translate}}</div>
+                </div>
+                <div class="row" ng-repeat="renew in renewal track by $index">
+                  <div class="col-xs-3 text-ellipsis">{{getToday(renew.renewalDate)?('od.label.23' | translate):renew.renewalDate}}</div>
+                  <div class="col-xs-3 text-ellipsis">${{renew.renewalAmt}}<span class="text-sm text-muted" ng-if="renew.amount==''">N/A</span></div>
+                  <div class="col-xs-5">{{renew.comment}}</div>
+                  <div class="col-xs-1 text-right" ng-if="isEditable && (!isShowOD && !isShowCL)"><a href="" class="text-danger" ng-click="deleteOrderItem($index);" uib-tooltip="{{'cm.btn.12' | translate}}" tooltip-popup-delay="1000"><i class="fas fa-times"></i></a></div>
+                </div>
+                <div ng-if="!renewal.length && !renewal.length" class="msg-warning">{{'There is no detail.' | translate}}</div>
+              </div>
+            </div>
+            <div class="errMsg marR10 pull-right marT5" ng-if="hasOdErr">
+              <span ng-if="errType == 'type'">{{"i.msg.1" | translate}}</span>
+              <span ng-if="errType == 'model'">{{"i.msg.2" | translate}}</span>
+              <span ng-if="errType == 'qty'">{{"i.msg.16" | translate}}</span>
+              <span ng-if="errType == 'orderItem'">{{"i.msg.17" | translate}}</span>
+              <span ng-if="errType == 'sn'">{{"i.msg.23" | translate}}</span>
+            </div>
+          </div>
+        </div>
+        <!-- <div ng-if="!poSFiles.length && !poUFiles.length" class="msg-warning">{{'od.msg.31' | translate}}</div> -->
+      </div>
+
+      <!-- <div ng-if="!orderView.quickForm || orderView.quickForm == 0"> -->
+      <div>
+        <div class="marT35">
+          <div class="section-head">{{'cm.label.30' | translate}}</div>
+          <div class="row item-container">
+            <div class="order-item col-xs-12">
+              <div class="table table-striped no-pointer">
+                <div class="row th">
+                  <div class="col-xs-3">{{'i.label.2' | translate}}</div>
+                  <div class="col-xs-3">{{'i.label.3' | translate}}</div>
+                  <div class="col-xs-2">{{'i.label.14' | translate}}</div>
+                  <div class="col-xs-4">{{'i.label.1' | translate}}</div>
+                </div>
+                <div class="row" ng-repeat="order in orderArr track by $index">
+                  <div class="col-xs-3 text-ellipsis">{{order.label}}</div>
+                  <div class="col-xs-3 text-ellipsis">{{order.model.label}}<span class="text-sm text-muted" ng-if="order.model.length == 0 || order.model.label == ''">N/A</span></div>
+                  <div class="col-xs-2">{{order.qty}}</div>
+                  <div class="col-xs-4">
+                    <div class="input-group" ng-if="order.id == 1">
+                      <div class="text-sm">{{order.sn.sn}}</div>
+                    </div>
+                    <span class="text-sm text-muted" ng-if="order.id != 1">N/A</span>
+                  </div>
+                  <div class="col-xs-1 text-right" ng-if="isEditable && (!isShowOD && !isShowCL)"><a href="" class="text-danger" ng-click="deleteOrderItem($index);" uib-tooltip="{{'cm.btn.12' | translate}}" tooltip-popup-delay="1000"><i class="fas fa-times"></i></a></div>
+                </div>
+                <div class="row bg-warning text-bold">
+                  <div class="col-xs-3">{{('od.label.8' | translate) +" : "+ orderArr.length}}</div>
+                  <div class="col-xs-3"></div>
+                  <div class="col-xs-6">{{('i.label.22' | translate) +" : "+ tQty}}</div>
+                </div>
+              </div>
+            </div>
+            <div class="errMsg marR10 pull-right marT5" ng-if="hasOdErr">
+              <span ng-if="errType == 'type'">{{"i.msg.1" | translate}}</span>
+              <span ng-if="errType == 'model'">{{"i.msg.2" | translate}}</span>
+              <span ng-if="errType == 'qty'">{{"i.msg.16" | translate}}</span>
+              <span ng-if="errType == 'orderItem'">{{"i.msg.17" | translate}}</span>
+              <span ng-if="errType == 'sn'">{{"i.msg.23" | translate}}</span>
+            </div>
+          </div>
+        </div>
+        <div class="marT35">
+          <div class="section-head">{{'cm.label.31' | translate}}</div>
+          <div class="bg-grey pad10 marB20">
+            <div class="row">
+              <div class="col-xs-6">
+                <label>{{'i.label.13' | translate}}</label>
+                <div>{{(order.courierBy.id!=0)?order.courierBy.label:'N/A'}}</div>
+              </div>
+              <div class="col-xs-6">
+                <label>{{'od.label.41' | translate}}</label>
+                <div>{{(order.trackingNumber!='')?order.trackingNumber:'N/A'}}</div>
+              </div>
+            </div>
+            <div class="row marT15" ng-if="order.courierBy.id==10000">
+              <div class="col-xs-6">
+                <label>{{'od.label.13' | translate}}</label>
+                <div>{{order.courierName!=''?order.courierName:'N/A'}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bdr-top-dashed">
+        <div class="form-group">
+          <span class="btnQuad">
+            <button class="btn btn-primary" ng-if="curTab=='cm'" ng-disabled="saveProcessing" ng-click="addOrderFx();"><span class="fas" ng-class="saveProcessing?'fa-redo fa-spin':'fa-check'"></span> {{'Update' | translate}}</button>
+
+            <button class="btn btn-primary" ng-click="setStatus('close', 4);" ng-if="isShowOD && (auth.userType != 1 && auth.userType != 2)"><span class="fas fa-check"></span> {{'Close Order' | translate}}</button>
+
+            <button class="btn btn-link" ui-sref="support.order.{{curTab}}">{{"cm.btn.9" | translate}}</button>
+          </span>
+          <div class="errMsg pull-right" ng-if="hasErr">
+            <span ng-if="errType == 'bName'">{{"od.msg.11" | translate}}</span>
+            <span ng-if="errType == 'bAds'">{{"od.msg.12" | translate}}</span>
+            <span ng-if="errType == 'bCity'">{{"od.msg.13" | translate}}</span>
+            <span ng-if="errType == 'bZip'">{{"od.msg.14" | translate}}</span>
+            <span ng-if="errType == 'bState'">{{"od.msg.15" | translate}}</span>
+            <span ng-if="errType == 'bCountry'">{{"od.msg.16" | translate}}</span>
+
+            <span ng-if="errType == 'sName'">{{"od.msg.17" | translate}}</span>
+            <span ng-if="errType == 'sAds'">{{"od.msg.18" | translate}}</span>
+            <span ng-if="errType == 'sCity'">{{"od.msg.19" | translate}}</span>
+            <span ng-if="errType == 'sZip'">{{"od.msg.20" | translate}}</span>
+            <span ng-if="errType == 'sState'">{{"od.msg.21" | translate}}</span>
+            <span ng-if="errType == 'sCountry'">{{"od.msg.22" | translate}}</span>
+
+            <span ng-if="errType == 'eFile'">{{"od.msg.36" | translate}}</span>
+            <span ng-if="errType == 'nCust'">{{"od.msg.37" | translate}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Comments -->
+    <div class="col-xs-1"></div>
+    <div class="col-xs-5 sticky" style="top:65px">
+      <div class="section-head">{{'cm.label.32' | translate}}</div>
+      <div>
+        <div ng-if="decId">
+          <div class="form-group">
+            <!-- Comments New -->
+            <div class="panel-body noBdrT">
+              <img src="assets/images/loading-xs.gif" ng-if="cmtLoading">
+              <div ng-if="!cmtLoading && order.comments.length>0" class="scrollQuad marB10" style="max-height:{{getAvailableHeight(350)}}px;">
+                <div ng-repeat="comment in order.comments" style="border-left:1px dashed #ccc;padding-left:10px;margin-left:4px">
+                  <div class="badge badge-info">{{getToday(comment.date)?('od.label.23' | translate):comment.date}}</div>
+                  <div ng-repeat="item in comment.items" style="padding:10px 0;position:relative;">
+                    <div class="word-break" ng-class="{'text-info':(item.type == 1 || item.type == 2), 'text-success':(item.type == 3 || item.type == 4), 'text-danger':(item.type == 5 || item.type == 7)}"><span class="fas fa-circle" style="font-size:8px;margin:7px 0 0 -14px;position:absolute;" ng-class="{'text-muted':item.type == 0}"></span><span ng-bind-html="item.comment"></span></div>
+                    <div class="word-break text-sm text-bold text-muted">{{item.createdBy.label}} | {{item.createdOn | date:'shortTime'}}</div>
+                  </div>
+                </div>
+              </div>
+              <div class="marB10" ng-if="decId && isShowOD && (auth.userType != 1 && auth.userType != 2)">
+                <button type="button" class="btn btn-primary btn-xs" ng-click="setStatus('invoiced', 1);" ng-if="order.isInvoiced != 1">Invoiced</button>
+                <button type="button" class="btn btn-primary btn-xs" ng-click="setStatus('paymentRec', 1);" ng-if="order.isPaymentRec!= 1">Payment Received</button>
+                <!-- <button type="button" class="btn btn-primary btn-xs" ng-click="setStatus('support', 3);" ng-if="auth.userType != 2 && orderArr.length && (!order.paymentReq || (order.paymentReq && order.accountStatus))">{{'i.label.24' | translate}}</button> -->
+              </div>
+              <div class="form-group">
+                <textarea type="text" placeholder="{{'od.msg.7' | translate}}" rows="2" class="form-control" ng-model="order.comment"></textarea>
+                <button type="submit" ng-disabled="cmtLoading" ng-click="addCommentFx(order.id);" class="btn btn-primary btn-xs marT10">{{'od.btn.1' | translate}}</button>
+                <div class="errMsg pull-right text-sm marT10" ng-if="cmtErr">
+                  <span ng-if="errType == 'cmtEmpty'">{{"od.msg.6" | translate}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div ng-if="!decId" class="form-group">
+          <textarea type="text" rows="3" class="form-control" ng-model="order.comment"></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/ng-template" id="poFilesTemp.html">
+  <div class="text-left text-sm">
+    <div ng-if="orderFormat.length > 0">
+      <div class="text-ucase">
+        <span ng-repeat="ext in orderFormat">{{ext}}<span ng-if="!$last">, </span></span>
+      </div>
+    </div>
+  </div>
+</script>

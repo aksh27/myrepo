@@ -1,0 +1,106 @@
+<div class="table table-md no-pointer">
+<img src="assets/images/loading.gif" class="padT10" ng-if="listLoading">
+  <div class="noPad" ng-if="!listLoading && serverList.length > 0">
+    <div class="row th">
+      <a href="" ng-click="columnSortFx('n', (auth.sort.ser_ser.val == 'a' ? 'd' : 'a'), serverList, 'ser_ser'); activeColumnFx('label');">
+        <div class="col-xs-3 text-primary text-bold display-flex">Name
+          <div class="marL10" ng-if="activeCol == 'label' && !saveProcessing">
+            <span ng-if="auth.sort.ser_ser.val === 'd'"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+            <span ng-if="auth.sort.ser_ser.val === 'a'"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="" ng-click="columnSortFx('cr', (auth.sort.ser_ser.val == 'a' ? 'd' : 'a'), serverList, 'ser_ser'); activeColumnFx('created');">
+        <div class="col-xs-2 text-primary text-bold display-flex">Created by
+          <div class="marL10" ng-if="activeCol == 'created' && !saveProcessing">
+            <span ng-if="auth.sort.ser_ser.val === 'd'"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+            <span ng-if="auth.sort.ser_ser.val === 'a'"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="" ng-click="columnSortFx('pa', (auth.sort.ser_ser.val == 'a' ? 'd' : 'a'), serverList, 'ser_ser'); activeColumnFx('primeAdmin');">
+        <div class="col-xs-3 text-primary text-bold display-flex">Prime Admin
+          <div class="marL10" ng-if="activeCol == 'primeAdmin' && !saveProcessing">
+            <span ng-if="auth.sort.ser_ser.val === 'd'"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+            <span ng-if="auth.sort.ser_ser.val === 'a'"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="" ng-click="columnSortFx('l', (auth.sort.ser_ser.val == 'a' ? 'd' : 'a'), serverList, 'ser_ser'); activeColumnFx('licenses');">
+        <div class="col-xs-2 text-primary text-bold display-flex">Licenses
+          <div class="marL10" ng-if="activeCol == 'licenses' && !saveProcessing">
+            <span ng-if="auth.sort.ser_ser.val === 'd'"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+            <span ng-if="auth.sort.ser_ser.val === 'a'"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="" ng-click="columnSortFx('d', (auth.sort.ser_ser.val == 'a' ? 'd' : 'a'), serverList, 'ser_ser'); activeColumnFx('devices');">
+        <div class="col-xs-2 text-primary text-bold display-flex">Devices
+          <div class="marL10" ng-if="activeCol == 'devices' && !saveProcessing">
+            <span ng-if="auth.sort.ser_ser.val === 'd'"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+            <span ng-if="auth.sort.ser_ser.val === 'a'"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+          </div>
+        </div>
+      </a>
+    </div>
+    <!-- <div class="row th">
+      <a href="" ng-click="sortBy('label');">
+        <div class="col-xs-3">Name
+          <span class="pull-right" ng-show="propertyName === 'label'">
+            <span ng-show="!reverse"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+            <span ng-show="reverse"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+          </span>
+        </div>
+      </a>
+      <a href="" ng-click="sortBy('fname');">
+        <div class="col-xs-2">Created by
+          <span class="pull-right" ng-show="propertyName === 'fname'">
+            <span ng-show="!reverse"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+            <span ng-show="reverse"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+          </span>
+        </div>
+      </a>
+      <a href="" ng-click="sortBy('email');">
+        <div class="col-xs-3">Prime Admin
+          <span class="pull-right" ng-show="propertyName === 'email'">
+            <span ng-show="!reverse"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+            <span ng-show="reverse"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+          </span>
+        </div>
+      </a>
+      <a href="" ng-click="sortBy('licenses');">
+        <div class="col-xs-2">Licenses
+          <span class="pull-right" ng-show="propertyName === 'licenses'">
+            <span ng-show="!reverse"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+            <span ng-show="reverse"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+          </span>
+        </div>
+      </a>
+      <a href="" ng-click="sortBy('devices');">
+        <div class="col-xs-2">Devices
+          <span class="pull-right" ng-show="propertyName === 'devices'">
+            <span ng-show="!reverse"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+            <span ng-show="reverse"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+          </span>
+        </div>
+      </a>
+    </div> -->
+    <div class="row" ng-repeat="server in filteredSList = (serverList | filter:search.text)">
+      <div class="col-xs-3 display-flex">
+        <a ng-if="server.bg != null" ng-href="{{storage + server.bg}}" fancyboxable="fbTitleInside" data-fancybox-title="{{server.label}}"><img class="thumbBdr" onerror="this.src='assets/images/na_sm.png'; this.parentElement.classList.add('disabled');" alt="" ng-src="{{tim + storage + server.bg}}&h=26&w=41"></a>
+        <img ng-if="server.bg == null" class="thumbBdr" alt="" ng-src="assets/images/na_sm.png">
+        <span class="marL10">{{server.label}}</span>
+      </div>
+      <div class="col-xs-2">{{server.cr.fname}}</div>
+      <div class="col-xs-3 text-ellipsis">{{server.pa.email}}</div>
+      <div class="col-xs-2">{{server.licenses}}</div>
+      <div class="col-xs-2">{{server.devices}}</div>
+    </div>
+    <div class="msg-warning" ng-if="filteredSList.length == 0" translate="{{'cm.msg.14'}}" translate-values="{searchText: '<b>&quot;{{search.text.replace(searchRegExp, searchReplaceChar)}}&quot;</b>'}"></div>
+  </div>
+  <div class="msg-warning" ng-if="!listLoading && !serverList.length" translate="{{'No server found for this server location.'}}"></div>
+</div>

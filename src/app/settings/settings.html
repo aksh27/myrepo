@@ -1,0 +1,21 @@
+<section class="panel noShadow">
+  <header class="panel-heading panel-tab">
+    <ul class="nav nav-tabs">
+      <li ui-sref-active="active" class="tab-primary"><a ui-sref=".d">{{'s.tab.1' | translate}}</a></li>
+      <li ui-sref-active="active" class="tab-success"><a ui-sref=".nt" translate="{{'s.tab.2'}}" translate-values="{htmlTag: '&nbsp;'}"></a></li>
+      <li ui-sref-active="active" class="tab-primary"><a ui-sref=".l">{{'s.tab.3' | translate}}</a></li>
+      <li ui-sref-active="active" class="tab-primary" ng-if="auth.role == 0"><a ui-sref=".c">{{'s.tab.4' | translate}}</a></li>
+      <li ui-sref-active="active" class="tab-primary"><a ui-sref=".s">{{'s.tab.5' | translate}}</a></li>
+      <li ui-sref-active="active" class="tab-primary"><a ui-sref=".v">{{'s.tab.6' | translate}}</a></li>
+      <li ui-sref-active="active" class="tab-primary"><a ui-sref=".cs">{{'s.tab.7' | translate}}</a></li>
+    </ul>
+    <div class="panel-tools marT10">
+      <div class="pull-right">
+        <button class="btn btn-primary btn-sm marT10" ng-click="addSettings();"><i class="fas fa-plus-circle"></i>{{(curState === 'support.settings.l' || curState === 'support.settings.c' || curState === 'support.settings.s')?'cm.btn.13':'cm.btn.18' | translate}}</button>
+      </div>
+    </div>
+  </header>
+  <div>
+    <div ui-view="tabView"></div>
+  </div>
+</section>

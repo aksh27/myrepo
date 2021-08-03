@@ -1,0 +1,151 @@
+<section class="panel">
+  <header class="panel-heading panel-tab">
+    <ul class="nav nav-tabs">
+      <li ng-class="{'active':selectedT=='1'}" class="tab-primary"><a href="" ng-click="tabFx(1, 'tabFx');">{{'ms.tab.1' | translate}}</a></li>
+      <li ng-class="{'active':selectedT=='2'}" class="tab-success"><a href="" ng-click="tabFx(2, 'tabFx');">{{'ms.tab.2' | translate}}</a></li>
+      <li ng-class="{'active':selectedT=='3'}" class="tab-success"><a href="" ng-click="tabFx(3, 'tabFx');">{{'ms.tab.3' | translate}}</a></li>
+    </ul>
+  </header>
+  <div class="tab-content">
+    <!--Profile-->
+    <div ng-if="selectedT=='1'">
+      <div class="panel-body">
+        <img alt="" src="assets/images/loading.gif" ng-if="settingsLoading">
+        <div ng-if="!settingsLoading">
+          <div class="row">
+            <div class="col-xs-10 col-sm-9">
+              <div class="row marT10">
+                <div class="col-xs-6">
+                  <div class="form-group">
+                    <label>{{'cm.label.2' | translate}}</label>
+                    <input type="text" class="form-control" ng-model="settings.pro.email" readonly>
+                  </div>
+                  <div class="form-group">
+                    <label>{{'ms.label.1' | translate}}</label>
+                    <input type="text" class="form-control" ng-model="settings.pro.fName" maxlength="100">
+                  </div>
+                  <div class="form-group">
+                    <label>{{'ms.label.2' | translate}}</label>
+                    <input type="text" class="form-control" ng-model="settings.pro.lName" maxlength="100">
+                  </div>
+                  <div class="form-group hide">
+                    <label>{{'cm.label.34' | translate}}</label>
+                    <select class="form-control" ng-model="settings.pro.lang">
+                      <option value="en_US">English / USA</option>
+                      <option value="fr_FR">French / France</option>
+                      <option value="es_ES">Spanish / Spain</option>
+                    </select>
+                  </div>
+                  <div class="form-group" ng-if="auth.role !== 0 && auth.tag">
+                    <label>{{'ms.label.9' | translate}}</label>
+                    <div><span class="marL5 badge bg-muted" ng-repeat="tag in auth.tag">#{{tag}}</span></div>
+                    <!-- {{hashtag = auth.tag; ""}}
+                    <input type="text" class="form-control" ng-model="hashtag" readonly> -->
+                  </div>
+                  <!-- <div class="form-group" ng-if="auth.role == 0">
+                    <label class="noMarB"><input type="checkbox" ng-model="settings.pro.isActivitylog"><label></label>{{'ms.label.7' | translate}}</label>
+                  </div> -->
+                  <!-- Any cheange to show reset button. it's pandding -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel-footer" ng-if="!settingsLoading">
+        <div class="errMsg pull-right" ng-if="hasErr">
+          <span ng-if="errType == 'name'">{{'ms.msg.1' | translate}}</span>
+          <span ng-if="errType == 'contact'">{{'ms.msg.2' | translate}}</span>
+        </div>
+        <span class="btnQuad">
+          <button type="button" class="btn btn-success" ng-click="settingFx();" ng-disabled="updateProcessing">
+            <span class="fas" ng-class="updateProcessing?'fa-redo fa-spin':'fa-check'"></span> {{updateProcessing?'cm.btn.14i':'cm.btn.14' | translate}}
+          </button>
+        </span>
+      </div>
+    </div>
+    <!--Change Password-->
+    <div ng-if="selectedT=='2'">
+      <div class="panel-body marT10">
+        <div class="row">
+          <div class="col-xs-6">
+            <div class="form-group">
+              <label>{{'ms.label.4' | translate}}</label>
+              <input type="password" class="form-control" ng-model="settings.pass.oPass" maxlength="{{inputLimit}}" autocomplete="new-password">
+            </div>
+            <div class="form-group">
+              <form method="post" action="/form" autocomplete="off">
+              <label>{{'ms.label.5' | translate}}</label>
+              <input type="password" class="form-control" ng-model="settings.pass.nPass" maxlength="{{inputLimit}}" autocomplete="new-password" ng-change="pwdValidate()">
+              </form>
+            </div>
+            <div class="form-group">
+              <label>{{'ms.label.6' | translate}}</label>
+              <input type="password" class="form-control" ng-model="settings.pass.cPass" maxlength="{{inputLimit}}" autocomplete="new-password">
+            </div>
+          </div>
+          <div class="col-xs-6">
+            <div class="bg-light pad10" ng-if="settings.pass.nPass">
+              <li ng-class="pwdLengthValid?'text-success':'text-danger'" class="text-bold">{{'ms.msg.6' | translate}} <span class="fa fa-check" ng-if="pwdLengthValid"></span></li>
+              <li ng-class="pwdCharValid?'text-success':'text-danger'" class="text-bold">{{'ms.msg.7' | translate}} <span class="fa fa-check" ng-if="pwdCharValid"></span></li>
+              <li ng-class="pwdNumValid?'text-success':'text-danger'" class="text-bold">{{'ms.msg.8' | translate}} <span class="fa fa-check" ng-if="pwdNumValid"></span></li>
+              <li ng-class="pwdSplCharValid?'text-success':'text-danger'" class="text-bold">{{'ms.msg.9' | translate}}<br>!@#$%& <span class="fa fa-check" ng-if="pwdSplCharValid"></span></li>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel-footer text-left">
+        <span class="btnQuad">
+          <button type="button" class="btn btn-success" ng-click="updatePassFx();" ng-disabled="updateProcessing">
+            <span class="fas" ng-class="updateProcessing?'fa-redo fa-spin':'fa-check'"></span> {{updateProcessing?'cm.btn.14i':'cm.btn.14' | translate}}
+          </button>
+        </span>
+        <div class="errMsg pull-right" ng-if="hasPwdErr">
+          <span ng-if="errType=='form'">{{'cm.msg.5' | translate}}</span>
+          <span ng-if="errType=='match'">{{'ms.msg.2' | translate}}</span>
+          <span ng-if="errType=='curPwd'">{{'ms.msg.3' | translate}}</span>
+          <span ng-if="errType=='oldNew'">{{'ms.msg.4' | translate}}</span>
+          <span ng-if="errType=='invalid'">{{'ms.msg.5' | translate}}</span>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+    <!--Notifications-->
+    <div ng-if="selectedT=='3'">
+      <div class="panel-body">
+        <img src="assets/images/loading.gif" ng-if="settingsLoading">
+        <div class="form-group" ng-if="!settingsLoading">
+          <label><i class="fas fa-envelope marR5"></i>{{'ms.label.8' | translate}}</label>
+          <ul class="list-unstyled">
+            <li ng-repeat="noti in notify">
+              <label class="text-unbold">
+                <input type="checkbox" ng-model="noti.value"><label></label>
+                <span ng-if="noti.id == 1">{{'ms.notify.1' | translate}}</span>
+                <span ng-if="noti.id == 2">{{'ms.notify.2' | translate}}</span>
+                <span ng-if="noti.id == 3">{{'ms.notify.3' | translate}}</span>
+                <span ng-if="noti.id == 4">{{'ms.notify.4' | translate}}</span>
+                <span ng-if="noti.id == 5">{{'ms.notify.5' | translate}}</span>
+                <span ng-if="noti.id == 6">{{'ms.notify.6' | translate}}</span>
+                <span ng-if="noti.id == 7">{{'ms.notify.7' | translate}}</span>
+                <span ng-if="noti.id == 8">{{'ms.notify.8' | translate}}</span>
+                <span ng-if="noti.id == 9">{{'ms.notify.9' | translate}}</span>
+                <span ng-if="noti.id == 10">{{'ms.notify.10' | translate}}</span>
+                <span ng-if="noti.id == 11">{{'ms.notify.11' | translate}}</span>
+                <span ng-if="noti.id == 12">{{'ms.notify.12' | translate}}</span>
+              </label>
+            </li>
+          </ul>
+          <div class="text-sm text-muted">{{'ms.label.10' | translate}}</div>
+        </div>
+
+      </div>
+      <div class="panel-footer" ng-if="!settingsLoading">
+        <span class="btnQuad">
+          <button type="button" class="btn btn-success" ng-click="notifyFx();" ng-disabled="updateProcessing">
+            <span class="fas" ng-class="updateProcessing?'fa-redo fa-spin':'fa-check'"></span> {{updateProcessing?'cm.btn.14i':'cm.btn.14' | translate}}
+          </button>
+        </span>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+<section class="panel noShadow">
+  <img src="assets/images/loading.gif" class="marT10" ng-if="pageLoading">
+  <div class="row servers">
+    <div class="col-xs-4" ng-repeat="server in servers">
+      <section class="panel" ng-click="loadServerList(server.url, server.label, server.id, server.storage, server.tt)">
+        <div class="panel-heading text-bold">{{server.label}}</div>
+        <div class="panel-body">
+          <div><label class="marR5">Location: </label>{{server.location}}</div>
+          <div ng-if="!server.info.servers" class="text-muted pull-left">Waiting for response...</div>
+          <div ng-if="server.info.servers" class="pull-left">
+            <div><label class="marR5">Servers:</label>{{server.info.servers}}</div>
+            <div><label class="marR5">Licenses:</label>{{server.info.licenses}}</div>
+            <div><label class="marR5">Devices:</label>{{server.info.devices}}</div>
+          </div>
+          <div ng-if="server.info.servers" class="pull-right">
+            <img ng-if="server.type=='azure'" alt="Azure" src="assets/images/azure.png">
+            <img ng-if="server.type=='aws'" alt="AWS" src="assets/images/aws.png">
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</section>

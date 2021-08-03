@@ -1,0 +1,142 @@
+<div class="table table-md no-pointer">
+  <img src="assets/images/loading.gif" class="padT10" ng-if="listLoading">
+  <div class="row noPad" ng-if="!listLoading && deviceList.length > 0 && filterCount != 0">
+    <div class="row th">
+      <a href="" ng-click="columnSortFx('n', (auth.sort.ser_dev.val == 'a' ? 'd' : 'a'), deviceList, 'ser_dev'); activeColumnFx('label');">
+        <div class="col-xs-2 text-primary text-bold display-flex">Name
+          <div class="marL10" ng-if="activeCol == 'label' && !saveProcessing">
+            <span ng-if="auth.sort.ser_dev.val === 'd'"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+            <span ng-if="auth.sort.ser_dev.val === 'a'"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="" ng-click="columnSortFx('m', (auth.sort.ser_dev.val == 'a' ? 'd' : 'a'), deviceList, 'ser_dev'); activeColumnFx('mac');">
+        <div class="col-xs-2 text-primary text-bold display-flex">MAC
+          <div class="marL10" ng-if="activeCol == 'mac' && !saveProcessing">
+            <span ng-if="auth.sort.ser_dev.val === 'd'"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+            <span ng-if="auth.sort.ser_dev.val === 'a'"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="" ng-click="columnSortFx('t', (auth.sort.ser_dev.val == 'a' ? 'd' : 'a'), deviceList, 'ser_dev'); activeColumnFx('type');">
+        <div class="col-xs-1 text-primary text-bold display-flex">Type
+          <div class="marL10" ng-if="activeCol == 'type' && !saveProcessing">
+            <span ng-if="auth.sort.ser_dev.val === 'd'"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+            <span ng-if="auth.sort.ser_dev.val === 'a'"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="" ng-click="columnSortFx('v', (auth.sort.ser_dev.val == 'a' ? 'd' : 'a'), deviceList, 'ser_dev'); activeColumnFx('version');">
+        <div class="col-xs-2 text-primary text-bold display-flex">Version
+          <div class="marL10" ng-if="activeCol == 'version' && !saveProcessing">
+            <span ng-if="auth.sort.ser_dev.val === 'd'"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+            <span ng-if="auth.sort.ser_dev.val === 'a'"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="" ng-click="columnSortFx('s', (auth.sort.ser_dev.val == 'a' ? 'd' : 'a'), deviceList, 'ser_dev'); activeColumnFx('server');">
+        <div class="col-xs-1 text-primary text-bold display-flex">Server
+          <div class="marL10" ng-if="activeCol == 'server' && !saveProcessing">
+            <span ng-if="auth.sort.ser_dev.val === 'd'"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+            <span ng-if="auth.sort.ser_dev.val === 'a'"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="" ng-click="columnSortFx('a', (auth.sort.ser_dev.val == 'a' ? 'd' : 'a'), deviceList, 'ser_dev'); activeColumnFx('addedOn');">
+        <div class="col-xs-2 text-primary text-bold display-flex">Added On
+          <div class="marL10" ng-if="activeCol == 'addedOn' && !saveProcessing">
+            <span ng-if="auth.sort.ser_dev.val === 'd'"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+            <span ng-if="auth.sort.ser_dev.val === 'a'"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="" ng-click="columnSortFx('l', (auth.sort.ser_dev.val == 'a' ? 'd' : 'a'), deviceList, 'ser_dev'); activeColumnFx('lastping');">
+        <div class="col-xs-2 text-primary text-right text-bold">Last Ping
+          <div class="pull-right marL10" ng-if="activeCol == 'lastping' && !saveProcessing">
+            <span ng-if="auth.sort.ser_dev.val === 'd'"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+            <span ng-if="auth.sort.ser_dev.val === 'a'"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+          </div>
+        </div>
+      </a>
+    </div>
+    <!-- <div class="row th">
+      <a href="" ng-click="sortBy('label');">
+        <div class="col-xs-2">Name
+          <span class="pull-right" ng-show="propertyName === 'label'">
+            <span ng-show="!reverse"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+            <span ng-show="reverse"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+          </span>
+        </div>
+      </a>
+      <a href="" ng-click="sortBy('mac');">
+        <div class="col-xs-2">MAC
+          <span class="pull-right" ng-show="propertyName === 'mac'">
+            <span ng-show="!reverse"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+            <span ng-show="reverse"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+          </span>
+        </div>
+      </a>
+      <a href="" ng-click="sortBy('type');">
+        <div class="col-xs-1">Type
+          <span class="pull-right" ng-show="propertyName === 'type'">
+            <span ng-show="!reverse"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+            <span ng-show="reverse"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+          </span>
+        </div>
+      </a>
+      <a href="" ng-click="sortBy('sVer');">
+        <div class="col-xs-2">Version
+          <span class="pull-right" ng-show="propertyName === 'sVer'">
+            <span ng-show="!reverse"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+            <span ng-show="reverse"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+          </span>
+        </div>
+      </a>
+      <a href="" ng-click="sortBy('slabel');">
+        <div class="col-xs-1">Server
+          <span class="pull-right" ng-show="propertyName === 'slabel'">
+            <span ng-show="!reverse"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+            <span ng-show="reverse"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+          </span>
+        </div>
+      </a>
+      <a href="" ng-click="sortBy('createdOnTS');">
+        <div class="col-xs-2">Added On
+          <span class="pull-right" ng-show="propertyName === 'createdOnTS'">
+            <span ng-show="!reverse"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+            <span ng-show="reverse"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+          </span>
+        </div>
+      </a>
+      <a href="" ng-click="sortBy('pingTS');">
+        <div class="col-xs-2 text-right">Last Ping
+          <span class="pull-right marL5" ng-show="propertyName === 'pingTS'">
+            <span ng-show="!reverse"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+            <span ng-show="reverse"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+          </span>
+        </div>
+      </a>
+    </div>
+    <div class="row" ng-repeat="device in filteredSList = (deviceList | filter:search.text | orderBy:propertyName:reverse)" ng-if="filter == 'all' || filter == device.status">
+      <div class="col-xs-2 text-ellipsis"><span class="deviceStatus {{device.status}}" uib-tooltip="{{device.status | capitalize}}" tooltip-popup-delay="500"></span> {{device.label}}</div>
+    </div> -->
+    <div class="row" ng-repeat="device in filteredSList = (deviceList | filter:search.text)">
+      <div class="col-xs-2 text-ellipsis">{{device.label}}</div>
+      <div class="col-xs-2 text-ellipsis">{{device.mac}}<a href="" ng-click="deviceIdOpen(device.id, device.mac, device.label);" uib-tooltip="{{'Edit' | translate}}" tooltip-append-to-body="true" tooltip-popup-delay="1000" class="pull-right marL5 text-primary"><span class="fa fa-pencil-alt"></span></a></div>
+      <div class="col-xs-1 text-ellipsis">{{device.type}}</div>
+      <div class="col-xs-2">{{device.sVer}} <span ng-if="device.wVer != ''">| {{device.wVer}}</span><span class="text-muted" ng-if="(device.sVer == '' && device.wVer == '')">NA</span></div>
+      <div class="col-xs-1 text-ellipsis">{{device.slabel}}</div>
+      <div class="col-xs-2 text-ellipsis">{{device.createdOnTS | date:getDateFormat(device.createdOnTS, 'oDT')}}</div>
+      <div class="col-xs-2 text-ellipsis text-right"><span ng-if="device.pingTS != null">{{device.pingTS | date:getDateFormat(device.pingTS, 'oDT')}}</span><span class="text-muted" ng-if="!device.pingTS || device.pingTS == null">NA</span></div>
+    </div>
+    <div class="msg-warning" ng-if="filteredSList.length == 0" translate="{{'cm.msg.14'}}" translate-values="{searchText: '<b>&quot;{{search.text.replace(searchRegExp, searchReplaceChar)}}&quot;</b>'}"></div>
+  </div>
+  <div class="msg-warning" ng-if="deviceList.length > 0 && filterCount == 0 && !listLoading">{{'cm.msg.15' | translate}} <button class="btn btn-default btn-xs" ng-click="deviceFilterFx('all');">{{'cm.btn.31' | translate}}</button></div>
+  <div class="msg-warning" ng-if="!listLoading && !deviceList.length" translate="{{'No device found for this server location.'}}"></div>
+</div>

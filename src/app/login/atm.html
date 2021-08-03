@@ -1,0 +1,27 @@
+<section class="wrapper">
+  <div class="loginContainer">
+    <div class="text-center">
+        <img src="assets/images/logo-index.png">
+    </div>
+    <div class="text-center marT25">
+      <div ng-if="atmLoading">Please wait <img alt="" src="assets\images\loading-xs.gif" class="marL5"></div>
+      <div ng-if="!atmLoading">
+        <div ng-if="!atm.code" class="text-danger text-bold">Something went wrong. Please try again.</div>
+        <div ng-if="atm.code">
+          <div class="text-success text-bold">
+            <span ng-if="atm.code == 3006">Ticket {{atm.ticketId}} assigned to you.</span>
+          </div>
+          <div class="text-danger text-bold">
+            <span ng-if="atm.code == 3004">Ticket {{atm.ticketId}} already assigned to {{atm.name}}.</span>
+            <span ng-if="atm.code == 3035">Ticket {{atm.ticketId}} can not be assigned to you because it's deleted.</span>
+            <span ng-if="atm.code == 3036">Ticket {{atm.ticketId}} can not be assigned to you because this ticket has been marked as Non-Ticket.</span>
+          </div>
+        </div>
+        <div class="marT20"><button class="btn btn-primary btn-sm" ui-sref="login">Go to L Squared Support</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="footer noMarL padL10">
+  <span ng-bind-html="copyRight"></span> | <a href="https://s3-us-west-2.amazonaws.com/lsquared-hub/doc/terms.pdf" target="_blank">Terms &amp; Conditions</a> | <a href="https://s3-us-west-2.amazonaws.com/lsquared-hub/doc/privacy.pdf" target="_blank">Privacy Policy</a> | V&nbsp;{{uiVersion}}
+</footer>

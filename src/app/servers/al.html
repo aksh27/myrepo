@@ -1,0 +1,49 @@
+<img src="assets/images/loading.gif" class="marT10" ng-if="pageLoading">
+<div ng-if="!pageLoading">
+  <div class="row subject-header marB25">
+    <div class="col-xs-10">
+      <div class="text-big">
+        <a ui-sref="{{'support.servers'}}" class="text-muted back-btn pull-left"><span
+            class="fas fa-arrow-left text-sm"></span></a>
+        <div class="word-break">
+          <span class="text-muted">Allot License</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-2"></div>
+  </div>
+  <div class="row">
+    <div class="col-xs-4">
+      <div class="form-group">
+        <label>Server Location</label>
+        <select class="form-control" ng-options="server.label for server in servers track by server.id"
+          ng-change="loadServerNames()" ng-model="sl.info">
+          <option value="">Select Location</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Server Name</label>
+        <select class="form-control bg-white" ng-options="list.label for list in serverNames track by list.id"
+          ng-change="" ng-model="sn.info" ng-disabled="listLoading">
+          <option selected value="">Select Name</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Quantity</label>
+        <input type="number" class="form-control" min="1" ng-model="sn.info.q">
+      </div>
+      <!-- <div class="bdr-btm-dashed"></div> -->
+      <div class="form-group bdr-top-dashed">
+        <span class="btnQuad">
+          <button type="submit" ng-disabled="popupProcessing" ng-click="allotLicenseFx();" class="btn btn-primary" id="submitBtn"><span class="fas" ng-class="popupProcessing? 'fa-redo fa-spin':'fa-check'"></span>Allot</button>
+          <button class="btn btn-link" ui-sref="{{'support.servers'}}">{{"cm.btn.8" | translate}}</button>
+        </span>
+        <div class="errMsg pull-right" ng-if="hasErr">
+          <span ng-if="errType == 'sl'">Please provide server location.</span>
+          <span ng-if="errType == 'sn'">Please provide server name.</span>
+          <span ng-if="errType == 'sQty'">Please select quantity.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

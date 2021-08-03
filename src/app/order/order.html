@@ -1,0 +1,42 @@
+<section class="panel noShadow">
+  <div class="filterRegQuad" ng-if="curOdFilter.apply && curState != 'support.order.odcu'">
+    <button type="button" ng-click="clearOdrFilterFx('all');" class="btn btn-default btn-xs pull-right">{{'cm.btn.31' | translate}}</button>
+    <ul class="list-inline">
+      <li ng-if="curOdFilter.customer" uib-tooltip="{{'t.label.9' | translate}}"><span class="fas fa-user"></span><span class="marL5 marR5">{{curOdFilter.customer.label}}</span><a href="" ng-click="clearOdrFilterFx('cu');" class="text-danger"><span class="fas fa-times"></span></a></li>
+      <li ng-if="curOdFilter.vendor" uib-tooltip="{{'od.label.61' | translate}}"><span class="fas fa-th"></span><span class="marL5 marR5">{{curOdFilter.vendor.label}}</span><a href="" ng-click="clearOdrFilterFx('v');" class="text-danger"><span class="fas fa-times"></span></a></li>
+      <li ng-if="curOdFilter.country" uib-tooltip="{{'od.label.48' | translate}}"><span class="fas fa-flag"></span>
+        <span ng-if="curOdFilter.country == 'ca'" class="marL5 marR5">Canada</span>
+        <span ng-if="curOdFilter.country == 'us'" class="marL5 marR5">United States</span>
+        <span ng-if="curOdFilter.country == 'uk'" class="marL5 marR5">United Kingdom</span>
+      <a href="" ng-click="clearOdrFilterFx('co');" class="text-danger"><span class="fas fa-times"></span></a></li>
+      <li ng-if="curOdFilter.department" uib-tooltip="{{'od.label.58' | translate}}"><span class="far fa-building"></span>
+        <span ng-if="curOdFilter.department == 's'" class="marL5 marR5">Support</span>
+        <span ng-if="curOdFilter.department == 'f'" class="marL5 marR5">Finance</span>
+        <span ng-if="curOdFilter.department == 'b'" class="marL5 marR5">Both</span>
+      <a href="" ng-click="clearOdrFilterFx('de');" class="text-danger"><span class="fas fa-times"></span></a></li>
+      <li ng-if="curOdFilter.courierBy" uib-tooltip="{{'i.label.13' | translate}}"><span class="fas fa-truck"></span><span class="marL5 marR5">{{curOdFilter.courierBy.label}}</span><a href="" ng-click="clearOdrFilterFx('sh');" class="text-danger"><span class="fas fa-times"></span></a></li>
+      <li ng-if="curOdFilter.createdBy" uib-tooltip="{{'od.label.14' | translate}}"><span class="fas fa-user"></span><span class="marL5 marR5">{{curOdFilter.createdBy.label}}</span><a href="" ng-click="clearOdrFilterFx('crBy');" class="text-danger"><span class="fas fa-times"></span></a></li>
+      <li ng-if="curOdFilter.isNewServer" uib-tooltip="{{'od.label.33' | translate}}"><span class="fas fa-server"></span><span class="marL5 marR5">Yes</span><a href="" ng-click="clearOdrFilterFx('ns');" class="text-danger"><span class="fas fa-times"></span></a></li>
+      <li ng-if="curOdFilter.keywords" uib-tooltip="{{'t.label.27' | translate}}"><span class="fas fa-font"></span><span class="marL5 marR5">{{curOdFilter.keywords}}</span><a href="" ng-click="clearOdrFilterFx('t');" class="text-danger"><span class="fas fa-times"></span></a></li>
+      <li ng-if="curOdFilter.id" uib-tooltip="{{'od.label.62' | translate}}"><span class="fas fa-hashtag"></span><span class="marL5 marR5">{{curOdFilter.id}}</span><a href="" ng-click="clearOdrFilterFx('id');" class="text-danger"><span class="fas fa-times"></span></a></li>
+      <li ng-if="curOdFilter.createdOn.isOn" uib-tooltip="{{'cm.tool.1.2' | translate}}"><span class="fas fa-calendar"></span><span class="marL5 marR5">{{curOdFilter.createdOn.dateRange.sd | date:'MMM dd, yyyy'}} - {{curOdFilter.createdOn.dateRange.ed | date:'MMM dd, yyyy'}}</span><a href="" ng-click="clearOdrFilterFx('crOn');" class="text-danger"><span class="fas fa-times"></span></a></li>
+    </ul>
+  </div>
+  <header class="panel-heading panel-tab" ng-if="curState != 'support.order.odcu' && curState != 'support.order.detail'">
+    <ul class="nav nav-tabs">
+      <li ui-sref-active="active" class="tab-primary"><a ui-sref=".r">{{'od.tab.1' | translate}}</a></li>
+      <li ui-sref-active="active" class="tab-primary"><a ui-sref=".d">{{'od.tab.2' | translate}}</a></li>
+      <li ui-sref-active="active" class="tab-primary"><a ui-sref=".cm">{{'od.tab.3' | translate}}</a></li>
+      <li ui-sref-active="active" class="tab-primary"><a ui-sref=".cl">{{'od.tab.5' | translate}}</a></li>
+      <li ui-sref-active="active" class="tab-primary"><a ui-sref=".cn">{{'od.tab.4' | translate}}</a></li>
+    </ul>
+    <div class="panel-tools marT10">
+      <div class="pull-right marT5">
+        <button ui-sref="support.order.odcu({types:listType, id: ''})" type="button" class="btn btn-primary btn-sm"><i class="fas fa-plus-circle"></i> {{'i.btn.4' | translate}}</button>
+      </div>
+    </div>
+  </header>
+  <div>
+    <div ui-view="tabView"></div>
+  </div>
+</section>

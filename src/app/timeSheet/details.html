@@ -1,0 +1,152 @@
+<section>
+  <img src="assets/images/loading.gif" ng-if="detailLoading">
+  <div ng-if="!detailLoading && ts.items.length">
+    <div class="row subject-header marB25">
+      <div class="col-xs-10">
+        <div class="text-big">
+          <a ui-sref="support.timeSheet.o" ng-if="ts.status==0" class="text-muted back-btn pull-left" style="height:auto"><span class="fas fa-arrow-left text-sm"></span></a>
+          <a ui-sref="support.timeSheet.s" ng-if="ts.status==1" class="text-muted back-btn pull-left" style="height:auto"><span class="fas fa-arrow-left text-sm"></span></a>
+          <a ui-sref="support.timeSheet.a" ng-if="ts.status==2" class="text-muted back-btn pull-left" style="height:auto"><span class="fas fa-arrow-left text-sm"></span></a>
+          <div class="word-break">
+            <span class="text-muted">{{"ts.label.1" | translate}} <span class="text-sm valign-tTop">[ {{ts.date.start | date:getDateFormat(ts.date.start, 'md')}} - {{ts.date.end | date:getDateFormat(ts.date.end, 'md')}} ]</span></span>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-2" ng-if="(colTotal[7] >= 0 && ts.items.length > 1) || (colTotal[7] == 0 && ts.items.length == 1)">
+        <switch id="enabled" class="switch-sm pull-right marT5" ng-true-value="0" ng-false-value="1" name="enabled" ng-model="showRow.all" on="Show All" off="Show All"></switch>
+      </div>
+    </div>
+    <div class="table no-pointer">
+      <div class="row th">
+        <a href="" ng-click="sortBy('subject');">
+          <div class="col-xs-4">{{"ts.label.2" | translate | camelCase}}
+            <span class="pull-right" ng-show="propertyName == 'subject'">
+              <span ng-show="reverse"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+              <span ng-show="!reverse"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+            </span>
+          </div>
+        </a>
+        <a href="" ng-click="dSortBy('mSort', 0);">
+          <div class="col-xs-1">{{"ts.label.4" | translate}}
+            <span class="pull-right" ng-show="propertyName == 'mSort'">
+              <span ng-show="sType==(reverse?'des':'asc')"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+              <span ng-show="sType==(!reverse?'des':'asc')"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+            </span>
+          </div>
+        </a>
+        <a href="" ng-click="dSortBy('tSort', 1);">
+          <div class="col-xs-1">{{"ts.label.5" | translate}}
+            <span class="pull-right" ng-show="propertyName == 'tSort'">
+              <span ng-show="sType==(reverse?'des':'asc')"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+              <span ng-show="sType==(!reverse?'des':'asc')"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+            </span>
+          </div>
+        </a>
+        <a href="" ng-click="dSortBy('wSort', 2);">
+          <div class="col-xs-1">{{"ts.label.6" | translate}}
+            <span class="pull-right" ng-show="propertyName == 'wSort'">
+              <span ng-show="sType==(reverse?'des':'asc')"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+              <span ng-show="sType==(!reverse?'des':'asc')"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+            </span>
+          </div>
+        </a>
+        <a href="" ng-click="dSortBy('thSort', 3);">
+          <div class="col-xs-1">{{"ts.label.7" | translate}}
+            <span class="pull-right" ng-show="propertyName == 'thSort'">
+              <span ng-show="sType==(reverse?'des':'asc')"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+              <span ng-show="sType==(!reverse?'des':'asc')"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+            </span>
+          </div>
+        </a>
+        <a href="" ng-click="dSortBy('fSort', 4);">
+          <div class="col-xs-1">{{"ts.label.8" | translate}}
+            <span class="pull-right" ng-show="propertyName == 'fSort'">
+              <span ng-show="sType==(reverse?'des':'asc')"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+              <span ng-show="sType==(!reverse?'des':'asc')"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+            </span>
+          </div>
+        </a>
+        <a href="" ng-click="dSortBy('sSort', 5);">
+          <div class="col-xs-1">{{"ts.label.9" | translate}}
+            <span class="pull-right" ng-show="propertyName == 'sSort'">
+              <span ng-show="sType==(reverse?'des':'asc')"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+              <span ng-show="sType==(!reverse?'des':'asc')"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+            </span>
+          </div>
+        </a>
+        <a href="" ng-click="dSortBy('suSort', 6);">
+          <div class="col-xs-1">{{"ts.label.10" | translate}}
+            <span class="pull-right" ng-show="propertyName == 'suSort'">
+              <span ng-show="sType==(reverse?'des':'asc')"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+              <span ng-show="sType==(!reverse?'des':'asc')"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+            </span>
+          </div>
+        </a>
+        <a href="" ng-click="sortBy('total');">
+          <div class="col-xs-1 text-right">{{"ts.label.3" | translate | camelCase}}
+            <span class="pull-right marL5" ng-show="propertyName == 'total'">
+              <span ng-show="reverse"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+              <span ng-show="!reverse"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+            </span>
+          </div>
+        </a>
+        <!-- <div class="col-xs-1 text-right">{{"ts.label.3" | translate}}</div> -->
+      </div>
+      <div class="row" ng-if="colTotal[7] >= 0" ng-show="showRow.all ? (ts.items.length >= 0) : (item.total != 0)" ng-repeat="item in ts.items | orderBy:propertyName:!reverse">
+        <div class="col-xs-4 padT5">
+          <a href="" ui-sref="support.tDetails({id: hubEncrypt(item.threadId)})">
+            <i class="fas fa-ticket-alt text-muted marR10" style="opacity:0.5" uib-tooltip="Ticket" tooltip-append-to-body="true" tooltip-popup-delay="1000" ng-if="item.type==0"></i>
+            <i class="fas fa-tasks text-muted marR10" style="opacity:0.5" uib-tooltip="Task" tooltip-append-to-body="true" tooltip-popup-delay="1000" ng-if="item.type==1"></i>
+            {{item.subject}}
+          </a>
+        </div>
+        <div class="col-xs-1 noPadR" ng-repeat="time in item.time track by $index">
+          <!-- {{item.total = (totalFx(item.time)); ""}} -->
+          <div class="input-group time-group" ng-if="isEditeble">
+            <select type="number" class="form-control input-sm" ng-model="item.time[$index].h" ng-options="hor as hor for hor in hours track by hor"></select>
+            <select type="number" class="form-control input-sm" ng-model="item.time[$index].m" ng-options="min as min for min in minutes track by min"></select>
+          </div>
+          <span class="text-right" ng-if="!isEditeble">{{item.time[$index].h +":"+ item.time[$index].m}}</span>
+        </div>
+        <div class="col-xs-1 text-right" ng-class="{'padT5':isEditeble}">{{item.total | showTotal }}</div>
+      </div>
+      <div class="row text-bold" ng-if="(colTotal[7] > 0) || (colTotal[7] == 0 && showRow.all)">
+        <div class="col-xs-4">{{"Total Hours" | translate | camelCase}}</div>
+        <div class="col-xs-1" ng-class="$index==7?'text-right':''" ng-repeat="total in ts.colTotal track by $index">{{total}}</div>
+      </div>
+      <div class="msg-warning" ng-if="(colTotal[7] == 0 && !showRow.all) || (!showRow.all && item.total ==0)">{{'ts.msg.10' | translate}}</div>
+      <!-- <div class="row totalRow">
+        <div class="col-xs-4">{{"ts.label.3" | translate}}</div>
+        <div ng-repeat="item in ts.items">
+
+          {{item}}
+
+          {{totalFx(ts.items[0].time[0])}}
+        </div> -->
+
+        <!-- <div class="col-xs-1" ng-repeat="time in item.time track by $index">
+          {{item.total = (totalFx(item.time)); ""}}
+          <input type="number" class="form-control input-sm" min="0" ng-model="item.time[$index]" ng-if="isEditeble">
+          <span class="text-right" ng-if="!isEditeble">{{item.time[$index]}}</span>
+        </div>
+        <div class="col-xs-1 text-right" ng-class="{'padT5':isEditeble}">{{item.total}}</div> -->
+      <!-- </div> -->
+
+    </div>
+    <div class="bdr-top-dashed marT15 marB15">
+      <button class="btn btn-primary" ng-click="saveTSFx(ts);" ng-disabled="saveProcessing" ng-if="isBtnSave"><span class="fas" ng-class="saveProcessing?'fa-spin fa-redo':'fa-save'"></span> {{saveProcessing?'cm.btn.6i':'cm.btn.6' | translate}}</button>
+      <button class="btn btn-success" ng-click="setStatusOpen(ts.id, 's');" ng-disabled="saveProcessing" ng-if="isBtnSubmit"><span class="fas fa-check"></span> {{'cm.btn.32' | translate}}</button>
+      <button class="btn btn-success" ng-click="setStatusOpen(ts.is, 'a');" ng-disabled="saveProcessing" ng-if="ts.status==1 && ts.showARBtn"><span class="fas fa-check"></span> {{'ts.btn.1' | translate}}</button>
+      <button class="btn btn-danger" ng-click="setStatusOpen(ts.id, 'r');" ng-disabled="saveProcessing" ng-if="ts.status==1 && ts.showARBtn"><span class="fas fa-times"></span> {{'ts.btn.2' | translate}}</button>
+      <button class="btn btn-link" ui-sref="support.timeSheet.o" ng-if="ts.status==0">{{"cm.btn.8" | translate}}</button>
+      <button class="btn btn-link" ui-sref="support.timeSheet.s" ng-if="ts.status==1">{{"cm.btn.8" | translate}}</button>
+      <button class="btn btn-link" ui-sref="support.timeSheet.a" ng-if="ts.status==2">{{"cm.btn.8" | translate}}</button>
+    </div>
+  </div>
+
+  <div class="msg-warning" ng-if="!detailLoading && !ts.items.length">{{'ts.msg.5' | translate}}</div>
+  <div class="marT15 marB15" ng-if="!detailLoading && !ts.items.length">
+    <button class="btn btn-link" ui-sref="support.timeSheet.{{curTab}}">{{"cm.btn.8" | translate}}</button>
+  </div>
+
+</section>

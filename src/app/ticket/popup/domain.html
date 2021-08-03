@@ -1,0 +1,33 @@
+<section class="panel">
+  <div class="panel-heading">{{"t.pop.1" | translate}}</div>
+  <div class="panel-body">
+    <img src="assets/images/loading.gif" ng-if="popupLoading">
+    <div ng-if="!popupLoading">
+      <div class="form-group">
+        <label>{{"t.label.9.1" | translate}}</label>
+        <select class="form-control" ng-model="domainObj.domain" ng-options="cust as cust.label for cust in domainList track by cust.id">
+          <option value="" disabled="disabled">{{"t.label.9.1" | translate}}</option>
+        </select>
+      </div>
+      <div class="form-group" ng-if="productList">
+        <label>{{"t.pop.3" | translate}} <span class="text-muted text-sm">({{"cm.label.7" | translate}})</span></label>
+        <select class="form-control" ng-model="domainObj.product" ng-options="pro as pro.label for pro in productList track by pro.id">
+          <option value="" disabled="disabled">{{"t.pop.3.1" | translate}}</option>
+        </select>
+      </div>
+      <div>
+        <label class="text-unbold"><input type="checkbox" ng-model="domainObj.checkEmail"><label></label><span translate="{{'t.pop.4'}}" translate-values="{email:'<b>{{domainObj.email}}</b>', domain:'<b>{{domainObj.domain.label}}</b>'}"></span></label>
+      </div>
+    </div>
+  </div>
+  <footer class="panel-footer" ng-if="!popupLoading">
+    <span class="btnQuad">
+      <button type="button" class="btn btn-success" ng-click="domainFx();" ng-disabled="popupProcessing"><span class="fas" ng-class="popupProcessing?'fa-redo fa-spin':'fa-check'"></span>{{popupProcessing?'t.btn.2i':'t.btn.2' | translate}}</button>
+      <button type="button" class="btn btn-link" ng-click="closeThisDialog();">{{"cm.btn.8" | translate}}</button>
+    </span>
+    <div class="errMsg pull-right" ng-if="hasErrPop">
+      <span ng-if="errType == 'empty'">{{'t.pop.5' | translate}}</span>
+    </div>
+    <div class="clearfix"></div>
+  </footer>
+</section>

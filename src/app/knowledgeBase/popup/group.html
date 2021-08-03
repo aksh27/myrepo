@@ -1,0 +1,27 @@
+<section class="panel">
+  <header class="panel-heading">
+    <span>{{group.id ? 'kb.group.2' : 'kb.group.1' | translate}}</span>
+  </header>
+  <div class="panel-body">
+    <!-- <div ng-if="groupObj.caller == 'a'"> -->
+      <div class="form-group">
+        <label>{{'cm.label.1' | translate}}</label>
+        <input type="text" class="form-control" ng-model="group.label" focus-me="true">
+      </div>
+    <!-- </div> -->
+  </div>
+  <footer class="panel-footer">
+    <span class="btnQuad">
+      <button class="btn btn-success" ng-click="groupFx();" ng-disabled="popupProcessing"><span class="fas" ng-class="popupProcessing?'fa-redo fa-spin':'fa-check'"></span>
+        <span ng-if="!group.id">{{popupProcessing?'cm.btn.13i':'cm.btn.13' | translate}}</span>
+        <span ng-if="group.id">{{popupProcessing?'cm.btn.14i':'cm.btn.14' | translate}}</span>
+      </button>
+      <button class="btn btn-link" ng-click="closeThisDialog();">{{'cm.btn.8' | translate}}</button>
+    </span>
+    <div class="errMsg pull-right" ng-if="hasErrPop">
+      <span ng-if="errType == 'grp'">{{'kb.msg.15' | translate}}</span>
+      <span ng-if="errType == 'alreadyG'">{{'kb.msg.16' | translate}}</span>
+    </div>
+    <div class="clearfix"></div>
+  </footer>
+</section>

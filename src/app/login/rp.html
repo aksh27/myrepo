@@ -1,0 +1,57 @@
+<section class="wrapper">
+  <div class="loginContainer">
+    <div class="text-center">
+      <img src="assets/images/logo-index.png">
+      <div class="text-muted marT15">Welcome to L Squared Digital Signage Platform</div>
+    </div>
+    <div class="text-center marT20" ng-if="pageLoading">Please wait <img src="assets/images/loading-xs.gif" class="marL5"></div>
+    <div ng-if="!pageLoading && isReset" class="text-center marT25">
+      <p  class="text-bold text-success">Your password has been successfully reset.</p>
+      <a class="btn btn-primary btn-sm" ui-sref="login">Go to L Squared Support</a>
+    </div>
+    <div ng-if="!pageLoading && !isLinkValid" class="text-center marT25">
+      <p class="text-bold text-danger">Sorry! The link has expired now.</p>
+      <p class="marB20">Please try "Forget password" again.</p>
+      <a class="btn btn-primary btn-sm" ui-sref="login">Go to L Squared Support</a>
+    </div>
+    <div class="forgotPass bg-white marT25" ng-if="!pageLoading && !isReset && isLinkValid">
+      <header class="panel-heading">Reset Password</header>
+      <div class="panel-body">
+        <div class="errMsg marL10 marR10" ng-if="isUserErr">Oops! Something went wrong. Please try again later. You can report this issue to L&nbsp;Squared&nbsp;Support by <a href="" ui-sref="login">clicking here</a></div>
+        <form method="post" name="retrievePassForm" ng-if="!isUserErr">
+          <div class="errMsg marB10" ng-if="hasErr">
+            <div ng-if="errType == 'cPass'">Please provide Confirm password.</div>
+            <div ng-if="errType == 'reCaptcha'">Please validate captcha.</div>
+            <div ng-if="errType == 'nPass'">Please provide New password.</div>
+            <div ng-if="errType == 'notMach'">Confirm password not match.</div>
+            <div ng-if="errType == 'invalid'">Password is not valid.</div>
+          </div>
+          <div class="form-group">
+            <label>New password</label>
+            <input type="password" class="form-control" ng-model="credentials.nPass" placeholder="New password" ng-change="pwdValidate()" focus-me="true" required>
+          </div>
+
+          <div class="form-group bg-light pad10" ng-if="credentials.nPass">
+            <li ng-class="pwdLengthValid?'text-success':'text-danger'" class="text-bold">Password must be at least 8 characters. <span class="fa fa-check" ng-if="pwdLengthValid"></span></li>
+            <li ng-class="pwdCharValid?'text-success':'text-danger'" class="text-bold">Password must contain at least one letter. <span class="fa fa-check" ng-if="pwdCharValid"></span></li>
+            <li ng-class="pwdNumValid?'text-success':'text-danger'" class="text-bold">Password must contain at least one digit. <span class="fa fa-check" ng-if="pwdNumValid"></span></li>
+            <li ng-class="pwdSplCharValid?'text-success':'text-danger'" class="text-bold">Password must contain at least one of the following character: !@#$%& <span class="fa fa-check" ng-if="pwdSplCharValid"></span></li>
+          </div>
+
+          <div class="form-group">
+            <label>Confirm password</label>
+            <input type="password" class="form-control" ng-model="credentials.cPass" placeholder="Confirm password" required>
+          </div>
+          <div class="form-group">
+            <div vc-recaptcha key="publicKey"></div>
+          </div>
+          <button type="button" ng-click="resetPassFx();" class="btn btn-primary" ng-disabled="authProcessing"><span class="fa fa-repeat fa-spin fa-fw" ng-if="authProcessing"></span><span class="fa fa-check" ng-if="!authProcessing"></span>Save</button>
+          <a href="" ui-sref="login" class="btn btn-link">Cancel</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="footer noMarL padL10">
+  <span ng-bind-html="copyRight"></span> | <a href="https://s3-us-west-2.amazonaws.com/lsquared-hub/doc/terms.pdf" target="_blank">Terms &amp; Conditions</a> | <a href="https://s3-us-west-2.amazonaws.com/lsquared-hub/doc/privacy.pdf" target="_blank">Privacy Policy</a> | V&nbsp;{{uiVersion}}
+</footer>

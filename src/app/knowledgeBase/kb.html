@@ -1,0 +1,18 @@
+<section class="panel noShadow">
+  <header class="panel-heading panel-tab">
+    <ul class="nav nav-tabs">
+      <li ui-sref-active="active" class="tab-primary"><a ui-sref=".a">{{'kb.tab.1' | translate}}</a></li>
+      <li ui-sref-active="active" class="tab-success"><a ui-sref=".v">{{'kb.tab.2' | translate}}</a></li>
+      <li ui-sref-active="active" class="tab-disabled"><a ui-sref=".d">{{'kb.tab.3' | translate}}</a></li>
+    </ul>
+    <div class="panel-tools marT10" ng-if="curState === 'support.kb.a' || curState === 'support.kb.v'">
+      <div class="pull-right marT5">
+        <button ng-click="addOpen();" class="btn btn-primary btn-sm marR5"><i class="fas fa-plus-circle"></i> {{'cm.btn.18' | translate}}</button>
+        <button ng-if="curState === 'support.kb.a'" ng-click="groupOpen();" class="btn btn-default btn-sm"><i class="fas fa-plus-circle"></i> {{'kb.btn.1' | translate}}</button>
+      </div>
+    </div>
+  </header>
+  <div>
+    <div ui-view="tabView"></div>
+  </div>
+</section>

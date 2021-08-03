@@ -1,0 +1,12 @@
+<section class="wrapper leftPanel-hide" ng-class="{'leftPanel-hide': auth.upreferences.isLPOpen == 0}">
+  <div ui-view="header"></div>
+  <section class="container-fluid">
+    <div ui-view="leftPanel"></div>
+    <div class="mainContainer">
+      <div class="msg-warning marB10" ng-if="showTimeoutMsg"><span translate="{{'cm.msg.28'}}" translate-values="{sessionTimer: '{{sessionTimer}}',htmlTagO: '<b>', htmlTagC:'</b>'}"></span> <a href="" class="btn-link text-bold" ng-click="resetSession(true);">{{'cm.msg.29' | translate}}</a></div>
+      <div ui-view=""></div>
+    </div>
+  </section>
+</section>
+<!-- Footer section -->
+<div ui-view="footer" class="leftPanel-hide"></div>

@@ -1,0 +1,27 @@
+<section class="wrapper">
+  <div class="loginContainer">
+    <div class="text-center">
+        <img src="assets/images/logo-index.png">
+    </div>
+    <div class="text-center marT25">
+      <div ng-if="pwdLoading">Please wait <img alt="" src="assets\images\loading-xs.gif" class="marL5"></div>
+      <div ng-if="!pwdLoading">
+        <div ng-if="pwd.code == 6012">
+          <div>Password: <span class="text-bold">{{pwd.password}}</span></div>
+          <div class="marT20"><button class="btn btn-primary btn-sm" ui-sref="login">Sign in to L Squared Support</button></div>
+        </div>
+        <div ng-if="pwd.code == 6028 || pwd.code == 6013">
+          <div class="text-danger text-bold">
+            <span ng-if="pwd.code == 6013">Sorry! The link has expired now.</span>
+            <span ng-if="pwd.code == 6028">Invalid request URL.</span>
+          </div>
+          <div class="marT5">Please contact your administrator.</div>
+          <div class="marT20"><button class="btn btn-primary btn-sm" ui-sref="login">Go to L Squared Support</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="footer noMarL padL10">
+  <span ng-bind-html="copyRight"></span> | <a href="https://s3-us-west-2.amazonaws.com/lsquared-hub/doc/terms.pdf" target="_blank">Terms &amp; Conditions</a> | <a href="https://s3-us-west-2.amazonaws.com/lsquared-hub/doc/privacy.pdf" target="_blank">Privacy Policy</a> | V&nbsp;{{uiVersion}}
+</footer>

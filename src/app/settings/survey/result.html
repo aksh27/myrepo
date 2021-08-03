@@ -1,0 +1,58 @@
+<img src="assets/images/loading.gif" class="marT10" ng-if="resultLoading">
+<div ng-if="!resultLoading">
+  <div class="row subject-header">
+    <div class="col-xs-10">
+      <div class="text-big">
+        <a ui-sref="{{'support.settings.s'}}" class="text-muted back-btn pull-left"><span
+            class="fas fa-arrow-left text-sm"></span></a>
+        <div class="word-break">
+          <span class="text-muted">Survey Result </span><span class="text-sm text-muted">[ {{result.title}} ]</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-2">
+      <a href="" class="marT5 marR10 pull-right" ng-click="downloadResultFx(result.id);" uib-tooltip="{{'Download' | translate}}"><i class="fas fa-arrow-down"></i></a>
+    </div>
+  </div>
+  <div class="row" ng-if="!resultLoading">
+    <div class="table table-striped tbl-lg" ng-if="result.q.length > 0">
+      <ul>
+        <div class="surveyQuad">
+          <li class="row" ng-repeat="r in result.q">
+            <div class="panel-body padL">
+              <div class="text-bold word-break marB10">{{$index + 1 + ". " + r.label}}</div>
+              <span ng-repeat="opt in r.options" ng-if="r.type!=3">
+                <div class="col-xs-6 word-break" ng-if="opt.label != ''">
+                  <div class="marB5"><span class="text-bold pull-left marR5">[{{opt.label}}]</span> <span>{{opt.opt}}</span></div>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="{{opt.percent}}" aria-valuemin="0" aria-valuemax="100" style="width:{{opt.percent}}%;">
+                      {{opt.percent}}%
+                    </div>
+                  </div>
+                </div>
+                <div class="clearfix" ng-if="$odd"></div>
+              </span>
+              <span ng-if="r.type==3">
+                <div class="col-xs-2 text-center marT35">
+                  <span class="statusCounter">{{r.avg > 0 ? r.avg : 0}} <i class="fa fa-star text-xs" aria-hidden="true"></i></span>
+                  <div>{{r.count}} Ratings</div>
+                </div>
+                <div class="col-xs-10">
+                    <div ng-repeat="opt in r.options" class="col-xs-6 word-break" ng-if="opt.label != ''">
+                      <div class="marB5"><span class="text-bold pull-left marR5">{{opt.label}}</span> <span ng-if="r.type!=3">{{opt.opt}}</span><span ng-if="r.type==3"><i class="fa fa-star" aria-hidden="true"></i></span></div>
+                      <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="{{opt.percent}}" aria-valuemin="0" aria-valuemax="100" style="width:{{opt.percent}}%;">
+                          {{opt.percent}}%
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              </span>
+            </div>
+          </li>
+        </div>
+      </ul>
+    </div>
+    <div class="msg-warning" ng-if="result == '' || result.q.length <= 0">Result not found.</div>
+  </div>
+</div>

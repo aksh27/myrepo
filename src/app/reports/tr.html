@@ -1,0 +1,134 @@
+<!-- <div class="row marT10">
+  <div class="col-xs-4">
+    <div class="form-group">
+      <label>{{'reports.label.3' | translate}}</label>
+      <div>
+        <label><input type="radio" name="trTypeOpt" ng-model="tr.rType" value="ts"><label></label>{{'reports.label.4' | translate}}</label>
+        <label class="marLR5"><input type="radio" name="trTypeOpt" ng-model="tr.rType" value="t" ng-change="getReports()"><label></label>{{'reports.label.5' | translate}}</label>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!-- Timesheet -->
+<!-- <div ng-if="tr.rType=='ts'" class="row">
+  <div class="col-xs-4">
+    <div class="form-group">
+      <label>{{'reports.label.1' | translate}}</label>
+      <select class="form-control" ng-model="reports.type" ng-change="typeFx();">
+        <option value="" disabled="disabled">{{'reports.label.1' | translate}}</option>
+        <option value="cw">{{'reports.label.1.1' | translate}}</option>
+        <option value="l2w">{{'reports.label.1.2' | translate}}</option>
+        <option value="cm">{{'reports.label.1.3' | translate}}</option>
+        <option value="l2m">{{'reports.label.1.4' | translate}}</option>
+        <option value="sd">{{'reports.label.1.7' | translate}}</option>
+        <option value="c">{{'reports.label.1.5' | translate}}</option>
+      </select>
+    </div>
+    <div class="form-group" ng-if="reports.type == 'c'">
+      <label>{{'reports.label.1.6' | translate}}</label>
+      <div class="input-group">
+        <span class="input-group-addon"><span class="fas fa-calendar-alt"></span></span>
+        <input type="daterange" class="form-control picker" ng-model="reports.dateRange" format="MM/DD/YYYY"  max-date="{{maxDate}}" readonly="" ng-change="rangeFx()">
+      </div>
+    </div>
+    <div>
+      <button class="btn btn-primary marR20" ng-click="reportsFx();" ng-disabled="saveProcessing"><span class="fas" ng-class="saveProcessing?'fa-spin fa-redo':'fa-check'"></span>{{'reports.btn.1' | translate}}</button>
+      <a href="{{download}}" ng-if="download!=''" target="_blank"><span class="fas fa-download marR5"></span>{{'reports.btn.2' | translate}}</a>
+    </div>
+    <div class="errMsg marT10" ng-if="hasErr">
+      <span ng-if="errType == 'empty'">{{'reports.msg.1' | translate}}</span>
+      <span ng-if="errType == 'date'">{{'reports.msg.2' | translate}}</span>
+      <span ng-if="errType == 'noData'">{{'reports.msg.3' | translate}}</span>
+    </div>
+  </div>
+</div> -->
+<!-- Ticket -->
+<div class="row marT10">
+  <div class="col-xs-4">
+    <div class="form-group">
+      <label>{{'cm.tool.2' | translate}}</label>
+      <div>
+        <label><input type="radio" name="tTypeOpt" ng-model="reports.tType" value="all"><label></label>{{'cm.label.29' | translate}}</label>
+        <label class="marLR5"><input type="radio" name="tTypeOpt" ng-model="reports.tType" value="a"><label></label>{{'cm.label.17' | translate}}</label>
+        <label><input type="radio" name="tTypeOpt" ng-model="reports.tType" value="r"><label></label>{{'cm.label.18' | translate}}</label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>{{'cm.label.4' | translate}}</label>
+      <div>
+        <label><input type="radio" name="rTypeOpt" ng-model="reports.rType" value="cu" ng-change="rTypeChange()"><label></label>{{'t.label.9' | translate}}</label>
+        <label class="marL5" ng-if="auth.role == 0"><input type="radio" name="rTypeOpt" ng-model="reports.rType" value="asTo" ng-change="rTypeChange()"><label></label>{{'t.label.13' | translate}}</label>
+        <label class="marLR5"><input type="radio" name="rTypeOpt" ng-model="reports.rType" value="ca" ng-change="rTypeChange()"><label></label>{{'t.label.24' | translate}}</label>
+        <label><input type="radio" name="rTypeOpt" ng-model="reports.rType" value="la" ng-change="rTypeChange()"><label></label>{{'t.label.26' | translate}}</label>
+      </div>
+    </div>
+
+    <div class="form-group" ng-if="reports.rType == 'cu'">
+      <label>{{'t.label.9.1' | translate}}</label>
+      <select class="form-control" ng-model="reports.rVal">
+        <option value="all">All</option>
+        <option ng-repeat="cu in typeList.customer" value="{{cu.id}}">{{cu.label}}</option>
+      </select>
+    </div>
+    <div class="form-group" ng-if="reports.rType == 'asTo'">
+      <label>{{'t.label.13.1' | translate}}</label>
+      <select class="form-control" ng-model="reports.rVal">
+        <option value="all">All</option>
+        <option ng-repeat="as in typeList.assigned" value="{{as.id}}">{{as.label}}</option>
+      </select>
+    </div>
+    <div class="form-group" ng-if="reports.rType == 'ca'">
+      <label>{{'t.label.24.1' | translate}}</label>
+      <select class="form-control" ng-model="reports.rVal">
+        <option value="all">All</option>
+        <option ng-repeat="ca in typeList.category" value="{{ca.id}}">{{ca.label}}</option>
+      </select>
+    </div>
+    <div class="form-group" ng-if="reports.rType == 'la'">
+      <label>{{'t.label.26.1' | translate}}</label>
+      <select class="form-control" ng-model="reports.rVal">
+        <option value="all">All</option>
+        <option ng-repeat="la in typeList.label" value="{{la.id}}">{{la.label}}</option>
+      </select>
+    </div>
+
+
+    <div class="form-group">
+      <label>{{'reports.label.1' | translate}}</label>
+      <select class="form-control" ng-model="reports.type" ng-change="typeFx();">
+        <option value="" disabled="disabled">{{'reports.label.1' | translate}}</option>
+        <option value="cw">{{'reports.label.1.1' | translate}}</option>
+        <option value="l2w">{{'reports.label.1.2' | translate}}</option>
+        <option value="cm">{{'reports.label.1.3' | translate}}</option>
+        <option value="l2m">{{'reports.label.1.4' | translate}}</option>
+        <option value="sd">{{'reports.label.1.7' | translate}}</option>
+        <option value="c">{{'reports.label.1.5' | translate}}</option>
+      </select>
+    </div>
+    <div class="form-group" ng-if="reports.type == 'c'">
+      <label>{{'reports.label.1.6' | translate}}</label>
+      <div class="input-group">
+        <span class="input-group-addon"><span class="fas fa-calendar-alt"></span></span>
+        <input type="daterange" class="form-control picker" ng-model="reports.dateRange" format="MM/DD/YYYY"  max-date="{{maxDate}}" readonly="" ng-change="rangeFx()">
+      </div>
+    </div>
+
+    <div>
+      <button class="btn btn-primary marR20" ng-click="reportsFx();" ng-disabled="saveProcessing"><span class="fas" ng-class="saveProcessing?'fa-spin fa-redo':'fa-check'"></span>{{'reports.btn.1' | translate}}</button>
+      <a href="{{download}}" ng-if="download!=''" target="_blank"><span class="fas fa-download marR5"></span>{{'reports.btn.2' | translate}}</a>
+    </div>
+    <div class="errMsg marT10" ng-if="hasErr">
+      <span ng-if="errType == 'empty'">{{'reports.msg.1' | translate}}</span>
+      <span ng-if="errType == 'date'">{{'reports.msg.2' | translate}}</span>
+      <span ng-if="errType == 'noData'">{{'reports.msg.3' | translate}}</span>
+      <span ng-if="errType == 'noDataC'">
+        <span ng-if="reports.rType == 'cu'">{{'reports.msg.4' | translate:{name: selectedObj.cu.label} }}</span>
+        <span ng-if="reports.rType == 'ca'">{{'reports.msg.5' | translate:{name: selectedObj.ca.label} }}</span>
+        <span ng-if="reports.rType == 'asTo'">{{'reports.msg.6' | translate:{name: selectedObj.asTo.label} }}</span>
+        <span ng-if="reports.rType == 'la'">{{'reports.msg.7' | translate:{name: selectedObj.la.label} }}</span>
+    </div>
+  </div>
+</div>
+
+

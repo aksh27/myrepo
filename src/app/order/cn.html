@@ -1,0 +1,48 @@
+<img src="assets/images/loading.gif" class="marT10" ng-if="pageLoading">
+<div class="table table-md no-pointer" ng-if="!pageLoading">
+  <div class="row th">
+    <a href="" ng-click="columnSortFx('i', (auth.sort.ord.val == 'a' ? 'd' : 'a'), odList, 'ord'); activeColumnFx('odId');">
+      <div class="col-xs-4 text-primary text-bold display-flex">Order Id
+        <div class="marL10" ng-if="activeCol == 'odId' && !saveProcessing">
+          <span ng-if="auth.sort.ord.val === 'd'"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+          <span ng-if="auth.sort.ord.val === 'a'"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+        </div>
+      </div>
+    </a>
+
+    <a href="" ng-click="columnSortFx('cr', (auth.sort.ord.val == 'a' ? 'd' : 'a'), odList, 'ord'); activeColumnFx('createdBy');">
+      <div class="col-xs-4 text-primary text-bold display-flex">Created By
+        <div class="marL10" ng-if="activeCol == 'createdBy' && !saveProcessing">
+          <span ng-if="auth.sort.ord.val === 'd'"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+          <span ng-if="auth.sort.ord.val === 'a'"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+        </div>
+      </div>
+    </a>
+
+    <a href="" ng-click="columnSortFx('canc', (auth.sort.ord.val == 'a' ? 'd' : 'a'), odList, 'ord'); activeColumnFx('cancel');">
+      <div class="col-xs-2 text-primary text-bold display-flex">Cancelled By
+        <div class="marL10" ng-if="activeCol == 'cancel' && !saveProcessing">
+          <span ng-if="auth.sort.ord.val === 'd'"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+          <span ng-if="auth.sort.ord.val === 'a'"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="row" ng-repeat="item in orderItemList = (odList | customSearch:{key:(search.text | removeSpaces), module:'od'})">
+    <div class="col-xs-4">
+      <a href="" class="text-primary" ui-sref="support.order.detail({types:'cn', id: hubEncrypt(item.id)})">
+        <!-- displayDetail('cn', item.id)" -->
+        <div class="text-bold">LSORD-{{item.id}}</div>
+      </a>
+      <div class="text-muted text-sm">{{item.name}}</div>
+    </div>
+    <div class="col-xs-4"><div class="text-bold text-sm"><a class="text-light-black text-dec-none" uib-tooltip="{{'od.label.14' | translate}}" tooltip-append-to-body="true" tooltip-placement="top">{{item.createdBy.label}}</a></div><div class="text-muted text-sm">{{getToday(item.createdAt)?('od.label.23' | translate):''}} {{item.createdAt | date:getDateFormat(item.createdAt, 'oDT')}}</div></div>
+    <div class="col-xs-2"><div class="text-bold text-sm"><a class="text-light-black text-dec-none" uib-tooltip="{{'od.label.16' | translate}}" tooltip-append-to-body="true" tooltip-placement="top">{{item.cancelledBy.label}}</a></div><div class="text-muted text-sm">{{getToday(item.cancelledOn)?('od.label.23' | translate):''}} {{item.cancelledOn | date:getDateFormat(item.cancelledOn, 'oDT')}}</div></div>
+    <div class="col-xs-2 text-right">
+      <a href="" class="text-primary" ng-click="orderReopen(item.id);" uib-tooltip="{{'Reopen' | translate}}" tooltip-popup-delay="1000"><i class="fas fa-envelope-open-text"></i></a>
+    </div>
+  </div>
+  <div class="msg-warning" ng-if="odList.length && !orderItemList.length && !curOdFilter.apply" translate="{{'cm.msg.14'}}" translate-values="{searchText: '<b>&quot;{{search.text.replace(searchRegExp, searchReplaceChar)}}&quot;</b>'}"></div>
+  <div class="msg-warning" ng-if="!odList.length && !curOdFilter.apply" translate="{{'od.msg.5'}}"></div>
+  <div class="msg-warning" ng-if="!odList.length && curOdFilter.apply" translate="{{'cm.msg.39'}}"></div>
+</div>

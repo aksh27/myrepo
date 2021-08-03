@@ -1,0 +1,15 @@
+<section class="panel">
+  <header class="panel-heading">{{'cm.btn.16' | translate}}</header>
+  <div class="panel-body text-center">
+    <p translate="{{'cm.body.1'}}" translate-values="{htmlTagO: '<b>&quot;', htmlTagC: '&quot;</b>'}"></p>
+    <div>
+      <a href="{{ngDialogData.url}}" download target="_blank" class="btn btn-link text-lg"><span class="fa fa-download"></span> {{'cm.btn.16' | translate}} <span ng-if="ngDialogData.size">({{(ngDialogData.size*1024) | filesize}})</span></a>
+    </div>
+  </div>
+  <footer class="panel-footer">
+    <span class="btnQuad">
+      <button type="button" class="btn btn-default" ng-click="closeThisDialog();">{{'cm.btn.9' | translate}}</button>
+    </span>
+    <div class="clearfix"></div>
+  </footer>
+</section>

@@ -1,0 +1,26 @@
+<section class="panel">
+    <header class="panel-heading">Edit Device Id [{{device.label}}]</header>
+    <img src="assets/images/loading.gif" class="pad15" ng-if="detailLoading">
+    <div class="panel-body" ng-if="!detailLoading">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label>Device Id <span class="text-muted text-sm marR5">(Alphabets, numbers, dash and colon are accepted)</span></label>
+            <input type="text" class="form-control" ng-model="device.mac" focus-me="true">
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="panel-footer">
+      <span class="btnQuad">
+        <button type="button" class="btn btn-success" ng-click="deviceIdFx();"><span class="fa fa-check"></span>{{'cm.btn.14' | translate}}</button>
+        <button type="button" class="btn btn-link" ng-click="closeThisDialog();">{{'cm.btn.9' | translate}}</button>
+      </span>
+      <div class="errMsg pull-right" ng-if="hasErr">
+        <div ng-if="errType == 'idExists'">{{'Device Id already exists.' | translate}}</div>
+        <div ng-if="errType == 'idInvalid'">{{'Invalid device id.' | translate}}</div>
+        <div ng-if="errType == 'form'">{{'Please provide new device id.' | translate}}</div>
+      </div>
+      <div class="clearfix"></div>
+    </footer>
+  </section>

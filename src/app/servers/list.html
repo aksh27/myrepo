@@ -1,0 +1,37 @@
+<a href="" ui-sref="support.servers">{{'cm.menu.10' | translate}}</a><span class="marL10 marR10">/</span><span>{{selectedServer}}</span>
+<section class="panel noShadow">
+  <header class="panel-heading panel-tab">
+    <ul class="nav nav-tabs">
+      <li ui-sref-active="active" class="tab-primary"><a ui-sref="support.sList.s">{{'servers.tab.1' | translate}}</a></li>
+      <li ui-sref-active="active" class="tab-primary"><a ui-sref="support.sList.d">{{'servers.tab.2' | translate}}</a></li>
+      <li ui-sref-active="active" class="tab-primary"><a ui-sref="support.sList.u">{{'servers.tab.3' | translate}}</a></li>
+      <!-- <li ui-sref-active="active" class="tab-primary"><a ui-sref="support.sList.l">{{'servers.tab.4' | translate}}</a></li> -->
+      <li ui-sref-active="active" class="tab-primary"><a ui-sref="support.sList.r">{{'servers.tab.5' | translate}}</a></li>
+      <li ui-sref-active="active" class="tab-primary"><a ui-sref="support.sList.w">{{'servers.tab.6' | translate}}</a></li>
+      <!-- <li ui-sref-active="active" class="tab-primary" ng-if="selectedServer!='Canada Post'"><a ui-sref="support.sList.vm">{{'servers.tab.7' | translate}}</a></li> -->
+    </ul>
+    <div class="panel-tools" ng-if="curState != 'support.sList.l' && curState != 'support.sList.r'">
+      <div class="pull-right marT10">
+        <a href="" ng-click="exportListFx();" uib-tooltip="{{'Download' | translate}}" tooltip-popup-delay="1000"><i class="fas fa-download"></i></a>
+      </div>
+      <div class="pull-right marT10" ng-if="curState == 'support.sList.d'" uib-dropdown>
+        <a href=""  uib-dropdown-toggle uib-tooltip="{{'cm.tool.2' | translate}}"><i class="fas fa-filter"></i></a>
+        <ul class="dropdown-menu" uib-dropdown-menu role="menu">
+          <li ng-class="{'selected': filter == 'online'}">
+            <a href="" ng-click="deviceFilterFx('online');">{{'s.menu.1' | translate}}</a>
+          </li>
+          <li ng-class="{'selected': filter == 'offline'}">
+            <a href="" ng-click="deviceFilterFx('offline');">{{'s.menu.2' | translate}}</a>
+          </li>
+          <li class="divider"></li>
+          <li ng-class="{'selected': filter == 'all'}">
+            <a href="" ng-click="deviceFilterFx('all');">{{'cm.label.29' | translate}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <div>
+    <div ui-view="tabView"></div>
+  </div>
+</section>

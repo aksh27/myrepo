@@ -1,0 +1,34 @@
+<img src="assets/images/loading.gif" class="padT10" ng-if="pageLoading">
+<div class="row" ng-if="!pageLoading && surveys.length > 0">
+  <div class="col-lg-12">
+    <div class="panel-body noPad">
+      <div class="table table-md no-th">
+        <ul class="checkList">
+          <li class="row th">
+            <a href="" ng-click="columnSortFx('t', (auth.sort.sur.val == 'a' ? 'd' : 'a'), surveys, 'sur');">
+              <div class="col-xs-2 text-primary text-bold display-flex">Name
+                <div class="marL10">
+                  <span ng-if="auth.sort.sur.val === 'd'"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+                  <span ng-if="auth.sort.sur.val === 'a'"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="row" ng-repeat="survey in filteredSurveyList = (surveys | customSearch:{key:(search.text | removeSpaces), module:'su'})">
+            <a href="" class="text-primary" ui-sref="support.scu({id: hubEncrypt(survey.id)})"><div class="col-xs-11 word-break">{{survey.title}}</div></a>
+            <div class="col-xs-1 text-right">
+              <a href="" ui-sref="support.result({id: hubEncrypt(survey.id)})" uib-tooltip="Result" tooltip-popup-delay="1000"><i class="fas fa-poll marLR5"></i></a>
+              <!-- <a href="" ui-sref="support.scu({id: hubEncrypt(survey.id)})" uib-tooltip="Edit" tooltip-popup-delay="1000"><i class="fas fa-pencil-alt marLR5"></i></a> -->
+              <a href="" class="marL5" ng-click="deleteConfirmation(survey.id, 's');" uib-tooltip="Delete" tooltip-popup-delay="1000"><i class="fas fa-times text-danger"></i></a>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="msg-warning" ng-if="filteredSurveyList.length == 0" translate="{{'cm.msg.14'}}" translate-values="{searchText: '<b>&quot;{{search.text.replace(searchRegExp, searchReplaceChar)}}&quot;</b>'}"></div>
+      <div class="msg-warning" ng-if="filteredSurveyList.length > 0 && filterCount == 0">{{'cm.msg.15' | translate}} <button class="btn btn-default btn-xs" ng-click="filterFx('all');">{{'cm.btn.38' | translate}}</button></div>
+    </div>
+  </div>
+</div>
+<div class="msg-warning" ng-if="!pageLoading && surveys.length == 0">
+  <p class="noMar">{{'s.msg.21' | translate}}</p>
+</div>

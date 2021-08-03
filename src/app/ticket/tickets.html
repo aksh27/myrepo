@@ -1,0 +1,149 @@
+<section class="panel noShadow">
+  <!-- <label class="noMarB"><input type="checkbox" ng-click="checkboxFx('all', $event);" ng-model="allChecked"><label></label></label> -->
+  <!-- <button type="button" class="btn btn-primary" ng-click="ticketOpen();"><i class="fas fa-plus-circle"></i>{{'t.btn.3' | translate}}</button> -->
+  <div class="filterRegQuad" ng-if="curFilter.apply">
+    <button type="button" ng-click="clearFilterFx('all');" class="btn btn-default btn-xs pull-right">{{'cm.btn.31' | translate}}</button>
+    <ul class="list-inline">
+      <li ng-if="curFilter.customer" uib-tooltip="{{'t.label.9' | translate}}"><span class="fas fa-user"></span><span class="marL5 marR5">{{curFilter.customer.label}}</span><a href="" ng-click="clearFilterFx('cus');" class="text-danger"><span class="fas fa-times"></span></a></li>
+      <li ng-if="curFilter.category" uib-tooltip="{{'t.label.24' | translate}}"><span class="fas fa-th"></span><span class="marL5 marR5">{{curFilter.category.label}}</span><a href="" ng-click="clearFilterFx('cat');" class="text-danger"><span class="fas fa-times"></span></a></li>
+      <li ng-if="curFilter.assignedTo" uib-tooltip="{{'t.label.13' | translate}}"><span class="fas fa-user"></span><span class="marL5 marR5">{{curFilter.assignedTo.label}}</span><a href="" ng-click="clearFilterFx('a');" class="text-danger"><span class="fas fa-times"></span></a></li>
+      <li ng-if="curFilter.createdBy" uib-tooltip="{{'cm.label.9' | translate}}"><span class="fas fa-user"></span><span class="marL5 marR5">{{curFilter.createdBy.label}}</span><a href="" ng-click="clearFilterFx('cr');" class="text-danger"><span class="fas fa-times"></span></a></li>
+      <li ng-if="curFilter.createdOn.isOn" uib-tooltip="{{'cm.tool.1.2' | translate}}"><span class="fas fa-calendar"></span><span class="marL5 marR5">{{curFilter.createdOn.dateRange.sd | date:'MMM dd, yyyy'}} - {{curFilter.createdOn.dateRange.ed | date:'MMM dd, yyyy'}}</span><a href="" ng-click="clearFilterFx('cro');" class="text-danger"><span class="fas fa-times"></span></a></li>
+      <li ng-if="curFilter.resolvedOn.isOn" uib-tooltip="{{'cm.label.5' | translate}}"><span class="fas fa-calendar"></span><span class="marL5 marR5">{{curFilter.resolvedOn.dateRange.sd | date:'MMM dd, yyyy'}} - {{curFilter.resolvedOn.dateRange.ed | date:'MMM dd, yyyy'}}</span><a href="" ng-click="clearFilterFx('ro');" class="text-danger"><span class="fas fa-times"></span></a></li>
+      <li ng-if="curFilter.label" uib-tooltip="{{'t.label.26' | translate}}"><span class="fas fa-tag"></span><span class="marL5 marR5">{{curFilter.label.label}}</span><a href="" ng-click="clearFilterFx('l');" class="text-danger"><span class="fas fa-times"></span></a></li>
+      <li ng-if="curFilter.email" uib-tooltip="{{'cm.label.2' | translate}}"><span class="fas fa-envelope"></span><span class="marL5 marR5">{{curFilter.email}}</span><a href="" ng-click="clearFilterFx('e');" class="text-danger"><span class="fas fa-times"></span></a></li>
+      <li ng-if="curFilter.tId" uib-tooltip="{{'t.label.30' | translate}}"><span class="fas fa-hashtag"></span><span class="marL5 marR5">{{curFilter.tId}}</span><a href="" ng-click="clearFilterFx('t');" class="text-danger"><span class="fas fa-times"></span></a></li>
+      <li ng-if="curFilter.keywords" uib-tooltip="{{'t.label.28' | translate}}"><span class="fas fa-font"></span><span class="marL5 marR5">{{curFilter.keywords}}</span><a href="" ng-click="clearFilterFx('k');" class="text-danger"><span class="fas fa-times"></span></a></li>
+    </ul>
+  </div>
+
+  <header class="panel-heading panel-tab">
+    <ul class="nav nav-tabs cl">
+      <li ui-sref-active="active" class="tab-primary"><a ui-sref=".a">{{'t.tab.1' | translate}}</a></li>
+      <li ui-sref-active="active" class="tab-danger">
+        <a ui-sref=".o" translate="{{'cm.label.19'}}" translate-values="{htmlTag: '&nbsp;'}"></a>
+      </li>
+      <li ui-sref-active="active" class="tab-success"><a ui-sref=".r">{{'t.tab.3' | translate}}</a></li>
+      <li ui-sref-active="active" class="tab-disabled"><a ui-sref=".n">{{'t.tab.4' | translate}}</a></li>
+    </ul>
+    <div class="panel-tools marT10">
+      <div class="pull-right uib-dropdown hide">
+        <div uib-dropdown is-open="status.isopen">
+          <a href="" uib-dropdown-toggle><i class="fas fa-ellipsis-v noMar"></i></a>
+          <ul class="dropdown-menu pull-right noPadL" uib-dropdown-menu role="menu">
+            <li role="menu-item">
+              <a href="" ng-click="checkboxFx('all', true);" ng-if="!allChecked"><i class="far fa-check-square marR5"></i>{{'cm.tool.3' | translate}}</a>
+              <a href="" ng-click="checkboxFx('all', false);" ng-if="allChecked"><i class="far fa-square marR5"></i>{{'cm.tool.4' | translate}}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- <div class="pull-right">
+        <a href="" ng-click="getTickets();" uib-tooltip="{{'cm.tool.6' | translate}}"><i class="fas fa-sync"></i></a>
+      </div> -->
+      <!-- hide below code because sorting added in column header -->
+      <!-- <div class="pull-right" uib-dropdown>
+        <a href="" uib-dropdown-toggle uib-tooltip="{{'cm.tool.1' | translate}}"><span class="glyphicon glyphicon-sort"></span></a>
+        <ul class="dropdown-menu" uib-dropdown-menu role="menu">
+          <li class="dropdown-header">{{'cm.tool.1.1' | translate}}</li>
+          <li ng-class="{'selected':auth.sort.t.type === 'l' && auth.sort.t.val === 'a'}">
+            <a href="" ng-click="sortFx('l', 'a', ticketList, 't');">{{'cm.tool.1.5' | translate}}</a>
+          </li>
+          <li ng-class="{'selected':auth.sort.t.type === 'l' && auth.sort.t.val === 'd'}">
+            <a href="" ng-click="sortFx('l', 'd', ticketList, 't');">{{'cm.tool.1.6' | translate}}</a>
+          </li>
+          <li class="divider"></li>
+          <li class="dropdown-header">{{'cm.tool.1.2' | translate}}</li>
+          <li ng-class="{'selected':auth.sort.t.type === 'c' && auth.sort.t.val === 'a'}">
+            <a href="" ng-click="sortFx('c', 'a', ticketList, 't');">{{'cm.tool.1.5' | translate}}</a>
+          </li>
+          <li ng-class="{'selected':auth.sort.t.type === 'c' && auth.sort.t.val === 'd'}">
+            <a href="" ng-click="sortFx('c', 'd', ticketList, 't');">{{'cm.tool.1.6' | translate}}</a>
+          </li>
+          <li class="divider" ng-if="curState != 'support.tickets.o' && curState != 'support.tickets.n'"></li>
+          <li class="dropdown-header" ng-if="curState != 'support.tickets.o' && curState != 'support.tickets.n'">{{'cm.tool.1.3' | translate}}</li>
+          <li ng-class="{'selected':auth.sort.t.type === 'a' && auth.sort.t.val === 'a'}" ng-if="curState != 'support.tickets.o' && curState != 'support.tickets.n'">
+            <a href="" ng-click="sortFx('a', 'a', ticketList, 't');">{{'cm.tool.1.5' | translate}}</a>
+          </li>
+          <li ng-class="{'selected':auth.sort.t.type === 'a' && auth.sort.t.val === 'd'}" ng-if="curState != 'support.tickets.o' && curState != 'support.tickets.n'">
+            <a href="" ng-click="sortFx('a', 'd', ticketList, 't');">{{'cm.tool.1.6' | translate}}</a>
+          </li>
+          <li class="divider"></li>
+          <li class="dropdown-header">{{'cm.tool.1.4' | translate}}</li>
+          <li ng-class="{'selected':auth.sort.t.type === 'u' && auth.sort.t.val === 'a'}">
+            <a href="" ng-click="sortFx('u', 'a', ticketList, 't');">{{'cm.tool.1.5' | translate}}</a>
+          </li>
+          <li ng-class="{'selected':auth.sort.t.type === 'u' && auth.sort.t.val === 'd'}">
+            <a href="" ng-click="sortFx('u', 'd', ticketList, 't');">{{'cm.tool.1.6' | translate}}</a>
+          </li>
+        </ul>
+      </div> -->
+
+      <!-- <div class="pull-right">
+        <a href="" ng-click="filterOpen();" uib-tooltip="{{'cm.tool.2' | translate}}"><i class="fas fa-filter"></i></a>
+      </div> -->
+
+      <div class="pull-right" uib-dropdown>
+        <a href=""  uib-dropdown-toggle uib-tooltip="{{'cm.tool.2' | translate}}"><i class="fas fa-filter"></i></a>
+        <ul class="dropdown-menu" uib-dropdown-menu role="menu">
+          <li ng-class="{'selected': ticketType == 0}">
+            <a href="" ng-click="ticketFilterFx('0');">{{'cm.menu.1' | translate}}</a>
+          </li>
+          <li ng-class="{'selected': ticketType == 1}">
+            <a href="" ng-click="ticketFilterFx('1');">{{'t.btn.13s' | translate}}</a>
+          </li>
+          <!-- <li ng-class="{'selected': ticketType == 2}">
+            <a href="" ng-click="filterOpen();">{{'t.btn.15' | translate}}</a>
+          </li> -->
+          <li class="divider"></li>
+          <li ng-class="{'selected': ticketType == 'all'}">
+            <a href="" ng-click="ticketFilterFx('all');">{{'cm.label.29' | translate}}</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="pull-right hide" ng-if="curState === 'support.tickets.r'">
+        <a href="" ng-click="ticketExportFx();" uib-tooltip="{{'t.btn.4' | translate}}"><i class="fas fa-file-download"></i></a>
+      </div>
+
+      <div class="pull-right label-dropdown hide" uib-dropdown ng-if="selectedTickets.length>0">
+        <a href="" uib-dropdown-toggle uib-tooltip="{{'t.label.10' | translate}}" ng-click="labelOpenCheckFx();"><i class="fas fa-backspace fa-rotate-180 label-icon"></i></a>
+        <div class="dropdown-menu noPadL pull-right" uib-dropdown-menu role="menu">
+          <div class="padL10 bdr-btm-dashed noMarB text-bold" ng-if="ddLabel.length > 0">{{'t.label.11' | translate}}:</div>
+          <div class="scrollQuad" ng-if="ddLabel.length > 0">
+            <ul class="list-unstyled noMarB">
+              <li ng-click="$event.stopPropagation();" ng-repeat="label in ddLabel" uib-tooltip="{{label.label}}" tooltip-popup-delay="1000"><label><input type="checkbox" ng-model="label.selected" ng-change="labelChangeFx()"><label></label>{{label.label}}</label></li>
+            </ul>
+          </div>
+          <div class="padL10 msg-warning text-unbold pad2" ng-if="ddLabel.length == 0">{{'t.msg.14' | translate}}</div>
+          <li class="divider"></li>
+          <li ng-if="!isApply"><a href="" ng-click="labelCUOpen();">{{'t.btn.5' | translate}}</a></li>
+          <li ng-if="isApply"><a href="" ng-click="labelAUFx('a');">{{'t.btn.6' | translate}}</a></li>
+        </div>
+      </div>
+
+
+
+      <!-- <div class="pull-right label-dropdown" uib-dropdown ng-if="selectedTickets.length>0">
+        <a href="" uib-dropdown-toggle uib-tooltip="{{'t.label.10' | translate}}"><i class="fas fa-backspace fa-rotate-180 label-icon"></i></a>
+        <div class="dropdown-menu noPadL" uib-dropdown-menu role="menu">
+          <div class="padL10" ng-if="labels.length > 0">{{'t.label.11' | translate}}:</div>
+          <div class="scrollQuad" ng-if="labels.length > 0">
+            <ul class="list-unstyled">
+              <li ng-click="$event.stopPropagation();" ng-repeat="label in labels" uib-tooltip="{{label.label}}" tooltip-popup-delay="1000"><label><input type="checkbox" ng-model="label.isChecked"><label></label>{{label.label}}</label></li>
+            </ul>
+          </div>
+          <div class="padL10 msg-warning text-unbold pad2" ng-if="labels.length == 0">{{'t.msg.14' | translate}}</div>
+          <li class="divider"></li>
+          <li><a href="" ng-click="labelCUOpen();">{{'t.btn.5' | translate}}</a></li>
+          <li><a href="" ng-click="applyLabelFx();">{{'t.btn.6' | translate}}</a></li>
+        </div>
+      </div> -->
+    </div>
+  </header>
+  <div class="panel-body noPad">
+    <div ui-view="tabView"></div>
+    <!-- {{selectedTickets | json}} -->
+  </div>
+</section>

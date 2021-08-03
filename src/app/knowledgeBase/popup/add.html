@@ -1,0 +1,65 @@
+<section class="panel">
+  <header class="panel-heading">
+    <span ng-if="addObj.caller == 'a'">{{addObj.id?'kb.label.8.1':'kb.label.8' | translate}}</span>
+    <span ng-if="addObj.caller == 'v'">{{addObj.id?'kb.label.9.1':'kb.label.9' | translate}}</span>
+  </header>
+  <div class="panel-body">
+    <div ng-if="addObj.caller == 'a'">
+      <div class="form-group">
+        <label>{{'cm.label.3' | translate}}</label>
+        <input type="text" class="form-control" ng-model="add.title" focus-me="true">
+      </div>
+      <div class="form-group">
+        <label>{{'kb.group.3' | translate}}</label>
+        <select class="form-control" ng-model="add.group" ng-options="group as group.label for group in groups track by group.id">
+          <option value="">{{'kb.group.3' | translate}}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>{{'t.label.21' | translate}}</label>
+        <div class="btn-file">
+          <button type="button" class="btn btn-primary btn-sm">{{'cm.btn.29' | translate}}</button>
+          <!-- <button type="button" class="btn btn-default not" ng-disabled="sendProcessing"><i class="fas fa-paperclip noMarR"></i></button> -->
+          <input type="text" class="form-control" ng-value="curFiles.name" readonly="" maxlength="250">
+          <input type="file" file-model="curFiles" options="{size:10485760, format:['article'], callback:true, multiple:false, caller:'a'}" ng-disabled="sendProcessing" uib-tooltip="{{'t.label.23' | translate}}" tooltip-popup-delay="1000" tooltip-append-to-body="true" title="">
+        </div>
+      </div>
+    </div>
+
+    <div ng-if="addObj.caller == 'v'">
+      <div class="marB5">
+        <label><input type="radio" ng-model="add.titleOpt" value="a">{{'kb.label.6' | translate}}<label></label></label>
+        <label class="marL5"><input type="radio" ng-model="add.titleOpt" value="c">{{'kb.label.7' | translate}}<label></label></label>
+      </div>
+      <div class="form-group" ng-if="add.titleOpt == 'c'">
+        <input type="text" class="form-control" ng-model="add.title">
+      </div>
+      <div class="form-group" ng-if="addObj.caller == 'v'">
+        <label>{{'kb.label.5' | translate}}</label>
+        <input type="text" class="form-control" ng-model="add.url">
+      </div>
+    </div>
+
+  </div>
+  <footer class="panel-footer">
+    <span class="btnQuad">
+      <button class="btn btn-success" ng-click="addFx();" ng-disabled="popupProcessing"><span class="fas" ng-class="popupProcessing?'fa-redo fa-spin':'fa-check'"></span>
+        <span ng-if="!addObj.id">{{popupProcessing?'cm.btn.18i':'cm.btn.18' | translate}}</span>
+        <span ng-if="addObj.id">{{popupProcessing?'cm.btn.14i':'cm.btn.14' | translate}}</span>
+      </button>
+      <button class="btn btn-link" ng-click="closeThisDialog();">{{'cm.btn.8' | translate}}</button>
+    </span>
+    <div class="errMsg pull-right" ng-if="hasErrPop">
+      <span ng-if="errType == 'invalideUrl'">{{'kb.msg.10' | translate}}</span>
+      <span ng-if="errType == 'alreadyVI'">{{'kb.msg.12.1' | translate}}</span>
+      <span ng-if="errType == 'alreadyVT'">{{'kb.msg.12' | translate}}</span>
+      <span ng-if="errType == 'alreadyA'">{{'kb.msg.11' | translate}}</span>
+      <span ng-if="errType == 'fileEmpty'">{{'kb.msg.8' | translate}}</span>
+      <span ng-if="errType == 'invalide'">{{'kb.msg.9' | translate}}</span>
+      <span ng-if="errType == 'title'">{{'kb.msg.5' | translate}}</span>
+      <span ng-if="errType == 'file'">{{'kb.msg.6' | translate}}</span>
+      <span ng-if="errType == 'url'">{{'kb.msg.7' | translate}}</span>
+    </div>
+    <div class="clearfix"></div>
+  </footer>
+</section>

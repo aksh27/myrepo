@@ -1,0 +1,26 @@
+<section class="panel">
+  <div class="panel-heading pad15"><span>{{courierDetail.id ? 's.label.18' : 's.label.17' | translate}}</span></div>
+  <div class="panel-body scrollQuad" style="max-height:{{getAvailableHeight(310)}}px">
+    <img src="assets/images/loading.gif" ng-if="popupLoading">
+    <div class="form-group">
+      <div class="row">
+        <div class="col-xs-12">
+          <label>{{'cm.label.1' | translate}}</label>
+          <input type="text" class="form-control" ng-model="courierDetail.label">
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="panel-footer">
+    <span class="btnQuad">
+      <button ng-if="!courierDetail.id" type="button" class="btn btn-success" ng-click="addSettingsFx();" ng-disabled="popupProcessing"><span class="fas" ng-class="popupProcessing?'fa-redo fa-spin':'fa-check'"></span>{{popupProcessing?'cm.btn.18i':'cm.btn.18' | translate}}</button>
+      <button ng-if="courierDetail.id" type="button" class="btn btn-success" ng-click="addSettingsFx();" ng-disabled="popupProcessing"><span class="fas" ng-class="popupProcessing?'fa-redo fa-spin':'fa-check'"></span>{{(popupProcessing && courierDetail.id)?'cm.btn.14i':'cm.btn.14' | translate}}</button>
+      <button type="button" class="btn btn-link" ng-click="closeThisDialog(); resetCourier();">{{'cm.btn.8' | translate}}</button>
+    </span>
+    <div class="errMsg pull-right" ng-if="hasErrPop">
+      <span ng-if="errType == 'cName'">{{"s.msg.23" | translate}}</span>
+      <span ng-if="errType == 'cSame'">{{"s.msg.24" | translate}}</span>
+    </div>
+    <div class="clearfix"></div>
+  </footer>
+</section>

@@ -1,0 +1,24 @@
+<section class="panel">
+  <div class="panel-heading">{{"i.label.21" | translate}}<div class="searchTbx bdrR">
+    <input type="text" class="form-control" ng-model="searchText"><a href="" ng-click="searchText=''" class="text-danger"><i class="fas fa-times" ng-if="searchText"></i></a></div>
+  </div>
+  <div class="panel-body">
+    <img alt="" src="../assets/images/loading.gif" ng-if="popupLoading">
+    <div ng-if="!popupLoading">
+      <div class="scrollQuad table table-sm no-th" style="max-height:{{getAvailableHeight(510)}}px">
+        <div class="row" ng-repeat="serial in serialList = (tempSerial | filter:{'sn': searchText})">
+          <div class="col-xs-12"><label><input type="radio" name="snName" ng-model="sn.data" ng-value="serial"><label></label>{{serial.sn}}</label></div>
+        </div>
+        <div class="msg-warning" ng-if="tempSerial.length && !serialList.length" translate="{{'cm.msg.14'}}" translate-values="{searchText: '<b>&quot;{{searchText.replace(searchRegExp, searchReplaceChar)}}&quot;</b>'}">
+        </div>
+        <div class="msg-warning" ng-if="!tempSerial.length" translate="{{'cm.msg.41'}}"></div>
+      </div>
+    </div>
+  </div>
+  <footer class="panel-footer" ng-if="!popupLoading">
+    <span class="btnQuad">
+      <button type="button" ng-if="tempSerial.length > 0" class="btn btn-success" ng-click="selectSnFx();" ng-disabled="popupProcessing"><span class="fas" ng-class="popupProcessing?'fa-redo fa-spin':'fa-check'"></span>{{"cm.btn.2" | translate}}</button>
+      <button type="button" class="btn" ng-class="tempSerial.length?'btn-link':'btn-default'" ng-click="closeThisDialog();">{{tempSerial.length?"cm.btn.8":"cm.btn.1" | translate}}</button>
+    </span>
+  </footer>
+</section>

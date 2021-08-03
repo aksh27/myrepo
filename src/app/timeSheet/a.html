@@ -1,0 +1,48 @@
+<div class="table table-md no-pointer">
+  <img src="assets/images/loading.gif" ng-if="pageLoading" class="marT10">
+  <div ng-if="!pageLoading && tsList.length > 0">
+    <div class="row th">
+      <a href="" ng-click="columnSortFx('n', (auth.sort.ts.val == 'a' ? 'd' : 'a'), tsList, 'ts'); activeColumnFx('name');">
+        <div ng-if="auth.isMultipleTS" class="col-xs-8 text-primary text-bold display-flex">Name
+          <div class="marL10" ng-if="activeCol == 'name' && !saveProcessing">
+            <span ng-if="auth.sort.ts.val === 'd'"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+            <span ng-if="auth.sort.ts.val === 'a'"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="" ng-click="columnSortFx('ws', (auth.sort.ts.val == 'a' ? 'd' : 'a'), tsList, 'ts'); activeColumnFx('week');">
+        <div ng-class="auth.isMultipleTS ?'col-xs-2':'col-xs-10'" class="text-primary text-bold display-flex">Week
+          <div class="marL10" ng-if="activeCol == 'week' && !saveProcessing">
+            <span ng-if="auth.sort.ts.val === 'd'"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+            <span ng-if="auth.sort.ts.val === 'a'"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="" ng-click="columnSortFx('wh', (auth.sort.ts.val == 'a' ? 'd' : 'a'), tsList, 'ts'); activeColumnFx('work');">
+        <div class="col-xs-2 text-primary text-right text-bold">Work Hour
+          <div class="pull-right marL10" ng-if="activeCol == 'work' && !saveProcessing">
+            <span ng-if="auth.sort.ts.val === 'd'"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+            <span ng-if="auth.sort.ts.val === 'a'"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="row" ng-repeat="ts in filteredTSList = (tsList | customSearch:{key:(search.text | removeSpaces), module:'ts'})">
+      <div class="col-xs-8" ng-if="auth.isMultipleTS">
+        <a ui-sref="support.tsDetails({id:hubEncrypt(ts.id)})">{{ts.uName}}</a>
+      </div>
+      <div ng-class="auth.isMultipleTS?'col-xs-3':'col-xs-11'">
+        <a class="text-ellipsis" ng-if="!auth.isMultipleTS" ui-sref="support.tsDetails({id:hubEncrypt(ts.id)})">{{ts.date.start | date:getDateFormat(ts.date.start, 'md')}} - {{ts.date.end | date:getDateFormat(ts.date.end, 'md')}}</a>
+        <div class="text-ellipsis" ng-if="auth.isMultipleTS">{{ts.date.start | date:getDateFormat(ts.date.start, 'md')}} - {{ts.date.end | date:getDateFormat(ts.date.end, 'md')}}</div>
+      </div>
+      <div class="col-xs-1 text-right">
+        <span class="pad2" ng-class="ts.total>=2400?'bg-success text-success':'bg-danger text-danger'">{{ts.total | timeConvert}}</span>
+        <!-- {{ts.total/60 | number:2}} -->
+      </div>
+    </div>
+    <div class="msg-warning" ng-if="filteredTSList.length == 0" translate="{{'cm.msg.14'}}" translate-values="{searchText: '<b>&quot;{{search.text.replace(searchRegExp, searchReplaceChar)}}&quot;</b>'}"></div>
+  </div>
+  <div class="msg-warning" ng-if="!pageLoading && tsList.length <= 0">{{'ts.msg.4'| translate}}</div>
+</div>

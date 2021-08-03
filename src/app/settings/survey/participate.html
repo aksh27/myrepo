@@ -1,0 +1,48 @@
+<section class="panel">
+  <div class="panel-body">
+    <img src="assets/images/loading.gif" ng-if="surveyLoading">
+    <div ng-if="hasMsg" class="pad10 text-md bg-warning text-warning">
+      <span ng-if="hasType == 'notFound'">Survey not found.</span>
+      <span ng-if="hasType == 'noQuestion'">No questions available in the survey.</span>
+    </div>
+
+    <div ng-if="!surveyLoading && !hasMsg">
+      <div class="form-group" ng-if="survey.info.title != null || survey.info.desc != null">
+        <label>{{survey.info.title}}</label>
+        <div>{{survey.info.desc}}</div>
+        <hr>
+      </div>
+      <div class="table table-striped tbl-lg" ng-if="survey.q.length > 0">
+        <div class="row" ng-repeat="s in survey.q">
+          <div class="col-xs-12 word-break marB5">
+            <div class="text-bold word-break">{{$index + 1 + ". " + s.label}}</div>
+          </div>
+          <div class="padL10">
+            <div class="col-xs-12 col-sm-6 col-lg-3 word-break survey" ng-repeat="option in s.opt" ng-if="option.opt != ''">
+              <label ng-if="s.selType != 2" class="noMarB">[{{option.label}}]</label>
+
+              <div ng-if="s.selType == 0" ng-init="s.isSelected=-1"><label class="text-normal"><input type="radio" name="opt{{option.id}}" ng-model="s.isSelected" ng-value="{{$index}}"><label></label>{{option.opt}}</label></div>
+
+              <div ng-if="s.selType == 1"><label class="text-normal"><input type="checkbox" name="opt{{option.id}}" ng-model="option.isCheck" ng-value="'opt'+option.opt"><label></label>{{option.opt}}</label></div>
+            </div>
+            <div class="col-xs-12 word-break survey" ng-if="s.opt.length == 0">
+              <div ng-if="s.selType == 2"><textarea class="txtAreaBig form-control" ng-model="s.isSelected"></textarea></div>
+            </div>
+            <div class="col-xs-12 word-break survey" ng-if="s.opt.length == 0">
+              <div ng-if="s.selType == 3">
+                <div star-rating rating-value="s.cRating" max="s.mRating" on-rating-selected="getSelectedRating(rating)" ng-model="s.cRating"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="msg-warning" ng-if="survey.q.length <= 0">You don't have any question yet.</div>
+    </div>
+  </div>
+  <div class="panel-footer" ng-if="!surveyLoading && !hasMsg">
+    <span class="btnQuad" ng-if="!hasMsg">
+      <button ng-click="surveyFx();" class="btn btn-primary" ng-disabled="surveyProcessing" ng-cloak><i class="fas" ng-class="surveyProcessing?'fa-redo-alt fa-spin': 'fa-check'"></i>Submit</button>
+      <button ng-click="resetFx();" class="btn btn-default" ng-cloak><span class="fas fa-redo"></span>Reset</button>
+    </span>
+  </div>
+</section>

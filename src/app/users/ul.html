@@ -1,0 +1,25 @@
+<div class="table no-th no-pointer">
+  <div class="scrollQuad" ng-hide="pageLoading" ng-if="logList.length > 0" when-scrolled="loadMoreLogs()" style="max-height:{{getAvailableHeight(200)}}px">
+    <div class="row" ng-repeat="log in filteredLogList = (logList | customSearch:{key:(search.text | removeSpaces), module:'ul'})">
+      <div class="col-xs-10">
+        <div class="user-tumb">
+          <img src="{{tim + uBucket + log.userImg}}&w=36&h=36&q=80&zc=3" ng-if="log.userImg">
+          <div class="profileIcon-sm" ng-if="!log.userImg"><span>{{log.user | limitTo:1}}</span></div>
+        </div>
+        <div class="word-break">
+          <span ng-if="!log.isDetailed">{{log.data}}</span>
+          <a href="" class="btn-link" ng-click="detailedLogFx(log);" ng-if="log.isDetailed">{{log.data}}</a>
+        </div>
+        <div class="word-break text-sm text-bold text-muted">{{log.user}}</div>
+      </div>
+      <div class="col-xs-2 text-right">
+        <div class="text-ellipsis text-sm">{{log.logDate}}</div>
+        <div class="text-ellipsis text-sm text-muted ng-cloak">{{log.logTime}}</div>
+      </div>
+    </div>
+    <div class="msg-warning" ng-if="filteredLogList.length == 0" translate="{{'cm.msg.14'}}" translate-values="{searchText: '<b>&quot;{{search.text.replace(searchRegExp, searchReplaceChar)}}&quot;</b>'}"></div>
+  </div>
+  <div ng-class="{'msg-warning':!logLoading}" ng-hide="pageLoading" ng-if="logList.length <= 0">
+    <img src="assets/images/loading.gif" ng-if="logLoading" class="marT10"><span ng-if="!logLoading">{{'cm.msg.1'| translate}}</span>
+  </div>
+</div>

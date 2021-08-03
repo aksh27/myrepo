@@ -1,0 +1,140 @@
+<img src="assets/images/loading.gif" class="marT10" ng-if="pageLoading">
+<div ng-if="!pageLoading">
+  <div class="row subject-header marB25">
+    <div class="col-xs-10">
+      <div class="text-big">
+        <a ui-sref="{{'support.settings.s'}}" class="text-muted back-btn pull-left"><span
+            class="fas fa-arrow-left text-sm"></span></a>
+        <div class="word-break">
+          <span class="text-muted">{{decId ? 'Edit Survey' : 'Create Survey'}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-2"></div>
+  </div>
+  <div class="row">
+    <div class="col-xs-4">
+      <div class="form-group">
+        <label>Title</label>
+        <input ng-if="survey.isEditable==1 || !decId" type="text" class="form-control" ng-model="survey.title" focus-me="true">
+        <div ng-if="survey.isEditable==0">{{survey.title}}</div>
+      </div>
+      <div class="form-group">
+        <label>Text send to customer</label>
+        <textarea ng-if="survey.isEditable==1 || !decId" class="form-control txtAreaBig" ng-model="survey.ticketBodyText"></textarea>
+        <div ng-if="survey.isEditable==0">{{survey.ticketBodyText}}</div>
+      </div>
+      <div class="form-group">
+        <label>Description</label>
+        <textarea ng-if="survey.isEditable==1 || !decId" class="form-control txtAreaBig" ng-model="survey.descr"></textarea>
+        <div ng-if="survey.isEditable==0">{{survey.descr}}</div>
+      </div>
+    </div>
+    <div class="col-xs-12">
+      <div ng-if="survey.isEditable==1 || !decId" class="form-group">
+        <label>Question Type</label>
+        <div>
+          <label class="noMarB marR10"><input type="radio" name="qTypeOpt" ng-model="addQuestion.type" ng-value="0" ng-change="queTypeFx(0)"><label></label> Single selection</label>
+          <label class="noMarB marR10"><input type="radio" name="qTypeOpt" ng-model="addQuestion.type" ng-value="1" ng-change="queTypeFx(1)"><label></label> Multi selection</label>
+          <label class="noMarB marR10"><input type="radio" name="qTypeOpt" ng-model="addQuestion.type" ng-value="3" ng-change="queTypeFx(3)"><label></label> Rating</label>
+          <label class="noMarB"><input type="radio" name="qTypeOpt" ng-model="addQuestion.type" ng-value="2" ng-change="queTypeFx(2)"><label></label> Comment</label>
+        </div>
+      </div>
+      <div ng-if="survey.isEditable==1 || !decId" class="row bg-light pad10">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label>Question</label>
+            <textarea type="text" class="form-control" ng-model="addQuestion.q" maxlength="{{descriptionLimit}}"></textarea>
+            <span class="text-muted text-sm">[ {{descriptionLimit - addQuestion.q.length}} ]</span>
+          </div>
+          <div class="row" ng-if="!isQDR">
+            <div class="col-xs-12">
+              <div class="bdr-btm-dashed">
+                <div class="col-xs-7 noPadL">
+                  <label>Options</label>
+                </div>
+                <div class="col-xs-5 noPadR text-right" ng-if="!isQDR">
+                  <button type="button" ng-click="addMoreOptFx($index);" class="btn btn-primary btn-xs" id="addOther"><span class="fa fa-plus-circle"></span>Add More</button>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row" ng-if="!isQDR">
+            <div class="other">
+              <div ng-repeat="option in optArr">
+                <div class="col-xs-6">
+                    <div class="form-group">
+                      <label>{{option.label}}</label>
+                      <div class="input-group w100">
+                          <input id="opt-{{$index}}" type="text" class="form-control" ng-model="option.opt" maxlength="{{inputLimit}}">
+                          <a href="" ng-if="optArr.length > 1" class="input-group-addon delOptBtn" ng-click="delOpt($index);" uib-tooltip="Remove" tooltip-popup-delay="1000"><span class="text-danger fa fa-times"></span></a>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <button ng-if="!editQForm.isEdit" type="button" class="btn btn-success btn-sm" ng-click="addQuestionFx();"><span class="fa fa-plus-circle"></span>Add</button>
+            <button ng-if="editQForm.isEdit" type="button" class="btn btn-success btn-sm" ng-click="addQuestionFx('e');"><span class="fa fa-check"></span>Update</button>
+            <button ng-if="!editQForm.isEdit" type="reset" class="btn btn-default btn-sm" ng-click="resetQuestionFx();">Reset</button>
+            <button ng-if="editQForm.isEdit" type="reset" class="btn-link" ng-click="editQForm.isEdit = false; resetQuestionFx();">Cancel</button>
+            <div class="errMsg pull-right" ng-if="hasListErr">
+              <div ng-if="errType=='question'">Please provide Question.</div>
+              <div ng-if="errType=='opt'">Please provide at least two options.</div>
+              <div ng-if="errType=='maxopt'">You can add max 10 options.</div>
+              <div ng-if="errType=='maxQ'">You can add max 5 questions.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="spaceH2"></div>
+      <div ng-if="survey.q.length > 0" class="bdr-top-dashed"></div>
+      <div class="table table-scroll" ng-if="survey.q.length > 0">
+        <div class="row th">
+          <div class="col-xs-2" ng-class="{'col-xs-2':survey.info.statusType==1}">Question</div>
+          <div class="col-xs-9">
+              <div class="w100" style="display: flex;">
+              <div ng-repeat="n in columnArr" ng-style="colWidthStyle">
+                Option {{n.label}}
+              </div>
+              </div>
+          </div>
+          <div ng-if="survey.isEditable==1 || !decId" class="col-xs-1 text-right"><span ng-if="survey.info.locked!=1">Action</span></div>
+        </div>
+        <div class="overflow-auto" ng-style="{'max-height':'{{getAvailableHeight(400) * 0.45}}px'}">
+          <ul ng-if="survey.q.length > 0">
+            <li class="row" ng-repeat="q in survey.q" data-id="{{q.id}}">
+              <div class="col-xs-2 word-break">{{q.q}}</div>
+              <div class="col-xs-9 word-break">
+                <div class="w100" style="display: flex;">
+                  <div ng-repeat="opt in q.opt" ng-style="colWidthStyle">
+                    {{opt.opt}}
+                  </div>
+                </div>
+              </div>
+              <div ng-if="survey.isEditable==1 || !decId" class="col-xs-1 text-right">
+                <a href="" class="text-primary marR5" ng-click="editQFx(q);" uib-tooltip="Edit" tooltip-popup-delay="1000" tooltip-append-to-body="true"><span class="fas fa-pencil-alt"></span></a>
+                <a href="" class="text-danger" ng-click="removeOpen($index);" uib-tooltip="Delete" tooltip-popup-delay="1000" tooltip-append-to-body="true"><span class="fas fa-times noMarR"></span></a>
+              </div>
+            </li>
+          </ul>
+          <div class="msg-warning" ng-if="survey.q.length <= 0">{{'cl.widget.survey.m3' | translate}}</div>
+        </div>
+      </div>
+
+      <div class="form-group bdr-top-dashed">
+        <span class="btnQuad">
+          <button type="submit" ng-if="survey.isEditable==1 || !decId" ng-disabled="popupProcessing" ng-click="createSurveyFx();" class="btn btn-primary" id="submitBtn"><span class="fas" ng-class="popupProcessing? 'fa-redo fa-spin':'fa-check'"></span>{{decId ? 'Update' : 'Create'}}</button>
+          <button class="btn btn-link" ui-sref="{{'support.settings.s'}}">{{"cm.btn.8" | translate}}</button>
+        </span>
+        <div class="errMsg pull-right" ng-if="hasErr">
+          <span ng-if="errType == 'title'">Please provide title.</span>
+          <span ng-if="errType == 'descr'">Please provide description.</span>
+          <span ng-if="errType == 'que'">Please add atleast one question.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

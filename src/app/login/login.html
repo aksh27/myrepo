@@ -1,0 +1,56 @@
+<section class="wrapper">
+  <div class="login-card">
+    <div class="text-center">
+      <img src="assets/images/logo-index.png">
+    </div>
+    <div class="panel-body text-center marT25" ng-if="isSsoAuth">
+      Please wait <img alt="" src="assets\images\loading-xs.gif" class="marL5">
+    </div>
+    <div class="login" ng-if="!isSsoAuth">
+      <div class="left">
+        <img alt="Canada Post" src="assets/images/hp-txt.png">
+        <label class="marT10">Email <a href="mailto:support@lsquared.com" class="btn-link text_underline text-bold">support@lsquared.com</a> or call us at
+ (+1)&nbsp;647-642-3011 to raise a ticket.</label>
+      </div>
+      <div class="right">
+        <form method="post" name="loginForm" >
+          <div class="panel-body">
+            <div class="form-group noMarB marT60" ng-if="!isNormalLogin">
+              <label class="text-muted">Agent login</label>
+            </div>
+            <div class="form-group" ng-if="isNormalLogin">
+              <label class="text-muted">Agent email</label>
+              <input type="email" ng-model="credentials.email" class="form-control" placeholder="Email" focus-me="true">
+            </div>
+            <div class="form-group" ng-if="isNormalLogin">
+              <label class="text-muted">Password</label>
+              <input type="password" ng-model="credentials.pwd" class="form-control" placeholder="Password">
+            </div>
+            <div ng-class="isNormalLogin ? 'marT25' : 'marT5'">
+              <button ng-if="isNormalLogin" ng-click="authenticate();" class="btn btn-primary marR10" ng-disabled="authProcessing">
+                <i class="fas" ng-class="authProcessing?'fa-redo fa-spin':'fa-sign-in-alt'"></i>Login
+              </button>
+              <button ng-click="authenticate('ft');" class="btn btn-primary marR10" ng-disabled="ftProcessing"><i ng-class="ftProcessing?'fas fa-redo-alt fa-spin':'fab fa-windows'"></i>Sign In with Microsoft</button>
+              <a ng-if="!isNormalLogin" href="" ng-click="showNormalLoginFx()" class="normalLoginBtn">Normal Login</a>
+            </div>
+            <div class="marT5" ng-if="isNormalLogin">
+              <a href="" ui-sref="forgotPassword" class="btn btn-link noPadL">Forgot Password?</a>
+            </div>
+          </div>
+          <div class="errMsg marT10" ng-if="hasErr">
+            <div ng-if="errType=='api'">Oops! Something went wrong. Please try again later.</div>
+            <div ng-if="errType=='auth'">Email or Password were not recognized.<br>Please check and try again.</div>
+            <div ng-if="errType=='form'">Please provide both Email and Password.</div>
+
+            <div ng-if="errType=='authFail'">Authentication has been failed. Please try again.</div>
+            <div ng-if="errType=='issueFetch'">Issue while fetching user information.</div>
+            <div ng-if="errType=='userNotExist'">User not exists on support desk.</div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="footer noMarL padL10">
+  <span ng-bind-html="copyRight"></span> | <a href="https://s3-us-west-2.amazonaws.com/lsquared-hub/doc/terms.pdf" target="_blank">Terms &amp; Conditions</a> | <a href="https://s3-us-west-2.amazonaws.com/lsquared-hub/doc/privacy.pdf" target="_blank">Privacy Policy</a> | V&nbsp;{{uiVersion}}
+</footer>

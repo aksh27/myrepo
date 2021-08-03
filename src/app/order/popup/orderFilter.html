@@ -1,0 +1,99 @@
+<section class="panel">
+  <div class="panel-heading text-bold">{{'t.label.31' | translate}}</div>
+  <div class="panel-body scrollQuad" style="max-height:{{getAvailableHeight(150)}}px">
+    <img src="assets/images/loading.gif" ng-if="popupLoading">
+    <div ng-if="!popupLoading">
+      <div class="row">
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label>{{"t.label.9" | translate}}</label>
+            <select class="form-control" ng-model="filterObj.customer" ng-options="customer as customer.label for customer in filters.customers track by customer.id">
+              <option value="">{{"t.label.9.1" | translate}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label>{{"od.label.61" | translate}}</label>
+            <select class="form-control" ng-model="filterObj.vendor" ng-options="vendor as vendor.label for vendor in filters.vendors track by vendor.id">
+              <option value="">{{"od.label.61.1" | translate}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label><input type="checkbox" ng-model="filterObj.createdOn.isOn"><label></label> {{"cm.tool.1.2" | translate}}</label>
+            <div class="input-group">
+              <span class="input-group-addon"><span class="fas fa-calendar-alt"></span></span>
+              <input type="daterange" class="form-control picker" ng-model="filterObj.createdOn.dateRange" format="MM/DD/YYYY" max-date="{{maxDate}}" readonly="" ng-disabled="!filterObj.createdOn.isOn">
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label>{{"od.label.14" | translate}}</label>
+            <select class="form-control" ng-model="filterObj.createdBy" ng-options="user as user.label for user in filters.users track by user.id">
+              <option value="">{{"i.msg.7" | translate}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="col-xs-4">
+          <div class="form-group">
+            <label>{{"od.label.64" | translate}}</label>
+            <select class="form-control" ng-model="filterObj.country">
+              <option value="">{{"od.label.64.1" | translate}}</option>
+              <option value="ca">Canada</option>
+              <option value="us">United states</option>
+              <option value="uk">United kingdom</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-xs-4">
+          <div class="form-group">
+            <label>{{"od.label.58" | translate}}</label>
+            <select class="form-control" ng-model="filterObj.department">
+              <option value="">{{"t.label.13.1" | translate}}</option>
+              <option value="s">Support</option>
+              <option value="f">Finance</option>
+              <option value="b">Both</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-xs-4">
+          <div class="form-group">
+            <label>{{"i.label.13" | translate}}</label>
+            <select class="form-control" ng-model="filterObj.courierBy" ng-options="ship as ship.label for ship in filters.shipped track by ship.id">
+              <option value="">{{"i.msg.7" | translate}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label><input type="checkbox" ng-true-value="1" ng-false-value="0" ng-model="filterObj.isNewServer"><label></label>{{'od.label.33' | translate}}</label>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label>{{"od.label.62" | translate}}</label>
+            <input type="text" class="form-control" ng-model="filterObj.id">
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="form-group">
+            <label>{{"t.label.27" | translate}}</label>
+            <input type="text" class="form-control" ng-model="filterObj.keywords">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="panel-footer" ng-if="!popupLoading">
+    <span class="btnQuad">
+      <button type="button" class="btn btn-success" ng-click="filterOdrFx();" ng-disabled="popupProcessing"><span class="fas" ng-class="popupProcessing?'fa-redo fa-spin':'fa-check'"></span>{{popupProcessing?'t.btn.6i':'t.btn.6' | translate}}</button>
+      <button type="button" class="btn btn-link" ng-click="closeThisDialog();">{{"cm.btn.8" | translate}}</button>
+    </span>
+    <div class="errMsg pull-right" ng-if="hasErrPop">{{'t.pop.13' | translate}}</div>
+    <div class="clearfix"></div>
+  </footer>
+</section>

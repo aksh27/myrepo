@@ -1,0 +1,516 @@
+{
+  "notification": [{
+    "id": 6019,
+    "en": "Password sent to "
+  }, {
+    "id": 8001,
+    "en": "Content uploaded."
+  }, {
+    "id": 8002,
+    "en": "Content updated."
+  }, {
+    "id": 8003,
+    "en": "Content moved to the <u>Deleted Content</u> tab."
+  }, {
+    "id": 8098,
+    "en": "Content deleted forever."
+  }, {
+    "id": 8004,
+    "en": "Web Page widget created."
+  }, {
+    "id": 8005,
+    "en": "Web Page widget updated."
+  }, {
+    "id": 8006,
+    "en": "Date Time widget created."
+  }, {
+    "id": 8007,
+    "en": "Date Time widget updated."
+  }, {
+    "id": 8008,
+    "en": "News widget created."
+  }, {
+    "id": 8009,
+    "en": "News widget updated."
+  }, {
+    "id": 8010,
+    "en": "Weather widget created."
+  }, {
+    "id": 8011,
+    "en": "Weather widget updated."
+  }, {
+    "id": 8012,
+    "en": "YouTube widget created."
+  }, {
+    "id": 8013,
+    "en": "YouTube widget updated."
+  }, {
+    "id": 8014,
+    "en": "Twitter widget created."
+  }, {
+    "id": 8015,
+    "en": "Twitter widget updated."
+  }, {
+    "id": 8016,
+    "en": "RSS widget created."
+  }, {
+    "id": 8017,
+    "en": "RSS widget updated."
+  }, {
+    "id": 8018,
+    "en": "Flight Schedule widget created."
+  }, {
+    "id": 8019,
+    "en": "Flight Schedule widget updated."
+  }, {
+    "id": 8020,
+    "en": "Meeting widget created."
+  }, {
+    "id": 8021,
+    "en": "Meeting widget updated."
+  }, {
+    "id": 8022,
+    "en": "Quotes widget created."
+  }, {
+    "id": 8023,
+    "en": "Quotes widget updated."
+  }, {
+    "id": 8024,
+    "en": "Live Streaming widget created."
+  }, {
+    "id": 8025,
+    "en": "Live Streaming widget updated."
+  }, {
+    "id": 8026,
+    "en": "Stock Price widget created."
+  }, {
+    "id": 8027,
+    "en": "Stock Price widget updated."
+  }, {
+    "id": 8028,
+    "en": "FTP widget created."
+  }, {
+    "id": 8029,
+    "en": "FTP widget updated."
+  }, {
+    "id": 8030,
+    "en": "Delimited Text widget created."
+  }, {
+    "id": 8031,
+    "en": "Delimited Text widget updated."
+  }, {
+    "id": 8032,
+    "en": "Currency widget created."
+  }, {
+    "id": 8033,
+    "en": "Currency widget updated."
+  }, {
+    "id": 8034,
+    "en": "Free Form widget created."
+  }, {
+    "id": 8035,
+    "en": "Free Form widget updated."
+  }, {
+    "id": 8036,
+    "en": "Open Hours widget created."
+  }, {
+    "id": 8037,
+    "en": "Open Hours widget updated."
+  }, {
+    "id": 8038,
+    "en": "Instagram widget created."
+  }, {
+    "id": 8039,
+    "en": "Instagram widget updated."
+  }, {
+    "id": 8040,
+    "en": "Filler Content widget created."
+  }, {
+    "id": 8041,
+    "en": "Filler Content widget updated."
+  }, {
+    "id": 8042,
+    "en": "TouchLink widget created."
+  }, {
+    "id": 8043,
+    "en": "TouchLink widget updated."
+  }, {
+    "id": 8044,
+    "en": "Windows Task widget created."
+  }, {
+    "id": 8045,
+    "en": "Windows Task widget updated."
+  }, {
+    "id": 8046,
+    "en": "SunSmart widget created."
+  }, {
+    "id": 8047,
+    "en": "SunSmart widget updated."
+  }, {
+    "id": 8048,
+    "en": "IFrame widget created."
+  }, {
+    "id": 8049,
+    "en": "IFrame widget updated."
+  }, {
+    "id": 8050,
+    "en": "Ungerboeck widget created."
+  }, {
+    "id": 8051,
+    "en": "Ungerboeck widget updated."
+  }, {
+    "id": 8052,
+    "en": "Web Cam widget created."
+  }, {
+    "id": 8053,
+    "en": "Web Cam widget updated."
+  }, {
+    "id": 8054,
+    "en": "Telax widget created."
+  }, {
+    "id": 8055,
+    "en": "Telax widget updated."
+  }, {
+    "id": 8056,
+    "en": "Fullscreen Chrome widget created."
+  }, {
+    "id": 8057,
+    "en": "Fullscreen Chrome widget updated."
+  }, {
+    "id": 8058,
+    "en": "Online Radio widget created."
+  }, {
+    "id": 8059,
+    "en": "Online Radio widget updated."
+  }, {
+    "id": 8060,
+    "en": "Interactive Menu widget created."
+  }, {
+    "id": 8061,
+    "en": "Interactive Menu widget updated."
+  }, {
+    "id": 8062,
+    "en": "Crawling Text widget created."
+  }, {
+    "id": 8063,
+    "en": "Crawling Text widget updated."
+  }, {
+    "id": 8064,
+    "en": "Google Calendar widget created."
+  }, {
+    "id": 8065,
+    "en": "Google Calendar widget updated."
+  }, {
+    "id": 8066,
+    "en": "Readerboard widget created."
+  }, {
+    "id": 8067,
+    "en": "Readerboard widget updated."
+  }, {
+    "id": 8068,
+    "en": "Web Login widget created."
+  }, {
+    "id": 8069,
+    "en": "Web Login widget updated."
+  }, {
+    "id": 8070,
+    "en": "Folder created."
+  }, {
+    "id": 8072,
+    "en": "Folder deleted."
+  }, {
+    "id": 8073,
+    "en": "Content archived."
+  }, {
+    "id": 8074,
+    "en": "Content unapproved."
+  }, {
+    "id": 8075,
+    "en": "Content moved."
+  }, {
+    "id": 8076,
+    "en": "A new version of content has been uploaded."
+  }, {
+    "id": 8081,
+    "en": "Content approved."
+  }, {
+    "id": 8082,
+    "en": "All content of the folder has been approved."
+  }, {
+    "id": 8083,
+    "en": "All content of the folder has been unapproved."
+  }, {
+    "id": 8084,
+    "en": "Content restored."
+  }, {
+    "id": 8104,
+    "en": "You don't have permission to move selected items on this server."
+  }, {
+    "id": 8106,
+    "en": "Parent folder does not exists and you do not have permission to add content on root."
+  }, {
+    "id": 8108,
+    "en": "Shortcut created."
+  }, {
+    "id": 9001,
+    "en": "Template created."
+  }, {
+    "id": 9002,
+    "en": "Template updated."
+  }, {
+    "id": 9003,
+    "en": "Template deleted."
+  }, {
+    "id": 9005,
+    "en": "Template approved."
+  }, {
+    "id": 9006,
+    "en": "Template unapproved."
+  }, {
+    "id": 9012,
+    "en": "Created a copy of selected item(s)."
+  }, {
+    "id": 9016,
+    "en": "Template category deleted."
+  }, {
+    "id": 10001,
+    "en": "Schedule created."
+  }, {
+    "id": 10002,
+    "en": "Schedule updated."
+  }, {
+    "id": 10003,
+    "en": "Schedule deleted."
+  }, {
+    "id": 10004,
+    "en": "Schedule Group created."
+  }, {
+    "id": 10005,
+    "en": "Schedule Group updated."
+  }, {
+    "id": 10006,
+    "en": "Schedule Group deleted."
+  }, {
+    "id": 10007,
+    "en": "Schedule approved."
+  }, {
+    "id": 10008,
+    "en": "Schedule unapproved."
+  }, {
+    "id": 10022,
+    "en": "Item(s) added to schedule."
+  }, {
+    "id": 11001,
+    "en": "Frame Layout created."
+  }, {
+    "id": 11002,
+    "en": "Frame Layout updated."
+  }, {
+    "id": 11003,
+    "en": "Frame Layout deleted."
+  }, {
+    "id": 11005,
+    "en": "Frame Layout approved."
+  }, {
+    "id": 11006,
+    "en": "Frame Layout unapproved."
+  }, {
+    "id": 11007,
+    "en": "Selected Frame Layout has been moved to <u>Frame Layouts</u> tab. You can use it now."
+  }, {
+    "id": 11008,
+    "en": "Assignment deleted."
+  }, {
+    "id": 11009,
+    "en": "Frame Layout assigned."
+  }, {
+    "id": 11010,
+    "en": "Assignment updated."
+  }, {
+    "id": 11015,
+    "en": "Assignment approved."
+  }, {
+    "id": 11016,
+    "en": "Assignment unapproved."
+  }, {
+    "id": 11018,
+    "en": "Created a copy of selected item(s)."
+  }, {
+    "id": 11028,
+    "en": "Frame Layout category deleted."
+  }, {
+    "id": 12001,
+    "en": "Device added."
+  }, {
+    "id": 12002,
+    "en": "Device updated."
+  }, {
+    "id": 12003,
+    "en": "Device deleted."
+  }, {
+    "id": 12004,
+    "en": "Device Group created."
+  }, {
+    "id": 12005,
+    "en": "Device Group updated."
+  }, {
+    "id": 12006,
+    "en": "Device Group deleted."
+  }, {
+    "id": 12007,
+    "en": "Device Tag created."
+  }, {
+    "id": 12008,
+    "en": "Device Tag updated."
+  }, {
+    "id": 12009,
+    "en": "Device Tag deleted."
+  }, {
+    "id": 13001,
+    "en": "User invited."
+  }, {
+    "id": 13002,
+    "en": "User access updated."
+  }, {
+    "id": 13003,
+    "en": "User deleted."
+  }, {
+    "id": 13004,
+    "en": "User Group created."
+  }, {
+    "id": 13005,
+    "en": "User Group updated."
+  }, {
+    "id": 13006,
+    "en": "User Group deleted."
+  }, {
+    "id": 13007,
+    "en": "User role created."
+  }, {
+    "id": 13008,
+    "en": "User role updated."
+  }, {
+    "id": 13009,
+    "en": "User role deleted."
+  }, {
+    "id": 13010,
+    "en": "User unblocked."
+  }, {
+    "id": 13011,
+    "en": "User blocked."
+  }, {
+    "id": 13022,
+    "en": "Password sent to "
+  }, {
+    "id": 13026,
+    "en": "User invited again."
+  }, {
+    "id": 14001,
+    "en": "Emergency message sent."
+  }, {
+    "id": 14002,
+    "en": "Settings updated."
+  },  {
+    "id": 14003,
+    "en": "Sent message deleted."
+  }, {
+    "id": 14007,
+    "en": "Predefined message added."
+  }, {
+    "id": 15001,
+    "en": "Creative service requested."
+  }, {
+    "id": 15009,
+    "en": "File attached."
+  }, {
+    "id": 15012,
+    "en": "Support can not create or comment on Creative Services"
+  }, {
+    "id": 16001,
+    "en": "New feature request submitted."
+  }, {
+    "id": 16002,
+    "en": "Feature request updated."
+  }, {
+    "id": 16003,
+    "en": "Feature request deleted."
+  }, {
+    "id": 16007,
+    "en": "Vote submitted."
+  }, {
+    "id": 16008,
+    "en": "Comment updated."
+  }, {
+    "id": 16009,
+    "en": "New comment added."
+  }, {
+    "id": 16010,
+    "en": "Comment deleted."
+  }, {
+    "id": 16011,
+    "en": "Feature request reported."
+  }, {
+    "id": 17001,
+    "en": "Feedback sent to L Squared team."
+  }, {
+    "id": 17002,
+    "en": "Bug report submitted."
+  },  {
+    "id": 17003,
+    "en": "Email sent to L Squared Support."
+  },  {
+    "id": 17004,
+    "en": "Change email."
+  },  {
+    "id": 17005,
+    "en": "Change password."
+  },  {
+    "id": 17006,
+    "en": "Profile image updated."
+  },  {
+    "id": 17007,
+    "en": "Profile image set to default."
+  }, {
+    "id": 17008,
+    "en": "Profile updated."
+  },  {
+    "id": 17009,
+    "en": "Invalid verfication code."
+  },  {
+    "id": 17010,
+    "en": "Currenct password not match."
+  },  {
+    "id": 17011,
+    "en": "New and confirm password not mactch."
+  },  {
+    "id": 17012,
+    "en": "Current and new passwords are same."
+  },  {
+    "id": 17013,
+    "en": "New email id already exists."
+  },  {
+    "id": 17014,
+    "en": "New email id is same as old."
+  },  {
+    "id": 17015,
+    "en": "Verification code sent to your current email."
+  },  {
+    "id": 17017,
+    "en": "Notification settings updated."
+  }, {
+    "id": 18001,
+    "en": "Report sent to "
+  }, {
+    "id": 18003,
+    "en": "Did not have any device yet."
+  }, {
+    "id": 1000,
+    "en": "Something went wrong. Please try again."
+  }, {
+    "id": 5000,
+    "en": "Something went wrong. Please try again."
+  }, {
+    "id": 4004,
+    "en": "The item you are editing does not exists. Following user has removed it from your server:"
+  }]
+}

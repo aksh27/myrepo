@@ -1,0 +1,7 @@
+<div class="table table-md no-th no-pointer">
+  <div class="row" ng-repeat="download in filteredDownloadList = (downloadList | customSearch:{key:(search.text | removeSpaces), module:'kb'})">
+    <div class="col-xs-12" ng-if="download.type == 'd'"><a href="https://s3-us-west-2.amazonaws.com/lsquared-hub/support/downloads/app/{{download.url}}?{{timestamp}}" target="_blank"><span class="far fa-file-archive marR5"></span> {{download.label}}</a></div>
+    <div class="col-xs-12" ng-if="download.type == 'p'"><a href="" ng-click="publisherOpen()" ng-disabled="popupOpen"><span class="far fa-file-archive marR5"></span> {{download.label}}</a></div>
+  </div>
+  <div class="msg-warning" ng-if="filteredDownloadList.length == 0" translate="{{'cm.msg.14'}}" translate-values="{searchText: '<b>&quot;{{search.text.replace(searchRegExp, searchReplaceChar)}}&quot;</b>'}"></div>
+</div>

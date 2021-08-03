@@ -1,0 +1,12 @@
+<section class="panel noShadow">
+  <header class="panel-heading panel-tab">
+    <ul class="nav nav-tabs">
+      <li ui-sref-active="active" class="tab-primary"><a ui-sref=".odr">{{'reports.tab.1' | translate}}</a></li>
+      <li ui-sref-active="active" class="tab-primary"><a ui-sref=".tr">{{'reports.tab.2' | translate}}</a></li>
+      <li ui-sref-active="active" class="tab-primary"><a ui-sref=".tsr">{{'reports.tab.3' | translate}}</a></li>
+    </ul>
+  </header>
+  <div>
+    <div ui-view="tabView"></div>
+  </div>
+</section>

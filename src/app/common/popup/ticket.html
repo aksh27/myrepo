@@ -1,0 +1,138 @@
+<section class="panel">
+  <div class="panel-heading pad15"><span ng-if="ticket.type == 0">{{'t.btn.3' | translate}}</span><span ng-if="ticket.type == 1">{{'t.btn.14' | translate}}</span></div>
+  <div class="panel-body scrollQuad" style="max-height:{{getAvailableHeight(310)}}px">
+    <img src="assets/images/loading.gif" ng-if="popupLoading">
+    <div class="form-group">
+      <div><label>{{'t.label.12' | translate}}</label></div>
+      <label class="noMarB"><input type="radio" name="emailOpt" value="m" ng-model="replyObj.eOpt"><label></label>{{'t.pop.2' | translate}}</label>
+      <label class="marL5 noMarB"><input type="radio" name="emailOpt" value="o" ng-model="replyObj.eOpt"><label></label>{{'t.pop.14' | translate}}</label>
+      <input type="email" class="form-control marB15 marT5" ng-model="ticket.email" ng-if="replyObj.eOpt == 'o'">
+    </div>
+
+    <div class="form-group">
+      <label>{{'t.label.7' | translate}}</label>
+      <input type="text" class="form-control" ng-model="ticket.subject">
+    </div>
+    <div class="form-group">
+      <label>{{'t.label.8' | translate}}</label>
+      <textarea class="form-control" rows="5" ng-model="ticket.body"></textarea>
+    </div>
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="form-group">
+          <label>{{'t.label.13' | translate}}</label>
+          <select class="form-control" ng-model="ticket.agent" ng-options="user as user.label for user in users track by user.id">
+            <option value="">{{'t.label.2.1' | translate}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <div class="form-group">
+          <label>{{'t.label.24' | translate}}</label>
+          <select class="form-control" ng-model="ticket.category" ng-options="cat as cat.label for cat in categoryList track by cat.id">
+            <option value="">{{"t.label.24.1" | translate}}</option>
+          </select>
+        </div>
+      </div>
+      <!-- <div class="col-xs-6">
+        <div class="form-group">
+          <label>{{'t.label.9.1' | translate}}</label>
+          <select class="form-control" ng-model="ticket.domain" ng-options="dom as dom.label for dom in domainList track by dom.id">
+            <option value="">{{"t.label.9.1" | translate}}</option>
+          </select>
+        </div>
+      </div> -->
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <label><input type="checkbox" ng-model="replyObj.dataOpt"><label></label>{{'t.pop.15' | translate}}</label>
+      </div>
+      <div class="col-xs-3" ng-if="replyObj.dataOpt">
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon"><span class="fas fa-calendar-alt"></span></span>
+            <input type="daterange" class="form-control picker" ng-model="replyObj.dueDate" format="MM/DD/YYYY"  min-date="{{minDate}}" singleDatePicker="true" readonly="">
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-3" ng-if="replyObj.dataOpt">
+        <div class="form-group timepicker">
+          <span uib-dropdown auto-close="outsideClick">
+            <div class="input-group">
+              <span class="input-group-addon"><span class="far fa-clock"></span></span>
+              <input type="text" class="form-control picker" uib-dropdown-toggle ng-value="replyObj.dueTime | date:'shortTime'" placeholder="HH:mm" readonly="">
+            </div>
+            <div class="dropdown-menu" uib-dropdown-menu>
+              <div uib-timepicker ng-model="replyObj.dueTime" hour-step="1" minute-step="5"></div>
+            </div>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group marT15">
+      <div class="bdrBtm marB10 padB2">
+        <label>{{popupSFiles.length + popupUFiles.length}} {{popupSFiles.length + popupUFiles.length>1?'t.label.21.1':'t.label.21' | translate}}</label><a href="" uib-tooltip-template="'sFilesTemp.html'" tooltip-placement="right" class="marL5"><span class="fas fa-info-circle text-sm"></span></a>
+        <div class="btn-file pull-right">
+          <button type="button" class="btn btn-primary btn-xs" ng-disabled="popupProcessing"><i class="fas fa-plus-circle"></i>{{'cm.btn.18' | translate}}</button>
+          <input type="file" file-model="curFiles" options="{size:10485760, format:['attach'], callback:true, multiple:true, caller:'c'}" multiple ng-disabled="popupProcessing">
+        </div>
+      </div>
+      <div class="marB10" ng-if="popupSFiles.length || popupUFiles.length">
+        <div class="row attachList" ng-repeat="sFile in popupSFiles">
+          <div class="col-xs-11 text-ellipsis noPadL noPadR">
+            {{ext = (sFile.type | fileExt:sFile.name); ""}}
+            <i class="far marR5" ng-class="{'fa-file-image':ext=='image', 'fa-file-video':ext=='video', 'fa-file-audio':ext=='audio', 'fa-file-code':ext=='code', 'fa-file-alt':ext=='text', 'fa-file-pdf':ext=='pdf', 'fa-file-archive':ext=='zip', 'fa-file-excel':ext=='xls', 'fa-file-word':ext=='doc', 'fa-file-powerpoint':ext=='ppt', 'fa-file':ext=='file', 'fas fa-file-csv':ext=='csv'}"></i>{{sFile.name | limitTo:55}}<span ng-if="sFile.name.length > 55">...</span><span class="text-muted marL5">({{sFile.size | filesize}})</span>
+          </div>
+          <div class="col-xs-1 text-right padR5"><a href="" class="text-danger" ng-click="popAttachRemoveFx('s', $index);" ng-disabled="popupProcessing"><i class="fas fa-times"></i></a></div>
+        </div>
+        <div class="row attachList text-ellipsis" ng-repeat="uFile in popupUFiles">
+          <div class="col-xs-11 text-ellipsis noPadL noPadR">
+            <div><i class="far fa-file marR5"></i>{{uFile.name | limitTo:55}}<span ng-if="uFile.name.length > 55">...</span><span class="text-muted marL5">({{uFile.size | filesize}})</span></div>
+            <span class="text-danger text-sm">{{'cm.msg.40' | translate}}</span>
+          </div>
+          <div class="col-xs-1 text-right padR5"><a href="" class="text-danger" ng-click="popAttachRemoveFx('u', $index);" ng-disabled="popupProcessing"><i class="fas fa-times"></i></a></div>
+        </div>
+      </div>
+      <div ng-if="!popupSFiles.length && !popupUFiles.length" class="msg-warning">{{'t.msg.21' | translate}}</div>
+    </div>
+  </div>
+  <footer class="panel-footer">
+    <span class="btnQuad">
+      <button type="button" class="btn btn-success" ng-click="ticketFx();" ng-disabled="popupProcessing"><span class="fas" ng-class="popupProcessing?'fa-redo fa-spin':'fa-check'"></span>{{popupProcessing?'cm.btn.13i':'cm.btn.13' | translate}}</button>
+      <button type="button" class="btn btn-link" ng-click="closeThisDialog();">{{'cm.btn.8' | translate}}</button>
+    </span>
+    <div class="errMsg pull-right" ng-if="hasErrPop">
+      <span ng-if="errType == 'email'">{{'t.msg.11' | translate}}</span>
+      <span ng-if="errType == 'subject'">{{'t.msg.12' | translate}}</span>
+      <span ng-if="errType == 'body'">{{'t.msg.13' | translate}}</span>
+    </div>
+    <div class="clearfix"></div>
+  </footer>
+</section>
+<script type="text/ng-template" id="sFilesTemp.html">
+  <div class="text-left text-sm">
+    <div class="text-bold">{{'cm.label.23' | translate}}</div>
+    <div ng-if="sFilesExt.img.length > 0">
+      <div class="text-bold">{{'cm.label.24' | translate}}</div>
+      <div class="text-ucase">
+        <span ng-repeat="ext in sFilesExt.img">{{ext}}<span ng-if="!$last">, </span></span>
+      </div>
+    </div>
+    <div ng-if="sFilesExt.vid.length > 0">
+      <div class="spaceH"></div>
+      <div class="text-bold">{{'cm.label.25' | translate}}</div>
+      <div class="text-ucase">
+        <span ng-repeat="ext in sFilesExt.vid">{{ext}}<span ng-if="!$last">, </span></span>
+      </div>
+    </div>
+    <div ng-if="sFilesExt.ot.length > 0">
+      <div class="spaceH"></div>
+      <div class="text-bold">{{'cm.label.26' | translate}}</div>
+      <div class="text-ucase">
+        <span ng-repeat="ext in sFilesExt.ot">{{ext}}<span ng-if="!$last">, </span></span>
+      </div>
+    </div>
+  </div>
+</script>

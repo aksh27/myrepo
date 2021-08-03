@@ -1,0 +1,77 @@
+<div class="table table-md no-pointer">
+  <img src="assets/images/loading.gif" class="padT10" ng-if="listLoading">
+  <div class="noPad" ng-if="!listLoading && widgetList.length > 0">
+    <div class="row th">
+      <a href="" ng-click="columnSortFx('n', (auth.sort.ser_wid.val == 'a' ? 'd' : 'a'), widgetList, 'ser_wid'); activeColumnFx('type');">
+        <div class="col-xs-3 text-primary text-bold display-flex">Type
+          <div class="marL10" ng-if="activeCol == 'type' && !saveProcessing">
+            <span ng-if="auth.sort.ser_wid.val === 'd'"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+            <span ng-if="auth.sort.ser_wid.val === 'a'"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="" ng-click="columnSortFx('s', (auth.sort.ser_wid.val == 'a' ? 'd' : 'a'), widgetList, 'ser_wid'); activeColumnFx('sch');">
+        <div class="col-xs-3 text-primary text-bold display-flex">Schedule
+          <div class="marL10" ng-if="activeCol == 'sch' && !saveProcessing">
+            <span ng-if="auth.sort.ser_wid.val === 'd'"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+            <span ng-if="auth.sort.ser_wid.val === 'a'"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="" ng-click="columnSortFx('a', (auth.sort.ser_wid.val == 'a' ? 'd' : 'a'), widgetList, 'ser_wid'); activeColumnFx('count');">
+        <div class="col-xs-3 text-primary text-bold display-flex">Count
+          <div class="marL10" ng-if="activeCol == 'count' && !saveProcessing">
+            <span ng-if="auth.sort.ser_wid.val === 'd'"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+            <span ng-if="auth.sort.ser_wid.val === 'a'"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+          </div>
+        </div>
+      </a>
+    </div>
+    <!-- <div class="row th">
+      <a href="" ng-click="sortBy('name');">
+        <div class="col-xs-3">Type
+          <span class="pull-right" ng-show="propertyName === 'name'">
+            <span ng-show="!reverse"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+            <span ng-show="reverse"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+          </span>
+        </div>
+      </a>
+      <a href="" ng-click="sortBy('sc');">
+        <div class="col-xs-3">Schedule
+          <span class="pull-right" ng-show="propertyName === 'sc'">
+            <span ng-show="!reverse"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+            <span ng-show="reverse"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+          </span>
+        </div>
+      </a>
+      <a href="" ng-click="sortBy('ac');">
+        <div class="col-xs-3">Count
+          <span class="pull-right" ng-show="propertyName === 'ac'">
+            <span ng-show="!reverse"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+            <span ng-show="reverse"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+          </span>
+        </div>
+      </a>
+      <div class="col-xs-3">&nbsp;</div>
+    </div> -->
+    <div class="row" ng-repeat="widget in filteredSList = (widgetList | filter:search.text)">
+      <div class="col-xs-3 display-flex"><span><img class="img-responsive" onerror="this.src=''" alt="" ng-src="{{storage + 'cl/widgets/thumbs/sm/' + widget.thumb + '.png'}}" /></span> <span class="marL10">{{widget.name}}</span></div>
+      <div class="col-xs-3 text-ellipsis">{{widget.sc}}</div>
+      <div class="col-xs-3">
+        {{widget.ac}}
+        <!-- <div ng-repeat="server in widget.s">{{server.label}} - {{server.role}}
+        </div>
+        <span class="text-muted" ng-if="widget.s.length == 0">NA</span> -->
+      </div>
+      <div class="col-xs-3 text-right">
+        <a href="" ng-if="widget.ac > 0" ng-click="exportWidgetFx(widget.id);" uib-tooltip="{{'cm.btn.16' | translate}}" tooltip-popup-delay="1000"><i class="fas fa-download"></i></a>
+        <span ng-if="widget.ac == 0" class="text-muted">NA</span>
+        <!-- <a href="{{download}}" ng-if="download!=''" target="_blank"><span class="fas fa-download marR5"></span>{{'reports.btn.2' | translate}}</a> -->
+      </div>
+    </div>
+    <div class="msg-warning" ng-if="filteredSList.length == 0" translate="{{'cm.msg.14'}}" translate-values="{searchText: '<b>&quot;{{search.text.replace(searchRegExp, searchReplaceChar)}}&quot;</b>'}"></div>
+  </div>
+  <div class="msg-warning" ng-if="!listLoading && !widgetList.length" translate="{{'No widget found for this server location.'}}"></div>
+</div>

@@ -1,0 +1,103 @@
+<!-- <section class="panel">
+  <div class="panel-heading pad15"><span>{{'s.label.2' | translate}}</span></div>
+  <div class="panel-body scrollQuad" style="max-height:{{getAvailableHeight(310)}}px">
+    <img src="assets/images/loading.gif" ng-if="popupLoading">
+    <div class="form-group">
+      <label>{{'cm.label.1' | translate}}</label>
+      <input type="text" class="form-control" ng-model="customer.label">
+    </div>
+  </div>
+  <footer class="panel-footer">
+    <span class="btnQuad">
+      <button type="button" class="btn btn-success" ng-click="addCustomerFx();" ng-disabled="popupProcessing"><span class="fas" ng-class="popupProcessing?'fa-redo fa-spin':'fa-check'"></span>{{popupProcessing?'cm.btn.18i':'cm.btn.18' | translate}}</button>
+      <button type="button" class="btn btn-link" ng-click="closeThisDialog();">{{'cm.btn.8' | translate}}</button>
+    </span>
+    <div class="errMsg pull-right" ng-if="hasErrPop">
+      <span ng-if="errType == 'name'">{{"od.msg.10" | translate}}</span>
+      <span ng-if="errType == 'cExist'">{{"s.msg.8" | translate}}</span>
+    </div>
+    <div class="clearfix"></div>
+  </footer>
+</section> -->
+<section class="panel">
+  <header class="panel-heading">{{'s.label.2' | translate}}</header>
+  <div class="panel-body">
+    <img src="assets/images/loading.gif" ng-if="popupLoading">
+    <div ng-if="!popupLoading">
+      <div class="form-group">
+        <label>{{'cm.label.1' | translate}}</label>
+        <input type="text" class="form-control" ng-model="domainObj.info.label" focus-me="true">
+      </div>
+      <div class="form-group">
+        <label>{{'s.label.7' | translate}}</label>
+        <div class="input-group">
+          <span class="input-group-addon">@</span>
+          <input type="text" class="form-control" ng-model="domainObj.info.postfix">
+        </div>
+      </div>
+      <div class="spaceH"></div>
+      <div class="form-group marB5">
+        <div class="bdr-btm-dashed noMarB">
+          <label class="noMarB marT10">{{'s.label.3' | translate}}</label>
+          <div class="input-group input-group-sm pull-right" style="width:250px">
+            <input type="email" class="form-control" placeholder="Email" ng-model="includeEmail.email">
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-primary" ng-click="addEmailFx('include');" ng-disabled="addProcessing">{{'cm.btn.18' | translate}}</button>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="errMsg marB10" ng-if="existErr && curType=='include'" translate="{{'s.msg.9'}}" translate-values="{exist:'<u>{{existDomain}}</u>'}"></div>
+      <div class="table no-th no-pointer" ng-if="domainObj.emails.length">
+        <div class="scrollQuad" style="max-height:{{getAvailableHeight(510)}}px">
+          <div class="row" ng-repeat="email in domainObj.emails">
+            <div class="col-xs-11 word-break">{{email.email}}</div>
+            <div class="col-xs-1 text-right"><a href="" class="text-danger" ng-click="deleteEmailConfirm($index, 'include');"><i class="fas fa-times"></i></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="msg-warning" ng-if="!domainObj.emails.length">{{'s.msg.7' | translate}}</div>
+
+      <div class="spaceH"></div>
+      <div class="form-group marB5" ng-if="domainObj.info.postfix">
+        <div class="bdr-btm-dashed noMarB">
+          <label class="noMarB marT10">{{'s.label.11' | translate}}</label>
+          <div class="input-group input-group-sm pull-right" style="width:250px">
+            <input type="email" class="form-control" placeholder="Email" ng-model="excludeEmail.email">
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-primary" ng-click="addEmailFx('exclude');" ng-disabled="addProcessing">{{'cm.btn.18' | translate}}</button>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="errMsg marB10" ng-if="existErr && curType=='exclude' && domainObj.info.postfix" translate="{{'s.msg.9'}}" translate-values="{exist:'<u>{{existDomain}}</u>'}"></div>
+      <div class="table no-th no-pointer" ng-if="domainObj.info.postfix && domainObj.exEmails.length">
+        <div class="scrollQuad" style="max-height:{{getAvailableHeight(510)}}px">
+          <div class="row" ng-repeat="email in domainObj.exEmails">
+            <div class="col-xs-11 word-break">{{email.email}}</div>
+            <div class="col-xs-1 text-right"><a href="" ng-click="deleteEmailConfirm($index, 'exclude', email.label);" class="text-danger"><i class="fas fa-times"></i></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="msg-warning" ng-if="domainObj.info.postfix && !domainObj.exEmails.length">{{'s.msg.14' | translate}}</div>
+    </div>
+  </div>
+  <footer class="panel-footer">
+    <span class="btnQuad">
+      <button type="button" class="btn btn-success" ng-click="addCustomerFx();" ng-disabled="popupProcessing"><span class="fas" ng-class="popupProcessing?'fa-redo fa-spin':'fa-check'"></span>{{popupProcessing?'cm.btn.6i':'cm.btn.6' | translate}}</button>
+      <!-- <button class="btn btn-success" ng-click="addSettingsFx();" ng-disabled="popupProcessing"><span class="fas" ng-class="popupProcessing?'fa-redo fa-spin':'fa-check'"></span>{{popupProcessing?'cm.btn.6i':'cm.btn.6' | translate}}</button> -->
+      <!-- <button class="btn btn-success" ng-click="addSettingsFx();" ng-disabled="popupProcessing" ng-if="!domainObj.info.new"><span class="fas" ng-class="popupProcessing?'fa-redo fa-spin':'fa-check'"></span>{{popupProcessing?'cm.btn.14i':'cm.btn.14' | translate}}</button> -->
+      <button class="btn btn-link" ng-click="closeThisDialog();">{{'cm.btn.8' | translate}}</button>
+    </span>
+    <div class="errMsg pull-right" ng-if="hasErrPop">
+      <span ng-if="errType == 'exist'">{{'t.msg.11.2' | translate}}</span>
+      <span ng-if="errType == 'dExist'">{{'s.msg.8' | translate}}</span>
+      <span ng-if="errType == 'deExist'">{{'s.msg.13' | translate}} {{customer}}</span>
+      <span ng-if="errType == 'domain'">{{'s.msg.15' | translate}}</span>
+      <span ng-if="errType == 'empty'">{{'t.msg.11' | translate}}</span>
+      <span ng-if="errType == 'name'">{{'cm.msg.37' | translate}}</span>
+    </div>
+    <div class="clearfix"></div>
+  </footer>
+</section>
+

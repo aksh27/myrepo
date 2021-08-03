@@ -1,0 +1,20 @@
+<section class="panel noShadow">
+  <header class="panel-heading panel-tab" ng-if="curState === 'support.i.d' || curState === 'support.i.o' || curState === 'support.i.t' || curState === 'support.i.m'">
+    <ul class="nav nav-tabs">
+      <li ui-sref-active="active" class="tab-primary"><a ui-sref=".d({lType: 'd'})">{{'i.tab.1' | translate}}</a></li>
+      <li ui-sref-active="active" class="tab-primary"><a ui-sref=".o({lType: 'o'})">{{'i.tab.2' | translate}}</a></li>
+      <li ui-sref-active="active" class="tab-primary"><a ui-sref=".t({lType: 't'})">{{'i.tab.3' | translate}}</a></li>
+      <li ui-sref-active="active" class="tab-primary"><a ui-sref=".m({lType: 'm'})">{{'i.tab.4' | translate}}</a></li>
+    </ul>
+    <div class="panel-tools marT10">
+      <div class="pull-right marT5">
+        <button ng-if="curState === 'support.i.d' || curState === 'support.i.o'" ui-sref=".cu({ types: (curState == 'support.i.d')? 'devices' : 'others' })" type="button" class="btn btn-primary btn-sm"><i class="fas fa-plus-circle"></i> {{'cm.btn.36' | translate}}</button>
+        <button ng-if="curState === 'support.i.t'" ng-click="typeOpen();" type="button" class="btn btn-primary btn-sm"><i class="fas fa-plus-circle"></i> {{'i.btn.8' | translate}}</button>
+        <button ng-if="curState === 'support.i.m'" ng-click="modelOpen();" type="button" class="btn btn-primary btn-sm"><i class="fas fa-plus-circle"></i> {{'i.btn.10' | translate}}</button>
+      </div>
+    </div>
+  </header>
+  <div>
+    <div ui-view="tabView"></div>
+  </div>
+</section>

@@ -1,0 +1,48 @@
+<div class="table no-pointer">
+  <img src="assets/images/loading.gif" ng-if="pageLoading" class="marT10">
+  <div class="scrollQuad" ng-if="!pageLoading">
+    <div class="row th">
+      <a href="" ng-click="columnSortFx('n', (auth.sort.user.val == 'a' ? 'd' : 'a'), agentList, 'user'); activeColumnFx('name');">
+        <div ng-class="auth.role == 0?'col-xs-9':'col-xs-10'" class="text-primary text-bold display-flex">Name
+          <div class="marL10" ng-if="activeCol == 'name' && !saveProcessing">
+            <span ng-if="auth.sort.user.val === 'd'"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+            <span ng-if="auth.sort.user.val === 'a'"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+          </div>
+        </div>
+      </a>
+
+      <a href="" ng-click="columnSortFx('t', (auth.sort.user.val == 'a' ? 'd' : 'a'), agentList, 'user'); activeColumnFx('userType');">
+        <div ng-class="auth.role == 0?'col-xs-2':'col-xs-2'" class="text-primary text-bold display-flex">User Type
+          <div class="marL10" ng-if="activeCol == 'userType' && !saveProcessing">
+            <span ng-if="auth.sort.user.val === 'd'"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+            <span ng-if="auth.sort.user.val === 'a'"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="row" ng-repeat="agent in filteredAgentList = (agentList | customSearch:{key:(search.text | removeSpaces), module:'s'})">
+      <div ng-class="auth.role == 0?'col-xs-9':'col-xs-10'">
+        <div class="user-tumb"><div class="profileIcon-md"><span>{{agent.label | limitTo:1}}</span></div></div>
+        <div class="text-ellipsis padR5 agents">
+          <div>{{agent.label}}<span class="text-bold marL5" ng-if="auth.id == agent.id">({{'users.label.3' | translate}})</span><span class="marL5 badge bg-muted" ng-if="agent.id != 1" ng-repeat="tag in agent.tag">#{{tag}}</span></div>
+          <span class="text-sm text-muted">{{agent.r}} {{'cm.label.18' | translate}} | {{agent.a}} {{'cm.label.17' | translate}}</span>
+          <div class="progress marT7 hide">
+            <div class="pull-left progress-bar progress-bar-success" style="width:{{(agent.r/agent.a)*100 | number:2}}%;" ng-if="agent.a != agent.r" uib-tooltip="{{agent.r}}" tooltip-append-to-body="true">&nbsp;</div>
+            <div class="pull-left progress-bar progress-bar-primary" style="width:{{((agent.a - agent.r) / agent.a)*100 | number:2}}%;" ng-if="agent.a != agent.r" uib-tooltip="{{agent.a - agent.r}}" tooltip-append-to-body="true">&nbsp;</div>
+            <div class="pull-left progress-bar progress-bar-success" style="width:100%;" ng-if="agent.a > 0 && agent.a == agent.r" uib-tooltip="{{agent.a}}" tooltip-append-to-body="true">&nbsp;</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-2 text-bold" ng-if="agent.userType == 1">{{'u.type.1' | translate}}</div>
+      <div class="col-xs-2 text-bold" ng-if="agent.userType == 3">{{'u.type.3' | translate}}</div>
+      <div class="col-xs-2 text-bold" ng-if="agent.userType == 2">{{'u.type.2' | translate}}</div>
+      <div class="col-xs-2 text-bold" ng-if="agent.userType == 4">{{'u.type.4' | translate}}</div>
+      <div class="col-xs-2 text-bold" ng-if="agent.userType == 5">{{'u.type.5' | translate}}</div>
+      <div class="col-xs-1 text-right" ng-if="auth.role == 0">
+        <a href="" ng-click="userCUOpen(agent.id);" uib-tooltip="{{'cm.btn.21' | translate}}" tooltip-append-to-body="true" tooltip-popup-delay="1000"><span class="fas fa-pencil-alt"></span></a>
+        <a href="" ng-click="deleteOpen(agent.id);" uib-tooltip="{{'cm.btn.12' | translate}}" tooltip-append-to-body="true" tooltip-popup-delay="1000" class="text-danger marL5"><span class="fas fa-times"></span></a>
+      </div>
+    </div>
+    <div class="msg-warning" ng-if="filteredAgentList.length == 0" translate="{{'cm.msg.14'}}" translate-values="{searchText: '<b>&quot;{{search.text.replace(searchRegExp, searchReplaceChar)}}&quot;</b>'}"></div>
+  </div>
+</div>

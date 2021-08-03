@@ -1,0 +1,29 @@
+<section class="panel">
+  <header class="panel-heading">{{'kb.label.3' | translate}}</header>
+  <div class="panel-body">
+    <div class="form-group">
+      <label>{{'cm.label.2' | translate}}</label>
+      <input type="email" class="form-control" ng-model="send.email">
+    </div>
+    <div class="form-group">
+      <label>{{'t.label.7' | translate}}</label>
+      <input type="text" class="form-control" ng-model="send.subject">
+    </div>
+    <div class="form-group">
+      <label>{{'kb.label.4' | translate}}</label>
+      <textarea class="form-control" ng-model="send.msg" rows="7"></textarea>
+    </div>
+    <div class="form-group" ng-if="send.type == 'a'"><span class="fas fa-paperclip"></span> <a href="{{send.url}}?{{timestamp}}" target="_blank">{{send.label | translate}}</a></div>
+  </div>
+  <footer class="panel-footer">
+    <span class="btnQuad">
+      <button class="btn btn-success" ng-click="sendFx(send.type);" ng-disabled="popupProcessing"><span class="fas" ng-class="popupProcessing?'fa-redo fa-spin':'fa-check'"></span>{{popupProcessing?'cm.btn.28i':'cm.btn.28' | translate}}</button>
+      <button class="btn btn-link" ng-click="closeThisDialog();">{{'cm.btn.8' | translate}}</button>
+    </span>
+    <div class="errMsg pull-right" ng-if="hasErrPop">
+      <span ng-if="errType == 'empty'">{{'cm.msg.5' | translate}}</span>
+      <span ng-if="errType == 'email'">{{'t.msg.11.1' | translate}}</span>
+    </div>
+    <div class="clearfix"></div>
+  </footer>
+</section>

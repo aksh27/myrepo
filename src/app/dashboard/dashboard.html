@@ -1,0 +1,85 @@
+<img src="assets/images/loading.gif" ng-if="dashboardLoading">
+<div ng-show="!dashboardLoading">
+  <div class="row">
+    <div class="col-xs-4">
+      <section class="panel">
+        <div class="panel-card">
+          <div class="row marT20">
+            <div class="col-xs-4 text-center text-primary bdr-r-dashed">
+              <a href="" ui-sref="support.tickets.a">
+                <div class="statusCounter" ng-cloak>{{dashboard.bar.a}}</div>
+                <div>{{'cm.label.17' | translate}}</div>
+              </a>
+            </div>
+            <div class="col-xs-4 text-center bdr-r-dashed">
+              <a href="" ui-sref="support.tickets.r" class="text-success">
+                <div class="statusCounter" ng-cloak>{{dashboard.bar.r}}</div>
+                <div>{{'cm.label.18' | translate}}</div>
+              </a>
+            </div>
+            <div class="col-xs-4 text-center">
+              <a href="" ui-sref="support.tickets.o" class="text-danger">
+                <div class="statusCounter" ng-cloak>{{dashboard.bar.o}}</div>
+                <div translate="{{'cm.label.19'}}" translate-values="{htmlTag: '&nbsp;'}"></div>
+              </a>
+            </div>
+          </div>
+          <div class="progress">
+            <div class="pull-left progress-bar progress-bar-primary" style="width:{{(dashboard.bar.a/totalTickets)*100}}%;" uib-tooltip="{{'cm.label.17' | translate}}" tooltip-append-to-body="true">&nbsp;</div>
+            <div class="pull-left progress-bar progress-bar-success" style="width:{{(dashboard.bar.r/totalTickets)*100}}%;" uib-tooltip="{{'cm.label.18' | translate}}" tooltip-append-to-body="true">&nbsp;</div>
+            <div class="pull-left progress-bar progress-bar-danger" style="width:{{(dashboard.bar.o/totalTickets)*100}}%;" uib-tooltip="{{'cm.label.19' | translate:{htmlTag: '&nbsp;'} }}" tooltip-append-to-body="true">&nbsp;</div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="col-xs-8">
+      <section class="panel">
+        <div class="panel-card">
+          <!-- <div id="ticketgraph"></div> -->
+          <div id="timesheetgraph"></div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <div class="row map-setting">
+    <div class="col-xs-4">
+      <section class="panel agents">
+        <div class="panel-heading text-bold">{{'cm.label.20' | translate}}</div>
+        <div>
+          <div class="panel-body table no-th no-pointer">
+            <div class="scrollQuad" style="min-height:{{getAvailableHeight(400)}}px;max-height:{{getAvailableHeight(400)}}px">
+              <div class="row" ng-repeat="agent in dashboard.agents">
+                <div class="user-tumb">
+                  <div class="profileIcon-md"><span>{{agent.label | limitTo:1}}</span></div>
+                </div>
+                <div class="text-ellipsis padR5">
+                  <div class="pull-right" uib-tooltip="{{'db.label.7' | translate}}" tooltip-append-to-body="true" tooltip-popup-delay="1000" tooltip-placement="left">{{agent.r}}/{{agent.a}}</div>
+                  <div><a href="" ng-click="ticketFilterFx(agent);">{{agent.label}}</a></div>
+                  <div class="progress marT7">
+                    <div class="pull-left progress-bar progress-bar-success" style="width:{{(agent.r/agent.a)*100 | number:2}}%;" ng-if="agent.a != agent.r" uib-tooltip="{{'db.label.5' | translate:{val: agent.r} }}" tooltip-append-to-body="true">&nbsp;</div>
+                    <div class="pull-left progress-bar progress-bar-primary" style="width:{{((agent.a - agent.r) / agent.a)*100 | number:2}}%;" ng-if="agent.a != agent.r" uib-tooltip="{{'db.label.6' | translate:{val: agent.a - agent.r} }}" tooltip-append-to-body="true">&nbsp;</div>
+                    <div class="pull-left progress-bar progress-bar-success" style="width:100%;" ng-if="agent.a > 0 && agent.a == agent.r" uib-tooltip="{{'db.label.5' | translate:{val: agent.a} }}" tooltip-append-to-body="true">&nbsp;</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="col-xs-8">
+      <section class="panel">
+        <div class="panel-heading text-bold">{{'t.tab.1' | translate}}</div>
+        <div class="panel-body">
+          <div ng-if="dashboard.assigned.length > 0" class="scrollQuad" style="min-height:{{getAvailableHeight(400)}}px;max-height:{{getAvailableHeight(400)}}px" when-scrolled="loadMoreLogs()">
+            <ng-ticket-list></ng-ticket-list>
+          </div>
+          <div ng-if="dashboard.assigned.length == 0" style="min-height:{{getAvailableHeight(400)}}px;max-height:{{getAvailableHeight(400)}}px">
+            <div class="msg-warning">{{'t.msg.1' | translate}} <a href="" ui-sref="support.tickets.o" class="btn-link text-bold">not-assigned tickets.</a></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

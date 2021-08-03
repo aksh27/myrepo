@@ -1,0 +1,22 @@
+<section class="panel noShadow">
+  <header class="panel-heading panel-tab">
+    <ul class="nav nav-tabs">
+      <li ui-sref-active="active" class="tab-primary"><a ui-sref=".sc">{{'users.tab.2' | translate}}</a></li>
+      <li ui-sref-active="active" class="tab-primary"><a ui-sref=".ul">{{'users.tab.1' | translate}}</a></li>
+    </ul>
+    <div class="panel-tools marT10">
+      <div class="pull-right marT5 marL5" ng-if="curState === 'support.users.sc' && auth.role == 0">
+        <button ng-click="userCUOpen();" class="btn btn-primary btn-sm"><i class="fas fa-plus-circle"></i> {{'cm.btn.18' | translate}}</button>
+      </div>
+      <div class="pull-right" ng-if="curState === 'support.users.ul'">
+        <a href="" ng-click="logsOpen();" uib-tooltip="{{'cm.btn.16' | translate}}"><i class="fas fa-arrow-down"></i></a>
+      </div>
+      <div class="pull-right" ng-if="curState === 'support.users.ul'">
+        <a href="" ng-click="getUser();" uib-tooltip="{{'cm.tool.6' | translate}}"><i class="fas fa-redo"></i></a>
+      </div>
+    </div>
+  </header>
+  <div>
+    <div ui-view="tabView"></div>
+  </div>
+</section>

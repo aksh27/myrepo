@@ -1,0 +1,18 @@
+<section class="wrapper">
+  <div ui-view="header"></div>
+  <section class="container-fluid">
+    <nav class="navbar navbar-fixed-top">
+      <div class="container-fluid display-flex justify-content-center">
+        <span class="navbar-brand noBdr">
+          <img alt="L Squared Hub" src="assets/images/logo-index.png">
+          <img alt="L Squared Hub" src="assets/images/logo-index.png" class="hide">
+        </span>
+      </div>
+    </nav>
+    <div class="marT10" ui-view=""></div>
+  </section>
+</section>
+<!-- Footer section -->
+<footer class="footer noMarL padL10">
+  <span ng-bind-html="copyRight"></span> | <a href="https://s3-us-west-2.amazonaws.com/lsquared-hub/doc/terms.pdf" target="_blank">Terms &amp; Conditions</a> | <a href="https://s3-us-west-2.amazonaws.com/lsquared-hub/doc/privacy.pdf" target="_blank">Privacy Policy</a> | V&nbsp;{{uiVersion}}
+</footer>

@@ -1,0 +1,25 @@
+<section class="panel">
+  <div class="panel-heading">{{"t.pop.8" | translate}}</div>
+  <div class="panel-body">
+    <img src="assets/images/loading.gif" ng-if="popupLoading">
+    <div ng-if="!popupLoading">
+      <div class="form-group noMarB">
+        <label>{{"t.label.24.1" | translate}}</label>
+        <select class="form-control" ng-model="categoryObj.category" ng-options="cat as cat.label for cat in categoryList track by cat.id">
+          <option value="" disabled="disabled">{{"t.label.24.1" | translate}}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <footer class="panel-footer" ng-if="!popupLoading">
+    <span class="btnQuad">
+      <button type="button" class="btn btn-success" ng-click="categoryFx();" ng-disabled="popupProcessing"><span class="fas" ng-class="popupProcessing?'fa-redo fa-spin':'fa-check'"></span>{{popupProcessing?'t.btn.2i':'t.btn.2' | translate}}</button>
+      <button type="button" class="btn btn-link" ng-click="closeThisDialog();">{{"cm.btn.8" | translate}}</button>
+    </span>
+    <div class="errMsg pull-right" ng-if="hasErrPop">
+      <span ng-if="errType == 'empty'">{{'t.pop.9' | translate}}</span>
+      <span ng-if="errType == 'already'">{{'t.pop.10' | translate}}</span>
+    </div>
+    <div class="clearfix"></div>
+  </footer>
+</section>

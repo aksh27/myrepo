@@ -1,0 +1,34 @@
+<section class="panel">
+  <div class="panel-heading pad15">
+    <span>{{(!typeObj.id) ? 'i.btn.8' : 'i.btn.9' | translate}}</span>
+  </div>
+  <div class="panel-body scrollQuad" style="max-height:{{getAvailableHeight(310)}}px">
+    <img src="assets/images/loading.gif" ng-if="popupLoading">
+    <div class="form-group">
+      <label>{{'cm.label.4' | translate}}</label>
+      <input type="text" class="form-control" ng-model="typeObj.type" focus-me="true">
+    </div>
+    <div class="form-group" ng-if="!typeObj.id">
+      <label>{{'i.label.3' | translate}}</label>
+      <input type="text" class="form-control" ng-model="typeObj.model">
+    </div>
+  </div>
+  <footer class="panel-footer">
+    <span class="btnQuad">
+      <button type="button" class="btn btn-success" ng-click="addTypeFx();" ng-disabled="popupProcessing">
+        <span class="fas" ng-class="popupProcessing?'fa-redo fa-spin':'fa-check'"></span>
+        <span ng-if="typeObj.id">{{popupProcessing?'cm.btn.14i':'cm.btn.14' | translate}}</span>
+        <span ng-if="!typeObj.id">{{popupProcessing?'cm.btn.18i':'cm.btn.18' | translate}}</span>
+      </button>
+      <!-- <button ng-if="typeObj.id" type="button" class="btn btn-success" ng-click="addTypeFx();" ng-disabled="popupProcessing"><span class="fas" ng-class="popupProcessing?'fa-redo fa-spin':'fa-check'"></span>{{popupProcessing?'cm.btn.18i':'cm.btn.18' | translate}}</button> -->
+      <button type="button" class="btn btn-link" ng-click="closeThisDialog(); resetTypeModelFx();">{{'cm.btn.8' | translate}}</button>
+    </span>
+    <div class="errMsg pull-right" ng-if="hasErrPop">
+      <span ng-if="errType == 'eType'">{{'i.msg.32' | translate}}</span>
+      <span ng-if="errType == 'eModel'">{{'i.msg.33' | translate}}</span>
+      <span ng-if="errType == 'sType'">{{'i.msg.34' | translate}}</span>
+      <span ng-if="errType == 'sModel'">{{'i.msg.35' | translate}}</span>
+    </div>
+    <div class="clearfix"></div>
+  </footer>
+</section>

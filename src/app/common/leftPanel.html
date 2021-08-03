@@ -1,0 +1,34 @@
+<div class="sidebar">
+  <ul class="nav nav-sidebar">
+    <li ng-class="{'active':selectedMenu===0}">
+      <a ui-sref=".dashboard" uib-tooltip="{{'cm.menu.0' | translate}}" tooltip-append-to-body="true" tooltip-placement="right" tooltip-enable="!auth.upreferences.isLPOpen" ng-cloak><i class="fas fa-chart-line"></i>{{'cm.menu.0' | translate}}</a>
+    </li>
+    <li ng-class="{'active':selectedMenu===1}">
+      <a ui-sref=".tickets.a" uib-tooltip="{{'cm.menu.1' | translate}}" tooltip-append-to-body="true" tooltip-placement="right" tooltip-enable="!auth.upreferences.isLPOpen" ng-cloak><i class="fas fa-ticket-alt"></i>{{'cm.menu.1' | translate}}</a>
+    </li>
+    <li ng-class="{'active':selectedMenu===3}">
+      <a ui-sref=".kb.a" uib-tooltip="{{'cm.menu.3' | translate}}" tooltip-append-to-body="true" tooltip-placement="right" tooltip-enable="!auth.upreferences.isLPOpen" ng-cloak><i class="fas fa-star"></i>{{'cm.menu.3' | translate}}</a>
+    </li>
+    <li ng-class="{'active':selectedMenu===2}">
+      <a ui-sref=".settings.d" uib-tooltip="{{'cm.menu.2' | translate}}" tooltip-append-to-body="true" tooltip-placement="right" tooltip-enable="!auth.upreferences.isLPOpen" ng-cloak><i class="fas fa-cog"></i>{{'cm.menu.2' | translate}}</a>
+    </li>
+    <li ng-class="{'active':selectedMenu===4}">
+      <a ui-sref=".users.sc" uib-tooltip="{{'cm.menu.4' | translate}}" tooltip-append-to-body="true" tooltip-placement="right" tooltip-enable="!auth.upreferences.isLPOpen" ng-cloak><i class="fas fa-user"></i>{{'cm.menu.4' | translate}}</a>
+    </li>
+    <li ng-class="{'active':selectedMenu===5}">
+      <a ui-sref=".reports.odr" uib-tooltip="{{'cm.menu.5' | translate}}" tooltip-append-to-body="true" tooltip-placement="right" tooltip-enable="!auth.upreferences.isLPOpen" ng-cloak><i class="far fa-chart-bar"></i>{{'cm.menu.5' | translate}}</a>
+    </li>
+    <li ng-class="{'active':selectedMenu===6}" ng-if="auth.userType == 1 || auth.userType == 4 || auth.userType == 5">
+      <a ui-sref=".i.d" uib-tooltip="{{'cm.menu.6' | translate}}" tooltip-append-to-body="true" tooltip-placement="right" tooltip-enable="!auth.upreferences.isLPOpen" ng-cloak><i class="fas fa-cubes"></i>{{'cm.menu.6' | translate}}</a>
+    </li>
+    <li ng-class="{'active':selectedMenu===7}">
+      <a ui-sref=".order.r" uib-tooltip="{{'cm.menu.7' | translate}}" tooltip-append-to-body="true" tooltip-placement="right" tooltip-enable="!auth.upreferences.isLPOpen" ng-cloak><i class="fa fa-shopping-cart"></i>{{'cm.menu.7' | translate}}</a>
+    </li>
+    <li ng-class="{'active':selectedMenu===9}">
+      <a ui-sref=".timeSheet.o" uib-tooltip="{{'cm.menu.9' | translate}}" tooltip-append-to-body="true" tooltip-placement="right" tooltip-enable="!auth.upreferences.isLPOpen" ng-cloak><i class="fas fa-user-clock"></i>{{'cm.menu.9' | translate}}</a>
+    </li>
+    <li ng-class="{'active':selectedMenu===10}">
+      <a ui-sref=".servers" uib-tooltip="{{'cm.menu.10' | translate}}" tooltip-append-to-body="true" tooltip-placement="right" tooltip-enable="!auth.upreferences.isLPOpen" ng-cloak><i class="fas fa-server"></i>{{'cm.menu.10' | translate}}</a>
+    </li>
+  </ul>
+</div>

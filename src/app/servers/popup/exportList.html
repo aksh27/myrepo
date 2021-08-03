@@ -1,0 +1,15 @@
+<section class="panel">
+  <header class="panel-heading">{{'Download' | translate}}</header>
+  <div class="panel-body">
+    <div class="text-center" ng-if="list.url">
+      <p translate="{{'cm.body.1'}}"  translate-values="{htmlTagO: '<b>&quot;', htmlTagC: '&quot;</b>'}"></p>
+      <a href="{{list.url}}" target="_blank" download class="btn btn-link text-lg"><span class="fa fa-download"></span> {{'cm.btn.16' | translate}}</a>
+    </div>
+  </div>
+  <div class="panel-footer">
+    <span class="btnQuad">
+      <button type="button" class="btn btn-default" ng-click="closeThisDialog();" ng-if="list.url">{{'cm.btn.9' | translate}}</button>
+    </span>
+    <div class="clearfix"></div>
+  </div>
+</section>
