@@ -61,77 +61,22 @@
     $scope.curTime = new Date(); //moment().format();
     $scope.curTimezone = $scope.curTime.getTimezoneOffset();
 
-    $scope.settingFx = function(){
-      $scope.hasErr = false;
-      $scope.errType = "";
-      if($scope.settings.pro.fName == "" || $scope.settings.pro.lName == ""){
-        $scope.errType = "name";
-        $scope.hasErr = true;
-      } else{
-        $scope.updateProcessing = true;
-        MySettingsSrv.updateSettings($scope.settings.pro).then(
-          function(data){
-            $scope.auth = $cookies.getObject("supportAuth");
-            $scope.auth.fName = $scope.settings.pro.fName;
-            $scope.auth.lName = $scope.settings.pro.lName;
-            $scope.auth.lang = $scope.settings.pro.lang;
-            $scope.auth.uLog = $scope.settings.pro.isActivitylog;
-
-            $cookies.putObject('supportAuth', $scope.auth);
-
-            /*Localization*/
-            if($scope.auth.lang != angular.fromJson(localStorage.getItem("supportAuthLang"))){
-              LocalizationSrv.getLocalization($scope.auth.lang).then(
-                function(data){
-                  localStorage.setItem("supportAuthLang", JSON.stringify($scope.auth.lang));
-                  localStorage.setItem("supportLang", JSON.stringify(data));
-                  $window.location.reload();
-                },
-                function(err){
-                  $log.error(err);
-                }
-              );
-            } else{
-              $state.reload();
-            }
-            $scope.updateProcessing = false;
-          },
-          function(err){
-            $log.error(err);
-            $scope.updateProcessing = false;
-          }
-        );
-      }
-    }
-
-
     $scope.uiVersionFx = function(){
-      if(temp == "manual"){
-        if(!$rootScope.uiVersion || $rootScope.uiVersion !== data.version){
-          $translate.refresh();
-          $window.location.reload();
-          setTimeout(function(){
+      CommonSrv.getUIVersion().then(
+        function(data){
+          if(!$rootScope.uiVersion || $rootScope.uiVersion !== data.version){
             $translate.refresh();
             $window.location.reload();
-          }, 100);
-        }
-      } else {
-        CommonSrv.getUIVersion().then(
-          function(data){
-            if(!$rootScope.uiVersion || $rootScope.uiVersion !== data.version){
+            setTimeout(function(){
               $translate.refresh();
               $window.location.reload();
-              setTimeout(function(){
-                $translate.refresh();
-                $window.location.reload();
-              }, 100);
-            }
-          },
-          function(err){
-            $log.error(err);
+            }, 100);
           }
-        );
-      }
+        },
+        function(err){
+          $log.error(err);
+        }
+      );
     }
     $scope.uiVersionFx();
 
@@ -144,15 +89,10 @@
       $rootScope.$broadcast('curStateBroadcast', {curState: $scope.curState});
       $scope.futureTimestamp = moment().add('days', 1).set('hour', 23).set('minute', 59).set('second', 59).format("x");
 
-      if(temp == "manual"){
+      if($scope.curState !== "support.tickets.a" && $scope.curState !== "support.tickets.o" && $scope.curState !== "support.tickets.r" && $scope.curState !== "support.tickets.n" && $scope.curState !== "support.tDetails"){
+        /*Clear filter obj*/
         localStorage.removeItem("curfilterObj");
         localStorage.removeItem("ticketType");
-      } else {
-        if($scope.curState !== "support.tickets.a" && $scope.curState !== "support.tickets.o" && $scope.curState !== "support.tickets.r" && $scope.curState !== "support.tickets.n" && $scope.curState !== "support.tDetails"){
-          /*Clear filter obj*/
-          localStorage.removeItem("curfilterObj");
-          localStorage.removeItem("ticketType");
-        }
       }
 
       if($scope.curState !== "support.order.r" && $scope.curState !== "support.order.d" && $scope.curState !== "support.order.cm" && $scope.curState !== "support.order.cl" && $scope.curState !== "support.order.cn" && $scope.curState !== "support.order.odcu"){
